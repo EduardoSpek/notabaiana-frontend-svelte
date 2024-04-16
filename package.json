@@ -22,5 +22,9 @@
 		"svelte": "^4.2.7",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@fontsource-variable/cabin": "^5.0.18",
+		"@fontsource-variable/roboto-condensed": "^5.0.2"
+	}
 }

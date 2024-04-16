@@ -7,7 +7,5 @@ export async function load({ fetch, params }) {
 	item['text'] = item.text.replace(/\n\n/g, '');
 	item['text'] = item.text.replace(/<br><br><br><br>/g, '');
 
-	console.log(item.text);
-
 	return { item };
 }

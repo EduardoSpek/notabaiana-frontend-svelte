@@ -1,13 +1,8 @@
 <script>
 	export let data;
-
-	console.log(data.item);
 </script>
 
 <div class="container">
-	<div class="voltar">
-		<a href="javascript:void(0);" onclick="window.history.back();" class="link">Página anterior</a>
-	</div>
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
@@ -25,17 +20,16 @@
 		flex-direction: column;
 		margin-left: 12px;
 		margin-right: 12px;
+		margin-top: -20px;
 	}
 	.title {
 		font-size: 18px;
 		font-weight: bold;
 		margin-bottom: 12px;
-		margin-top: 20px;
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: 'Roboto Condensed Variable', sans-serif;
 	}
 	.text {
-		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
-			sans-serif;
+		font-family: 'Cabin', sans-serif;
 		text-align: justify;
 	}
 	.img {
@@ -46,16 +40,6 @@
 	}
 	.thumb {
 		border-radius: 4px;
-	}
-	.voltar {
-		margin-bottom: -20px;
-		margin-top: 10px;
-	}
-	.link {
-		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-			Geneva, Verdana, sans-serif;
-		text-decoration: none;
-		color: blue;
-		font-size: 16px;
+		width: 100%;
 	}
 </style>

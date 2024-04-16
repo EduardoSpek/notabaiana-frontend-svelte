@@ -3,8 +3,6 @@
 </script>
 
 <div class="container">
-	<h2>Notícias</h2>
-
 	{#each data.news as info, i}
 		<div class="card">
 			<div class="img">
@@ -27,13 +25,8 @@
 </div>
 
 <style>
-	:global(body) {
-		-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
-		-moz-osx-font-smoothing: grayscale; /* Para Firefox no macOS */
-		font-smooth: always;
-	}
 	h2 {
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: 'Roboto Condensed Variable', sans-serif;
 	}
 	.container {
 		display: flex;
@@ -46,7 +39,7 @@
 		gap: 12px;
 		margin-bottom: 20px;
 		padding-bottom: 10px;
-		border-bottom: 1px dashed #ccc;
+		border-bottom: 1px dashed var(--cinza);
 	}
 	.img {
 		width: 120px;
@@ -56,12 +49,13 @@
 		border-radius: 4px;
 	}
 	.title {
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: 'Cabin', sans-serif;
 		font-size: 16px;
+		font-weight: 700;
 	}
 	.link {
 		text-decoration: none;
-		color: #333;
+		color: var(--secundary);
 	}
 	.link:hover {
 		text-decoration: underline;
@@ -72,9 +66,16 @@
 		align-items: center;
 	}
 	.page {
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: 'Cabin', sans-serif;
 		justify-content: center;
 		align-items: center;
 		width: 20px;
+		background-color: var(--cinza-claro);
+		padding: 8px;
+		margin: 4px;
+		text-align: center;
+		border-radius: 8px;
+		cursor: pointer;
+		font-weight: 700;
 	}
 </style>

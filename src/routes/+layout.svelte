@@ -1,4 +1,10 @@
-<div class="topo">NotaBaiana.com.br</div>
+<script>
+	import '../global.css';
+	import '@fontsource-variable/roboto-condensed';
+	import '@fontsource-variable/cabin';
+</script>
+
+<div class="topo"><a href="/" class="link-topo" title="Página Inicial">NotaBaiana.com.br</a></div>
 <slot />
 
 <style>
@@ -6,10 +12,17 @@
 		display: flex;
 		text-align: center;
 		justify-content: center;
-		background-color: #f5f3f2;
-		padding: 8px;
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		border-bottom: 1px solid #f5f3f2;
+		padding-bottom: 12px;
+		padding-top: 4px;
+		font-family: 'Roboto Condensed Variable', sans-serif;
 		font-size: 20px;
-		color: red;
+		color: var(--primary);
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	.link-topo {
+		color: var(--primary);
+		text-decoration: none;
 	}
 </style>
