@@ -3,7 +3,7 @@
 	import '@fontsource-variable/roboto-condensed';
 	import '@fontsource-variable/cabin';
 	import { setContext } from 'svelte';
-	const host = 'http://localhost:8080';
+	const host = 'https://bn-api-production.up.railway.app';
 	setContext('host', host);
 </script>
 

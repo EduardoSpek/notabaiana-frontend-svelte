@@ -1,5 +1,5 @@
 export async function load({ fetch, params }) {
-	const res = await fetch(`http://localhost:8080/news/${params.slug}`);
+	const res = await fetch(`https://bn-api-production.up.railway.app/news/${params.slug}`);
 	const item = await res.json();
 
 	item['text'] = item.text.replace(/\n\n \n\n/g, '<br><br>');

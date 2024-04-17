@@ -1,5 +1,7 @@
 export async function load({ fetch, params }) {
-	const res = await fetch(`http://localhost:8080/news/${params.page}/${params.limit}`);
+	const res = await fetch(
+		`https://bn-api-production.up.railway.app/news/${params.page}/${params.limit}`
+	);
 	const news = await res.json();
 
 	return { news: news.news, pagination: news.pagination };
