@@ -1,5 +1,7 @@
 <script>
+	import { getContext } from 'svelte';
 	export let data;
+	const host = getContext('host');
 </script>
 
 <div class="container">
@@ -7,7 +9,7 @@
 		<h3>{data.item.title}</h3>
 	</div>
 	<div class="img">
-		<img class="thumb" src="http://localhost:8080/images/{data.item.image}" alt={data.item.title} />
+		<img class="thumb" src="{host}/images/{data.item.image}" alt={data.item.title} />
 	</div>
 	<div class="text">
 		{@html data.item.text}

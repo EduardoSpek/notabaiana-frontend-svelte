@@ -1,5 +1,9 @@
 <script>
+	import { getContext } from 'svelte';
 	export let data;
+	export let comparePage;
+	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+	const host = getContext('host');
 </script>
 
 <div class="container">
@@ -7,7 +11,7 @@
 		<div class="card">
 			<div class="img">
 				<a href={info.link}
-					><img class="thumb" src="http://localhost:8080/images/{info.image}" alt={info.title} /></a
+					><img class="thumb" src="{host}/images/{info.image}" alt={info.title} /></a
 				>
 			</div>
 			<div class="info">
@@ -18,16 +22,44 @@
 		</div>
 	{/each}
 	<div class="pagination">
-		<div class="page"><a href="/news/1/10" class="link">1</a></div>
-		<div class="page"><a href="/news/2/10" class="link">2</a></div>
-		<div class="page"><a href="/news/3/10" class="link">3</a></div>
+		{#if parseInt(data.pagination.currentPage) >= 4}
+			<div class="page">
+				<a href="/news/1/10" class="link">1</a>
+			</div>
+			...
+		{/if}
+		{#if data.pagination.previousPages}
+			{#each data.pagination.previousPages as previousPage}
+				<div class="page">
+					<a href="/news/{previousPage}/10" class="link">{previousPage}</a>
+				</div>
+			{/each}
+		{/if}
+		{#if data.pagination.currentPage}
+			<div class="page page_current">
+				<a href="/news/{data.pagination.currentPage}/10" class="link link_current"
+					>{data.pagination.currentPage}</a
+				>
+			</div>
+		{/if}
+		{#if data.pagination.nextPages}
+			{#each data.pagination.nextPages as nextPage}
+				<div class="page">
+					<a href="/news/{nextPage}/10" class="link">{nextPage}</a>
+				</div>
+			{/each}
+		{/if}
+		{#if comparePage < parseInt(data.pagination.totalPages)}
+			...
+			<div class="page">
+				<a href="/news/{data.pagination.totalPages}/10" class="link">{data.pagination.totalPages}</a
+				>
+			</div>
+		{/if}
 	</div>
 </div>
 
 <style>
-	h2 {
-		font-family: 'Roboto Condensed Variable', sans-serif;
-	}
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -60,6 +92,9 @@
 	.link:hover {
 		text-decoration: underline;
 	}
+	.link_current {
+		color: var(--primary);
+	}
 	.pagination {
 		display: flex;
 		justify-content: center;
@@ -77,5 +112,8 @@
 		border-radius: 8px;
 		cursor: pointer;
 		font-weight: 700;
+	}
+	.page_current {
+		background-color: var(--cinza);
 	}
 </style>

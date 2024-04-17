@@ -2,6 +2,9 @@
 	import '../global.css';
 	import '@fontsource-variable/roboto-condensed';
 	import '@fontsource-variable/cabin';
+	import { setContext } from 'svelte';
+	const host = 'http://localhost:8080';
+	setContext('host', host);
 </script>
 
 <div class="topo"><a href="/" class="link-topo" title="Página Inicial">NotaBaiana.com.br</a></div>

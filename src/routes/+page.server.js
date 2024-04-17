@@ -4,6 +4,7 @@ export async function load() {
 	let news = data;
 
 	return {
-		news
+		news: news.news,
+		pagination: news.pagination
 	};
 }
