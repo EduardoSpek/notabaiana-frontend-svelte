@@ -7,7 +7,7 @@
 	setContext('host', host);
 </script>
 
-<div class="topo"><a href="/" class="link-topo" title="Página Inicial">NotaBaiana.com.br</a></div>
+<div class="topo"><a href="/" class="link-topo" title="Página Inicial">bn-api.com.br</a></div>
 <slot />
 
 <style>
