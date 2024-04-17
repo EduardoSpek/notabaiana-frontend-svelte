@@ -4,6 +4,11 @@
 	const host = getContext('host');
 </script>
 
+<svelte:head>
+	<title>{data.item.title}</title>
+	<meta name="description" content={data.item.title} />
+</svelte:head>
+
 <div class="container">
 	<div class="title">
 		<h3>{data.item.title}</h3>
