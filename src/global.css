@@ -3,6 +3,7 @@
 	--secundary: rgb(68, 68, 68);
 	--cinza: #ccc;
 	--cinza-claro: #f5f3f2;
+	--cinza-escuro: #979797;
 }
 body {
 	-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
