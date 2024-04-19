@@ -8,7 +8,9 @@
 </script>
 
 <div class="topo"><a href="/" class="link-topo" title="Página Inicial">NOTÍCIAS BRASIL</a></div>
-<slot />
+<div class="container">
+	<slot />
+</div>
 
 <style>
 	.topo {

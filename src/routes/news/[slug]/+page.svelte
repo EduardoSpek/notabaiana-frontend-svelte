@@ -12,7 +12,7 @@
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 
-<div class="container">
+<div class="conteudo">
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
@@ -28,7 +28,7 @@
 </div>
 
 <style>
-	.container {
+	.conteudo {
 		display: flex;
 		flex-direction: column;
 		margin-left: 12px;
@@ -40,10 +40,12 @@
 		font-weight: bold;
 		margin-bottom: 12px;
 		font-family: 'Roboto Condensed Variable', sans-serif;
+		font-size: 22px;
 	}
 	.text {
 		font-family: 'Cabin', sans-serif;
 		text-align: justify;
+		font-size: 20px;
 	}
 	.img {
 		justify-content: center;
@@ -57,7 +59,7 @@
 	}
 	.data_news {
 		font-family: 'Cabin', sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		color: var(--cinza-escuro);
 		margin-top: -24px;
 		margin-bottom: 20px;

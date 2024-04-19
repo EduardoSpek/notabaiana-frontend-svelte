@@ -12,7 +12,7 @@
 	<meta name="description" content="Notícias do Brasil" />
 </svelte:head>
 
-<div class="container">
+<div class="conteudo">
 	{#each data.news as info, i}
 		<div class="card">
 			<div class="img">
@@ -67,7 +67,7 @@
 </div>
 
 <style>
-	.container {
+	.conteudo {
 		display: flex;
 		flex-direction: column;
 		margin-left: 12px;
@@ -122,11 +122,5 @@
 	}
 	.page_current {
 		background-color: var(--cinza);
-	}
-	.data_news {
-		font-family: 'Cabin', sans-serif;
-		font-size: 14px;
-		color: var(--cinza-escuro);
-		margin-bottom: 4px;
 	}
 </style>

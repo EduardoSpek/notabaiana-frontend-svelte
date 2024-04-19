@@ -1,4 +1,5 @@
 <script>
+	import { SITE_NAME, formatarData } from '../../../../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
 	export let comparePage;
@@ -6,7 +7,7 @@
 	const host = getContext('host');
 </script>
 
-<div class="container">
+<div class="conteudo">
 	{#each data.news as info, i}
 		<div class="card">
 			<div class="img">
@@ -15,6 +16,7 @@
 				>
 			</div>
 			<div class="info">
+				<div class="data_news">{formatarData(info.created_at)}</div>
 				<div class="title">
 					<a href={info.link} class="link">{info.title}</a>
 				</div>
@@ -60,7 +62,7 @@
 </div>
 
 <style>
-	.container {
+	.conteudo {
 		display: flex;
 		flex-direction: column;
 		margin-left: 12px;
