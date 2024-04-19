@@ -1,10 +1,16 @@
 <script>
+	import { SITE_NAME } from '../lib/index.js';
 	import { getContext } from 'svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 	const host = getContext('host');
 </script>
+
+<svelte:head>
+	<title>{SITE_NAME}</title>
+	<meta name="description" content="Notícias do Brasil" />
+</svelte:head>
 
 <div class="container">
 	{#each data.news as info, i}

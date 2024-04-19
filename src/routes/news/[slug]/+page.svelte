@@ -1,4 +1,5 @@
 <script>
+	import { SITE_NAME } from '../lib/index.js';
 	import { getContext } from 'svelte';
 	export let data;
 	const host = getContext('host');
