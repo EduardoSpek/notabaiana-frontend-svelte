@@ -1,5 +1,5 @@
 <script>
-	import { SITE_NAME } from '../lib/index.js';
+	import { SITE_NAME, formatarData } from '../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
 	export let comparePage;
@@ -21,6 +21,7 @@
 				>
 			</div>
 			<div class="info">
+				<div class="data_news">{formatarData(info.created_at)}</div>
 				<div class="title">
 					<a href={info.link} class="link">{info.title}</a>
 				</div>
@@ -121,5 +122,11 @@
 	}
 	.page_current {
 		background-color: var(--cinza);
+	}
+	.data_news {
+		font-family: 'Cabin', sans-serif;
+		font-size: 14px;
+		color: var(--cinza-escuro);
+		margin-bottom: 4px;
 	}
 </style>
