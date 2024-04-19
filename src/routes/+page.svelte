@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<title>{SITE_NAME}</title>
-	<meta name="description" content="Notícias do Brasil" />
+	<meta name="description" content="Notícias do Brasil e do Mundo" />
 </svelte:head>
 
 <div class="conteudo">
