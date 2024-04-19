@@ -24,7 +24,7 @@
 		font-size: 20px;
 		color: var(--primary);
 		font-weight: bold;
-		margin-bottom: 20px;
+		margin-bottom: 12px;
 	}
 	.link-topo {
 		color: var(--primary);
