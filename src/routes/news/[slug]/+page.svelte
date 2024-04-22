@@ -13,7 +13,7 @@
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 
-<div class="conteudo" transition:fade>
+<div class="conteudo" transition:fade={{ duration: 300 }}>
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
