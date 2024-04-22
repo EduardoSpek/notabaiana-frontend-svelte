@@ -13,7 +13,7 @@
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 
-<div class="conteudo" in:fly={{ x: -100, duration: 200 }) out:fly={{ x: 100, duration: 200 })>
+<div class="conteudo" in:fly={{ x: -100, duration: 200 }) out:fly={{ x: -100, duration: 200 })>
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
