@@ -8,7 +8,7 @@
 </script>
 
 <div class="conteudo">
-	{#each data.news as info, i}
+	{#each data.news as info}
 		<div class="card">
 			<div class="img">
 				<a href={info.link}

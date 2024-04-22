@@ -14,7 +14,7 @@
 </svelte:head>
 
 <div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
-	{#each data.news as info, i}
+	{#each data.news as info}
 		<div class="card">
 			<div class="img">
 				<a href={info.link}
