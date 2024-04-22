@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../../../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
@@ -13,7 +13,7 @@
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 
-<div class="conteudo" transition:fade={{ duration: 300 }}>
+<div class="conteudo" in:fly={{ x: -100, duration: 500 }} out:fade={{ duration: 300 }}>
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
