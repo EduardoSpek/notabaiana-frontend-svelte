@@ -1,5 +1,5 @@
 <script>
-	import { slide } from 'svelte/transition';
+	import { transition } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../../../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
