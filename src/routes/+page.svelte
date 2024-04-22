@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
@@ -12,7 +13,7 @@
 	<meta name="description" content="Notícias do Brasil e do Mundo" />
 </svelte:head>
 
-<div class="conteudo">
+<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
 	{#each data.news as info, i}
 		<div class="card">
 			<div class="img">
