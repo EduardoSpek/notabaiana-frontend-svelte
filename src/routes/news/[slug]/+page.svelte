@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../../../lib/index';
 	import { getContext } from 'svelte';
 	export let data;
@@ -12,7 +13,7 @@
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 
-<div class="conteudo">
+<div class="conteudo" transition:fade>
 	<div class="title">
 		<h3>{data.item.title}</h3>
 	</div>
