@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.item.title}</title>
+	<title>{data.item.title} - {SITE_NAME}</title>
 	<meta name="description" content={data.item.title} />
 </svelte:head>
 

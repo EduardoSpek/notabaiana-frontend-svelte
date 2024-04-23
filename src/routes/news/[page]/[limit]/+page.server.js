@@ -1,4 +1,4 @@
-export async function load({ fetch, params }) {
+export async function load({ params }) {
 	const res = await fetch(
 		`https://bn-api-production.up.railway.app/news/${params.page}/${params.limit}`
 	);
