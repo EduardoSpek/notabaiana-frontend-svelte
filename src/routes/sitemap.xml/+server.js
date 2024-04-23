@@ -1,5 +1,5 @@
 export async function GET() {
-	const host = 'https://frontend-bn-api.vercel.app';
+	const host = 'https://www.notabaiana.com.br';
 	const response = await fetch('https://bn-api-production.up.railway.app/news/1/50000');
 	const data = await response.json();
 	let news = data;
