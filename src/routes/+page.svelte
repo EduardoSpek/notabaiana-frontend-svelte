@@ -12,6 +12,7 @@
 </svelte:head>
 
 <div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
+	<div class="emalta">Notícias em destaque</div>
 	{#each data.news as info}
 		<div class="card">
 			<div class="img">
@@ -57,14 +58,30 @@
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 700;
 	}
 	.link {
 		text-decoration: none;
-		color: var(--secundary);
+		color: var(--text);
 	}
 	.link:hover {
 		text-decoration: underline;
+	}
+	.emalta {
+		font-family: 'Roboto Condensed Variable', sans-serif;
+		font-size: 20px;
+		padding-bottom: 4px;
+		margin-bottom: 10px;
+	}
+	@media (min-width: 480px) {
+		.title {
+			font-size: 18px;
+		}
+		.emalta {
+			font-size: 28px;
+			margin-top: -10px;
+			margin-bottom: 20px;
+		}
 	}
 </style>

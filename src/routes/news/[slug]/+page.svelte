@@ -65,4 +65,9 @@
 		margin-top: -24px;
 		margin-bottom: 20px;
 	}
+	@media (min-width: 480px) {
+		.conteudo {
+			margin-top: -30px;
+		}
+	}
 </style>

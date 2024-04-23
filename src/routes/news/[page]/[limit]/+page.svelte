@@ -84,12 +84,12 @@
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 700;
 	}
 	.link {
 		text-decoration: none;
-		color: var(--secundary);
+		color: var(--text);
 	}
 	.link:hover {
 		text-decoration: underline;
@@ -117,5 +117,10 @@
 	}
 	.page_current {
 		background-color: var(--cinza);
+	}
+	@media (min-width: 480px) {
+		.title {
+			font-size: 18px;
+		}
 	}
 </style>

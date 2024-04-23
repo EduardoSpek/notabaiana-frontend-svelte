@@ -1,6 +1,7 @@
 :root {
-	--primary: rgb(179, 0, 196);
-	--secundary: rgb(68, 68, 68);
+	--primary: #b2181f;
+	--secundary: #86151a;
+	--text: rgb(68, 68, 68);
 	--cinza: #ccc;
 	--cinza-claro: #f5f3f2;
 	--cinza-escuro: #979797;

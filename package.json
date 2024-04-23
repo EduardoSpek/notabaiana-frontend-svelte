@@ -25,6 +25,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/cabin": "^5.0.18",
-		"@fontsource-variable/roboto-condensed": "^5.0.2"
+		"@fontsource-variable/roboto-condensed": "^5.0.2",
+		"@fontsource/poppins": "^5.0.14"
 	}
 }
