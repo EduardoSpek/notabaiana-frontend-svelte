@@ -7,6 +7,14 @@
 	const host = getContext('host');
 </script>
 
+<svelte:head>
+	<title>Notícias da Página {data.pagination.currentPage} - {SITE_NAME}</title>
+	<meta
+		name="description"
+		content="Lista de notícias da página número {data.pagination.currentPage}"
+	/>
+</svelte:head>
+
 <div class="conteudo">
 	{#each data.news as info}
 		<div class="card">
