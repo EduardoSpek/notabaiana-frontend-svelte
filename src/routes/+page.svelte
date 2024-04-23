@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>{SITE_NAME}</title>
+	<title>{SITE_NAME} - As notícias do jeito que o baiano gosta</title>
 	<meta name="description" content="Notícias do Brasil e do Mundo" />
 </svelte:head>
 

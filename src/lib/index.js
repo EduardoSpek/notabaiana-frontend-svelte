@@ -1,5 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
-const SITE_NAME = 'Notícias Brasil';
+const SITE_NAME = 'Nota Baiana';
 
 const formatarData = (data) => {
 	const data_news = new Date(Date.parse(data));
