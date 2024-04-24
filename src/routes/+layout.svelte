@@ -21,8 +21,8 @@
 		text-align: center;
 		justify-content: center;
 		border-bottom: 2px solid #f5f3f2;
-		padding-bottom: 12px;
-		padding-top: 4px;
+		padding-bottom: 6px;
+		padding-top: 2px;
 		font-family: 'Poppins', sans-serif;
 		font-size: 22px;
 		color: var(--primary);
@@ -38,6 +38,8 @@
 	}
 	@media (min-width: 480px) {
 		.topo {
+			padding-top: 4px;
+			padding-bottom: 12px;
 			font-size: 32px;
 			margin-bottom: 30px;
 		}
