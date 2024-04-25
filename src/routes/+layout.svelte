@@ -3,9 +3,6 @@
 	import '@fontsource-variable/roboto-condensed';
 	import '@fontsource-variable/cabin';
 	import '@fontsource/poppins';
-	import { setContext } from 'svelte';
-	const host = 'https://bn-api-production.up.railway.app';
-	setContext('host', host);
 </script>
 
 <div class="topo">

@@ -1,10 +1,8 @@
 <script>
-	import { SITE_NAME, formatarData } from '../../../../lib/index';
-	import { getContext } from 'svelte';
+	import { HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
-	const host = getContext('host');
 </script>
 
 <svelte:head>
@@ -20,7 +18,7 @@
 		<div class="card">
 			<div class="img">
 				<a href={info.link}
-					><img class="thumb" src="{host}/images/{info.image}" alt={info.title} /></a
+					><img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} /></a
 				>
 			</div>
 			<div class="info">

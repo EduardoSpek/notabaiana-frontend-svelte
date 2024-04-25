@@ -1,4 +1,7 @@
-// place files you want to import through the `$lib` alias in this folder.
+//const HOST_API = "https://bn-api-production.up.railway.app"
+
+const HOST_API = 'http://localhost:8080';
+
 const SITE_NAME = 'Nota Baiana';
 
 const formatarData = (data) => {
@@ -13,4 +16,4 @@ const formatarData = (data) => {
 	return `${dia}/${mes}/${ano} às ${hora}:${minuto}:${segundo}`;
 };
 
-export { SITE_NAME, formatarData };
+export { SITE_NAME, formatarData, HOST_API };

@@ -28,6 +28,10 @@ body {
 	margin-bottom: 20px;
 	font-weight: bold;
 }
+.imagem_anexada {
+	border-radius: 4px;
+	margin-top: 20px;
+}
 @media (min-width: 480px) {
 	.container {
 		display: flex;

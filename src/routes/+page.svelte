@@ -1,9 +1,8 @@
 <script>
+	import { HOST_API } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../lib/index';
-	import { getContext } from 'svelte';
 	export let data;
-	const host = getContext('host');
 </script>
 
 <svelte:head>
@@ -17,7 +16,7 @@
 		<div class="card">
 			<div class="img">
 				<a href={info.link}
-					><img class="thumb" src="{host}/images/{info.image}" alt={info.title} /></a
+					><img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} /></a
 				>
 			</div>
 			<div class="info">

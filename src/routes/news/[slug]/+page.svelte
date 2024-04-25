@@ -1,10 +1,7 @@
 <script>
+	import { HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
 	import { fly, fade } from 'svelte/transition';
-	import { SITE_NAME, formatarData } from '../../../lib/index';
-	import { getContext } from 'svelte';
 	export let data;
-	const host = getContext('host');
-
 	let data_news = formatarData(data.item.created_at);
 </script>
 
@@ -21,7 +18,7 @@
 	<div class="data_news">Publicado em {data_news}</div>
 
 	<div class="img">
-		<img class="thumb" src="{host}/images/{data.item.image}" alt={data.item.title} />
+		<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
 	</div>
 	<div class="text">
 		{@html data.item.text}
