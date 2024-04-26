@@ -1,6 +1,8 @@
+import { HOST_API } from '$lib/index.js';
+
 export async function GET() {
 	const host = 'https://www.notabaiana.com.br';
-	const response = await fetch('https://bn-api-production.up.railway.app/news/1/50000');
+	const response = await fetch(`${HOST_API}/news/1/50000`);
 	const data = await response.json();
 	let news = data;
 	let urls;
