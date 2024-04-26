@@ -67,12 +67,6 @@
 	.link:hover {
 		text-decoration: underline;
 	}
-	.emalta {
-		font-family: 'Roboto Condensed Variable', sans-serif;
-		font-size: 20px;
-		padding-bottom: 4px;
-		margin-bottom: 10px;
-	}
 	@media (min-width: 480px) {
 		.title {
 			font-size: 18px;

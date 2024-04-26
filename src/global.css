@@ -5,6 +5,7 @@
 	--cinza: #ccc;
 	--cinza-claro: #f5f3f2;
 	--cinza-escuro: #979797;
+	--branco: white;
 }
 body {
 	-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
@@ -31,6 +32,15 @@ body {
 .imagem_anexada {
 	border-radius: 4px;
 	margin-top: 20px;
+}
+input::placeholder {
+	color: var(--cinza-escuro);
+}
+.emalta {
+	font-family: 'Roboto Condensed Variable', sans-serif;
+	font-size: 20px;
+	padding-bottom: 4px;
+	margin-bottom: 10px;
 }
 @media (min-width: 480px) {
 	.container {

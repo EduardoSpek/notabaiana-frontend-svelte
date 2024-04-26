@@ -38,9 +38,11 @@
 		{/if}
 		{#if data.pagination.previousPages}
 			{#each data.pagination.previousPages as previousPage}
-				<div class="page">
-					<a href="/news/{previousPage}/10" class="link">{previousPage}</a>
-				</div>
+				{#if previousPage > 0}
+					<div class="page">
+						<a href="/news/{previousPage}/10" class="link">{previousPage}</a>
+					</div>
+				{/if}
 			{/each}
 		{/if}
 		{#if data.pagination.currentPage}
