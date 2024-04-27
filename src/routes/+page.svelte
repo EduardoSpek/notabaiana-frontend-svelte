@@ -7,7 +7,11 @@
 
 <svelte:head>
 	<title>{SITE_NAME} - As notícias do jeito que o baiano gosta</title>
-	<meta name="description" content="Notícias do Brasil e do Mundo" />
+	<meta
+		name="description"
+		content="Portal baiano que reúne as principais notícias do Brasil e do mundo."
+	/>
+	<meta name="robots" content="index, follow" />
 </svelte:head>
 
 <div class="conteudo" in:fly={{ duration: 200, y: 500 }}>

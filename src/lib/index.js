@@ -1,3 +1,4 @@
+const HOST = 'https://notabaiana.com.br';
 const HOST_API = 'https://bn-api-production.up.railway.app';
 
 //const HOST_API = 'http://localhost:8080';
@@ -16,4 +17,4 @@ const formatarData = (data) => {
 	return `${dia}/${mes}/${ano} às ${hora}:${minuto}:${segundo}`;
 };
 
-export { SITE_NAME, formatarData, HOST_API };
+export { SITE_NAME, formatarData, HOST_API, HOST };

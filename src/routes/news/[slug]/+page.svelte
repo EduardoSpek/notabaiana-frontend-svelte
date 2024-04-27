@@ -1,14 +1,17 @@
 <script>
-	import { HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
+	import { HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly, fade } from 'svelte/transition';
+	import Seo from '$lib/Seo.svelte';
 	export let data;
 	let data_news = formatarData(data.item.created_at);
 </script>
 
-<svelte:head>
-	<title>{data.item.title} - {SITE_NAME}</title>
-	<meta name="description" content={data.item.title} />
-</svelte:head>
+<Seo
+	title={data.item.title}
+	description="{data.item.text.substr(0, 150)}..."
+	url={HOST + data.item.link}
+	image="{HOST_API}/images/{data.item.image}"
+/>
 
 <div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
 	<div class="title">

@@ -1,17 +1,17 @@
 <script>
-	import { HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
+	import { HOST, HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
+	import Seo from '$lib/Seo.svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 </script>
 
-<svelte:head>
-	<title>Busca por {data.search} - Página {data.pagination.currentPage} - {SITE_NAME}</title>
-	<meta
-		name="description"
-		content="Lista de notícias da página número {data.pagination.currentPage}"
-	/>
-</svelte:head>
+<Seo
+	title="Busca por {data.search} - Página {data.pagination.currentPage}"
+	description="Lista de notícias sobre {data.search}"
+	url={HOST + '/news/busca/' + data.pagination.currentPage + '?search=' + data.search}
+	image="{HOST}/notabaiana_1200.jpg"
+/>
 
 <div class="conteudo">
 	{#if data.pagination.totalPages == 0}
