@@ -1,9 +1,11 @@
 <script>
 	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
 	import IconMenuSvg from '$lib/IconMenuSvg.svelte';
+	import { tick } from 'svelte';
 
 	let search_visible = false;
 	let timeoutID;
+	let ref;
 
 	const closesearch = () => {
 		search_visible = false;
@@ -14,6 +16,12 @@
 		search_visible = !search_visible;
 		clearTimeout(timeoutID);
 		timeoutID = setTimeout(closesearch, 15000);
+		setFocus();
+	};
+
+	const setFocus = async () => {
+		await tick();
+		ref?.focus();
 	};
 </script>
 
@@ -28,7 +36,7 @@
 {#if search_visible}
 	<div class="search">
 		<form action="/news/busca/1" method="get" on:submit={opensearch}>
-			<input type="text" name="search" placeholder="Procurar por..." id="btn_search" />
+			<input type="text" name="search" placeholder="Procurar por..." bind:this={ref} />
 			<button type="submit">Buscar</button>
 		</form>
 	</div>
