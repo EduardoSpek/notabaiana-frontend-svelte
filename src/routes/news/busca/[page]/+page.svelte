@@ -85,25 +85,6 @@
 		margin-left: 12px;
 		margin-right: 12px;
 	}
-	.card {
-		display: flex;
-		gap: 12px;
-		margin-bottom: 20px;
-		padding-bottom: 10px;
-		border-bottom: 1px dashed var(--cinza);
-	}
-	.img {
-		width: 120px;
-	}
-	.thumb {
-		width: 120px;
-		border-radius: 4px;
-	}
-	.title {
-		font-family: 'Cabin', sans-serif;
-		font-size: 14px;
-		font-weight: 700;
-	}
 	.link {
 		text-decoration: none;
 		color: var(--text);
@@ -134,10 +115,5 @@
 	}
 	.page_current {
 		background-color: var(--cinza);
-	}
-	@media (min-width: 480px) {
-		.title {
-			font-size: 18px;
-		}
 	}
 </style>
