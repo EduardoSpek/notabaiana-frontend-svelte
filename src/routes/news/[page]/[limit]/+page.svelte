@@ -1,5 +1,6 @@
 <script>
 	import { HOST, HOST_API, formatarData } from '$lib/index.js';
+	import ItemNews from '$lib/ItemNews.svelte';
 	import Seo from '$lib/Seo.svelte';
 	export let data;
 	export let comparePage;
@@ -15,19 +16,12 @@
 
 <div class="conteudo">
 	{#each data.news as info}
-		<div class="card">
-			<div class="img">
-				<a href={info.link}
-					><img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} /></a
-				>
-			</div>
-			<div class="info">
-				<div class="data_news">{formatarData(info.created_at)}</div>
-				<div class="title">
-					<a href={info.link} class="link">{info.title}</a>
-				</div>
-			</div>
-		</div>
+		<ItemNews
+			title={info.title}
+			url_image="{HOST_API}/images/{info.image}"
+			link={info.link}
+			date={formatarData(info.created_at)}
+		/>
 	{/each}
 	<div class="pagination">
 		{#if parseInt(data.pagination.currentPage) >= 4}

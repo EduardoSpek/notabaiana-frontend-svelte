@@ -1,13 +1,14 @@
 <script>
 	import { HOST, HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
 	import Seo from '$lib/Seo.svelte';
+	import ItemNews from '$lib/ItemNews.svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 </script>
 
 <Seo
-	title="Busca por {data.search} - Página {data.pagination.currentPage}"
+	title="Busca por {data.search} - Página {data.pagination.currentPage} - {SITE_NAME}"
 	description="Lista de notícias sobre {data.search}"
 	url={HOST + '/news/busca/' + data.pagination.currentPage + '?search=' + data.search}
 	image="{HOST}/notabaiana_1200.jpg"
@@ -19,19 +20,12 @@
 	{:else}
 		<div class="emalta">Busca por: <b>{data.search}</b></div>
 		{#each data.news as info}
-			<div class="card">
-				<div class="img">
-					<a href={info.link}
-						><img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} /></a
-					>
-				</div>
-				<div class="info">
-					<div class="data_news">{formatarData(info.created_at)}</div>
-					<div class="title">
-						<a href={info.link} class="link">{info.title}</a>
-					</div>
-				</div>
-			</div>
+			<ItemNews
+				title={info.title}
+				url_image="{HOST_API}/images/{info.image}"
+				link={info.link}
+				date={formatarData(info.created_at)}
+			/>
 		{/each}
 		<div class="pagination">
 			{#if parseInt(data.pagination.currentPage) >= 4}
