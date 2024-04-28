@@ -47,11 +47,4 @@
 	.link:hover {
 		text-decoration: underline;
 	}
-	@media (min-width: 480px) {
-		.emalta {
-			font-size: 28px;
-			margin-top: -10px;
-			margin-bottom: 20px;
-		}
-	}
 </style>

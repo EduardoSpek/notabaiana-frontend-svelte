@@ -1,24 +1,30 @@
 <script>
-	import { HOST, HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
-	import Seo from '$lib/Seo.svelte';
+	import { HOST, HOST_API, formatarData } from '$lib/index.js';
 	import ItemNews from '$lib/ItemNews.svelte';
+	import Seo from '$lib/Seo.svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 </script>
 
 <Seo
-	title="Busca por {data.search} - Página {data.pagination.currentPage} - {SITE_NAME}"
-	description="Lista de notícias sobre {data.search}"
-	url={HOST + '/news/busca/' + data.pagination.currentPage + '?search=' + data.search}
+	title="Notícias da Página {data.pagination.currentPage}"
+	description="Lista de notícias da página número {data.pagination.currentPage}"
+	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
 <div class="conteudo">
-	{#if data.pagination.totalPages == 0}
-		<div class="zero_resultado">Nenhum resultado encontrado sobre <b>{data.search}</b></div>
+	{#if data.news.length == 0}
+		<div class="zero_resultado">Nenhum resultado nesta categoria.</div>
 	{:else}
-		<div class="emalta">Busca por: <b>{data.search}</b></div>
+		<div class="emalta">
+			{#if data.category == 'famosos'}
+				Famosos
+			{:else if data.category == 'esportes'}
+				Esportes
+			{/if}
+		</div>
 		{#each data.news as info}
 			<ItemNews
 				title={info.title}
@@ -30,7 +36,7 @@
 		<div class="pagination">
 			{#if parseInt(data.pagination.currentPage) >= 4}
 				<div class="page">
-					<a href="/news/busca/1?search={data.search}" class="link">1</a>
+					<a href="/news/category/{data.category}/1" class="link">1</a>
 				</div>
 				...
 			{/if}
@@ -38,8 +44,7 @@
 				{#each data.pagination.previousPages as previousPage}
 					{#if previousPage > 0}
 						<div class="page">
-							<a href="/news/busca/{previousPage}?search={data.search}" class="link"
-								>{previousPage}</a
+							<a href="/news/category/{data.category}/{previousPage}" class="link">{previousPage}</a
 							>
 						</div>
 					{/if}
@@ -48,7 +53,7 @@
 			{#if data.pagination.currentPage}
 				<div class="page page_current">
 					<a
-						href="/news/busca/{data.pagination.currentPage}?search={data.search}"
+						href="/news/category/{data.category}/{data.pagination.currentPage}"
 						class="link link_current">{data.pagination.currentPage}</a
 					>
 				</div>
@@ -56,14 +61,14 @@
 			{#if data.pagination.nextPages}
 				{#each data.pagination.nextPages as nextPage}
 					<div class="page">
-						<a href="/news/busca/{nextPage}?search={data.search}" class="link">{nextPage}</a>
+						<a href="/news/category/{data.category}/{nextPage}" class="link">{nextPage}</a>
 					</div>
 				{/each}
 			{/if}
 			{#if comparePage < parseInt(data.pagination.totalPages)}
 				...
 				<div class="page">
-					<a href="/news/busca/{data.pagination.totalPages}?search={data.search}" class="link"
+					<a href="/news/category/{data.category}/{data.pagination.totalPages}" class="link"
 						>{data.pagination.totalPages}</a
 					>
 				</div>

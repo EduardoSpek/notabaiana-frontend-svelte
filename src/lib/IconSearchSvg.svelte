@@ -27,9 +27,9 @@
 		text-align: end;
 	}
 	.icon-search {
-		width: 30px;
+		width: 28px;
 		fill: var(--cinza-escuro);
-		margin-top: 2px;
+		margin-top: 4px;
 		float: right;
 	}
 	.icon-search:hover {

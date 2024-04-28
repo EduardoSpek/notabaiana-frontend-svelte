@@ -83,7 +83,7 @@
 		border-bottom: 2px solid #f5f3f2;
 		padding-bottom: 6px;
 		font-family: 'Poppins', sans-serif;
-		font-size: 22px;
+		font-size: 26px;
 		color: var(--primary);
 		font-weight: bold;
 		margin-bottom: 12px;
