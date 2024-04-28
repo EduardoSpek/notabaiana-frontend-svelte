@@ -3,6 +3,7 @@
 	import ItemNews from '$lib/ItemNews.svelte';
 	import Seo from '$lib/Seo.svelte';
 	export let data;
+	let titleUp = firstLetterUppercase(data.category);
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
@@ -12,14 +13,14 @@ const firstLetterUppercase(str) = (str) => {
 </script>
 
 <Seo
-	title="{firstLetterUppercase(data.category)} - Notícias da Página {data.pagination.currentPage}"
+	title="{titleUp} - Notícias da Página {data.pagination.currentPage}"
 	description="Lista de notícias da página número {data.pagination.currentPage}"
 	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
 <div class="conteudo">
-	{#if data.news.length == 0}
+	{#if data.news.length <= 0}
 		<div class="zero_resultado">Nenhum resultado nesta categoria.</div>
 	{:else}
 		<div class="emalta">
