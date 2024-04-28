@@ -5,15 +5,10 @@
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
-
-const firstLetterUppercase = (str) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-let titleUp = firstLetterUppercase(data.category);
-} 
 </script>
 
 <Seo
-	title="{titleUp} - Notícias da Página {data.pagination.currentPage}"
+	title="Notícias da Página {data.pagination.currentPage} - {data.category}"
 	description="Lista de notícias da página número {data.pagination.currentPage}"
 	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
