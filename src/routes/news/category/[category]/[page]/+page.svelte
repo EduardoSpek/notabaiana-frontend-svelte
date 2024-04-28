@@ -3,12 +3,12 @@
 	import ItemNews from '$lib/ItemNews.svelte';
 	import Seo from '$lib/Seo.svelte';
 	export let data;
-	let titleUp = firstLetterUppercase(data.category);
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
-const firstLetterUppercase(str) = (str) => {
+const firstLetterUppercase = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
+let titleUp = firstLetterUppercase(data.category);
 } 
 </script>
 
