@@ -31,7 +31,6 @@
 		fill: var(--cinza-escuro);
 		margin-top: 4px;
 		float: right;
-		margin-right: 10px;
 	}
 	.icon-search:hover {
 		fill: var(--primary);
