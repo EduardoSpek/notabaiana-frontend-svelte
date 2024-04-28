@@ -97,6 +97,7 @@
 		fill: var(--cinza-escuro);
 		margin-top: 6px;
 		float: left;
+		margin-left: 10px;
 	}
 	.icon-menu:hover {
 		fill: var(--primary);
