@@ -58,6 +58,7 @@
 		align-items: center;
 		margin: auto;
 		margin-bottom: 30px;
+		width: 100%;
 	}
 	.thumb {
 		border-radius: 4px;
