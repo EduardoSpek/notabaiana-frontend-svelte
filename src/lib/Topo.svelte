@@ -87,6 +87,8 @@
 		color: var(--primary);
 		font-weight: bold;
 		margin-bottom: 12px;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 	.topo span {
 		color: var(--secundary);

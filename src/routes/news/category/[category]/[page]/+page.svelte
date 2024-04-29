@@ -8,14 +8,14 @@
 </script>
 
 <Seo
-	title="Notícias da Página {data.pagination.currentPage}"
+	title="Notícias da Página {data.pagination.currentPage} - {data.category}"
 	description="Lista de notícias da página número {data.pagination.currentPage}"
 	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
 <div class="conteudo">
-	{#if data.news.length == 0}
+	{#if data.news.length <= 0}
 		<div class="zero_resultado">Nenhum resultado nesta categoria.</div>
 	{:else}
 		<div class="emalta">
