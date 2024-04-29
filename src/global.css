@@ -13,6 +13,7 @@ body {
 	-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
 	-moz-osx-font-smoothing: grayscale; /* Para Firefox no macOS */
 	font-smooth: always;
+	font-family: 'Cabin', sans-serif;
 }
 .main {
 	max-width: 600px;

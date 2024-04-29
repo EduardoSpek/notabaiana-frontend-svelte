@@ -25,6 +25,10 @@
 		<li><a href="/news/category/saude/1" on:click={openmenu}>Saúde</a></li>
 		<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
 	</ul>
+	<div class="menu-title">Termos de uso</div>
+	<ul>
+		<li><a href="/politica-de-privacidade" on:click={openmenu}>Política de Privacidade</a></li>
+	</ul>
 </div>
 <button on:click={openmenu}>
 	<div class={isOpen ? 'menu-bg' : ''}></div>
