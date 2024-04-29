@@ -7,6 +7,6 @@
 </script>
 
 <Topo />
-<div class="container">
+<main class="main">
 	<slot />
-</div>
+</main>

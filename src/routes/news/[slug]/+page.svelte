@@ -2,6 +2,7 @@
 	import { HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly, fade } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
+	import TopNoticias from '$lib/TopNoticias.svelte';
 	export let data;
 	let data_news = formatarData(data.item.created_at);
 </script>
@@ -27,6 +28,10 @@
 		{@html data.item.text}
 	</div>
 </div>
+
+<div class="separator"></div>
+
+<TopNoticias data={data.top} />
 
 <style>
 	.conteudo {

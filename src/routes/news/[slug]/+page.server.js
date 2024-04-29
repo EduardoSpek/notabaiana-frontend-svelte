@@ -4,11 +4,15 @@ export async function load({ fetch, params }) {
 		return response.json();
 	});
 
+	const top = await fetch(`${HOST_API}/top`).then((response) => {
+		return response.json();
+	});
+
 	item['text'] = item.text.replace(/\n/g, '<br>');
 
 	item['text'] = item.text.replace(/<br><br><br><br>/g, '');
 	item['text'] = item.text.replace(/<br><br><br>/g, '');
 	item['text'] = item.text.replace(/<br><br>/g, '<br>');
 
-	return { item };
+	return { item, top };
 }
