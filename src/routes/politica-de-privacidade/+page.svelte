@@ -1,3 +1,4 @@
+<div class="conteudo">
 <h2>Política de Privacidade</h2>
 
 <p>
@@ -70,3 +71,4 @@
 	Ao utilizar nosso site, você concorda com nossa Política de Privacidade e nos concede permissão
 	para coletar, usar e proteger suas informações pessoais da maneira descrita nesta política.
 </p>
+</div>
