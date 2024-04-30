@@ -2,6 +2,7 @@
 	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
 	import IconMenuSvg from '$lib/IconMenuSvg.svelte';
 	import { tick } from 'svelte';
+	import IconDarkMode from './IconDarkMode.svelte';
 
 	let search_visible = false;
 	let timeoutID;
@@ -30,6 +31,7 @@
 	<div class="logo">
 		<a href="/" class="link-topo" title="Página Inicial"><span>nota</span>baiana</a>
 	</div>
+	<IconDarkMode />
 	<IconSearchSvg onSearchClick={opensearch} />
 </div>
 
@@ -80,7 +82,7 @@
 		display: flex;
 		text-align: center;
 		justify-content: center;
-		border-bottom: 2px solid #f5f3f2;
+		border-bottom: 2px solid var(--cinza-claro);
 		padding-bottom: 6px;
 		font-family: 'Poppins', sans-serif;
 		font-size: 26px;
@@ -104,6 +106,9 @@
 		.topo {
 			font-size: 32px;
 			margin-bottom: 30px;
+		}
+		.logo {
+			flex: 4;
 		}
 	}
 </style>

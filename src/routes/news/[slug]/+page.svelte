@@ -39,6 +39,9 @@
 <TopNoticias data={data.top} />
 
 <style>
+	h3 {
+		color: var(--preto);
+	}
 	.conteudo {
 		display: flex;
 		flex-direction: column;
@@ -57,6 +60,7 @@
 		font-family: 'Cabin', sans-serif;
 		text-align: justify;
 		font-size: 20px;
+		color: var(--text);
 	}
 	.img {
 		justify-content: center;
