@@ -1,9 +1,9 @@
-const HOST = 'https://notabaiana.com.br';
 const HOST_API = 'https://bn-api-production.up.railway.app';
-
 //const HOST_API = 'http://localhost:8080';
 
+const HOST = 'https://notabaiana.com.br';
 const SITE_NAME = 'Nota Baiana';
+const IMG_PADRAO = HOST + '/notabaiana_400.jpg';
 
 const formatarData = (data) => {
 	const data_news = new Date(Date.parse(data));
@@ -17,4 +17,4 @@ const formatarData = (data) => {
 	return `${dia}/${mes}/${ano} às ${hora}:${minuto}:${segundo}`;
 };
 
-export { SITE_NAME, formatarData, HOST_API, HOST };
+export { SITE_NAME, formatarData, HOST_API, HOST, IMG_PADRAO };

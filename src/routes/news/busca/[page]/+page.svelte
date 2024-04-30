@@ -1,5 +1,6 @@
 <script>
 	import { HOST, HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
+	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import ItemNews from '$lib/ItemNews.svelte';
 	export let data;
@@ -14,7 +15,7 @@
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
-<div class="conteudo">
+<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
 	{#if data.pagination.totalPages == 0}
 		<div class="zero_resultado">Nenhum resultado encontrado sobre <b>{data.search}</b></div>
 	{:else}

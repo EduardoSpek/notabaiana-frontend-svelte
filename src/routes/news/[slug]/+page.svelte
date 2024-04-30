@@ -1,6 +1,6 @@
 <script>
-	import { HOST, HOST_API, formatarData } from '$lib/index.js';
-	import { fly, fade } from 'svelte/transition';
+	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
+	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import TopNoticias from '$lib/TopNoticias.svelte';
 	export let data;
@@ -22,8 +22,13 @@
 	<div class="data_news">Publicado em {data_news}</div>
 
 	<div class="img">
-		<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
+		{#if data.item.image.includes('.jpg')}
+			<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
+		{:else}
+			<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+		{/if}
 	</div>
+
 	<div class="text">
 		{@html data.item.text}
 	</div>

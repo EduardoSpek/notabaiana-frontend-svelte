@@ -1,5 +1,6 @@
 <script>
 	import { HOST, HOST_API, formatarData } from '$lib/index.js';
+	import { fly } from 'svelte/transition';
 	import ItemNews from '$lib/ItemNews.svelte';
 	import Seo from '$lib/Seo.svelte';
 	export let data;
@@ -14,7 +15,7 @@
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
-<div class="conteudo">
+<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
 	{#if data.news.length <= 0}
 		<div class="zero_resultado">Nenhum resultado nesta categoria.</div>
 	{:else}
