@@ -5,6 +5,8 @@ export async function load({ fetch }) {
 	const data = await response.json();
 	let news = data;
 
+	news.splice(1, 2);
+
 	return {
 		news
 	};

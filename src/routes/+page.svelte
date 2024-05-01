@@ -1,9 +1,6 @@
 <script>
-	import { HOST_API } from '$lib/index.js';
-	import { fly } from 'svelte/transition';
 	import { SITE_NAME, formatarData } from '../lib/index';
-	import ItemNews from '$lib/ItemNews.svelte';
-	import TopNoticias from '$lib/TopNoticias.svelte';
+	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
 	export let data;
 </script>
 
@@ -16,4 +13,4 @@
 	<meta name="robots" content="index, follow" />
 </svelte:head>
 
-<TopNoticias data={data.news} />
+<TopNoticiasHome data={data.news} />

@@ -13,27 +13,27 @@
 	url={HOST + data.item.link}
 	image="{HOST_API}/images/{data.item.image}"
 />
+<div class="central">
+	<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
+		<div class="title">
+			<h3>{data.item.title}</h3>
+		</div>
 
-<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
-	<div class="title">
-		<h3>{data.item.title}</h3>
-	</div>
+		<div class="data_news">Publicado em {data_news}</div>
 
-	<div class="data_news">Publicado em {data_news}</div>
+		<div class="img">
+			{#if data.item.image.includes('.jpg')}
+				<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
+			{:else}
+				<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+			{/if}
+		</div>
 
-	<div class="img">
-		{#if data.item.image.includes('.jpg')}
-			<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
-		{:else}
-			<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
-		{/if}
-	</div>
-
-	<div class="text">
-		{@html data.item.text}
+		<div class="text">
+			{@html data.item.text}
+		</div>
 	</div>
 </div>
-
 <div class="separator"></div>
 
 <TopNoticias data={data.top} />

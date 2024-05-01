@@ -13,52 +13,54 @@
 	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
 />
-
-<div class="conteudo">
-	{#each data.news as info}
-		<ItemNews
-			title={info.title}
-			url_image="{HOST_API}/images/{info.image}"
-			link={info.link}
-			date={formatarData(info.created_at)}
-		/>
-	{/each}
-	<div class="pagination">
-		{#if parseInt(data.pagination.currentPage) >= 4}
-			<div class="page">
-				<a href="/news/1/10" class="link">1</a>
-			</div>
-			...
-		{/if}
-		{#if data.pagination.previousPages}
-			{#each data.pagination.previousPages as previousPage}
-				{#if previousPage > 0}
-					<div class="page">
-						<a href="/news/{previousPage}/10" class="link">{previousPage}</a>
-					</div>
-				{/if}
-			{/each}
-		{/if}
-		{#if data.pagination.currentPage}
-			<div class="page page_current">
-				<a href="/news/{data.pagination.currentPage}/10" class="link link_current"
-					>{data.pagination.currentPage}</a
-				>
-			</div>
-		{/if}
-		{#if data.pagination.nextPages}
-			{#each data.pagination.nextPages as nextPage}
+<div class="central">
+	<div class="conteudo">
+		{#each data.news as info}
+			<ItemNews
+				title={info.title}
+				url_image="{HOST_API}/images/{info.image}"
+				link={info.link}
+				date={formatarData(info.created_at)}
+			/>
+		{/each}
+		<div class="pagination">
+			{#if parseInt(data.pagination.currentPage) >= 4}
 				<div class="page">
-					<a href="/news/{nextPage}/10" class="link">{nextPage}</a>
+					<a href="/news/1/10" class="link">1</a>
 				</div>
-			{/each}
-		{/if}
-		{#if comparePage < parseInt(data.pagination.totalPages)}
-			...
-			<div class="page">
-				<a href="/news/{data.pagination.totalPages}/10" class="link">{data.pagination.totalPages}</a
-				>
-			</div>
-		{/if}
+				...
+			{/if}
+			{#if data.pagination.previousPages}
+				{#each data.pagination.previousPages as previousPage}
+					{#if previousPage > 0}
+						<div class="page">
+							<a href="/news/{previousPage}/10" class="link">{previousPage}</a>
+						</div>
+					{/if}
+				{/each}
+			{/if}
+			{#if data.pagination.currentPage}
+				<div class="page page_current">
+					<a href="/news/{data.pagination.currentPage}/10" class="link link_current"
+						>{data.pagination.currentPage}</a
+					>
+				</div>
+			{/if}
+			{#if data.pagination.nextPages}
+				{#each data.pagination.nextPages as nextPage}
+					<div class="page">
+						<a href="/news/{nextPage}/10" class="link">{nextPage}</a>
+					</div>
+				{/each}
+			{/if}
+			{#if comparePage < parseInt(data.pagination.totalPages)}
+				...
+				<div class="page">
+					<a href="/news/{data.pagination.totalPages}/10" class="link"
+						>{data.pagination.totalPages}</a
+					>
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>

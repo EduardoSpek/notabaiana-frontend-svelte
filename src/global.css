@@ -28,6 +28,7 @@ body {
 	background-color: var(--branco);
 }
 .main {
+	padding: 10px;
 	max-width: 600px;
 	margin: auto;
 	justify-content: center;
@@ -45,7 +46,7 @@ body {
 	align-items: center;
 	padding: 12px;
 	font-family: 'Cabin', sans-serif;
-	background-color: var(--cinza);
+	background-color: var(--cinza-claro);
 	border-radius: 4px;
 	margin-bottom: 20px;
 	font-weight: bold;
@@ -117,6 +118,17 @@ input::placeholder {
 	border-bottom: 1px solid var(--cinza);
 }
 @media (min-width: 480px) {
+	.central {
+		display: flex;
+		max-width: 600px;
+		margin: auto;
+		justify-content: center;
+		align-items: center;
+	}
+	.main {
+		max-width: none;
+		padding: 10px;
+	}
 	.container {
 		display: flex;
 		max-width: 600px;

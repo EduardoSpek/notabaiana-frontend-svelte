@@ -31,8 +31,10 @@
 	<div class="logo">
 		<a href="/" class="link-topo" title="Página Inicial"><span>nota</span>baiana</a>
 	</div>
-	<IconDarkMode />
-	<IconSearchSvg onSearchClick={opensearch} />
+	<div class="recursos">
+		<IconDarkMode />
+		<IconSearchSvg onSearchClick={opensearch} />
+	</div>
 </div>
 
 {#if search_visible}
@@ -45,6 +47,10 @@
 {/if}
 
 <style>
+	.recursos {
+		display: flex;
+		gap: 20px;
+	}
 	.search {
 		display: flex;
 		justify-content: center;
