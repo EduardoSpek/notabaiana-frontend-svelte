@@ -36,7 +36,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: stretch;
-		gap: 20px;
+		gap: 34px;
 	}
 	@media (min-width: 480px) {
 		.conteudo-flow {
