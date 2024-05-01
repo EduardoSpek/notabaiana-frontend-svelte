@@ -27,11 +27,20 @@
 </div>
 
 <style>
+	.conteudo-flow {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 	.items {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: stretch;
 		gap: 20px;
+	}
+	@media (min-width: 480px) {
+		.conteudo-flow {
+			margin: auto;
+		}
 	}
 </style>
