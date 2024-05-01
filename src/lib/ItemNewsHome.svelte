@@ -6,20 +6,20 @@
 </script>
 
 <div class="card">
+	<div class="img">
+		<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
+	</div>
+	<div class="data_news">{date}</div>
 	<div class="info">
 		<div class="title">
 			<a href={link} class="link">{title}</a>
 		</div>
 	</div>
-	<div class="data_news">{date}</div>
-	<div class="img">
-		<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
-	</div>
 </div>
 
 <style>
 	.data_news {
-		margin-bottom: 10px;
+		margin-top: 10px;
 		padding-bottom: 4px;
 		font-size: 14px;
 	}
