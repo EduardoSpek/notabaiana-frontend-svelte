@@ -1,4 +1,5 @@
 <script>
+	import { IMG_PADRAO } from '$lib/index.js';
 	export let title;
 	export let url_image;
 	export let link;
@@ -7,7 +8,11 @@
 
 <div class="card">
 	<div class="img">
-		<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
+		{#if url_image.includes('.jpg')}
+			<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
+		{:else}
+			<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+		{/if}
 	</div>
 	<div class="data_news">{date}</div>
 	<div class="info">
