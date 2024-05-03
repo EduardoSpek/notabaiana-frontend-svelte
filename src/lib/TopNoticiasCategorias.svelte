@@ -3,14 +3,15 @@
 	import { fly } from 'svelte/transition';
 	import { formatarData } from './index';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
-	export let data;
+	export let data_categorias;
+	export let category;
 </script>
 
 <div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
-	<div class="emalta">Notícias em destaque</div>
+	<div class="emalta">{category}</div>
 
 	<div class="items">
-		{#each data as info}
+		{#each data_categorias as info}
 			<ItemNewsHome
 				title={info.title}
 				url_image="{HOST_API}/images/{info.image}"
@@ -21,7 +22,9 @@
 	</div>
 	<div class="box">
 		<div class="box-page">
-			<a href="/news/1/10" class="link">Veja todas as notícias</a>
+			<a href="/news/category/{category.toLowerCase().replace('ç', 'c')}/1" class="link"
+				>Veja todas as notícias sobre {category}</a
+			>
 		</div>
 	</div>
 </div>
