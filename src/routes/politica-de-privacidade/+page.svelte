@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Política de Privacidade - {SITE_NAME}</title>
+	<meta
+		name="description"
+		content="Confira as políticas de privacidade e como preservamos os seus dados. "
+	/>
+</svelte:head>
+
 <div class="central">
 	<div class="conteudo">
 		<h2>Política de Privacidade</h2>
