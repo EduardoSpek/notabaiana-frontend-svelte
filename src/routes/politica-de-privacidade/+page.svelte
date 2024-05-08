@@ -1,3 +1,7 @@
+<script>
+	import { SITE_NAME } from '../lib/index';
+</script>
+
 <svelte:head>
 	<title>Política de Privacidade - {SITE_NAME}</title>
 	<meta
