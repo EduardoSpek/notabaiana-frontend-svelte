@@ -36,14 +36,21 @@
 	}
 	.items {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		flex-wrap: wrap;
-		align-items: stretch;
-		gap: 34px;
+		align-items: normal;
+		gap: 10px;
 	}
 	@media (min-width: 480px) {
 		.conteudo-flow {
 			margin: auto;
+		}
+		.items {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: normal;
+			gap: 34px;
 		}
 	}
 </style>

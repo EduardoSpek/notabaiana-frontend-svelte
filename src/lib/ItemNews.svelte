@@ -25,21 +25,21 @@
 <style>
 	.card {
 		display: flex;
-		gap: 12px;
+		gap: 14px;
 		margin-bottom: 20px;
 		padding-bottom: 10px;
 		border-bottom: 1px dashed var(--cinza);
 	}
 	.img {
-		width: 120px;
+		width: 130px;
 	}
 	.thumb {
-		width: 120px;
+		width: 130px;
 		border-radius: 4px;
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: 700;
 	}
 	.link {

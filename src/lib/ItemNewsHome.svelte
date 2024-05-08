@@ -14,8 +14,9 @@
 			<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
 		{/if}
 	</div>
-	<div class="data_news">{date}</div>
+
 	<div class="info">
+		<div class="data_news">{date}</div>
 		<div class="title">
 			<a href={link} class="link">{title}</a>
 		</div>
@@ -24,27 +25,28 @@
 
 <style>
 	.data_news {
-		margin-top: 10px;
+		margin-top: 0px;
 		padding-bottom: 4px;
 		font-size: 14px;
 	}
 	.card {
+		display: flex;
 		width: 100%;
-		gap: 12px;
-		margin-bottom: 20px;
-		padding-bottom: 30px;
+		gap: 16px;
+		margin-bottom: 14px;
+		padding-bottom: 14px;
 		border-bottom: 1px solid var(--cinza);
 	}
 	.img {
-		width: 100%;
+		width: 130px;
 	}
 	.thumb {
-		width: 100%;
+		width: 130px;
 		border-radius: 4px;
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 18px;
+		font-size: 16x;
 		font-weight: 700;
 		margin-bottom: 10px;
 	}
@@ -57,10 +59,27 @@
 	}
 	@media (min-width: 480px) {
 		.card {
+			display: block;
 			width: 300px;
+			gap: 12px;
+			margin-bottom: 20px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid var(--cinza);
+		}
+		.img {
+			width: 100%;
+		}
+		.thumb {
+			width: 100%;
+			border-radius: 4px;
 		}
 		.title {
 			font-size: 18px;
+		}
+		.data_news {
+			margin-top: 10px;
+			padding-bottom: 4px;
+			font-size: 14px;
 		}
 	}
 </style>

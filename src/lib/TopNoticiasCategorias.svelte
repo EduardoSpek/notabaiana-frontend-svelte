@@ -42,11 +42,18 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: stretch;
-		gap: 34px;
+		gap: 10px;
 	}
 	@media (min-width: 480px) {
 		.conteudo-flow {
 			margin: auto;
+		}
+		.items {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: stretch;
+			gap: 34px;
 		}
 	}
 </style>
