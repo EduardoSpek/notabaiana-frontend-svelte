@@ -1,5 +1,5 @@
 <script>
-	import { SITE_NAME } from '../lib/index';
+	import { SITE_NAME } from '$lib/index.js';
 </script>
 
 <svelte:head>
