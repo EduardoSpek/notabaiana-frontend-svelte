@@ -1,5 +1,5 @@
 <script>
-	import { onMount, OnDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -14,20 +14,10 @@ function checkAndInitWidgets() {
     
   }
 
-
-function removeWidgets() {
-    const twitterWidgets = document.getElementsByClassName('twitter-tweet');
-    while (twitterWidgets.length > 0) {
-      twitterWidgets[0].parentNode.removeChild(twitterWidgets[0]);
-    }
-} 
   onMount(() => {
     checkAndInitWidgets();
   });
 
-onDestroy(() => {
-    removeWidgets();
-  });
 </script>
 
 <Seo
