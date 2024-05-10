@@ -1,23 +1,10 @@
 <script>
-	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import TopNoticias from '$lib/TopNoticias.svelte';
 	export let data;
 	let data_news = formatarData(data.item.created_at);
-
-function checkAndInitWidgets() {
-    if (typeof twttr !== 'undefined' && twttr.widgets && typeof twttr.widgets.load === 'function') {
-      twttr.widgets.load();
-    }
-    
-  }
-
-  onMount(() => {
-    checkAndInitWidgets();
-  });
-
 </script>
 
 <Seo
