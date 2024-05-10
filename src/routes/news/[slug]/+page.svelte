@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -18,7 +18,9 @@ function checkAndInitWidgets() {
   }
 
   onMount(() => {
-    checkAndInitWidgets();
+    tick().then(() => {
+      checkAndInitWidgets();
+    });
   });
 </script>
 
