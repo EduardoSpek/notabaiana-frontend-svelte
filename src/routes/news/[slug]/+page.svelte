@@ -1,5 +1,5 @@
 <script>
-	import { onMount, afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -7,22 +7,23 @@
 	export let data;
 	let data_news = formatarData(data.item.created_at);
 
-function checkAndInitWidgets() {
-    if (typeof twttr !== 'undefined' && twttr.widgets && typeof twttr.widgets.load === 'function') {
-      twttr.widgets.load();
-    }
+	function checkAndInitWidgets() {
+		if (typeof twttr !== 'undefined' && twttr.widgets && typeof twttr.widgets.load === 'function') {
+			twttr.widgets.load();
+		}
 
-    if (typeof instgrm !== 'undefined' && instgrm.Embeds && typeof instgrm.Embeds.process === 'function') {
-      instgrm.Embeds.process();
-    }
-  }
+		if (
+			typeof instgrm !== 'undefined' &&
+			instgrm.Embeds &&
+			typeof instgrm.Embeds.process === 'function'
+		) {
+			instgrm.Embeds.process();
+		}
+	}
 
-  onMount(() => {
-      checkAndInitWidgets();
-  });
-afterUpdate(() => {
-      checkAndInitWidgets();
-  });
+	onMount(() => {
+		checkAndInitWidgets();
+	});
 </script>
 
 <Seo
