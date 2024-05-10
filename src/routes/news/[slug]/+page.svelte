@@ -26,6 +26,11 @@
 	});
 </script>
 
+<svelte:head>
+	<script src="https://platform.twitter.com/widgets.js"></script>
+	<script src="https://www.instagram.com/embed.js" async defer></script>
+</svelte:head>
+
 <Seo
 	title={data.item.title}
 	description="{data.item.text.substr(0, 150)}..."
