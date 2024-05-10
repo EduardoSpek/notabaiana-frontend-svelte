@@ -12,8 +12,8 @@ function checkAndInitWidgets() {
       twttr.widgets.load();
     }
 
-    if (typeof instgrm !== 'undefined' && instgrm.Embeds && typeof instgrm.Embeds.process === 'function') {
-      instgrm.Embeds.process();
+    if (typeof InstagramWidget !== 'undefined') {
+					InstagramWidget.load();
     }
   }
 
