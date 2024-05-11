@@ -60,6 +60,9 @@
 		text-decoration: underline;
 	}
 	@media (min-width: 480px) {
+		article {
+			display: flex;
+		}
 		.card {
 			display: block;
 			width: 300px;

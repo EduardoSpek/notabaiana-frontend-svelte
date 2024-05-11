@@ -49,9 +49,9 @@
 		}
 		.items {
 			display: flex;
+			align-items: stretch;
 			flex-direction: row;
 			flex-wrap: wrap;
-			align-items: normal;
 			gap: 34px;
 		}
 	}
