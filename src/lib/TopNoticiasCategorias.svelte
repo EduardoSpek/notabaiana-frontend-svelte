@@ -7,27 +7,29 @@
 	export let category;
 </script>
 
-<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
-	<div class="emalta">{category}</div>
+<section>
+	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
+		<div class="emalta">{category}</div>
 
-	<div class="items">
-		{#each data_categorias as info}
-			<ItemNewsHome
-				title={info.title}
-				url_image="{HOST_API}/images/{info.image}"
-				link={info.link}
-				date={formatarData(info.created_at)}
-			/>
-		{/each}
-	</div>
-	<div class="box">
-		<div class="box-page">
-			<a href="/news/category/{category.toLowerCase().replace('ç', 'c')}/1" class="link"
-				>Veja todas as notícias sobre {category}</a
-			>
+		<div class="items">
+			{#each data_categorias as info}
+				<ItemNewsHome
+					title={info.title}
+					url_image="{HOST_API}/images/{info.image}"
+					link={info.link}
+					date={formatarData(info.created_at)}
+				/>
+			{/each}
+		</div>
+		<div class="box">
+			<div class="box-page">
+				<a href="/news/category/{category.toLowerCase().replace('ç', 'c')}/1" class="link"
+					>Veja todas as notícias sobre {category}</a
+				>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <style>
 	.box {

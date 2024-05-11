@@ -26,25 +26,27 @@
 	};
 </script>
 
-<div class="topo">
-	<IconMenuSvg />
-	<div class="logo">
-		<a href="/" class="link-topo" title="Página Inicial"><span>nota</span>baiana</a>
+<header>
+	<div class="topo">
+		<IconMenuSvg />
+		<div class="logo">
+			<a href="/" class="link-topo" title="Página Inicial"><span>nota</span>baiana</a>
+		</div>
+		<div class="recursos">
+			<IconDarkMode />
+			<IconSearchSvg onSearchClick={opensearch} />
+		</div>
 	</div>
-	<div class="recursos">
-		<IconDarkMode />
-		<IconSearchSvg onSearchClick={opensearch} />
-	</div>
-</div>
 
-{#if search_visible}
-	<div class="search">
-		<form action="/news/busca/1" method="get" on:submit={opensearch}>
-			<input type="text" name="search" placeholder="Procurar por..." bind:this={ref} />
-			<button type="submit">Buscar</button>
-		</form>
-	</div>
-{/if}
+	{#if search_visible}
+		<div class="search">
+			<form action="/news/busca/1" method="get" on:submit={opensearch}>
+				<input type="text" name="search" placeholder="Procurar por..." bind:this={ref} />
+				<button type="submit">Buscar</button>
+			</form>
+		</div>
+	{/if}
+</header>
 
 <style>
 	.recursos {

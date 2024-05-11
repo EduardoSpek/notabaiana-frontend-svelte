@@ -37,33 +37,38 @@
 	url={HOST + data.item.link}
 	image="{HOST_API}/images/{data.item.image}"
 />
-<div class="central">
-	<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
-		<div class="title">
-			<h3>{data.item.title}</h3>
-		</div>
+<section>
+	<article>
+		<div class="central">
+			<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
+				<div class="title">
+					<h1>{data.item.title}</h1>
+				</div>
 
-		<div class="data_news">Publicado em {data_news}</div>
+				<div class="data_news">Publicado em {data_news}</div>
 
-		<div class="img">
-			{#if data.item.image.includes('.jpg')}
-				<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
-			{:else}
-				<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
-			{/if}
-		</div>
+				<div class="img">
+					{#if data.item.image.includes('.jpg')}
+						<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
+					{:else}
+						<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+					{/if}
+				</div>
 
-		<div class="text">
-			{@html data.item.text}
+				<div class="text">
+					<p>{@html data.item.text}</p>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
+	</article>
+</section>
+
 <div class="separator"></div>
 
 <TopNoticias data={data.top} />
 
 <style>
-	h3 {
+	h1 {
 		color: var(--preto);
 	}
 	.conteudo {
@@ -90,7 +95,8 @@
 		justify-content: center;
 		align-items: center;
 		margin: auto;
-		margin-bottom: 30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		width: 100%;
 	}
 	.thumb {
@@ -105,8 +111,14 @@
 		margin-bottom: 20px;
 	}
 	@media (min-width: 480px) {
+		h1 {
+			font-size: 32px;
+		}
 		.conteudo {
 			margin-top: -30px;
+		}
+		.img {
+			margin-bottom: 0px;
 		}
 	}
 </style>
