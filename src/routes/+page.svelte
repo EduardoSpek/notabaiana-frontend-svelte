@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>{SITE_NAME} - As notícias do jeito que o baiano gosta</title>
+	<title>{SITE_NAME} - Notícias atuais em tempo real da Bahia e do Brasil</title>
 	<meta
 		name="description"
-		content="Portal baiano que reúne as principais notícias do Brasil e do mundo."
+		content="Portal baiano com notícias recentes dos famosos, celebridades, futebol, cidade de Salvador, política, municípios, música, carnaval e muito mais"
 	/>
 	<meta name="robots" content="index, follow" />
 </svelte:head>
