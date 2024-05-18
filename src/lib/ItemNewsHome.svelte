@@ -10,7 +10,7 @@
 	<div class="card">
 		<div class="img">
 			{#if url_image.includes('.jpg')}
-				<a href={link} data-sveltekit-preload-data="viewport"><img class="thumb" src={url_image} alt={title} /></a>
+				<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
 			{:else}
 				<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
 			{/if}
