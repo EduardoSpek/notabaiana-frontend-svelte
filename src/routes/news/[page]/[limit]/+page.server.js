@@ -3,5 +3,11 @@ export async function load({ fetch, params }) {
 	const res = await fetch(`${HOST_API}/news/${params.page}/${params.limit}`);
 	const news = await res.json();
 
+	news.news.forEach((item, i) => {
+		if (item.title_ai) {
+			news.news[i].title = news.news[i].title_ai;
+		}
+	});
+
 	return { news: news.news, pagination: news.pagination };
 }

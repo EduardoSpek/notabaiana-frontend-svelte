@@ -4,6 +4,10 @@ export async function load({ fetch, params }) {
 		return response.json();
 	});
 
+	if (item.title_ai) {
+		item.title = item.title_ai;
+	}
+
 	const top = await fetch(`${HOST_API}/top`).then((response) => {
 		return response.json();
 	});
