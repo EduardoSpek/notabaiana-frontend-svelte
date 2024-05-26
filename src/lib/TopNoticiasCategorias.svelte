@@ -1,7 +1,6 @@
 <script>
-	import { HOST_API } from '$lib/index.js';
+	import { HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
-	import { formatarData } from './index';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
 	export let data_categorias;
 	export let category;

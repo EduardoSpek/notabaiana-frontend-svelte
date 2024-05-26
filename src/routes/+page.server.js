@@ -51,7 +51,7 @@ export async function load({ fetch }) {
 		}
 	});
 
-	news.splice(1, 2);
+	news.splice(news.length - 2, 2);
 	famosos.news.splice(1, 2);
 	esportes.news.splice(1, 2);
 	municipios.news.splice(1, 2);
