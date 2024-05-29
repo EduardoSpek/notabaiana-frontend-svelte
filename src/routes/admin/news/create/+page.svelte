@@ -19,7 +19,7 @@
 				<textarea name="text" id="ttextarea" class="textareaForm"></textarea><br /><br />
 
 				<label for="fileInput">Selecione um arquivo:</label><br />
-				<input type="file" id="fileInput" name="Image" class="fileForm" /><br /><br />
+				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
 				<input type="submit" value="Enviar Arquivo" class="buttonForm" />
 			</form>
 		</div>
