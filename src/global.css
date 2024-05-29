@@ -27,6 +27,39 @@ body {
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--branco);
 }
+label {
+	font-family: 'Cabin', sans-serif;
+	color: var(--primary);
+}
+.inputForm,
+.textareaForm {
+	font-family: 'Cabin', sans-serif;
+	border: 1px solid var(--cinza-escuro);
+	border-radius: 2px;
+	padding: 8px;
+	margin-top: 8px;
+	width: 98%;
+	font-size: 16px;
+}
+.textareaForm {
+	width: 98%;
+	height: 250px;
+}
+.buttonForm,
+.fileForm {
+	font-family: 'Cabin', sans-serif;
+	padding: 8px;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--primary);
+	border: 1px solid var(--cinza-escuro);
+	color: var(--branco);
+	margin-top: 8px;
+}
+.fileForm {
+	background-color: var(--secundary);
+}
 .main {
 	max-width: 600px;
 	margin: auto;
