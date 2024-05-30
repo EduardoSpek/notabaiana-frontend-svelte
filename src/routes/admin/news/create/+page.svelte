@@ -1,5 +1,9 @@
 <script>
 	import { HOST_API } from '$lib/index';
+
+	function onSubmit(token) {
+		document.getElementById('demo-form').submit();
+	}
 </script>
 
 <section>
@@ -20,7 +24,14 @@
 
 				<label for="fileInput">Selecione um arquivo:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
-				<input type="submit" value="Enviar Arquivo" class="buttonForm" />
+				<input
+					type="submit"
+					value="Enviar Arquivo"
+					class="buttonForm g-recaptcha"
+					data-sitekey="6LdrROwpAAAAAPJdEUdTZnqwmraKFeGXXJkNytsw"
+					data-callback="onSubmit"
+					data-action="submit"
+				/>
 			</form>
 		</div>
 	</div>
