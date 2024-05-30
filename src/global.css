@@ -14,8 +14,8 @@
 	--secundary: white;
 	--text: #f5f3f2;
 	--preto: #f5f3f2ea;
-	--branco: #000;
-	--amarelo: rgb(68, 68, 68);
+	--branco: #292929;
+	--amarelo: #121212;
 	--cinza-claro: #585858;
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
@@ -40,6 +40,7 @@ label {
 	margin-top: 8px;
 	width: 98%;
 	font-size: 16px;
+	background-color: var(--amarelo);
 }
 .textareaForm {
 	width: 98%;
@@ -58,7 +59,7 @@ label {
 	margin-top: 8px;
 }
 .fileForm {
-	background-color: var(--secundary);
+	background-color: var(--amarelo);
 }
 .main {
 	max-width: 600px;
