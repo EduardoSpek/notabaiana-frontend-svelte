@@ -11,8 +11,8 @@
 }
 .dark-mode:root {
 	--primary: #ccc;
-	--secundary: white;
-	--text: #f5f3f2;
+	--secundary: rgb(232, 232, 232);
+	--text: #cecece;
 	--preto: #f5f3f2ea;
 	--branco: #292929;
 	--amarelo: #121212;
