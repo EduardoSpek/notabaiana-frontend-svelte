@@ -2,14 +2,19 @@
 	import { HOST_API } from '$lib/index';
 
 	function onSubmit(token) {
-		document.getElementById('demo-form').submit();
+		document.getElementById('formCreateNews').submit();
 	}
 </script>
 
 <section>
 	<div class="central">
 		<div class="conteudo">
-			<form action="{HOST_API}/news/create" method="post" enctype="multipart/form-data">
+			<form
+				action="{HOST_API}/news/create"
+				method="post"
+				id="formCreateNews"
+				enctype="multipart/form-data"
+			>
 				<label for="keyinput">Key:</label><br />
 				<input type="text" class="inputForm" id="keyinput" name="key" /><br /><br />
 
