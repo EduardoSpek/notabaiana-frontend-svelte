@@ -1,9 +1,5 @@
 <script>
 	import { HOST_API } from '$lib/index';
-
-	function onSubmit(token) {
-		document.getElementById('formCreateNews').submit();
-	}
 </script>
 
 <section>
