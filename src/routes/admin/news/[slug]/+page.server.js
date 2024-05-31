@@ -8,7 +8,7 @@ export async function load({ fetch, params }) {
 		item.title = item.title_ai;
 	}
 
-	//item['text'] = item.text.replace(/<br><br><br>/g, '\n');
+	item['text'] = item.text.replace(/<br><br>/g, '\n');
 
 	return { item };
 }
