@@ -1,33 +1,49 @@
 <script>
 	import { HOST_API } from '$lib/index';
+	export let data;
 </script>
 
 <section>
 	<div class="central">
 		<div class="conteudo">
 			<form
-				action="{HOST_API}/news/create"
+				action="{HOST_API}/update/news/{data.item.slug}"
 				method="post"
 				id="formCreateNews"
 				enctype="multipart/form-data"
 			>
+				<input type="hidden" name="slug" value={data.item.slug} />
 				<label for="keyinput">Key:</label><br />
 				<input type="text" class="inputForm" id="keyinput" name="key" /><br /><br />
 
 				<label for="cInput">Categoria:</label><br />
-				<input type="text" class="inputForm" id="cInput" name="category" /><br /><br />
+				<input
+					type="text"
+					class="inputForm"
+					id="cInput"
+					name="category"
+					value={data.item.category}
+				/><br /><br />
 
 				<label for="tinput">Título:</label><br />
-				<input type="text" class="inputForm" size="70" id="tinput" name="title" /><br /><br />
+				<input
+					type="text"
+					class="inputForm"
+					size="70"
+					id="tinput"
+					name="title"
+					value={data.item.title}
+				/><br /><br />
 
 				<label for="ttextarea">Texto:</label><br />
-				<textarea name="text" id="ttextarea" class="textareaForm"></textarea><br /><br />
+				<textarea name="text" id="ttextarea" class="textareaForm" value={data.item.text}
+				></textarea><br /><br />
 
 				<label for="fileInput">Selecione um arquivo:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
 				<input
 					type="submit"
-					value="Cadastrar"
+					value="Atualizar"
 					class="buttonForm g-recaptcha"
 					data-sitekey="6LdrROwpAAAAAPJdEUdTZnqwmraKFeGXXJkNytsw"
 					data-callback="onSubmit"
