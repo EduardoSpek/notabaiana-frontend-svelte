@@ -12,7 +12,7 @@
 				id="formCreateNews"
 				enctype="multipart/form-data"
 			>
-				<input type="hidden" name="slug" value={data.item.slug} />
+				<input type="hidden" name="id" value={data.item.id} />
 				<label for="keyinput">Key:</label><br />
 				<input type="text" class="inputForm" id="keyinput" name="key" /><br /><br />
 
@@ -42,6 +42,17 @@
 
 				<label for="fileInput">Selecione um arquivo:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
+
+				<input
+					type="checkbox"
+					id="fileInput"
+					name="visible"
+					class="fileForm"
+					checked={data.item.visible}
+					value={data.item.visible}
+				/>
+				<label for="fileInput">{data.item.visible}</label><br /><br />
+
 				<input
 					type="submit"
 					value="Atualizar"
