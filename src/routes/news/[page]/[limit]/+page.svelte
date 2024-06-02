@@ -1,6 +1,7 @@
 <script>
 	import { HOST, HOST_API, formatarData } from '$lib/index.js';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
+	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	export let data;
 	export let comparePage;
