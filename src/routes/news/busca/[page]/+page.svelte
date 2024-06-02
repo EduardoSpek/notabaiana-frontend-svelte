@@ -65,7 +65,7 @@
 							</div>
 						{/each}
 					{/if}
-					{#if comparePage <section parseInt(data.pagination.totalPages)}
+					{#if comparePage < parseInt(data.pagination.totalPages)}
 						...
 						<div class="page">
 							<a href="/news/busca/{data.pagination.totalPages}?search={data.search}" class="link"
