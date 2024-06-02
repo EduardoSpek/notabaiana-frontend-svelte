@@ -52,10 +52,10 @@ export async function load({ fetch }) {
 	});
 
 	news.splice(news.length - 2, 2);
-	famosos.news.splice(1, 2);
-	esportes.news.splice(1, 2);
-	municipios.news.splice(1, 2);
-	justica.news.splice(1, 2);
+	famosos.news.splice(famosos.news.length - 8, 8);
+	esportes.news.splice(esportes.news.length - 8, 8);
+	municipios.news.splice(municipios.news.length - 8, 8);
+	justica.news.splice(justica.news.length - 8, 8);
 
 	return {
 		news,
