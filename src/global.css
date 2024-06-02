@@ -27,6 +27,17 @@ body {
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--branco);
 }
+.conteudo-flow {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 10px;
+}
 label {
 	font-family: 'Cabin', sans-serif;
 	color: var(--primary);
@@ -109,6 +120,7 @@ input::placeholder {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	text-align: center;
+	color: var(--preto);
 }
 .conteudo {
 	display: flex;
@@ -158,6 +170,7 @@ input::placeholder {
 @media (min-width: 480px) {
 	.conteudo-flow {
 		max-width: 1310px;
+		margin: auto;
 	}
 	.central {
 		display: flex;
@@ -195,5 +208,12 @@ input::placeholder {
 		font-size: 28px;
 		margin-top: -10px;
 		margin-bottom: 20px;
+	}
+	.items {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: stretch;
+		gap: 34px;
 	}
 }
