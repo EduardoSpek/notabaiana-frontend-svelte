@@ -35,7 +35,7 @@
 	.icon-search:hover {
 		fill: var(--primary);
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		.icon-search {
 			margin-top: 6px;
 			width: 34px;

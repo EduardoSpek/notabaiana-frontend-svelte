@@ -56,7 +56,7 @@
 	.link:hover {
 		text-decoration: underline;
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		.title {
 			font-size: 18px;
 		}

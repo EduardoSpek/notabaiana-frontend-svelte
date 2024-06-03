@@ -42,7 +42,7 @@
 		align-items: normal;
 		gap: 10px;
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		.conteudo-flow {
 			margin: auto;
 		}

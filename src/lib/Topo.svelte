@@ -107,7 +107,7 @@
 		color: var(--primary);
 		text-decoration: none;
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		.search {
 			margin-top: -12px;
 		}

@@ -110,7 +110,7 @@
 		margin-top: -24px;
 		margin-bottom: 20px;
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		h1 {
 			font-size: 32px;
 		}
