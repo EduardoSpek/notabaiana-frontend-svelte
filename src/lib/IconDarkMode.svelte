@@ -57,7 +57,7 @@
 	.icon-dark-mode:hover {
 		fill: var(--primary);
 	}
-	@media (min-width: 480px) {
+	@media (min-width: 669px) {
 		.icon-dark-mode {
 			margin-top: 6px;
 			width: 34px;
