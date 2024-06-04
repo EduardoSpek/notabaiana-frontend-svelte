@@ -12,11 +12,13 @@ export async function load({ fetch, params }) {
 		return response.json();
 	});
 
-	item['text'] = item.text.replace(/\n/g, '<br>');
+	if (item.text) {
+		item['text'] = item.text.replace(/\n/g, '<br>');
 
-	item['text'] = item.text.replace(/<br><br><br><br>/g, '');
-	item['text'] = item.text.replace(/<br><br><br>/g, '');
-	item['text'] = item.text.replace(/<br><br>/g, '<br>');
+		item['text'] = item.text.replace(/<br><br><br><br>/g, '');
+		item['text'] = item.text.replace(/<br><br><br>/g, '');
+		item['text'] = item.text.replace(/<br><br>/g, '<br>');
+	}
 
 	return { item, top };
 }
