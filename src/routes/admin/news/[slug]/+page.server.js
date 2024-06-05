@@ -14,4 +14,4 @@ export async function load({ fetch, params }) {
 }
 
 export const ssr = true;
-export const csr = false;
+export const csr = true;
