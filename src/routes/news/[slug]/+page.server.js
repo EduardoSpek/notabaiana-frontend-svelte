@@ -22,3 +22,6 @@ export async function load({ fetch, params }) {
 
 	return { item, top };
 }
+
+export const ssr = true;
+export const csr = true;
