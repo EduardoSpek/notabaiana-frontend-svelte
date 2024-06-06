@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { fly } from 'svelte/transition';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
@@ -39,44 +40,71 @@
 			<section>
 				<div class="pagination">
 					{#if parseInt(data.pagination.currentPage) >= 4}
-						<div class="page">
-							<a href="/news/category/{data.category}/1" class="link">1</a>
-						</div>
+						<button
+							on:click={() => goto('/news/category/' + data.category + '/1')}
+							class="btn_transparent"
+						>
+							<div class="page">
+								<a href="/news/category/{data.category}/1" class="link">1</a>
+							</div>
+						</button>
 						...
 					{/if}
 					{#if data.pagination.previousPages}
 						{#each data.pagination.previousPages as previousPage}
 							{#if previousPage > 0}
-								<div class="page">
-									<a href="/news/category/{data.category}/{previousPage}" class="link"
-										>{previousPage}</a
-									>
-								</div>
+								<button
+									on:click={() => goto('/news/category/' + data.category + '/' + previousPage)}
+									class="btn_transparent"
+								>
+									<div class="page">
+										<a href="/news/category/{data.category}/{previousPage}" class="link"
+											>{previousPage}</a
+										>
+									</div>
+								</button>
 							{/if}
 						{/each}
 					{/if}
 					{#if data.pagination.currentPage}
-						<div class="page page_current">
-							<a
-								href="/news/category/{data.category}/{data.pagination.currentPage}"
-								class="link link_current">{data.pagination.currentPage}</a
-							>
-						</div>
+						<button
+							on:click={() =>
+								goto('/news/category/' + data.category + '/' + data.pagination.currentPage)}
+							class="btn_transparent"
+						>
+							<div class="page page_current">
+								<a
+									href="/news/category/{data.category}/{data.pagination.currentPage}"
+									class="link link_current">{data.pagination.currentPage}</a
+								>
+							</div>
+						</button>
 					{/if}
 					{#if data.pagination.nextPages}
 						{#each data.pagination.nextPages as nextPage}
-							<div class="page">
-								<a href="/news/category/{data.category}/{nextPage}" class="link">{nextPage}</a>
-							</div>
+							<button
+								on:click={() => goto('/news/category/' + data.category + '/' + nextPage)}
+								class="btn_transparent"
+							>
+								<div class="page">
+									<a href="/news/category/{data.category}/{nextPage}" class="link">{nextPage}</a>
+								</div>
+							</button>
 						{/each}
 					{/if}
 					{#if comparePage < parseInt(data.pagination.totalPages)}
 						...
-						<div class="page">
-							<a href="/news/category/{data.category}/{data.pagination.totalPages}" class="link"
-								>{data.pagination.totalPages}</a
-							>
-						</div>
+						<button
+							on:click={() =>
+								goto('/news/category/' + data.category + '/' + data.pagination.totalPages)}
+							class="btn_transparent"
+						>
+							<div class="page">
+								<a href="/news/category/{data.category}/{data.pagination.totalPages}" class="link"
+									>{data.pagination.totalPages}</a
+								>
+							</div>
+						</button>
 					{/if}
 				</div>
 			</section>

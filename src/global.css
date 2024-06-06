@@ -27,6 +27,11 @@ body {
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--branco);
 }
+.btn_transparent {
+	all: unset;
+	cursor: pointer;
+	float: left;
+}
 .conteudo-flow {
 	margin-left: 10px;
 	margin-right: 10px;
