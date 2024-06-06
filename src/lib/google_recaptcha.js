@@ -54,6 +54,6 @@ const getKey = () => {
 	return localStorage.getItem('key_admin');
 };
 
-const KEY_RECAPTCHA = '6LfSJPIpAAAAAPagzUJqz4IO_-Xgl66-E1kmS_fn';
+const KEY_RECAPTCHA = '6LdrROwpAAAAAPJdEUdTZnqwmraKFeGXXJkNytsw';
 
 export { initRecaptcha, KEY_RECAPTCHA, setKey, getKey };
