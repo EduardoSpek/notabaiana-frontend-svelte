@@ -8,10 +8,11 @@ export async function load({ fetch, params }) {
 		item.title = item.title_ai;
 	}
 
+	item['text'] = item.text.replace(/\n\n/g, '\n');
 	item['text'] = item.text.replace(/<br><br>/g, '\n');
 
 	return { item };
 }
 
 export const ssr = true;
-export const csr = false;
+export const csr = true;

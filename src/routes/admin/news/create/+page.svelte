@@ -1,5 +1,14 @@
 <script>
+	import { onMount } from 'svelte';
 	import { HOST_API } from '$lib/index';
+	import { initRecaptcha, KEY_RECAPTCHA, setKey, getKey } from '$lib/google_recaptcha';
+
+	export let KEY_ADMIN;
+
+	onMount(() => {
+		initRecaptcha();
+		KEY_ADMIN = getKey();
+	});
 </script>
 
 <section>
@@ -12,7 +21,14 @@
 				enctype="multipart/form-data"
 			>
 				<label for="keyinput">Key:</label><br />
-				<input type="text" class="inputForm" id="keyinput" name="key" /><br /><br />
+				<input
+					type="text"
+					class="inputForm"
+					id="keyinput"
+					value={KEY_ADMIN}
+					name="key"
+					on:focusout={setKey}
+				/><br /><br />
 
 				<label for="cInput">Categoria:</label><br />
 				<input type="text" class="inputForm" id="cInput" name="category" /><br /><br />
@@ -29,7 +45,7 @@
 					type="submit"
 					value="Cadastrar"
 					class="buttonForm g-recaptcha"
-					data-sitekey="6LdrROwpAAAAAPJdEUdTZnqwmraKFeGXXJkNytsw"
+					data-sitekey={KEY_RECAPTCHA}
 					data-callback="onSubmit"
 					data-action="submit"
 				/>
