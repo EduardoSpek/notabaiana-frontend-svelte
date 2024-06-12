@@ -8,7 +8,9 @@ export async function load({ fetch }) {
 		});
 	} 
 
-	const [news] = Promise.all([fetch_news()]);
+	const allPromises = Promise.all([fetch_news()]);
+
+allPromises.then(([news]) => { return });
 
 
 	news.forEach((item, i) => {
