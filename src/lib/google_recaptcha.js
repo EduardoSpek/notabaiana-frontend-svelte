@@ -1,4 +1,4 @@
-const initRecaptcha = () => {
+const initRecaptcha = async () => {
 	(function () {
 		var w = window,
 			C = '___grecaptcha_cfg',

@@ -1,17 +1,18 @@
 <script>
+	import { beforeNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
+	import { InitTwitterWidget } from '$lib/twitter_widget.js';
+	import { InitInstagramWidget } from '$lib/instagram_widget.js';
+
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import TopNoticias from '$lib/TopNoticias.svelte';
 	export let data;
 	let data_news = formatarData(data.item.created_at);
+	let textNews;
 
 	function checkAndInitWidgets() {
-		if (typeof twttr !== 'undefined' && twttr.widgets && typeof twttr.widgets.load === 'function') {
-			twttr.widgets.load();
-		}
-
 		if (
 			typeof instgrm !== 'undefined' &&
 			instgrm.Embeds &&
@@ -21,15 +22,24 @@
 		}
 	}
 
+	function removeIframe() {
+		const iframe = document.querySelector('iframe');
+		if (iframe) {
+			iframe.remove();
+		}
+	}
+
 	onMount(() => {
+		InitTwitterWidget();
+		InitInstagramWidget();
 		checkAndInitWidgets();
+		textNews = document.getElementById('textNews');
+	});
+
+	beforeNavigate((event) => {
+		removeIframe();
 	});
 </script>
-
-<svelte:head>
-	<script src="https://platform.twitter.com/widgets.js"></script>
-	<script src="https://www.instagram.com/embed.js" async defer></script>
-</svelte:head>
 
 <Seo
 	title={data.item.title}
@@ -55,7 +65,7 @@
 					{/if}
 				</div>
 
-				<div class="text">
+				<div class="text" id="textNews">
 					<p>{@html data.item.text}</p>
 				</div>
 			</div>
