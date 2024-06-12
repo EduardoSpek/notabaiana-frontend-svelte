@@ -2,13 +2,9 @@ import { HOST_API } from '$lib/index.js';
 
 export async function load({ fetch }) {
 
-	const load_news = () => { 
-await fetch(`${HOST_API}/top`).then((res) => {
+	const news = await fetch(`${HOST_API}/top`).then((res) => {
 		return res.json();
 	});
-} 
-
-const [news] = await Promise.all([load_news()]);
 
 
 	news.forEach((item, i) => {
