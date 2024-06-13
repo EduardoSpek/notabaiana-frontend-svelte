@@ -30,6 +30,8 @@ export const actions = {
 			cookies.set('user_token', login.token, { path: '/' });
 			redirect(302, '/admin/news/create');
 		} else {
+			cookies.delete('user_id', { path: '/' });
+			cookies.delete('user_token', { path: '/' });
 			return { login: login };
 		}
 	}

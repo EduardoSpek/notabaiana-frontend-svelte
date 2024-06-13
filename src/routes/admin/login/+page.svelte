@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { HOST_API } from '$lib/index';
 	import { initRecaptcha, KEY_RECAPTCHA } from '$lib/google_recaptcha';
 	export let form;
 
@@ -26,7 +25,7 @@
 					id="tinput"
 					name="password"
 					maxlength="30"
-					required
+					required="true"
 				/><br /><br />
 
 				{#if form?.login.erro}
