@@ -17,7 +17,7 @@
 			<form
 				action="{HOST_API}/news/create"
 				method="post"
-				id="formCreateNews"
+				id="formDefault"
 				enctype="multipart/form-data"
 			>
 				<label for="keyinput">Key:</label><br />

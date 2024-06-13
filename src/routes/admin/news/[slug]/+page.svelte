@@ -18,7 +18,7 @@
 			<form
 				action="{HOST_API}/update/news/{data.item.slug}"
 				method="post"
-				id="formCreateNews"
+				id="formDefault"
 				enctype="multipart/form-data"
 			>
 				<input type="hidden" name="id" value={data.item.id} />
