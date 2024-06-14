@@ -1,14 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import { HOST_API } from '$lib/index';
-	import { initRecaptcha, KEY_RECAPTCHA, setKey, getKey } from '$lib/google_recaptcha';
+	import { initRecaptcha, KEY_RECAPTCHA } from '$lib/google_recaptcha';
 	export let data;
-
-	export let KEY_ADMIN;
 
 	onMount(() => {
 		initRecaptcha();
-		KEY_ADMIN = getKey();
 	});
 </script>
 
@@ -22,15 +19,7 @@
 				enctype="multipart/form-data"
 			>
 				<input type="hidden" name="id" value={data.item.id} />
-				<label for="keyinput">Key:</label><br />
-				<input
-					type="text"
-					class="inputForm"
-					id="keyinput"
-					value={KEY_ADMIN}
-					name="key"
-					on:focusout={setKey}
-				/><br /><br />
+				<input type="hidden" name="token" value={data.token} />
 
 				<label for="cInput">Categoria:</label><br />
 				<input

@@ -1,13 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import { HOST_API } from '$lib/index';
-	import { initRecaptcha, KEY_RECAPTCHA, setKey, getKey } from '$lib/google_recaptcha';
-
-	export let KEY_ADMIN;
+	import { initRecaptcha, KEY_RECAPTCHA } from '$lib/google_recaptcha';
+	export let data;
 
 	onMount(() => {
 		initRecaptcha();
-		KEY_ADMIN = getKey();
 	});
 </script>
 
@@ -20,15 +18,7 @@
 				id="formDefault"
 				enctype="multipart/form-data"
 			>
-				<label for="keyinput">Key:</label><br />
-				<input
-					type="text"
-					class="inputForm"
-					id="keyinput"
-					value={KEY_ADMIN}
-					name="key"
-					on:focusout={setKey}
-				/><br /><br />
+				<input type="hidden" id="ctoken" name="token" value={data.token} />
 
 				<label for="cInput">Categoria:</label><br />
 				<input type="text" class="inputForm" id="cInput" name="category" /><br /><br />
@@ -41,6 +31,17 @@
 
 				<label for="fileInput">Selecione um arquivo:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
+
+				<input
+					type="checkbox"
+					id="fileInput"
+					name="visible"
+					class="fileForm"
+					value="true"
+					checked
+				/>
+				<label for="fileInput">true</label><br /><br />
+
 				<input
 					type="submit"
 					value="Cadastrar"

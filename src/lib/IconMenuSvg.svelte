@@ -30,6 +30,10 @@
 	<ul>
 		<li><a href="/politica-de-privacidade" on:click={openmenu}>Política de Privacidade</a></li>
 	</ul>
+	<div class="menu-title">Administração</div>
+	<ul>
+		<li><a href="/admin/login" on:click={openmenu}>Entrar</a></li>
+	</ul>
 </div>
 <button on:click={openmenu}>
 	<div class={isOpen ? 'menu-bg' : ''}></div>
