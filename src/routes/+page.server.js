@@ -1,9 +1,11 @@
 import { HOST_API } from '$lib/index.js';
 
 export async function load({ fetch }) {
+
 	const news = await fetch(`${HOST_API}/top`).then((res) => {
 		return res.json();
 	});
+
 
 	news.forEach((item, i) => {
 		if (item.title_ai) {
