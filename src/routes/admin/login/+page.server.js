@@ -5,7 +5,6 @@ export const actions = {
 		const data = await request.formData();
 		const email = data.get('email');
 		const password = data.get('password');
-		let user;
 		const payload = {
 			email,
 			password
