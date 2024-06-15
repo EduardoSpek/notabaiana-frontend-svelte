@@ -8,12 +8,6 @@
 
 <article>
 	<div class="card">
-		<div class="info">
-			<div class="title">
-				<a href={link} class="link">{title}</a>
-			</div>
-		</div>
-		<div class="data_news">{date}</div>
 		<div class="img">
 			{#if url_image.includes('.jpg')}
 				<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
@@ -21,18 +15,25 @@
 				<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
 			{/if}
 		</div>
+		<div class="data_news">Publicado em {date}</div>
+		<div class="info">
+			<div class="title">
+				<a href={link} class="link">{title}</a>
+			</div>
+		</div>
 	</div>
 </article>
 
 <style>
 	.data_news {
-		margin-bottom: 10px;
+		margin-top: 12px;
+		margin-bottom: 8px;
 		padding-bottom: 4px;
 		font-size: 14px;
 	}
 	.card {
-		gap: 12px;
-		margin-bottom: 20px;
+		gap: 14px;
+		margin-bottom: 34px;
 		padding-bottom: 30px;
 		border-bottom: 1px solid var(--cinza);
 	}
@@ -47,7 +48,7 @@
 		font-family: 'Cabin', sans-serif;
 		font-size: 18px;
 		font-weight: 700;
-		margin-bottom: 10px;
+		margin-bottom: 0px;
 	}
 	.link {
 		text-decoration: none;
@@ -58,7 +59,7 @@
 	}
 	@media (min-width: 669px) {
 		.title {
-			font-size: 18px;
+			font-size: 24px;
 		}
 	}
 </style>
