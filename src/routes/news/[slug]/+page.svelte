@@ -55,7 +55,12 @@
 					<h1>{data.item.title}</h1>
 				</div>
 
-				<div class="data_news">Publicado em {data_news}</div>
+				<div class="data_news">
+					Publicado em {data_news}
+					{#if data.token}
+						<a href="{HOST}/admin/{data.item.link}">Editar</a>
+					{/if}
+				</div>
 
 				<div class="img">
 					{#if data.item.image.includes('.jpg')}

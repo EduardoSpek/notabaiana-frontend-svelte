@@ -1,5 +1,5 @@
 import { HOST_API } from '$lib/index.js';
-export async function load({ fetch, params }) {
+export async function load({ fetch, params, cookies }) {
 	const item = await fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
 		return response.json();
 	});
@@ -20,7 +20,9 @@ export async function load({ fetch, params }) {
 		item['text'] = item.text.replace(/<br><br>/g, '<br>');
 	}
 
-	return { item, top };
+	const token = cookies.get('user_token');
+
+	return { item, top, token };
 }
 
 export const ssr = true;
