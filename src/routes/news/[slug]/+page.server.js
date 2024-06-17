@@ -1,16 +1,30 @@
 import { HOST_API } from '$lib/index.js';
 export async function load({ fetch, params, cookies }) {
-	const item = await fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
-		return response.json();
+	let item;
+	let top;
+
+	const fnNews = () => {
+		return fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
+			return response.json();
+		});
+	};
+
+	const fnTop = () => {
+		return fetch(`${HOST_API}/top`).then((response) => {
+			return response.json();
+		});
+	};
+
+	const allPromises = Promise.all([fnNews(), fnTop()]);
+
+	await allPromises.then(([ritem, rtop]) => {
+		item = ritem;
+		top = rtop;
 	});
 
 	if (item.title_ai) {
 		item.title = item.title_ai;
 	}
-
-	const top = await fetch(`${HOST_API}/top`).then((response) => {
-		return response.json();
-	});
 
 	if (item.text) {
 		item['text'] = item.text.replace(/\n/g, '<br>');

@@ -94,7 +94,6 @@
 		margin-top: -20px;
 	}
 	.title {
-		font-size: 18px;
 		font-weight: bold;
 		margin-bottom: 12px;
 		font-family: 'Roboto Condensed Variable', sans-serif;
