@@ -70,8 +70,9 @@
 		font-size: 16px;
 		padding: 8px;
 		border-radius: 8px 0px 0px 8px;
-		color: var(--cinza-escuro);
+		color: var(--preto);
 		accent-color: var(--primary);
+		background-color: var(--branco);
 	}
 	.search form button {
 		font-family: 'Cabin', sans-serif;
