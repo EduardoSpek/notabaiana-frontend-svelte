@@ -87,19 +87,26 @@
 	.logo {
 		flex: 1;
 	}
+	header {
+		position: fixed;
+		width: 100%;
+		background-color: var(--branco);
+		height: 52px;
+		float: left;
+	}
 	.topo {
 		display: flex;
 		text-align: center;
 		justify-content: center;
 		border-bottom: 2px solid var(--cinza-claro);
-		padding-bottom: 6px;
 		font-family: 'Poppins', sans-serif;
 		font-size: 26px;
 		color: var(--primary);
+		padding-bottom: 6px;
 		font-weight: bold;
-		margin-bottom: 12px;
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-left: 16px;
+		margin-right: 16px;
+		margin-top: 6px;
 	}
 	.topo span {
 		color: var(--secundary);
@@ -109,12 +116,17 @@
 		text-decoration: none;
 	}
 	@media (min-width: 669px) {
+		header {
+			height: 62px;
+		}
 		.search {
 			margin-top: -12px;
 		}
 		.topo {
 			font-size: 32px;
 			margin-bottom: 30px;
+			margin-left: 20px;
+			margin-right: 20px;
 		}
 		.logo {
 			flex: 4;

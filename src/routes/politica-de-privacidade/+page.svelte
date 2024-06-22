@@ -90,9 +90,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.conteudo {
-		color: var(--text);
-	}
-</style>

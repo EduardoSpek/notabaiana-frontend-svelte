@@ -86,13 +86,7 @@
 	h1 {
 		color: var(--preto);
 	}
-	.conteudo {
-		display: flex;
-		flex-direction: column;
-		margin-left: 12px;
-		margin-right: 12px;
-		margin-top: -20px;
-	}
+
 	.title {
 		font-weight: bold;
 		margin-bottom: 12px;

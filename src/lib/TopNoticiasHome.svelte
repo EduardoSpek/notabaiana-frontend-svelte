@@ -31,10 +31,6 @@
 	.box {
 		margin-bottom: 30px;
 	}
-	.conteudo-flow {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
 	.items {
 		display: flex;
 		flex-direction: column;
@@ -43,9 +39,6 @@
 		gap: 10px;
 	}
 	@media (min-width: 669px) {
-		.conteudo-flow {
-			margin: auto;
-		}
 		.items {
 			display: flex;
 			align-items: stretch;
