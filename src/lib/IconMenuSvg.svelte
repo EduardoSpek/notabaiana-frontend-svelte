@@ -1,7 +1,7 @@
 <script>
-	let isOpen = false;
+	import { globalStore } from '$lib/index.js';
 	const openmenu = () => {
-		isOpen = !isOpen;
+		$globalStore.isOpen = !$globalStore.isOpen;
 	};
 </script>
 
@@ -15,7 +15,7 @@
 	</button>
 </div>
 
-<div class="menu-box {isOpen ? 'open' : ''}">
+<div class="menu-box {$globalStore.isOpen ? 'open' : ''}">
 	<div class="menu-title">Categorias</div>
 	<ul>
 		<li><a href="/" on:click={openmenu}>Home</a></li>
@@ -35,9 +35,6 @@
 		<li><a href="/admin/login" on:click={openmenu}>Entrar</a></li>
 	</ul>
 </div>
-<button on:click={openmenu}>
-	<div class={isOpen ? 'menu-bg' : ''}></div>
-</button>
 
 <style>
 	.menu-title {
@@ -85,15 +82,7 @@
 		transition: left 0.3s ease;
 		z-index: 2;
 	}
-	.menu-bg {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: var(--branco);
-		z-index: 1;
-		opacity: 0.7;
-	}
+
 	.menu {
 		flex: 0.2;
 		text-align: start;
