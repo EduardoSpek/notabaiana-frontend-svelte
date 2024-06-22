@@ -12,16 +12,6 @@
 	let data_news = formatarData(data.item.created_at);
 	let textNews;
 
-	function checkAndInitWidgets() {
-		if (
-			typeof instgrm !== 'undefined' &&
-			instgrm.Embeds &&
-			typeof instgrm.Embeds.process === 'function'
-		) {
-			instgrm.Embeds.process();
-		}
-	}
-
 	function removeIframe() {
 		const iframe = document.querySelector('iframe');
 		if (iframe) {
@@ -32,7 +22,6 @@
 	onMount(() => {
 		InitTwitterWidget();
 		InitInstagramWidget();
-		checkAndInitWidgets();
 		textNews = document.getElementById('textNews');
 	});
 
