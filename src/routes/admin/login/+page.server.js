@@ -3,15 +3,9 @@ import { redirect } from '@sveltejs/kit';
 export const actions = {
 	login: async ({ request, cookies }) => {
 		const data = await request.formData();
-		const email = data.get('email');
-		const password = data.get('password');
-		const payload = {
-			email,
-			password
-		};
 
 		const login = await fetch(HOST_API + '/login', {
-			body: JSON.stringify(payload),
+			body: data,
 			method: 'post',
 			headers: {
 				'Content-Type': 'application/json'
