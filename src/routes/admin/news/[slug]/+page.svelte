@@ -1,24 +1,14 @@
 <script>
-	import { onMount } from 'svelte';
-	import { HOST_API } from '$lib/index';
-	import { initRecaptcha, KEY_RECAPTCHA } from '$lib/google_recaptcha';
 	export let data;
-
-	onMount(() => {
-		initRecaptcha();
-	});
+	export let form;
 </script>
 
 <section>
 	<div class="central">
 		<div class="conteudo">
-			<form
-				action="{HOST_API}/update/news/{data.item.slug}"
-				method="post"
-				id="formDefault"
-				enctype="multipart/form-data"
-			>
+			<form action="?/update" method="post" id="formDefault" enctype="multipart/form-data">
 				<input type="hidden" name="id" value={data.item.id} />
+				<input type="hidden" name="slug" value={data.item.slug} />
 				<input type="hidden" name="token" value={data.token} />
 
 				<label for="cInput">Categoria:</label><br />
@@ -58,14 +48,11 @@
 				/>
 				<label for="fileInput">{data.item.visible}</label><br /><br />
 
-				<input
-					type="submit"
-					value="Atualizar"
-					class="buttonForm g-recaptcha"
-					data-sitekey={KEY_RECAPTCHA}
-					data-callback="onSubmit"
-					data-action="submit"
-				/>
+				{#if form?.erro}
+					<p class="alert">Houve um problema ao atualizar</p>
+				{/if}
+
+				<input type="submit" value="Atualizar" class="buttonForm" />
 			</form>
 		</div>
 	</div>

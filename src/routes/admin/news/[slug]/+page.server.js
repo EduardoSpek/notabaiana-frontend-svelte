@@ -1,5 +1,6 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST, HOST_API } from '$lib/index.js';
 import { access_check } from '$lib/access_check.js';
+import { redirect } from '@sveltejs/kit';
 export async function load({ cookies, fetch, params }) {
 	await access_check(cookies);
 
@@ -18,6 +19,29 @@ export async function load({ cookies, fetch, params }) {
 
 	return { item, token };
 }
+
+export const actions = {
+	update: async ({ request }) => {
+		let erro = false;
+
+		const formData = await request.formData();
+		const slug = formData.get('slug');
+
+		const response = await fetch(`${HOST_API}/update/news/${slug}`, {
+			method: 'POST',
+			body: formData
+		});
+
+		const data = await response.json();
+
+		if (data.id) {
+			redirect(302, HOST + data.link);
+		} else {
+			erro = true;
+			return { erro: erro };
+		}
+	}
+};
 
 export const ssr = true;
 export const csr = true;

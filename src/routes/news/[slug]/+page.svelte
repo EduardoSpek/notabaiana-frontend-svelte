@@ -32,7 +32,7 @@
 
 <Seo
 	title={data.item.title}
-	description="{data.item.text.substr(0, 150)}..."
+	description="{data.item.text?.substr(0, 150)}..."
 	url={HOST + data.item.link}
 	image="{HOST_API}/images/{data.item.image}"
 />
@@ -49,7 +49,7 @@
 				</div>
 
 				<div class="img">
-					{#if data.item.image.includes('.jpg')}
+					{#if data.item.image?.includes('.jpg')}
 						<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
 					{:else}
 						<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />

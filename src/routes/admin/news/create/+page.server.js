@@ -1,5 +1,6 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST, HOST_API } from '$lib/index.js';
 import { access_check } from '$lib/access_check.js';
+import { redirect } from '@sveltejs/kit';
 export async function load({ cookies }) {
 	await access_check(cookies);
 
@@ -10,30 +11,22 @@ export async function load({ cookies }) {
 
 export const actions = {
 	create: async ({ request }) => {
-		let resultado = 'erro';
+		let erro = false;
 
 		const formData = await request.formData();
-		const title = formData.get('title');
-		const text = formData.get('text');
-		const category = formData.get('category');
-		const token = formData.get('token');
-		const image = formData.get('image');
 
-		try {
-			const response = await fetch(`${HOST_API}/news/create`, {
-				method: 'POST',
-				body: formData
-			});
+		const response = await fetch(`${HOST_API}/news/create`, {
+			method: 'POST',
+			body: formData
+		});
 
-			const data = await response.json();
+		const data = await response.json();
 
-			if (data.id) {
-				resultado = 'ok';
-			}
-		} catch (e) {
-			console.error('Error:', e);
+		if (data.id) {
+			redirect(302, HOST + data.link);
+		} else {
+			erro = true;
+			return { erro: erro };
 		}
-
-		return { resultado };
 	}
 };
