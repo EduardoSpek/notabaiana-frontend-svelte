@@ -45,10 +45,7 @@
 				</div>
 
 				<div class="data_news">
-					Publicado em {data_news} -
-					{#if data.token}
-						<a href="{HOST}/admin{data.item.link}" class="link">Editar</a>
-					{/if}
+					Publicado em {data_news}
 				</div>
 
 				<div class="img">
@@ -62,6 +59,9 @@
 				<div class="text" id="textNews">
 					<p>{@html data.item.text}</p>
 				</div>
+				{#if data.token}
+					<br /><br /><a href="{HOST}/admin{data.item.link}" class="link">Editar notícia</a>
+				{/if}
 			</div>
 		</div>
 	</article>
