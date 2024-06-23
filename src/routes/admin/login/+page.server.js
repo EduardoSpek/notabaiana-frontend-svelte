@@ -6,10 +6,7 @@ export const actions = {
 
 		const login = await fetch(HOST_API + '/login', {
 			body: data,
-			method: 'post',
-			headers: {
-				'Content-Type': 'application/json'
-			}
+			method: 'post'
 		})
 			.then((res) => {
 				return res.json();
