@@ -185,10 +185,12 @@ input::placeholder {
 		max-width: 1310px;
 		margin: auto;
 		padding-top: 90px;
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 	.central {
 		display: flex;
-		max-width: 600px;
+		max-width: 800px;
 		margin: auto;
 		justify-content: center;
 		align-items: center;
