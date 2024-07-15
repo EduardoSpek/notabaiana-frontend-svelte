@@ -1,4 +1,5 @@
 import { HOST_API } from '$lib/index.js';
+import { error } from '@sveltejs/kit';
 export async function load({ fetch, params, cookies }) {
 	let item;
 	let top;
@@ -21,6 +22,10 @@ export async function load({ fetch, params, cookies }) {
 		item = ritem;
 		top = rtop;
 	});
+
+	if (!item.id) {
+		error(404, 'Not Found');
+	}
 
 	if (item.title_ai) {
 		item.title = item.title_ai;
