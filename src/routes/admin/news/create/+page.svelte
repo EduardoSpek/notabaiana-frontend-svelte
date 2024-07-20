@@ -29,7 +29,7 @@
 					value="true"
 					checked
 				/>
-				<label for="fileInput">true</label><br /><br />
+				<label for="fileInput">Exibir no site</label><br /><br />
 
 				{#if form?.erro}
 					<p class="alert">Houve um problema ao cadastrar</p>

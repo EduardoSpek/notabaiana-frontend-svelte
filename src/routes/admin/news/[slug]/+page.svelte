@@ -44,7 +44,7 @@
 					name="visible"
 					class="fileForm"
 					checked={data.item.visible}
-					value={data.item.visible}
+					value="true"
 				/>
 				<label for="fileInput">{data.item.visible}</label><br /><br />
 

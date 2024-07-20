@@ -28,6 +28,10 @@ body {
 	background-color: var(--branco);
 	margin: 0;
 }
+.dimensoes {
+	font-size: 14px;
+	color: var(--cinza-escuro);
+}
 .btn_transparent {
 	all: unset;
 	cursor: pointer;
