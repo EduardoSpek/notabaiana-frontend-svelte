@@ -20,6 +20,9 @@
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
 }
+.icon {
+	color: var(--primary);
+}
 body {
 	-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
 	-moz-osx-font-smoothing: grayscale; /* Para Firefox no macOS */
