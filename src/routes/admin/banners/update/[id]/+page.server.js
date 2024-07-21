@@ -29,7 +29,7 @@ export const actions = {
 		const data = await response.json();
 
 		if (data.id) {
-			redirect(302, HOST + '/admin/banners/update/' + data.id);
+			redirect(302, HOST + '/admin/banners');
 		} else {
 			erro = true;
 			return { erro: erro };

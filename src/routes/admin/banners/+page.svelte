@@ -1,16 +1,10 @@
 <script>
 	import { SITE_NAME } from '$lib/index.js';
 	import DeleteSvg from '$lib/svg/delete.svelte';
-
+	import { enhance } from '$app/forms';
 	export let data;
 
 	let checkbox = [];
-
-	const deleteItem = () => {
-		if (confirm('Deseja realmente deletar este item?')) {
-			alert('DELETADO!');
-		}
-	};
 
 	const selectAll = () => {
 		const idAll = document.getElementsByName('id[]');
@@ -31,7 +25,12 @@
 	<div class="central">
 		<div class="conteudo-flow">
 			<div class="emalta">Banners</div>
-			<button class="btn_transparent deleteSelected">Apagar selecionados</button>
+			<div class="actions">
+				<button class="btn_transparent deleteSelected">Apagar selecionados</button>
+				<a href="/admin/banners/create" class="link"
+					><button class="btn_transparent novo">Novo banner</button></a
+				>
+			</div>
 			<table>
 				<tr class="header">
 					<td><input type="checkbox" name="ids" id="ids" on:click={selectAll} /></td>
@@ -42,7 +41,12 @@
 					<tr>
 						<td><input type="checkbox" name="id[]" id="id" value={banner.id} /></td>
 						<td><a href="/admin/banners/update/{banner.id}" class="link">{banner.title}</a></td>
-						<td><a href="?" on:click={deleteItem(banner.id)} class="link"><DeleteSvg /></a></td>
+						<td>
+							<form action="?/delete" method="post" use:enhance>
+								<input type="hidden" name="id" value={banner.id} />
+								<DeleteSvg />
+							</form>
+						</td>
 					</tr>
 				{/each}
 			</table>
@@ -51,6 +55,10 @@
 </section>
 
 <style>
+	.actions {
+		display: flex;
+		justify-content: space-between;
+	}
 	.btn_transparent {
 		float: none;
 		background-color: var(--cinza-claro);
@@ -59,6 +67,17 @@
 	.delete {
 		display: block;
 		width: 18px;
+	}
+	.novo {
+		background-color: var(--primary);
+		font-size: 14px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+		color: var(--branco);
+		padding-top: 8px;
+		padding-left: 14px;
+		padding-bottom: 8px;
+		padding-right: 14px;
 	}
 	.deleteSelected {
 		font-size: 14px;

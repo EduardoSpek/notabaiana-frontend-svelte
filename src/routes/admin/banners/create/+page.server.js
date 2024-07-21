@@ -15,7 +15,7 @@ export const actions = {
 
 		const formData = await request.formData();
 
-		const response = await fetch(`${HOST_API}/banners/create`, {
+		const response = await fetch(`${HOST_API}/admin/banners/create`, {
 			method: 'POST',
 			body: formData
 		});
@@ -23,7 +23,7 @@ export const actions = {
 		const data = await response.json();
 
 		if (data.id) {
-			redirect(302, HOST + '/admin/banners/create');
+			redirect(302, HOST + '/admin/banners');
 		} else {
 			erro = true;
 			return { erro: erro };
