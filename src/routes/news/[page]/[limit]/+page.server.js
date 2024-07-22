@@ -1,7 +1,26 @@
 import { HOST_API } from '$lib/index.js';
 export async function load({ fetch, params }) {
-	const res = await fetch(`${HOST_API}/news/${params.page}/${params.limit}`);
-	const news = await res.json();
+	let news;
+	let banners;
+
+	const fnBanners = () => {
+		return fetch(`${HOST_API}/banners`).then((res) => {
+			return res.json();
+		});
+	};
+
+	const fnNews = () => {
+		return fetch(`${HOST_API}/news/${params.page}/${params.limit}`).then((res) => {
+			return res.json();
+		});
+	};
+
+	const allPromises = Promise.all([fnBanners(), fnNews()]);
+
+	await allPromises.then(([rbanners, rnews]) => {
+		banners = rbanners;
+		news = rnews;
+	});
 
 	news.news.forEach((item, i) => {
 		if (item.title_ai) {
@@ -9,5 +28,9 @@ export async function load({ fetch, params }) {
 		}
 	});
 
-	return { news: news.news, pagination: news.pagination };
+	return {
+		banners: banners.banners,
+		news: news.news,
+		pagination: news.pagination
+	};
 }

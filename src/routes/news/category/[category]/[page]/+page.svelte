@@ -4,6 +4,7 @@
 	import { fly } from 'svelte/transition';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
 	import Seo from '$lib/Seo.svelte';
+	import Banners from '$lib/Banners.svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
@@ -15,6 +16,11 @@
 	url={HOST + '/news/' + data.pagination.currentPage + '/10'}
 	image="{HOST}/notabaiana_1200.jpg"
 />
+
+<div class="TopSpace"></div>
+
+<Banners banners={data.banners} region="topo" />
+
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
 		{#if data.news.length <= 0}
@@ -111,3 +117,6 @@
 		{/if}
 	</div>
 </section>
+
+<div class="TopSpace"></div>
+<Banners banners={data.banners} region="rodape" />

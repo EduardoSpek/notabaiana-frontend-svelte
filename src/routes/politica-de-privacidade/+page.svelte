@@ -9,6 +9,9 @@
 		content="Confira as políticas de privacidade e como preservamos os seus dados. "
 	/>
 </svelte:head>
+
+<div class="TopSpace"></div>
+
 <section>
 	<div class="central">
 		<div class="conteudo">

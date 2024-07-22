@@ -31,6 +31,9 @@ body {
 	background-color: var(--branco);
 	margin: 0;
 }
+.TopSpace {
+	padding-top: 70px;
+}
 .dimensoes {
 	font-size: 14px;
 	color: var(--cinza-escuro);
@@ -43,7 +46,6 @@ body {
 .conteudo-flow {
 	margin-left: 16px;
 	margin-right: 16px;
-	padding-top: 70px;
 	color: var(--text);
 }
 .items {
@@ -140,9 +142,9 @@ input::placeholder {
 .conteudo {
 	display: flex;
 	flex-direction: column;
+	margin-top: -26px;
 	margin-left: 20px;
 	margin-right: 20px;
-	padding-top: 50px;
 	color: var(--text);
 }
 .link {
@@ -185,13 +187,12 @@ input::placeholder {
 	border-bottom: 1px solid var(--cinza);
 }
 @media (min-width: 669px) {
-	.conteudo {
-		padding-top: 80px;
+	.TopSpace {
+		padding-top: 90px;
 	}
 	.conteudo-flow {
 		max-width: 1310px;
 		margin: auto;
-		padding-top: 90px;
 		padding-left: 12px;
 		padding-right: 12px;
 	}

@@ -2,6 +2,7 @@
 	import { SITE_NAME, formatarData } from '../lib/index';
 	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
 	import TopNoticiasCategorias from '$lib/TopNoticiasCategorias.svelte';
+	import Banners from '$lib/Banners.svelte';
 	export let data;
 </script>
 
@@ -14,12 +15,26 @@
 	<meta name="robots" content="index, follow" />
 </svelte:head>
 
+<div class="TopSpace"></div>
+
+<Banners banners={data.banners} region="topo" />
+
 <TopNoticiasHome data={data.news} />
+
+<Banners banners={data.banners} region="meio1" />
 
 <TopNoticiasCategorias data_categorias={data.famosos} category="Famosos" />
 
+<Banners banners={data.banners} region="meio2" />
+
 <TopNoticiasCategorias data_categorias={data.esportes} category="Esportes" />
+
+<Banners banners={data.banners} region="meio3" />
 
 <TopNoticiasCategorias data_categorias={data.municipios} category="Municípios" />
 
+<Banners banners={data.banners} region="meio4" />
+
 <TopNoticiasCategorias data_categorias={data.justica} category="Justiça" />
+
+<Banners banners={data.banners} region="rodape" />

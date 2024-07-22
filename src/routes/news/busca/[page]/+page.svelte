@@ -16,6 +16,8 @@
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
+<div class="TopSpace"></div>
+
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
 		{#if data.pagination.totalPages == 0}

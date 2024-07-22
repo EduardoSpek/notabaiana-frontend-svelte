@@ -3,6 +3,13 @@ import { error } from '@sveltejs/kit';
 export async function load({ fetch, params, cookies }) {
 	let item;
 	let top;
+	let banners;
+
+	const fnBanners = () => {
+		return fetch(`${HOST_API}/banners`).then((res) => {
+			return res.json();
+		});
+	};
 
 	const fnNews = () => {
 		return fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
@@ -16,9 +23,10 @@ export async function load({ fetch, params, cookies }) {
 		});
 	};
 
-	const allPromises = Promise.all([fnNews(), fnTop()]);
+	const allPromises = Promise.all([fnBanners(), fnNews(), fnTop()]);
 
-	await allPromises.then(([ritem, rtop]) => {
+	await allPromises.then(([rbanners, ritem, rtop]) => {
+		banners = rbanners;
 		item = ritem;
 		top = rtop;
 	});
@@ -43,7 +51,7 @@ export async function load({ fetch, params, cookies }) {
 
 	top.splice(top.length - 2, 2);
 
-	return { item, top, token };
+	return { banners: banners.banners, item, top, token };
 }
 
 export const ssr = true;

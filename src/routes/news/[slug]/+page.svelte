@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import { InitTwitterWidget } from '$lib/twitter_widget.js';
+	import Banners from '$lib/Banners.svelte';
 
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -34,6 +35,11 @@
 	url={HOST + data.item.link}
 	image="{HOST_API}/images/{data.item.image}"
 />
+
+<div class="TopSpace"></div>
+
+<Banners banners={data.banners} region="topo" />
+
 <section>
 	<article>
 		<div class="central">
@@ -65,7 +71,13 @@
 	</article>
 </section>
 
+<div class="TopSpace"></div>
+
+<Banners banners={data.banners} />
+
 <TopNoticiasHome data={data.top} />
+
+<Banners banners={data.banners} region="rodape" />
 
 <style>
 	h1 {

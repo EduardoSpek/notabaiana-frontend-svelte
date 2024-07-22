@@ -6,6 +6,13 @@ export async function load({ fetch }) {
 	let esportes;
 	let municipios;
 	let justica;
+	let banners;
+
+	const fnBanners = () => {
+		return fetch(`${HOST_API}/banners`).then((res) => {
+			return res.json();
+		});
+	};
 
 	const fnNews = () => {
 		return fetch(`${HOST_API}/top`).then((res) => {
@@ -38,6 +45,7 @@ export async function load({ fetch }) {
 	};
 
 	const allPromises = Promise.all([
+		fnBanners(),
 		fnNews(),
 		fnFamosos(),
 		fnEsportes(),
@@ -45,7 +53,8 @@ export async function load({ fetch }) {
 		fnJustica()
 	]);
 
-	await allPromises.then(([rnews, rfamosos, resportes, rmunicipios, rjustica]) => {
+	await allPromises.then(([rbanners, rnews, rfamosos, resportes, rmunicipios, rjustica]) => {
+		banners = rbanners;
 		news = rnews;
 		famosos = rfamosos;
 		esportes = resportes;
@@ -90,6 +99,7 @@ export async function load({ fetch }) {
 	justica.news.splice(justica.news.length - 8, 8);
 
 	return {
+		banners: banners.banners,
 		news,
 		famosos: famosos.news,
 		esportes: esportes.news,
