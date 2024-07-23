@@ -37,10 +37,7 @@
 	.box {
 		margin-bottom: 30px;
 	}
-	.conteudo-flow {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
+	
 	.items {
 		display: flex;
 		flex-direction: row;
