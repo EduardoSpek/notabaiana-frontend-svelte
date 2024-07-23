@@ -66,14 +66,17 @@
 	.b-pc {
 		display: none;
 		margin-bottom: 40px;
+		border-radius: 8px;
 	}
 	.b-tablet {
 		display: none;
 		margin-bottom: 30px;
+		border-radius: 8px;
 	}
 	.b-mobile {
 		display: block;
 		margin-bottom: 20px;
+		border-radius: 8px;
 	}
 	@media (min-width: 600px) {
 		.b-pc {
