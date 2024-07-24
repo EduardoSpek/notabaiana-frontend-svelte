@@ -1,4 +1,13 @@
-<button type="submit" class="btn_transparent">
+<button
+	type="submit"
+	class="btn_transparent"
+	on:click={(e) => {
+		if (confirm('Deseja realmente deletar?') == false) {
+			e.preventDefault();
+			return false;
+		}
+	}}
+>
 	<svg
 		class="icon-svg"
 		fill="var(--primary)"

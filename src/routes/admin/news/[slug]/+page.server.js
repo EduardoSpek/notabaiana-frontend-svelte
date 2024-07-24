@@ -2,7 +2,11 @@ import { HOST, HOST_API } from '$lib/index.js';
 import { access_check } from '$lib/access_check.js';
 import { redirect } from '@sveltejs/kit';
 export async function load({ cookies, fetch, params }) {
-	await access_check(cookies);
+	const auth = await access_check(cookies);
+
+	if (!auth.ok) {
+		redirect(302, '/admin/login');
+	}
 
 	const item = await fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
 		return response.json();
@@ -27,7 +31,7 @@ export const actions = {
 		const formData = await request.formData();
 		const slug = formData.get('slug');
 
-		const response = await fetch(`${HOST_API}/update/news/${slug}`, {
+		const response = await fetch(`${HOST_API}/admin/news/update/${slug}`, {
 			method: 'POST',
 			body: formData
 		});

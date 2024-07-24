@@ -29,7 +29,16 @@
 			<div class="emalta">Banners</div>
 			<form action="?/deleteall" method="post" use:enhance>
 				<div class="actions">
-					<button type="submit" class="btn_transparent deleteSelected">Apagar selecionados</button>
+					<button
+						type="submit"
+						class="btn_transparent deleteSelected"
+						on:click={(e) => {
+							if (confirm('Deseja realmente deletar?') == false) {
+								e.preventDefault();
+								return false;
+							}
+						}}>Apagar selecionados</button
+					>
 					<a href="/admin/banners/create" class="link"
 						><button class="btn_transparent novo">Novo banner</button></a
 					>

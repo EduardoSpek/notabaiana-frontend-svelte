@@ -1,7 +1,13 @@
 import { HOST_API } from '$lib/index.js';
 import { access_check } from '$lib/access_check.js';
+import { redirect } from '@sveltejs/kit';
 export async function load({ cookies }) {
-	await access_check(cookies);
+	const auth = await access_check(cookies);
+
+	if (!auth.ok) {
+		redirect(302, '/admin/login');
+	}
+
 	const token = cookies.get('user_token');
 
 	const banners = await fetch(`${HOST_API}/admin/banners`, {

@@ -1,5 +1,4 @@
 import { HOST_API } from '$lib/index.js';
-import { redirect } from '@sveltejs/kit';
 const access_check = async (cookies) => {
 	const token = cookies.get('user_token');
 
@@ -15,9 +14,7 @@ const access_check = async (cookies) => {
 			console.log(e);
 		});
 
-	if (!accesscheck.ok) {
-		redirect(302, '/admin/login');
-	}
+	return accesscheck;
 };
 
 export { access_check };
