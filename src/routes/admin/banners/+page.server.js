@@ -29,5 +29,21 @@ export const actions = {
 		}).then((response) => {
 			return response.json();
 		});
+	},
+
+	deleteall: async ({ cookies, request }) => {
+		await access_check(cookies);
+		const token = cookies.get('user_token');
+		const formData = await request.formData();
+
+		await fetch(`${HOST_API}/admin/banners/deleteall`, {
+			method: 'DELETE',
+			body: JSON.stringify(formData.getAll('id[]')),
+			headers: {
+				Authorization: 'Bearer ' + token
+			}
+		}).then((response) => {
+			return response.json();
+		});
 	}
 };

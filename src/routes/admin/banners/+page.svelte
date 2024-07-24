@@ -27,31 +27,33 @@
 	<div class="central">
 		<div class="conteudo-flow">
 			<div class="emalta">Banners</div>
-			<div class="actions">
-				<button class="btn_transparent deleteSelected">Apagar selecionados</button>
-				<a href="/admin/banners/create" class="link"
-					><button class="btn_transparent novo">Novo banner</button></a
-				>
-			</div>
-			<table>
-				<tr class="header">
-					<td><input type="checkbox" name="ids" id="ids" on:click={selectAll} /></td>
-					<td width="100%">Título</td>
-					<td><span class="delete"></span></td>
-				</tr>
-				{#each data.banners.banners as banner}
-					<tr>
-						<td><input type="checkbox" name="id[]" id="id" value={banner.id} /></td>
-						<td><a href="/admin/banners/update/{banner.id}" class="link">{banner.title}</a></td>
-						<td>
-							<form action="?/delete" method="post" use:enhance>
-								<input type="hidden" name="id" value={banner.id} />
-								<DeleteSvg />
-							</form>
-						</td>
+			<form action="?/deleteall" method="post" use:enhance>
+				<div class="actions">
+					<button type="submit" class="btn_transparent deleteSelected">Apagar selecionados</button>
+					<a href="/admin/banners/create" class="link"
+						><button class="btn_transparent novo">Novo banner</button></a
+					>
+				</div>
+				<table>
+					<tr class="header">
+						<td><input type="checkbox" name="ids" id="ids" on:click={selectAll} /></td>
+						<td width="100%">Título</td>
+						<td><span class="delete"></span></td>
 					</tr>
-				{/each}
-			</table>
+					{#each data.banners.banners as banner}
+						<tr>
+							<td><input type="checkbox" name="id[]" id="id" value={banner.id} /></td>
+							<td><a href="/admin/banners/update/{banner.id}" class="link">{banner.title}</a></td>
+							<td>
+								<form action="?/delete" method="post" use:enhance>
+									<input type="hidden" name="id" value={banner.id} />
+									<DeleteSvg />
+								</form>
+							</td>
+						</tr>
+					{/each}
+				</table>
+			</form>
 		</div>
 	</div>
 </section>
