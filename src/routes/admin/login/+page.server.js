@@ -26,7 +26,7 @@ export const actions = {
 		if (login.token) {
 			cookies.set('user_id', login.id, { path: '/' });
 			cookies.set('user_token', login.token, { path: '/' });
-			redirect(302, '/admin/banners');
+			redirect(302, '/admin');
 		} else {
 			cookies.delete('user_id', { path: '/' });
 			cookies.delete('user_token', { path: '/' });
