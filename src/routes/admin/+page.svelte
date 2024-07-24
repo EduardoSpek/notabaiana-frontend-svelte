@@ -1,0 +1,46 @@
+<div class="TopSpace"></div>
+
+<section>
+	<div class="conteudo-flow">
+		<h1 class="titulo">Administração</h1>
+		<ul>
+			<button
+				class="btn_transparent"
+				on:click={() => {
+					window.location = '/admin/news';
+				}}><li>Notícias</li></button
+			>
+			<button
+				class="btn_transparent"
+				on:click={() => {
+					window.location = '/admin/banners';
+				}}><li>Banners</li></button
+			>
+		</ul>
+	</div>
+</section>
+
+<style>
+	h1 {
+		text-align: center;
+		color: var(--preto);
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		font-size: 22px;
+		gap: 10px;
+		flex-direction: column;
+	}
+	ul li {
+		margin: auto;
+		text-align: center;
+		padding: 10px;
+		background-color: var(--primary);
+		border-radius: 50px;
+		min-width: 250px;
+		color: var(--branco);
+	}
+</style>

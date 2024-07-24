@@ -7,7 +7,8 @@
 
 <section>
 	<div class="central">
-		<div class="conteudo">
+		<div class="conteudo-flow">
+			<div class="emalta">Editar notícias</div>
 			<form action="?/update" method="post" id="formDefault" enctype="multipart/form-data">
 				<input type="hidden" name="id" value={data.item.id} />
 				<input type="hidden" name="slug" value={data.item.slug} />

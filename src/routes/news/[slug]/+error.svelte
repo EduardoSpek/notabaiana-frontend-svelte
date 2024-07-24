@@ -6,9 +6,11 @@
 	<title>Página não encontrada ou removida - {SITE_NAME}</title>
 	<meta name="description" content="Error 404 - Página não encontrada ou removida" />
 </svelte:head>
+
+<div class="TopSpace"></div>
 <section>
 	<div class="central">
-		<div class="conteudo">
+		<div class="conteudo-flow">
 			<h2>Página não encontrada</h2>
 
 			<p>A página que você tentou acessar não existe ou foi removida do nosso site.</p>
