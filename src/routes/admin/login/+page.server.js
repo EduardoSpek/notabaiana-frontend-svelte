@@ -3,9 +3,11 @@ import { redirect } from '@sveltejs/kit';
 import { access_check } from '$lib/access_check.js';
 export async function load({ cookies }) {
 	const auth = await access_check(cookies);
-	if (auth.ok) {
+	if (auth?.ok) {
 		redirect(302, '/admin');
 	}
+
+	return auth;
 }
 
 export const actions = {
@@ -26,7 +28,7 @@ export const actions = {
 		if (login.token) {
 			cookies.set('user_id', login.id, { path: '/' });
 			cookies.set('user_token', login.token, { path: '/' });
-			redirect(302, '/admin/banners');
+			redirect(302, '/admin');
 		} else {
 			cookies.delete('user_id', { path: '/' });
 			cookies.delete('user_token', { path: '/' });

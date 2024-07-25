@@ -5,6 +5,7 @@
 	import { enhance } from '$app/forms';
 	export let data;
 	export let comparePage;
+	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 	let checkbox = [];
 
 	const selectAll = () => {
