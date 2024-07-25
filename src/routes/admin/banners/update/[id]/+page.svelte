@@ -7,7 +7,7 @@
 
 <section>
 	<div class="central">
-		<div class="conteudo">
+		<div class="conteudo-flow">
 			<form action="?/update" method="post" id="formDefault" enctype="multipart/form-data">
 				<input type="hidden" name="id" value={data.id} />
 				<input type="hidden" id="ctoken" name="token" value={data.token} />
