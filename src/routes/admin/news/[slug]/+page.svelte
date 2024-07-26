@@ -49,7 +49,17 @@
 					checked={data.item.visible}
 					value="true"
 				/>
-				<label for="fileInput">{data.item.visible}</label><br /><br />
+				<label for="fileInput">Exibir no site</label><br /><br />
+
+				<input
+					type="checkbox"
+					id="fileInput"
+					name="topstory"
+					class="fileForm"
+					checked={data.item.topstory}
+					value="true"
+				/>
+				<label for="fileInput">Marcar como destaque</label><br /><br />
 
 				{#if form?.erro}
 					<p class="alert">Houve um problema ao atualizar</p>
