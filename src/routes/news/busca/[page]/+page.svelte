@@ -4,6 +4,7 @@
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
+	import Banners from '$lib/Banners.svelte';
 	export let data;
 	export let comparePage;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
@@ -17,6 +18,8 @@
 />
 
 <div class="TopSpace"></div>
+
+<Banners banners={data.banners} region="topo" />
 
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
@@ -108,3 +111,6 @@
 		{/if}
 	</div>
 </section>
+
+<div class="TopSpace"></div>
+<Banners banners={data.banners} region="rodape" />
