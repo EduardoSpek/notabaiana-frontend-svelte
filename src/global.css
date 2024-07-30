@@ -9,7 +9,8 @@
 	--amarelo: yellow;
 	--preto: #000;
 	--dark: #333;
-	--dark-title: #FFF;
+	--dark-title: yellow;
+	--dark-subtitle: #FFF;
 }
 .dark-mode:root {
 	--primary: #ccc;
