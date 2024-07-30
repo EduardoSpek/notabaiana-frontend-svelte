@@ -43,7 +43,7 @@
 		margin-top: 30px;
 		font-family: 'Cabin', sans-serif;
 		font-size: 18px;
-		color: var(--amarelo);
+		color: var(--dark-title);
 		border-bottom: 1px solid var(--branco);
 		padding-bottom: 10px;
 		margin-right: 20px;
@@ -59,7 +59,7 @@
 		margin-bottom: 12px;
 	}
 	ul li a {
-		color: var(--dark-title);
+		color: var(--dark-subtitle);
 		text-decoration: none;
 	}
 	ul li a:hover {
