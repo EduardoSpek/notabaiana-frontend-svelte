@@ -9,6 +9,7 @@
 	--amarelo: yellow;
 	--preto: #000;
 	--dark: #333;
+	--dark-title: #FFF;
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -21,6 +22,7 @@
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
 	--dark: #333;
+	--dark-title: #FFF;
 }
 .icon {
 	color: var(--primary);
