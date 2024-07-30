@@ -44,7 +44,7 @@
 		font-family: 'Cabin', sans-serif;
 		font-size: 18px;
 		color: var(--dark-title);
-		border-bottom: 1px solid var(--branco);
+		border-bottom: 1px solid var(--dark-line);
 		padding-bottom: 10px;
 		margin-right: 20px;
 	}
