@@ -77,7 +77,7 @@
 		left: -250px; /* Menu initially hidden off-screen */
 		width: 250px;
 		height: 100%;
-		background-color: var(--primary);
+		background-color: var(--cinza-escuro);
 		color: var(--branco);
 		transition: left 0.3s ease;
 		z-index: 2;
