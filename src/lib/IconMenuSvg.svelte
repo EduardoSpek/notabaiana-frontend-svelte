@@ -59,7 +59,7 @@
 		margin-bottom: 12px;
 	}
 	ul li a {
-		color: var(--branco);
+		color: var(--dark-title);
 		text-decoration: none;
 	}
 	ul li a:hover {
