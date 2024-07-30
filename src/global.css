@@ -8,6 +8,7 @@
 	--branco: white;
 	--amarelo: yellow;
 	--preto: #000;
+	--dark: #333;
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -19,6 +20,7 @@
 	--cinza-claro: #585858;
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
+	--dark: #333;
 }
 .icon {
 	color: var(--primary);
