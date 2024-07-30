@@ -22,7 +22,8 @@
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
 	--dark: #333;
-	--dark-title: #FFF;
+	--dark-title: yellow;
+	--dark-subtitle: #FFF;
 }
 .icon {
 	color: var(--primary);
