@@ -44,7 +44,7 @@
 		font-family: 'Cabin', sans-serif;
 		font-size: 18px;
 		color: var(--dark-title);
-		border-bottom: 1px solid var(--dark-line);
+		border-bottom: 1px solid var(--dark);
 		padding-bottom: 10px;
 		margin-right: 20px;
 	}
@@ -63,7 +63,7 @@
 		text-decoration: none;
 	}
 	ul li a:hover {
-		color: var(--amarelo);
+		color: var(--dark-title);
 		text-decoration: underline;
 	}
 	button {
