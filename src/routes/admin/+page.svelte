@@ -16,6 +16,12 @@
 					window.location = '/admin/banners';
 				}}><li>Banners</li></button
 			>
+			<button
+				class="btn_transparent"
+				on:click={() => {
+					window.location = '/admin/contacts';
+				}}><li>Contatos</li></button
+			>
 		</ul>
 	</div>
 </section>

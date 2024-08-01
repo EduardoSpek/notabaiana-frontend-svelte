@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store';
 
-//const HOST = 'http://localhost:5173';
-//const HOST_API = 'http://localhost:8080';
+const HOST = 'http://localhost:5173';
+const HOST_API = 'http://localhost:8080';
 
-const HOST_API = 'https://bn-api-production.up.railway.app';
-const HOST = 'https://notabaiana.com.br';
+//const HOST_API = 'https://bn-api-production.up.railway.app';
+//const HOST = 'https://notabaiana.com.br';
 
 const SITE_NAME = 'Nota Baiana';
 const IMG_PADRAO = HOST + '/notabaiana_400.jpg';
