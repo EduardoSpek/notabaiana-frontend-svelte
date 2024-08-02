@@ -16,8 +16,13 @@ export async function load({ cookies, fetch, params }) {
 		return response.json();
 	});
 
-	item['text'] = item.text.replace(/\n\n/g, '\n');
-	item['text'] = item.text.replace(/<br><br>/g, '\n');
+	if (item.text) {
+		item['text'] = item.text.replace(/\n/g, '<br>');
+
+		item['text'] = item.text.replace(/<br><br><br><br>/g, '');
+		item['text'] = item.text.replace(/<br><br><br>/g, '');
+		item['text'] = item.text.replace(/<br><br>/g, '<br>');
+	}
 
 	return { item, token };
 }
