@@ -26,9 +26,10 @@
 		<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
 		<li><a href="/news/1/16" on:click={openmenu}>Todas as notícias</a></li>
 	</ul>
-	<div class="menu-title">Termos de uso</div>
+	<div class="menu-title">Institucional</div>
 	<ul>
 		<li><a href="/politica-de-privacidade" on:click={openmenu}>Política de Privacidade</a></li>
+		<li><a href="/fale-conosco" on:click={openmenu}>Fale conosco</a></li>
 	</ul>
 	<div class="menu-title">Administração</div>
 	<ul>

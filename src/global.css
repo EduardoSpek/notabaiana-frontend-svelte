@@ -12,6 +12,9 @@
 	--dark-title: yellow;
 	--dark-subtitle: #fff;
 	--dark-line: #f5f3f2;
+	--form-bg: #f2f3f5;
+	--form-color: #000;
+	--label: rgb(68, 68, 68);
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -27,6 +30,9 @@
 	--dark-title: yellow;
 	--dark-subtitle: #fff;
 	--dark-line: #f5f3f2;
+	--form-bg: #5a0404d8;
+	--form-color: yellow;
+	--label: #f5f3f2;
 }
 .icon {
 	color: var(--primary);
@@ -65,26 +71,39 @@ body {
 }
 label {
 	font-family: 'Cabin', sans-serif;
-	color: var(--primary);
+	color: var(--label);
 }
 .inputForm,
 .textareaForm {
 	font-family: 'Cabin', sans-serif;
 	border: 1px solid var(--cinza-escuro);
-	border-radius: 2px;
+	border-radius: 6px;
 	padding: 8px;
 	margin-top: 8px;
 	width: 98%;
 	font-size: 16px;
-	background-color: var(--amarelo);
-	color: var(--preto);
+	background-color: var(--form-bg);
+	color: var(--form-color);
 }
 .textareaForm {
 	width: 98%;
 	height: 250px;
 }
-.buttonForm,
+
 .fileForm {
+	border-radius: 6px;
+	font-family: 'Cabin', sans-serif;
+	padding: 8px;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--form-bg);
+	border: 1px solid var(--cinza-escuro);
+	color: var(--form-color);
+	margin-top: 8px;
+}
+.buttonForm {
+	border-radius: 2px;
 	font-family: 'Cabin', sans-serif;
 	padding: 8px;
 	font-weight: bold;
@@ -94,10 +113,6 @@ label {
 	border: 1px solid var(--cinza-escuro);
 	color: var(--branco);
 	margin-top: 8px;
-}
-.fileForm {
-	background-color: var(--amarelo);
-	color: var(--preto);
 }
 .main {
 	max-width: 600px;
