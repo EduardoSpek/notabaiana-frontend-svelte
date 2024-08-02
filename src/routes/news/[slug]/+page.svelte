@@ -2,7 +2,6 @@
 	import { beforeNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
-	import { InitTwitterWidget } from '$lib/twitter_widget.js';
 	import Banners from '$lib/Banners.svelte';
 
 	import { fly } from 'svelte/transition';
@@ -20,7 +19,6 @@
 	}
 
 	onMount(() => {
-		InitTwitterWidget();
 		textNews = document.getElementById('textNews');
 	});
 
