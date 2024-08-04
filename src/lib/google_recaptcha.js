@@ -55,7 +55,7 @@ const getKey = () => {
 };
 
 //Chave para produção
-const KEY_RECAPTCHA = '6LdrROwpAAAAAPJdEUdTZnqwmraKFeGXXJkNytsw';
+const KEY_RECAPTCHA = import.meta.env.VITE_GOOGLE_CAPTCHA;
 
 //Chave para testar em localhost
 //const KEY_RECAPTCHA = '6LfSJPIpAAAAAPagzUJqz4IO_-Xgl66-E1kmS_fn';
