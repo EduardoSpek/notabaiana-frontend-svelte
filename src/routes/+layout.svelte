@@ -50,6 +50,7 @@
 <style>
 	footer {
 		background-color: var(--cinza-claro);
+		margin-top: 40px;
 	}
 	.caixa {
 		margin: auto;
