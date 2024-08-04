@@ -49,7 +49,7 @@
 
 <style>
 	main {
-		align-items: top;
+		align-items: flex-start;
 	} 
 	footer {
 		background-color: var(--cinza-claro);
