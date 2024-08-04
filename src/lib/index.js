@@ -1,8 +1,5 @@
 import { writable } from 'svelte/store';
 
-//const HOST = 'http://localhost:5173';
-//const HOST_API = 'http://localhost:8080';
-
 const HOST_API = import.meta.env.VITE_HOST_API;
 const HOST = import.meta.env.VITE_HOST;
 
