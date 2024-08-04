@@ -23,7 +23,7 @@
 	--preto: #f5f3f2ea;
 	--branco: #000000;
 	--amarelo: #222;
-	--cinza-claro: #585858;
+	--cinza-claro: #333;
 	--cinza: #cecece;
 	--cinza-escuro: #d8d8d8;
 	--dark: #333;
@@ -44,6 +44,9 @@ body {
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--branco);
 	margin: 0;
+}
+ul {
+	list-style: none;
 }
 .TopSpace {
 	padding-top: 70px;
