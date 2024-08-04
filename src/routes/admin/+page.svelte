@@ -39,6 +39,7 @@
 		font-size: 22px;
 		gap: 10px;
 		flex-direction: column;
+		padding: 0px;
 	}
 	ul li {
 		margin: auto;
