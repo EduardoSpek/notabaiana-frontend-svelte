@@ -38,6 +38,9 @@
 	color: var(--primary);
 }
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	-webkit-font-smoothing: antialiased; /* Para navegadores WebKit (Chrome, Safari, etc.) */
 	-moz-osx-font-smoothing: grayscale; /* Para Firefox no macOS */
 	font-smooth: always;
@@ -122,6 +125,7 @@ label {
 	margin: auto;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
 }
 .data_news {
 	font-family: 'Cabin', sans-serif;
