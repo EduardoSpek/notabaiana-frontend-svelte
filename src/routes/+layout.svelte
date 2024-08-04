@@ -48,6 +48,9 @@
 </footer>
 
 <style>
+	main {
+		align-items: top;
+	} 
 	footer {
 		background-color: var(--cinza-claro);
 		margin-top: 40px;
