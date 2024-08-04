@@ -28,7 +28,6 @@
 		"@fontsource-variable/cabin": "^5.0.18",
 		"@fontsource-variable/roboto-condensed": "^5.0.2",
 		"@fontsource/poppins": "^5.0.14",
-		"axios": "^1.7.2",
-		"dotenv": "^16.4.5"
+		"axios": "^1.7.2"
 	}
 }
