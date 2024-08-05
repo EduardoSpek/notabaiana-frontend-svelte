@@ -48,9 +48,6 @@
 </footer>
 
 <style>
-	main {
-		align-items: flex-start;
-	} 
 	footer {
 		background-color: var(--cinza-claro);
 		margin-top: 40px;
