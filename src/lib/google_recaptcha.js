@@ -17,11 +17,12 @@ const initRecaptcha = async () => {
 			po = d.createElement('script');
 		po.type = 'text/javascript';
 		po.async = true;
+		po.charset = 'utf-8';
 		var v = w.navigator,
 			m = d.createElement('meta');
 		m.httpEquiv = 'origin-trial';
 		m.content =
-			'Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=';
+			'A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9';
 		if (v && v.cookieDeprecationLabel) {
 			v.cookieDeprecationLabel.getValue().then(function (l) {
 				if (l !== 'treatment_1.1' && l !== 'treatment_1.2' && l !== 'control_1.1') {
@@ -32,9 +33,9 @@ const initRecaptcha = async () => {
 			d.head.prepend(m);
 		}
 		po.src =
-			'https://www.gstatic.com/recaptcha/releases/DH3nyJMamEclyfe-nztbfV8S/recaptcha__pt_br.js';
+			'https://www.gstatic.com/recaptcha/releases/hfUfsXWZFeg83qqxrK27GB8P/recaptcha__pt_br.js';
 		po.crossOrigin = 'anonymous';
-		po.integrity = 'sha384-666IxluSOP3w2F/vHro2IAl7ksHGvVPvAsWC2eZhsMsv0bD5RotT7KwXwUp4QIgU';
+		po.integrity = 'sha384-nWbc4uEImIfEMNk1C6/Zp73d6qjwnQSEJeNJhTGOYt0NoRWul7yWr2GGT7nTJ7sv';
 		var e = d.querySelector('script[nonce]'),
 			n = e && (e['nonce'] || e.getAttribute('nonce'));
 		if (n) {
