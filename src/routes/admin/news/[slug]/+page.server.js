@@ -8,7 +8,13 @@ export async function load({ cookies, fetch, params }) {
 		redirect(302, '/admin/login');
 	}
 
-	const item = await fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
+	const token = cookies.get('user_token');
+
+	const item = await fetch(`${HOST_API}/admin/news/${params.slug}`, {
+		headers: {
+			Authorization: 'Bearer ' + token
+		}
+	}).then((response) => {
 		return response.json();
 	});
 
@@ -18,8 +24,6 @@ export async function load({ cookies, fetch, params }) {
 
 	item['text'] = item.text.replace(/\n\n/g, '\n');
 	item['text'] = item.text.replace(/<br><br>/g, '\n');
-
-	const token = cookies.get('user_token');
 
 	return { item, token };
 }
