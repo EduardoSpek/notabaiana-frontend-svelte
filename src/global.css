@@ -39,6 +39,7 @@
 }
 main {
 	flex: 1;
+	width: 100%;
 }
 body {
 	display: flex;
@@ -89,17 +90,17 @@ label {
 	border-radius: 6px;
 	padding: 8px;
 	margin-top: 8px;
-	width: 98%;
+	width: 96%;
 	font-size: 16px;
 	background-color: var(--form-bg);
 	color: var(--form-color);
 }
 .textareaForm {
-	width: 98%;
 	height: 250px;
 }
 
 .fileForm {
+	width: 92%;
 	border-radius: 6px;
 	font-family: 'Cabin', sans-serif;
 	padding: 8px;
@@ -220,6 +221,9 @@ input::placeholder {
 	border-bottom: 1px solid var(--cinza);
 }
 @media (min-width: 669px) {
+	main {
+		width: auto;
+	}
 	.TopSpace {
 		padding-top: 90px;
 	}

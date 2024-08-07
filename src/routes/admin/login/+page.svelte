@@ -12,7 +12,7 @@
 
 <section>
 	<div class="central">
-		<div class="conteudo">
+		<div class="conteudo-flow">
 			<h1 class="titulo">Administração</h1>
 			<form action="?/login" method="post" id="formDefault">
 				<label for="cInput">Email:</label><br />

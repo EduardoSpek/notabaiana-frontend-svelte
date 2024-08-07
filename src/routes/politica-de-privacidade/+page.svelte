@@ -14,7 +14,7 @@
 
 <section>
 	<div class="central">
-		<div class="conteudo">
+		<div class="conteudo-flow">
 			<h2>Política de Privacidade</h2>
 
 			<p>
