@@ -26,14 +26,7 @@
 				<label for="fileInput">Imagem .JPG<span class="dimensoes">(opcional)</span>:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
 
-				<input
-					type="checkbox"
-					id="checkboxInput"
-					name="answered"
-					class="fileForm"
-					value="true"
-					checked
-				/>
+				<input type="checkbox" id="checkboxInput" name="answered" value="true" checked />
 				<label for="checkboxInput">Respondida</label><br /><br />
 
 				{#if form?.erro}

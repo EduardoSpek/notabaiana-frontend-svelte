@@ -23,17 +23,10 @@
 				<label for="fileInput">Selecione um arquivo:</label><br />
 				<input type="file" id="fileInput" name="image" class="fileForm" /><br /><br />
 
-				<input
-					type="checkbox"
-					id="fileInput"
-					name="visible"
-					class="fileForm"
-					value="true"
-					checked
-				/>
+				<input type="checkbox" id="fileInput" name="visible" value="true" checked />
 				<label for="fileInput">Exibir no site</label><br /><br />
 
-				<input type="checkbox" id="fileInput" name="topstory" class="fileForm" value="true" />
+				<input type="checkbox" id="fileInput" name="topstory" value="true" />
 				<label for="fileInput">Marcar como destaque</label><br /><br />
 
 				{#if form?.erro}

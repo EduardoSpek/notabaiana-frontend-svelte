@@ -61,7 +61,6 @@
 					type="checkbox"
 					id="fileInput"
 					name="visible"
-					class="fileForm"
 					value="true"
 					checked={data.banner.visible}
 				/>

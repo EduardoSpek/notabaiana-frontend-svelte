@@ -45,7 +45,6 @@
 					type="checkbox"
 					id="fileInput"
 					name="visible"
-					class="fileForm"
 					checked={data.item.visible}
 					value="true"
 				/>
@@ -55,7 +54,6 @@
 					type="checkbox"
 					id="fileInput"
 					name="topstory"
-					class="fileForm"
 					checked={data.item.topstory}
 					value="true"
 				/>

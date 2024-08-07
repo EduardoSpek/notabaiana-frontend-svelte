@@ -35,14 +35,7 @@
 				<label for="tinput">Tag:</label><br />
 				<input type="text" class="inputForm" size="70" id="tinput" name="tag" /><br /><br />
 
-				<input
-					type="checkbox"
-					id="fileInput"
-					name="visible"
-					class="fileForm"
-					value="true"
-					checked
-				/>
+				<input type="checkbox" id="fileInput" name="visible" value="true" checked />
 				<label for="fileInput">Exibir no site</label><br /><br />
 
 				{#if form?.erro}
