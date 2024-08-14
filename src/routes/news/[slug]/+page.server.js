@@ -53,6 +53,3 @@ export async function load({ fetch, params, cookies }) {
 
 	return { banners: banners.banners, item, top, token };
 }
-
-export const ssr = true;
-export const csr = true;

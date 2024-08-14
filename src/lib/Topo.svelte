@@ -40,7 +40,7 @@
 
 	{#if search_visible}
 		<div class="search">
-			<form action="/news/busca/1" method="get" on:submit={opensearch}>
+			<form action="/news/search/1" method="get" on:submit={opensearch}>
 				<input type="text" name="search" placeholder="Procurar por..." bind:this={ref} />
 				<button type="submit">Buscar</button>
 			</form>

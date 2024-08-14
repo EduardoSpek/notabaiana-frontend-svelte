@@ -11,7 +11,7 @@ export async function load({ fetch, params, url }) {
 	};
 
 	const fnNews = () => {
-		return fetch(`${HOST_API}/news/busca/${params.page}?search=${search}`).then((res) => {
+		return fetch(`${HOST_API}/news/search/${params.page}?search=${search}`).then((res) => {
 			return res.json();
 		});
 	};

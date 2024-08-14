@@ -13,7 +13,7 @@
 <Seo
 	title="Busca por {data.search} - Página {data.pagination.currentPage} - {SITE_NAME}"
 	description="Lista de notícias sobre {data.search}"
-	url={HOST + '/news/busca/' + data.pagination.currentPage + '?search=' + data.search}
+	url={HOST + '/news/search/' + data.pagination.currentPage + '?search=' + data.search}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
@@ -41,11 +41,11 @@
 				<div class="pagination">
 					{#if parseInt(data.pagination.currentPage) >= 4}
 						<button
-							on:click={() => goto('/news/busca/1?search=' + data.search)}
+							on:click={() => goto('/news/search/1?search=' + data.search)}
 							class="btn_transparent"
 						>
 							<div class="page">
-								<a href="/news/busca/1?search={data.search}" class="link">1</a>
+								<a href="/news/search/1?search={data.search}" class="link">1</a>
 							</div>
 						</button>
 						...
@@ -54,11 +54,11 @@
 						{#each data.pagination.previousPages as previousPage}
 							{#if previousPage > 0}
 								<button
-									on:click={() => goto('/news/busca/' + previousPage + '?search=' + data.search)}
+									on:click={() => goto('/news/search/' + previousPage + '?search=' + data.search)}
 									class="btn_transparent"
 								>
 									<div class="page">
-										<a href="/news/busca/{previousPage}?search={data.search}" class="link"
+										<a href="/news/search/{previousPage}?search={data.search}" class="link"
 											>{previousPage}</a
 										>
 									</div>
@@ -69,12 +69,12 @@
 					{#if data.pagination.currentPage}
 						<button
 							on:click={() =>
-								goto('/news/busca/' + data.pagination.currentPage + '?search=' + data.search)}
+								goto('/news/search/' + data.pagination.currentPage + '?search=' + data.search)}
 							class="btn_transparent"
 						>
 							<div class="page page_current">
 								<a
-									href="/news/busca/{data.pagination.currentPage}?search={data.search}"
+									href="/news/search/{data.pagination.currentPage}?search={data.search}"
 									class="link link_current">{data.pagination.currentPage}</a
 								>
 							</div>
@@ -83,11 +83,11 @@
 					{#if data.pagination.nextPages}
 						{#each data.pagination.nextPages as nextPage}
 							<button
-								on:click={() => goto('/news/busca/' + nextPage + '?search=' + data.search)}
+								on:click={() => goto('/news/search/' + nextPage + '?search=' + data.search)}
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/news/busca/{nextPage}?search={data.search}" class="link">{nextPage}</a>
+									<a href="/news/search/{nextPage}?search={data.search}" class="link">{nextPage}</a>
 								</div>
 							</button>
 						{/each}
@@ -96,12 +96,13 @@
 						...
 						<button
 							on:click={() =>
-								goto('/news/busca/' + data.pagination.totalPages + '?search=' + data.search)}
+								goto('/news/search/' + data.pagination.totalPages + '?search=' + data.search)}
 							class="btn_transparent"
 						>
 							<div class="page">
-								<a href="/news/busca/{data.pagination.totalPages}?search={data.search}" class="link"
-									>{data.pagination.totalPages}</a
+								<a
+									href="/news/search/{data.pagination.totalPages}?search={data.search}"
+									class="link">{data.pagination.totalPages}</a
 								>
 							</div>
 						</button>
