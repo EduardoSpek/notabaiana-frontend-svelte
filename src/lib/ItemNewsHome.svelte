@@ -53,6 +53,7 @@
 		margin-bottom: 10px;
 	}
 	.link {
+		font-size: 16x; 
 		text-decoration: none;
 		color: var(--text);
 	}
