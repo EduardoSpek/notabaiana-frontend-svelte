@@ -48,12 +48,11 @@
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 16x;
+		font-size: 16px;
 		font-weight: 700;
 		margin-bottom: 10px;
 	}
 	.link {
-		font-size: 16x; 
 		text-decoration: none;
 		color: var(--text);
 	}
