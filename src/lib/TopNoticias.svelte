@@ -19,7 +19,7 @@
 			{/each}
 			<div class="box">
 				<div class="box-page">
-					<a href="/news/1/10" class="link">Veja todas as notícias</a>
+					<a href="/news/1/24" class="link">Veja todas as notícias</a>
 				</div>
 			</div>
 		</div>
