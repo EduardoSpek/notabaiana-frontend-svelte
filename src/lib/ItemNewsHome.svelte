@@ -48,7 +48,7 @@
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 16x;
+		font-size: 18px;
 		font-weight: 700;
 		margin-bottom: 10px;
 	}
