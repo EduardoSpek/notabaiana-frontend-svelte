@@ -37,7 +37,7 @@
 	.box {
 		margin-bottom: 30px;
 	}
-	
+
 	.items {
 		display: flex;
 		flex-direction: row;

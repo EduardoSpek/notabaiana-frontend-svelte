@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
 	export let data;
+	let page = 24;
 </script>
 
 <section>
@@ -21,7 +22,7 @@
 		</div>
 		<div class="box">
 			<div class="box-page">
-				<a href="/news/1/16" class="link">Veja todas as notícias</a>
+				<a href="/news/1/{page}" class="link">Veja todas as notícias</a>
 			</div>
 		</div>
 	</div>

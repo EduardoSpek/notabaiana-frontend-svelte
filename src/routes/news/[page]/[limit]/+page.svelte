@@ -7,13 +7,14 @@
 	import Banners from '$lib/Banners.svelte';
 	export let data;
 	export let comparePage;
+	let page = 24;
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 </script>
 
 <Seo
 	title="Notícias da Página {data.pagination.currentPage}"
 	description="Lista de notícias da página número {data.pagination.currentPage}"
-	url={HOST + '/news/' + data.pagination.currentPage + '/16'}
+	url={HOST + '/news/' + data.pagination.currentPage + '/' + page}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
@@ -36,9 +37,9 @@
 		<section>
 			<div class="pagination">
 				{#if parseInt(data.pagination.currentPage) >= 4}
-					<button on:click={() => goto('/news/1/16')} class="btn_transparent">
+					<button on:click={() => goto('/news/1/' + page)} class="btn_transparent">
 						<div class="page">
-							<a href="/news/1/16" class="link">1</a>
+							<a href="/news/1/{page}" class="link">1</a>
 						</div>
 					</button>
 					...
@@ -47,11 +48,11 @@
 					{#each data.pagination.previousPages as previousPage}
 						{#if previousPage > 0}
 							<button
-								on:click={() => goto('/news/' + previousPage + '/16')}
+								on:click={() => goto('/news/' + previousPage + '/' + page)}
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/news/{previousPage}/16" class="link">{previousPage}</a>
+									<a href="/news/{previousPage}/{page}" class="link">{previousPage}</a>
 								</div>
 							</button>
 						{/if}
@@ -59,11 +60,11 @@
 				{/if}
 				{#if data.pagination.currentPage}
 					<button
-						on:click={() => goto('/news/' + data.pagination.currentPage + '/16')}
+						on:click={() => goto('/news/' + data.pagination.currentPage + '/' + page)}
 						class="btn_transparent"
 					>
 						<div class="page page_current">
-							<a href="/news/{data.pagination.currentPage}/16" class="link link_current"
+							<a href="/news/{data.pagination.currentPage}/{page}" class="link link_current"
 								>{data.pagination.currentPage}</a
 							>
 						</div>
@@ -71,9 +72,9 @@
 				{/if}
 				{#if data.pagination.nextPages}
 					{#each data.pagination.nextPages as nextPage}
-						<button on:click={() => goto('/news/' + nextPage + '/16')} class="btn_transparent">
+						<button on:click={() => goto('/news/' + nextPage + '/' + page)} class="btn_transparent">
 							<div class="page">
-								<a href="/news/{nextPage}/16" class="link">{nextPage}</a>
+								<a href="/news/{nextPage}/{page}" class="link">{nextPage}</a>
 							</div>
 						</button>
 					{/each}
@@ -81,12 +82,12 @@
 				{#if comparePage < parseInt(data.pagination.totalPages)}
 					...
 					<button
-						on:click={() => goto('/news/' + data.pagination.totalPages + '/16')}
+						on:click={() => goto('/news/' + data.pagination.totalPages + '/' + page)}
 						class="btn_transparent"
 					>
 						<div class="page">
 							<a
-								href="/news/{data.pagination.totalPages}/16"
+								href="/news/{data.pagination.totalPages}/{page}"
 								class="link"
 								data-sveltekit-preload-code="viewport">{data.pagination.totalPages}</a
 							>
