@@ -112,6 +112,9 @@
 		font-size: 20px;
 		color: var(--text);
 	}
+	.text p {
+		line-height: 28px;
+	}
 	.img {
 		justify-content: center;
 		align-items: center;
