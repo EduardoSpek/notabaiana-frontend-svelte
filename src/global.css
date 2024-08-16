@@ -15,6 +15,7 @@
 	--form-bg: #f2f3f5;
 	--form-color: #000;
 	--label: rgb(68, 68, 68);
+	--link: rgb(0, 130, 229);
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -33,6 +34,7 @@
 	--form-bg: #5a0404d8;
 	--form-color: yellow;
 	--label: #f5f3f2;
+	--link: yellow;
 }
 .icon {
 	color: var(--primary);
@@ -51,6 +53,9 @@ body {
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--branco);
 	margin: 0;
+}
+.links {
+	color: var(--link);
 }
 ul {
 	list-style: none;
