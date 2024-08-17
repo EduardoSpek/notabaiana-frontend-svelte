@@ -23,11 +23,13 @@ export async function load({ fetch, params, url }) {
 		news = rnews;
 	});
 
-	news.news.forEach((item, i) => {
-		if (item.title_ai) {
-			news.news[i].title = news.news[i].title_ai;
-		}
-	});
+	if (news.news) {
+		news.news.forEach((item, i) => {
+			if (item.title_ai) {
+				news.news[i].title = news.news[i].title_ai;
+			}
+		});
+	}
 
 	return {
 		banners: banners.banners,
