@@ -15,7 +15,7 @@
 	<section>
 		<div class="conteudo-flow">
 			{#if bannersTopo[0].html == ''}
-				{#if bannersTopo[0].banner_pc != ''}
+				{#if bannersTopo[0].banner_pc != '' && bannersTopo[0].visible_image1 == true}
 					<a
 						href={bannersTopo[0].link}
 						target="_blank"
@@ -33,7 +33,7 @@
 						/>
 					</a>
 				{/if}
-				{#if bannersTopo[0].banner_tablet != ''}
+				{#if bannersTopo[0].banner_tablet != '' && bannersTopo[0].visible_image2 == true}
 					<a href={bannersTopo[0].link} target="_blank" class="link">
 						<img
 							src={HOST_API + bannersTopo[0].banner_tablet}
@@ -44,7 +44,7 @@
 						/>
 					</a>
 				{/if}
-				{#if bannersTopo[0].banner_mobile != ''}
+				{#if bannersTopo[0].banner_mobile != '' && bannersTopo[0].visible_image3 == true}
 					<a href={bannersTopo[0].link} target="_blank" class="link">
 						<img
 							src={HOST_API + bannersTopo[0].banner_mobile}

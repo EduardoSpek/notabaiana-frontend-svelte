@@ -3,17 +3,20 @@ import { access_check } from '$lib/access_check.js';
 import { redirect } from '@sveltejs/kit';
 export async function load({ cookies, params }) {
 	const auth = await access_check(cookies);
+	const token = cookies.get('user_token');
 	if (!auth?.ok) {
 		redirect(302, '/admin/login');
 	}
 
 	const id = params.id;
 
-	const banner = await fetch(`${HOST_API}/admin/banners/${id}`).then((response) => {
+	const banner = await fetch(`${HOST_API}/admin/banners/${id}`, {
+		headers: {
+			Authorization: 'Bearer ' + token
+		}
+	}).then((response) => {
 		return response.json();
 	});
-
-	const token = cookies.get('user_token');
 
 	return { banner, token, id };
 }
