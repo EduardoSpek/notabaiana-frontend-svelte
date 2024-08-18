@@ -48,9 +48,10 @@
 	}
 	.title {
 		font-family: 'Cabin', sans-serif;
-		font-size: 18px;
+		font-size: 15px;
 		font-weight: 700;
 		margin-bottom: 10px;
+		line-height: 20px;
 	}
 	.link {
 		text-decoration: none;
@@ -59,13 +60,14 @@
 	.link:hover {
 		text-decoration: underline;
 	}
-	@media (min-width: 669px) {
+
+	@media (min-width: 768px) {
 		article {
 			display: flex;
 		}
 		.card {
 			display: block;
-			width: 300px;
+			width: 345px;
 			gap: 12px;
 			margin-bottom: 20px;
 			padding-bottom: 30px;
@@ -85,6 +87,21 @@
 			margin-top: 10px;
 			padding-bottom: 4px;
 			font-size: 14px;
+		}
+	}
+	@media (min-width: 1024px) {
+		.card {
+			width: 298px;
+		}
+	}
+	@media (min-width: 1280px) {
+		.card {
+			width: 282px;
+		}
+	}
+	@media (min-width: 1360px) {
+		.card {
+			width: 300px;
 		}
 	}
 </style>
