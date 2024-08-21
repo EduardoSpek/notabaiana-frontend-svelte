@@ -42,9 +42,11 @@ export async function load({ fetch, params, cookies }) {
 	if (item.text) {
 		item['text'] = item.text.replace(/\n/g, '<br>');
 
-		item['text'] = item.text.replace(/<br><br><br><br>/g, '');
-		item['text'] = item.text.replace(/<br><br><br>/g, '');
-		item['text'] = item.text.replace(/<br><br>/g, '<br>');
+		item['text'] = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
+		item['text'] = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
+		item['text'] = item.text.replace(/<br><br><br><br>/g, '<br><br>');
+		item['text'] = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
+		item['text'] = item.text.replace(/<br><br><br>/g, '<br><br>');
 	}
 
 	const token = cookies.get('user_token');
