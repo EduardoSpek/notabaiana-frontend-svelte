@@ -22,7 +22,7 @@
 		</div>
 		<div class="box">
 			<div class="box-page">
-				<a href="/news/1/{page}" class="link">Veja todas as notícias</a>
+				<a href="/news/1/{page}" class="link" data-sveltekit-reload>Veja todas as notícias</a>
 			</div>
 		</div>
 	</div>
