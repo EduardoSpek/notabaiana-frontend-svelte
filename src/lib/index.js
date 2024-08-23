@@ -18,6 +18,6 @@ const formatarData = (data) => {
 	return `${dia}/${mes}/${ano} às ${hora}:${minuto}:${segundo}`;
 };
 
-const globalStore = writable({ isOpen: false });
+const globalStore = writable({ isOpen: false, listNewsExpand: true });
 
 export { SITE_NAME, formatarData, HOST_API, HOST, IMG_PADRAO, globalStore };

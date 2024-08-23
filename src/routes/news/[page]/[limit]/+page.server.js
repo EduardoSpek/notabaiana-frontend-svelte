@@ -26,6 +26,18 @@ export async function load({ fetch, params }) {
 		if (item.title_ai) {
 			news.news[i].title = news.news[i].title_ai;
 		}
+
+		if (item.text) {
+			item['text'] = item.text.replace(/\n/g, '<br>');
+
+			item['text'] = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br><br><br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br> <br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br><br> <br><br> <br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
+			item['text'] = item.text.replace(/<br><br><br>/g, '<br><br>');
+		}
 	});
 
 	return {
