@@ -24,7 +24,7 @@
 		<li><a href="/news/category/justica/1" on:click={openmenu}>Justiça</a></li>
 		<li><a href="/news/category/saude/1" on:click={openmenu}>Saúde</a></li>
 		<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
-		<li><a href="/news/1/16" on:click={openmenu}>Todas as notícias</a></li>
+		<li><a href="/news/1/24" on:click={openmenu}>Todas as notícias</a></li>
 	</ul>
 	<div class="menu-title">Institucional</div>
 	<ul>
