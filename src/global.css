@@ -36,6 +36,9 @@
 	--label: #f5f3f2;
 	--link: yellow;
 }
+.visible {
+	color: var(--link);
+}
 .icon {
 	color: var(--primary);
 }

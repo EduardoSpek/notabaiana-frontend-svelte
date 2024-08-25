@@ -52,7 +52,18 @@
 					{#each data.banners.banners as banner}
 						<tr>
 							<td><input type="checkbox" name="id[]" id="id" value={banner.id} /></td>
-							<td><a href="/admin/banners/update/{banner.id}" class="link">{banner.title}</a></td>
+							<td
+								><a
+									href="/admin/banners/update/{banner.id}"
+									class={banner.visible ? 'visible' : 'link'}
+								>
+									{#if banner.visible}
+										<b>{banner.title}</b>
+									{:else}
+										{banner.title}
+									{/if}
+								</a></td
+							>
 							<td>
 								<form action="?/delete" method="post" use:enhance>
 									<input type="hidden" name="id" value={banner.id} />
