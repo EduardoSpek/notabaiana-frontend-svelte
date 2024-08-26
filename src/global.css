@@ -16,6 +16,7 @@
 	--form-color: #000;
 	--label: rgb(68, 68, 68);
 	--link: rgb(0, 130, 229);
+	--hover-bg: rgb(253, 64, 64);
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -191,7 +192,7 @@ input::placeholder {
 }
 .link {
 	text-decoration: none;
-	color: var(--text);
+	color: var(--preto);
 }
 .link:hover {
 	text-decoration: underline;
@@ -216,6 +217,9 @@ input::placeholder {
 	border-radius: 8px;
 	cursor: pointer;
 	font-weight: 700;
+}
+.page:hover {
+	background-color: var(--hover-bg);
 }
 .page_current {
 	background-color: var(--text);
