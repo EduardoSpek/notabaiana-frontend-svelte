@@ -73,9 +73,9 @@
 		<section>
 			<div class="pagination">
 				{#if parseInt(data.pagination.currentPage) >= 4}
-					<button on:click={() => goto('/news-expanded/1/' + page)} class="btn_transparent">
+					<button on:click={() => { window.location.href = '/news-expanded/1/' + page; }} class="btn_transparent">
 						<div class="page">
-							<a href="/news-expanded/1/{page}" class="link">1</a>
+							<a href="/news-expanded/1/{page}" class="link" data-sveltekit-reload>1</a>
 						</div>
 					</button>
 					...
@@ -84,11 +84,11 @@
 					{#each data.pagination.previousPages as previousPage}
 						{#if previousPage > 0}
 							<button
-								on:click={() => goto('/news-expanded/' + previousPage + '/' + page)}
+								on:click={() => { window.location.href = '/news-expanded/' + previousPage + '/' + page; }} 
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/news-expanded/{previousPage}/{page}" class="link">{previousPage}</a>
+									<a href="/news-expanded/{previousPage}/{page}" class="link" data-sveltekit-reload>{previousPage}</a>
 								</div>
 							</button>
 						{/if}
@@ -96,13 +96,13 @@
 				{/if}
 				{#if data.pagination.currentPage}
 					<button
-						on:click={() => goto('/news-expanded/' + data.pagination.currentPage + '/' + page)}
-						class="btn_transparent"
+						on:click={() => { window.location.href = '/news-expanded/' + data.pagination.currentPage + '/' + page; }}  
+			class="btn_transparent"
 					>
 						<div class="page page_current">
 							<a
 								href="/news-expanded/{data.pagination.currentPage}/{page}"
-								class="link link_current">{data.pagination.currentPage}</a
+								class="link link_current" data-sveltekit-reload>{data.pagination.currentPage}</a
 							>
 						</div>
 					</button>
@@ -110,11 +110,11 @@
 				{#if data.pagination.nextPages}
 					{#each data.pagination.nextPages as nextPage}
 						<button
-							on:click={() => goto('/news-expanded/' + nextPage + '/' + page)}
+							on:click={() => { window.location.href = '/news-expanded/' + nextPage + '/' + page; }}
 							class="btn_transparent"
 						>
 							<div class="page">
-								<a href="/news-expanded/{nextPage}/{page}" class="link">{nextPage}</a>
+								<a href="/news-expanded/{nextPage}/{page}" class="link" data-sveltekit-reload>{nextPage}</a>
 							</div>
 						</button>
 					{/each}
@@ -122,14 +122,13 @@
 				{#if comparePage < parseInt(data.pagination.totalPages)}
 					...
 					<button
-						on:click={() => goto('/news-expanded/' + data.pagination.totalPages + '/' + page)}
+						on:click={() => { window.location.href = '/news-expanded/' + data.pagination.totalPages + '/' + page; }} 
 						class="btn_transparent"
 					>
 						<div class="page">
 							<a
 								href="/news-expanded/{data.pagination.totalPages}/{page}"
-								class="link"
-								data-sveltekit-preload-code="viewport">{data.pagination.totalPages}</a
+								class="link" data-sveltekit-reload >{data.pagination.totalPages}</a
 							>
 						</div>
 					</button>
