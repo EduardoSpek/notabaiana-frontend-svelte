@@ -6,6 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
+
 	export let data;
 	let data_news = formatarData(data.item.created_at);
 	let textNews;
