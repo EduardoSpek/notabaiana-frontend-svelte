@@ -18,8 +18,8 @@
 </script>
 
 <Seo
-	title="Notícias da Página {data.pagination.currentPage}"
-	description="Lista de notícias da página número {data.pagination.currentPage}"
+	title="Notícias expandidas da Página {data.pagination.currentPage}"
+	description="Lista de notícias expandidas da página número {data.pagination.currentPage}"
 	url={HOST + '/news-expanded/' + data.pagination.currentPage + '/' + page}
 	image="{HOST}/notabaiana_1200.jpg"
 />
