@@ -22,7 +22,7 @@
 		</div>
 		<div class="box">
 			<div class="box-page">
-				<a href="/news/category/{category.toLowerCase().replace('ç', 'c')}/1" class="link"
+				<a href="/news/category/{category.toLowerCase().replace('ç', 'c').replace('í', 'i')}/1" class="link"
 					>Veja todas as notícias sobre {category}</a
 				>
 			</div>
