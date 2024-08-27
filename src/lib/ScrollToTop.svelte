@@ -28,17 +28,34 @@
 	class={isVisible ? 'scroll-to-top-btn scroll-to-top-btn-visible ' : 'scroll-to-top-btn'}
 	on:click={scrollToTop}
 >
-	^
+	<svg
+		fill="var(--branco)"
+		width="22px"
+		height="22px"
+		viewBox="0 0 32 32"
+		version="1.1"
+		xmlns="http://www.w3.org/2000/svg"
+		class="icon-svg"
+	>
+		<title>up</title>
+		<path d="M11.25 15.688l-7.656 7.656-3.594-3.688 11.063-11.094 11.344 11.344-3.5 3.5z"></path>
+	</svg>
 </button>
 
 <style>
+	.icon-svg {
+		display: block;
+		margin: auto;
+		margin-left: 5px;
+	}
 	.scroll-to-top-btn {
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
-		padding: 10px 18px;
+		padding: 14px;
 		padding-top: 16px;
-		font-size: 20px;
+		padding-bottom: 16px;
+		font-size: 14px;
 		font-weight: 700;
 		background-color: var(--preto);
 		color: var(--branco);
@@ -46,13 +63,11 @@
 		border-radius: 50%;
 		cursor: pointer;
 		display: none;
+		align-items: center;
+		justify-content: center;
 		transition: opacity 0.3s ease;
 	}
 	.scroll-to-top-btn-visible {
-		display: block;
-	}
-
-	.scroll-to-top-btn:hover {
-		background-color: var(--hover-bg);
+		display: flex;
 	}
 </style>
