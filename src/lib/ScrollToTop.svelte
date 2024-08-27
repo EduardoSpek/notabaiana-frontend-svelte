@@ -53,8 +53,8 @@
 		bottom: 20px;
 		right: 20px;
 		padding: 10px;
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding-top: 13px;
+		padding-bottom: 13px;
 		font-size: 14px;
 		font-weight: 700;
 		background-color: var(--preto);
