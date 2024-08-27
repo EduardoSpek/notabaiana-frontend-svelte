@@ -46,7 +46,7 @@
 	.icon-svg {
 		display: block;
 		margin: auto;
-		margin-left: 5px;
+		margin-left: 7px;
 	}
 	.scroll-to-top-btn {
 		position: fixed;
