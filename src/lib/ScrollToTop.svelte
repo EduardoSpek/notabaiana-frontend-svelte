@@ -52,9 +52,9 @@
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
-		padding: 14px;
-		padding-top: 16px;
-		padding-bottom: 16px;
+		padding: 10px;
+		padding-top: 12px;
+		padding-bottom: 12px;
 		font-size: 14px;
 		font-weight: 700;
 		background-color: var(--preto);
