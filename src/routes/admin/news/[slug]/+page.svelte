@@ -34,6 +34,17 @@
 					value={data.item.title}
 				/><br /><br />
 
+				<label for="tinputai">Título com IA:</label><br />
+
+				<input
+					type="text"
+					class="inputForm"
+					size="70"
+					id="tinputai"
+					name="title_ai"
+					value={data.item.title_ai}
+				/><br /><br />
+
 				<label for="ttextarea">Texto:</label><br />
 				<textarea name="text" id="ttextarea" class="textareaForm" value={data.item.text}
 				></textarea><br /><br />
