@@ -46,15 +46,15 @@
 	.icon-svg {
 		display: block;
 		margin: auto;
-		margin-left: 5px;
+		margin-left: 7px;
 	}
 	.scroll-to-top-btn {
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
 		padding: 10px;
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding-top: 13px;
+		padding-bottom: 13px;
 		font-size: 14px;
 		font-weight: 700;
 		background-color: var(--preto);
