@@ -42,7 +42,7 @@
 		</button>
 
 		<button
-			on:click={openCenteredWindow('https://www.facebook.com/share_channel/?link=' + url)}
+			on:click={openCenteredWindow('https://www.facebook.com/sharer/sharer.php?u=' + url)}
 			type="button"
 			class="react-share__ShareButton"
 			style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer"
