@@ -6,6 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
+	import IconSocialNetwork from '$lib/svg/IconSocialNetwork.svelte';
 
 	export let data;
 	let data_news = formatarData(data.item.created_at);
@@ -60,6 +61,9 @@
 
 				<div class="text" id="textNews">
 					<p>{@html data.item.text}</p>
+				</div>
+				<div class="social">
+					<IconSocialNetwork url={HOST + data.item.link} />
 				</div>
 				{#if data.token}
 					<br /><br /><a href="{HOST}/admin{data.item.link}" class="link">Editar notícia</a>
