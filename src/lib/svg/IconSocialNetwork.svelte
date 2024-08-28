@@ -23,7 +23,7 @@
 	<div class="compartilhar">Compartilhar nas redes sociais</div>
 	<div class="centralizado">
 		<button
-			on:click={openCenteredWindow('https://web.whatsapp.com/send?text=' + url)}
+			on:click={openCenteredWindow('https://api.whatsapp.com/send?text=' + url)}
 			type="button"
 			class="react-share__ShareButton"
 			style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer"
