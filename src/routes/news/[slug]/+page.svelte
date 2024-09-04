@@ -20,12 +20,27 @@
 	}
 
 	onMount(() => {
+		loadInstagramWidget();
 		textNews = document.getElementById('textNews');
 	});
 
 	beforeNavigate((event) => {
 		removeIframe();
 	});
+
+  function loadInstagramWidget() {
+    // Carrega o script do Instagram
+    const script = document.createElement('script');
+    script.src = '//www.instagram.com/embed.js';
+    script.async = true;
+    script.onload = () => {
+      // Inicializa o widget quando o script for carregado
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+    document.body.appendChild(script);
+  }
 </script>
 
 <Seo
