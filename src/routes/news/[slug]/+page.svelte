@@ -21,6 +21,7 @@
 
 	onMount(() => {
 		loadInstagramWidget();
+		loadTwitterWidget();
 		textNews = document.getElementById('textNews');
 	});
 
@@ -39,6 +40,30 @@
         window.instgrm.Embeds.process();
       }
     };
+    document.body.appendChild(script);
+  }
+
+function loadTwitterWidget() {
+    // Remover qualquer instância anterior do script do Twitter
+    const existingScript = document.getElementById('twitter-widget-script');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Carregar o script do Twitter
+    const script = document.createElement('script');
+    script.id = 'twitter-widget-script';
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.async = true;
+    script.charset = 'utf-8';
+    
+    script.onload = () => {
+      // Inicializar o widget quando o script for carregado
+      if (window.twttr) {
+        window.twttr.widgets.load();
+      }
+    };
+
     document.body.appendChild(script);
   }
 </script>
