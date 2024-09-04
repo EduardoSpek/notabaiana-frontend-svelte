@@ -30,6 +30,15 @@
 	});
 
   function loadInstagramWidget() {
+			// Remover qualquer instância anterior do script do Instagram
+    const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
+    existingScripts.forEach(script => script.remove());
+
+    // Remover qualquer instância anterior do objeto instgrm
+    if (window.instgrm) {
+      delete window.instgrm;
+    } 
+
     // Carrega o script do Instagram
     const script = document.createElement('script');
     script.src = '//www.instagram.com/embed.js';
