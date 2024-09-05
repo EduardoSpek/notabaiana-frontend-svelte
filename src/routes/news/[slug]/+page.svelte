@@ -11,6 +11,7 @@
 	export let data;
 	let data_news = formatarData(data.item.created_at);
 	let textNews;
+	let divRef;
 
 	function removeIframe() {
 		const iframe = document.querySelector('iframe');
@@ -22,6 +23,7 @@
 	onMount(() => {
 		loadInstagramWidget();
 		loadTwitterWidget();
+		loadFacebookComments();
 		textNews = document.getElementById('textNews');
 	});
 
@@ -29,53 +31,85 @@
 		removeIframe();
 	});
 
-  function loadInstagramWidget() {
-			// Remover qualquer instância anterior do script do Instagram
-    const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
-    existingScripts.forEach(script => script.remove());
+	function loadFacebookComments() {
+		// Remover qualquer instância anterior do script do Facebook
+		const existingScript = document.getElementById('facebook-jssdk');
+		if (existingScript) {
+			existingScript.remove();
+		}
 
-    // Remover qualquer instância anterior do objeto instgrm
-    if (window.instgrm) {
-      delete window.instgrm;
-    } 
+		// Resetar o objeto FB se existir
+		if (window.FB) {
+			delete window.FB;
+		}
 
-    // Carrega o script do Instagram
-    const script = document.createElement('script');
-    script.src = '//www.instagram.com/embed.js';
-    script.async = true;
-    script.onload = () => {
-      // Inicializa o widget quando o script for carregado
-      if (window.instgrm) {
-        window.instgrm.Embeds.process();
-      }
-    };
-    document.body.appendChild(script);
-  }
+		// Carregar o SDK do Facebook
+		const script = document.createElement('script');
+		script.id = 'facebook-jssdk';
+		script.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0';
+		script.async = true;
+		script.defer = true;
+		script.crossOrigin = 'anonymous';
 
-function loadTwitterWidget() {
-    // Remover qualquer instância anterior do script do Twitter
-    const existingScript = document.getElementById('twitter-widget-script');
-    if (existingScript) {
-      existingScript.remove();
-    }
+		script.onload = () => {
+			// Inicializar o widget quando o script for carregado
+			if (window.FB) {
+				window.FB.XFBML.parse(divRef);
+			}
+		};
 
-    // Carregar o script do Twitter
-    const script = document.createElement('script');
-    script.id = 'twitter-widget-script';
-    script.src = 'https://platform.twitter.com/widgets.js';
-    script.async = true;
-    script.charset = 'utf-8';
-    
-    script.onload = () => {
-      // Inicializar o widget quando o script for carregado
-      if (window.twttr) {
-        window.twttr.widgets.load();
-      }
-    };
+		document.body.appendChild(script);
+	}
 
-    document.body.appendChild(script);
-  }
+	function loadInstagramWidget() {
+		// Remover qualquer instância anterior do script do Instagram
+		const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
+		existingScripts.forEach((script) => script.remove());
+
+		// Remover qualquer instância anterior do objeto instgrm
+		if (window.instgrm) {
+			delete window.instgrm;
+		}
+
+		// Carrega o script do Instagram
+		const script = document.createElement('script');
+		script.src = '//www.instagram.com/embed.js';
+		script.async = true;
+		script.onload = () => {
+			// Inicializa o widget quando o script for carregado
+			if (window.instgrm) {
+				window.instgrm.Embeds.process();
+			}
+		};
+		document.body.appendChild(script);
+	}
+
+	function loadTwitterWidget() {
+		// Remover qualquer instância anterior do script do Twitter
+		const existingScript = document.getElementById('twitter-widget-script');
+		if (existingScript) {
+			existingScript.remove();
+		}
+
+		// Carregar o script do Twitter
+		const script = document.createElement('script');
+		script.id = 'twitter-widget-script';
+		script.src = 'https://platform.twitter.com/widgets.js';
+		script.async = true;
+		script.charset = 'utf-8';
+
+		script.onload = () => {
+			// Inicializar o widget quando o script for carregado
+			if (window.twttr) {
+				window.twttr.widgets.load();
+			}
+		};
+
+		document.body.appendChild(script);
+	}
 </script>
+
+<div id="fb-root"></div>
 
 <Seo
 	title={data.item.title}
@@ -114,6 +148,14 @@ function loadTwitterWidget() {
 				<div class="social">
 					<IconSocialNetwork url={HOST + data.item.link} />
 				</div>
+				<div class="comentarios">
+					<div
+						class="fb-comments"
+						data-href={HOST + data.item.link}
+						data-width="100%"
+						data-numposts="5"
+					></div>
+				</div>
 				{#if data.token}
 					<br /><br /><a href="{HOST}/admin{data.item.link}" class="link">Editar notícia</a>
 				{/if}
@@ -131,6 +173,9 @@ function loadTwitterWidget() {
 <Banners banners={data.banners} region="rodape" />
 
 <style>
+	.comentarios {
+		margin-top: 50px;
+	}
 	h1 {
 		color: var(--preto);
 	}
