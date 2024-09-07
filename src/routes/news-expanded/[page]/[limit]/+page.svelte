@@ -1,8 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
 	import { IMG_PADRAO, HOST, HOST_API, formatarData, globalStore } from '$lib/index.js';
-	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
 	import ListNewsCloseSvg from '$lib/svg/list_news_close.svelte';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -13,8 +11,57 @@
 	$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
 	onMount(() => {
+		loadInstagramWidget();
+		loadTwitterWidget();
 		$globalStore.listNewsExpand = false;
 	});
+
+	function loadInstagramWidget() {
+		// Remover qualquer instância anterior do script do Instagram
+		const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
+		existingScripts.forEach((script) => script.remove());
+
+		// Remover qualquer instância anterior do objeto instgrm
+		if (window.instgrm) {
+			delete window.instgrm;
+		}
+
+		// Carrega o script do Instagram
+		const script = document.createElement('script');
+		script.src = '//www.instagram.com/embed.js';
+		script.async = true;
+		script.onload = () => {
+			// Inicializa o widget quando o script for carregado
+			if (window.instgrm) {
+				window.instgrm.Embeds.process();
+			}
+		};
+		document.body.appendChild(script);
+	}
+
+	function loadTwitterWidget() {
+		// Remover qualquer instância anterior do script do Twitter
+		const existingScripts = document.querySelectorAll(
+			'script[src*="platform.twitter.com/widgets.js"]'
+		);
+		existingScripts.forEach((script) => script.remove());
+
+		// Carregar o script do Twitter
+		const script = document.createElement('script');
+		script.id = 'twitter-widget-script';
+		script.src = 'https://platform.twitter.com/widgets.js';
+		script.async = true;
+		script.charset = 'utf-8';
+
+		script.onload = () => {
+			// Inicializar o widget quando o script for carregado
+			if (window.twttr) {
+				window.twttr.widgets.load();
+			}
+		};
+
+		document.body.appendChild(script);
+	}
 </script>
 
 <Seo
@@ -73,7 +120,12 @@
 		<section>
 			<div class="pagination">
 				{#if parseInt(data.pagination.currentPage) >= 4}
-					<button on:click={() => { window.location.href = '/news-expanded/1/' + page; }} class="btn_transparent">
+					<button
+						on:click={() => {
+							window.location.href = '/news-expanded/1/' + page;
+						}}
+						class="btn_transparent"
+					>
 						<div class="page">
 							<a href="/news-expanded/1/{page}" class="link" data-sveltekit-reload>1</a>
 						</div>
@@ -84,11 +136,15 @@
 					{#each data.pagination.previousPages as previousPage}
 						{#if previousPage > 0}
 							<button
-								on:click={() => { window.location.href = '/news-expanded/' + previousPage + '/' + page; }} 
+								on:click={() => {
+									window.location.href = '/news-expanded/' + previousPage + '/' + page;
+								}}
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/news-expanded/{previousPage}/{page}" class="link" data-sveltekit-reload>{previousPage}</a>
+									<a href="/news-expanded/{previousPage}/{page}" class="link" data-sveltekit-reload
+										>{previousPage}</a
+									>
 								</div>
 							</button>
 						{/if}
@@ -96,13 +152,16 @@
 				{/if}
 				{#if data.pagination.currentPage}
 					<button
-						on:click={() => { window.location.href = '/news-expanded/' + data.pagination.currentPage + '/' + page; }}  
-			class="btn_transparent"
+						on:click={() => {
+							window.location.href = '/news-expanded/' + data.pagination.currentPage + '/' + page;
+						}}
+						class="btn_transparent"
 					>
 						<div class="page page_current">
 							<a
 								href="/news-expanded/{data.pagination.currentPage}/{page}"
-								class="link link_current" data-sveltekit-reload>{data.pagination.currentPage}</a
+								class="link link_current"
+								data-sveltekit-reload>{data.pagination.currentPage}</a
 							>
 						</div>
 					</button>
@@ -110,11 +169,15 @@
 				{#if data.pagination.nextPages}
 					{#each data.pagination.nextPages as nextPage}
 						<button
-							on:click={() => { window.location.href = '/news-expanded/' + nextPage + '/' + page; }}
+							on:click={() => {
+								window.location.href = '/news-expanded/' + nextPage + '/' + page;
+							}}
 							class="btn_transparent"
 						>
 							<div class="page">
-								<a href="/news-expanded/{nextPage}/{page}" class="link" data-sveltekit-reload>{nextPage}</a>
+								<a href="/news-expanded/{nextPage}/{page}" class="link" data-sveltekit-reload
+									>{nextPage}</a
+								>
 							</div>
 						</button>
 					{/each}
@@ -122,13 +185,16 @@
 				{#if comparePage < parseInt(data.pagination.totalPages)}
 					...
 					<button
-						on:click={() => { window.location.href = '/news-expanded/' + data.pagination.totalPages + '/' + page; }} 
+						on:click={() => {
+							window.location.href = '/news-expanded/' + data.pagination.totalPages + '/' + page;
+						}}
 						class="btn_transparent"
 					>
 						<div class="page">
 							<a
 								href="/news-expanded/{data.pagination.totalPages}/{page}"
-								class="link" data-sveltekit-reload >{data.pagination.totalPages}</a
+								class="link"
+								data-sveltekit-reload>{data.pagination.totalPages}</a
 							>
 						</div>
 					</button>

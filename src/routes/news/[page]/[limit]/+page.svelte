@@ -100,10 +100,8 @@
 						class="btn_transparent"
 					>
 						<div class="page">
-							<a
-								href="/news/{data.pagination.totalPages}/{page}"
-								class="link"
-								data-sveltekit-preload-code="viewport">{data.pagination.totalPages}</a
+							<a href="/news/{data.pagination.totalPages}/{page}" class="link"
+								>{data.pagination.totalPages}</a
 							>
 						</div>
 					</button>

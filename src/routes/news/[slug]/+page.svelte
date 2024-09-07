@@ -86,10 +86,10 @@
 
 	function loadTwitterWidget() {
 		// Remover qualquer instância anterior do script do Twitter
-		const existingScript = document.getElementById('twitter-widget-script');
-		if (existingScript) {
-			existingScript.remove();
-		}
+		const existingScripts = document.querySelectorAll(
+			'script[src*="platform.twitter.com/widgets.js"]'
+		);
+		existingScripts.forEach((script) => script.remove());
 
 		// Carregar o script do Twitter
 		const script = document.createElement('script');
