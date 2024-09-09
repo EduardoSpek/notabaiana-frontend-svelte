@@ -22,6 +22,12 @@
 					window.location = '/admin/contacts';
 				}}><li>Contatos</li></button
 			>
+			<button
+				class="btn_transparent"
+				on:click={() => {
+					window.location = '/admin/logout';
+				}}><li>Sair da conta</li></button
+			>
 		</ul>
 	</div>
 </section>
