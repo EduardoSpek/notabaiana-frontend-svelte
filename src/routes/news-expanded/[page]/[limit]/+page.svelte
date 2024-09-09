@@ -89,7 +89,7 @@
 				<section class="listExpanded">
 					<article>
 						<div class="title">
-							<h1>{info.title}</h1>
+							<h1><a href={HOST + info.link} class="link">{info.title}</a></h1>
 						</div>
 
 						<div class="data_news">
@@ -98,9 +98,13 @@
 
 						<div class="img">
 							{#if info.image?.includes('.jpg')}
-								<img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} />
+								<a href={HOST + info.link}
+									><img class="thumb" src="{HOST_API}/images/{info.image}" alt={info.title} /></a
+								>
 							{:else}
-								<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+								<a href={HOST + info.link}
+									><img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} /></a
+								>
 							{/if}
 						</div>
 
