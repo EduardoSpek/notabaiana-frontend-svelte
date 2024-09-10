@@ -126,7 +126,7 @@ function loadTiktokWidget() {
       // O TikTok geralmente não requer uma inicialização explícita
       // mas podemos forçar um re-parse se necessário
       if (window.TikTok) {
-        window.TikTok.reload();
+        //window.TikTok.reload();
       }
     };
 
