@@ -18,6 +18,10 @@ const formatarData = (data) => {
 	return `${dia}/${mes}/${ano} às ${hora}:${minuto}:${segundo}`;
 };
 
+const bigFirstLetter = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const globalStore = writable({ isOpen: false, listNewsExpand: true });
 
-export { SITE_NAME, formatarData, HOST_API, HOST, IMG_PADRAO, globalStore };
+export { SITE_NAME, formatarData, HOST_API, HOST, IMG_PADRAO, globalStore, bigFirstLetter };

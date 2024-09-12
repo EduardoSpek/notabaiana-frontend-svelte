@@ -58,6 +58,23 @@ body {
 	background-color: var(--branco);
 	margin: 0;
 }
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--branco);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+}
+
+/* Estilização para Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--primary) var(--branco);
+}
 .links {
 	color: var(--link);
 }

@@ -29,6 +29,15 @@
 	<div class="menu-title">Baixar CDs</div>
 	<ul>
 		<li><a href="/downloads/1/24" on:click={openmenu}>Recentes</a></li>
+		<li><a href="/downloads/category/arrocha/1" on:click={openmenu}>Arrocha</a></li>
+		<li><a href="/downloads/category/arrochadeira/1" on:click={openmenu}>Arrochadeira</a></li>
+		<li><a href="/downloads/category/axe/1" on:click={openmenu}>Axé</a></li>
+		<li><a href="/downloads/category/forro/1" on:click={openmenu}>Forró</a></li>
+		<li><a href="/downloads/category/pagode/1" on:click={openmenu}>Pagode</a></li>
+		<li><a href="/downloads/category/piseiro/1" on:click={openmenu}>Piseiro</a></li>
+		<li><a href="/downloads/category/samba/1" on:click={openmenu}>Samba</a></li>
+		<li><a href="/downloads/category/swingueira/1" on:click={openmenu}>Swingueira</a></li>
+		<li><a href="/downloads/category/variados/1" on:click={openmenu}>Variados</a></li>
 	</ul>
 	<div class="menu-title">Institucional</div>
 	<ul>
@@ -39,6 +48,11 @@
 	<ul>
 		<li><a href="/admin/login" on:click={openmenu}>Entrar</a></li>
 	</ul>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 </div>
 
 <style>
@@ -86,6 +100,7 @@
 		color: var(--branco);
 		transition: left 0.3s ease;
 		z-index: 2;
+		overflow-y: auto;
 	}
 
 	.menu {
