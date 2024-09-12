@@ -26,6 +26,10 @@
 		<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
 		<li><a href="/news/1/24" on:click={openmenu}>Todas as notícias</a></li>
 	</ul>
+	<div class="menu-title">Baixar CDs</div>
+	<ul>
+		<li><a href="/downloads/1/24" on:click={openmenu}>Recentes</a></li>
+	</ul>
 	<div class="menu-title">Institucional</div>
 	<ul>
 		<li><a href="/politica-de-privacidade" on:click={openmenu}>Política de Privacidade</a></li>
