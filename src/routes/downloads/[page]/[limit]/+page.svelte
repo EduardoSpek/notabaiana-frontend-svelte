@@ -17,9 +17,10 @@
 </script>
 
 <Seo
-	title="Baixar CDs de Pagode - Lista de Recentes - {SITE_NAME}"
-	description="Lista com os CDs mais recentes do pagode baiano - {SITE_NAME}"
-	url={HOST + '/pagode'}
+	title="Baixe CDs atuais aqui - Página {data.pagination.currentPage} - {SITE_NAME}"
+	description="Lista com os CDs mais recentes da atualidade - Página {data.pagination
+		.currentPage} - {SITE_NAME}"
+	url={HOST + '/downloads/' + data.pagination.currentPage + '/' + page}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
