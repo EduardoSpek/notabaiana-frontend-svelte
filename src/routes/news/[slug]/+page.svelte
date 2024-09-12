@@ -23,6 +23,7 @@
 	onMount(() => {
 		loadInstagramWidget();
 		loadTwitterWidget();
+		loadTiktokWidget();
 		loadFacebookComments();
 		textNews = document.getElementById('textNews');
 	});
@@ -104,6 +105,31 @@
 				window.twttr.widgets.load();
 			}
 		};
+
+		document.body.appendChild(script);
+	}
+
+function loadTiktokWidget() {
+		// Remover qualquer instância anterior do script do TikTok 
+		const existingScripts = document.querySelectorAll(
+			'script[src*="tiktok.com/embed.js"]'
+		);
+		existingScripts.forEach((script) => script.remove());
+
+		// Carregar o script do TikTok
+    const script = document.createElement('script');
+    script.id = 'tiktok-embed-script';
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.async = true;
+    
+    script.onload = () => {
+      // O TikTok geralmente não requer uma inicialização explícita
+      // mas podemos forçar um re-parse se necessário
+      if (window.TikTok) {
+        //window.TikTok.reload();
+      }
+    };
+
 
 		document.body.appendChild(script);
 	}
