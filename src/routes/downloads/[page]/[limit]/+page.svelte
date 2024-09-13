@@ -1,11 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData, globalStore, SITE_NAME } from '$lib/index.js';
+	import { HOST, HOST_API, formatarData, globalStore, SITE_NAME } from '$lib/index.js';
+	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
+	import InputSearchDownload from '$lib/InputSearchDownload.svelte';
 	import ItemCD from '$lib/ItemCD.svelte';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import Banners from '$lib/Banners.svelte';
+	import { tick } from 'svelte';
 	export let data;
 	let page = 24;
 	export let comparePage;
@@ -14,6 +17,27 @@
 	onMount(() => {
 		$globalStore.listNewsExpand = true;
 	});
+
+	let search_visible = false;
+	let timeoutID;
+	let ref;
+
+	const closesearch = () => {
+		search_visible = false;
+		clearTimeout(timeoutID);
+	};
+
+	const opensearch = () => {
+		search_visible = !search_visible;
+		clearTimeout(timeoutID);
+		timeoutID = setTimeout(closesearch, 15000);
+		setFocus();
+	};
+
+	const setFocus = async () => {
+		await tick();
+		ref?.focus();
+	};
 </script>
 
 <Seo
@@ -25,6 +49,7 @@
 />
 
 <div class="TopSpace"></div>
+<InputSearchDownload {search_visible} />
 
 <Banners banners={data.banners} region="topo" />
 
@@ -32,6 +57,9 @@
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
 		<div class="list">
 			<div class="emalta">Baixar CDs - Recentes</div>
+			<div>
+				<IconSearchSvg onSearchClick={opensearch} />
+			</div>
 		</div>
 
 		<div class="items">
