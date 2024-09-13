@@ -2,7 +2,7 @@ import { HOST_API } from '$lib/index.js';
 
 export async function GET() {
 	const host = 'https://www.notabaiana.com.br';
-	const response = await fetch(`${HOST_API}/downloads/1/50000`);
+	const response = await fetch(`${HOST_API}/downloads/1/1000`);
 	const data = await response.json();
 	let downloads = data;
 	let urls;
