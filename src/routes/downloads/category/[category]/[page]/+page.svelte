@@ -15,6 +15,7 @@
 	import Banners from '$lib/Banners.svelte';
 	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
 	import InputSearchDownload from '$lib/InputSearchDownload.svelte';
+	import { tick } from 'svelte';
 	export let data;
 	let page = 24;
 	export let comparePage;

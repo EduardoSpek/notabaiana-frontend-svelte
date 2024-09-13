@@ -2,7 +2,7 @@
 	import { tick } from 'svelte';
 	export let search_visible = false;
 	let timeoutID;
-	let ref;
+	export let ref;
 
 	const closesearch = () => {
 		search_visible = false;
@@ -20,6 +20,10 @@
 		await tick();
 		ref?.focus();
 	};
+
+	$: if (search_visible) {
+		setFocus();
+	}
 </script>
 
 {#if search_visible}

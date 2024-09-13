@@ -8,7 +8,6 @@
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
 	import Banners from '$lib/Banners.svelte';
-	import { tick } from 'svelte';
 	export let data;
 	let page = 24;
 	export let comparePage;
@@ -20,7 +19,6 @@
 
 	let search_visible = false;
 	let timeoutID;
-	let ref;
 
 	const closesearch = () => {
 		search_visible = false;
@@ -31,12 +29,6 @@
 		search_visible = !search_visible;
 		clearTimeout(timeoutID);
 		timeoutID = setTimeout(closesearch, 15000);
-		setFocus();
-	};
-
-	const setFocus = async () => {
-		await tick();
-		ref?.focus();
 	};
 </script>
 
