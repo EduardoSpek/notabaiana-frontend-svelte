@@ -48,7 +48,7 @@
 <div id="fb-root"></div>
 
 <Seo
-	title="{data.item.title} - Baixar CD - "
+	title="{data.item.title} - Baixar CD"
 	description="{data.item.text?.substr(0, 150)}..."
 	url={HOST + '/downloads/' + data.item.slug}
 	image="{HOST_API}/images/downloads/{data.item.image}"
