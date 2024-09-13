@@ -32,10 +32,21 @@
 		<li><a href="/downloads/category/arrocha/1" on:click={openmenu}>Arrocha</a></li>
 		<li><a href="/downloads/category/arrochadeira/1" on:click={openmenu}>Arrochadeira</a></li>
 		<li><a href="/downloads/category/axe/1" on:click={openmenu}>Axé</a></li>
+		<li><a href="/downloads/category/brega/1" on:click={openmenu}>Brega</a></li>
+		<li><a href="/downloads/category/brega-funk/1" on:click={openmenu}>Brega Funk</a></li>
+		<li><a href="/downloads/category/eletronica/1" on:click={openmenu}>Eletrônica</a></li>
 		<li><a href="/downloads/category/forro/1" on:click={openmenu}>Forró</a></li>
+		<li><a href="/downloads/category/funk/1" on:click={openmenu}>Funk</a></li>
+		<li><a href="/downloads/category/gospel/1" on:click={openmenu}>Gospel</a></li>
+		<li><a href="/downloads/category/rap-hip-hop/1" on:click={openmenu}>Rap Hip Hop</a></li>
+		<li><a href="/downloads/category/mpb/1" on:click={openmenu}>MPB</a></li>
 		<li><a href="/downloads/category/pagode/1" on:click={openmenu}>Pagode</a></li>
+		<li><a href="/downloads/category/pop/1" on:click={openmenu}>Pop</a></li>
+		<li><a href="/downloads/category/reggae/1" on:click={openmenu}>Reggae</a></li>
 		<li><a href="/downloads/category/piseiro/1" on:click={openmenu}>Piseiro</a></li>
+		<li><a href="/downloads/category/rock/1" on:click={openmenu}>Rock</a></li>
 		<li><a href="/downloads/category/samba/1" on:click={openmenu}>Samba</a></li>
+		<li><a href="/downloads/category/sertanejo/1" on:click={openmenu}>Sertanejo</a></li>
 		<li><a href="/downloads/category/swingueira/1" on:click={openmenu}>Swingueira</a></li>
 		<li><a href="/downloads/category/variados/1" on:click={openmenu}>Variados</a></li>
 	</ul>
