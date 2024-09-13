@@ -133,6 +133,7 @@
 		background-color: var(--secundary);
 		font-size: 18px;
 		color: var(--branco);
+		margin-bottom: 40px;
 	}
 	.btn_baixar:hover {
 		background-color: var(--primary);
@@ -166,7 +167,7 @@
 		align-items: center;
 		margin: auto;
 		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		width: 100%;
 	}
 	.thumb {
@@ -186,9 +187,6 @@
 		}
 		.conteudo {
 			margin-top: -30px;
-		}
-		.img {
-			margin-bottom: 0px;
 		}
 		.thumb {
 			width: 400px;
