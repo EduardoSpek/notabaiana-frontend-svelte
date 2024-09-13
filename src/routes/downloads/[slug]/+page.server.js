@@ -2,7 +2,6 @@ import { HOST_API } from '$lib/index.js';
 import { error } from '@sveltejs/kit';
 export async function load({ fetch, params, cookies }) {
 	let item;
-	let top;
 	let banners;
 
 	const fnBanners = () => {
@@ -11,24 +10,17 @@ export async function load({ fetch, params, cookies }) {
 		});
 	};
 
-	const fnNews = () => {
-		return fetch(`${HOST_API}/news/${params.slug}`).then((response) => {
+	const fnDownload = () => {
+		return fetch(`${HOST_API}/download/${params.slug}`).then((response) => {
 			return response.json();
 		});
 	};
 
-	const fnTop = () => {
-		return fetch(`${HOST_API}/top`).then((response) => {
-			return response.json();
-		});
-	};
+	const allPromises = Promise.all([fnBanners(), fnDownload()]);
 
-	const allPromises = Promise.all([fnBanners(), fnNews(), fnTop()]);
-
-	await allPromises.then(([rbanners, ritem, rtop]) => {
+	await allPromises.then(([rbanners, ritem]) => {
 		banners = rbanners;
 		item = ritem;
-		top = rtop;
 	});
 
 	if (!item.id) {
@@ -53,7 +45,5 @@ export async function load({ fetch, params, cookies }) {
 
 	const token = cookies.get('user_token');
 
-	top.splice(top.length - 2, 2);
-
-	return { banners: banners.banners, item, top, token };
+	return { banners: banners.banners, item, token };
 }

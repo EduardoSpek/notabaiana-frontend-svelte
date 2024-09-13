@@ -1,7 +1,6 @@
 <script>
-	import { beforeNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
+	import { SITE_NAME, IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import Banners from '$lib/Banners.svelte';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
@@ -10,26 +9,9 @@
 
 	export let data;
 	let data_news = formatarData(data.item.created_at);
-	let textNews;
-	let divRef;
-
-	function removeIframe() {
-		const iframe = document.querySelector('iframe');
-		if (iframe) {
-			iframe.remove();
-		}
-	}
 
 	onMount(() => {
-		loadInstagramWidget();
-		loadTwitterWidget();
-		loadTiktokWidget();
 		loadFacebookComments();
-		textNews = document.getElementById('textNews');
-	});
-
-	beforeNavigate((event) => {
-		removeIframe();
 	});
 
 	function loadFacebookComments() {
@@ -61,87 +43,15 @@
 
 		document.body.appendChild(script);
 	}
-
-	function loadInstagramWidget() {
-		// Remover qualquer instância anterior do script do Instagram
-		const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
-		existingScripts.forEach((script) => script.remove());
-
-		// Remover qualquer instância anterior do objeto instgrm
-		if (window.instgrm) {
-			delete window.instgrm;
-		}
-
-		// Carrega o script do Instagram
-		const script = document.createElement('script');
-		script.src = '//www.instagram.com/embed.js';
-		script.async = true;
-		script.onload = () => {
-			// Inicializa o widget quando o script for carregado
-			if (window.instgrm) {
-				window.instgrm.Embeds.process();
-			}
-		};
-		document.body.appendChild(script);
-	}
-
-	function loadTwitterWidget() {
-		// Remover qualquer instância anterior do script do Twitter
-		const existingScripts = document.querySelectorAll(
-			'script[src*="platform.twitter.com/widgets.js"]'
-		);
-		existingScripts.forEach((script) => script.remove());
-
-		// Carregar o script do Twitter
-		const script = document.createElement('script');
-		script.id = 'twitter-widget-script';
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		script.charset = 'utf-8';
-
-		script.onload = () => {
-			// Inicializar o widget quando o script for carregado
-			if (window.twttr) {
-				window.twttr.widgets.load();
-			}
-		};
-
-		document.body.appendChild(script);
-	}
-
-function loadTiktokWidget() {
-		// Remover qualquer instância anterior do script do TikTok 
-		const existingScripts = document.querySelectorAll(
-			'script[src*="tiktok.com/embed.js"]'
-		);
-		existingScripts.forEach((script) => script.remove());
-
-		// Carregar o script do TikTok
-    const script = document.createElement('script');
-    script.id = 'tiktok-embed-script';
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    
-    script.onload = () => {
-      // O TikTok geralmente não requer uma inicialização explícita
-      // mas podemos forçar um re-parse se necessário
-      if (window.TikTok) {
-        //window.TikTok.reload();
-      }
-    };
-
-
-		document.body.appendChild(script);
-	}
 </script>
 
 <div id="fb-root"></div>
 
 <Seo
-	title={data.item.title}
+	title="{data.item.title} - Baixar CD - {SITE_NAME}"
 	description="{data.item.text?.substr(0, 150)}..."
-	url={HOST + data.item.link}
-	image="{HOST_API}/images/{data.item.image}"
+	url={HOST + '/downloads/' + data.item.slug}
+	image="{HOST_API}/images/downloads/{data.item.image}"
 />
 
 <div class="TopSpace"></div>
@@ -162,7 +72,11 @@ function loadTiktokWidget() {
 
 				<div class="img">
 					{#if data.item.image?.includes('.jpg')}
-						<img class="thumb" src="{HOST_API}/images/{data.item.image}" alt={data.item.title} />
+						<img
+							class="thumb"
+							src="{HOST_API}/images/downloads/{data.item.image}"
+							alt={data.item.title}
+						/>
 					{:else}
 						<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
 					{/if}
@@ -170,6 +84,14 @@ function loadTiktokWidget() {
 
 				<div class="text" id="textNews">
 					<p>{@html data.item.text}</p>
+				</div>
+				<div class="baixar">
+					<button
+						class="btn_transparent btn_baixar"
+						on:click={() => {
+							window.open(data.item.link);
+						}}>Quero baixar este CD</button
+					>
 				</div>
 				<div class="social">
 					<IconSocialNetwork url={HOST + data.item.link} />
@@ -183,7 +105,9 @@ function loadTiktokWidget() {
 					></div>
 				</div>
 				{#if data.token}
-					<br /><br /><a href="{HOST}/admin{data.item.link}" class="link">Editar notícia</a>
+					<br /><br /><a href="{HOST}/admin/downloads/update/{data.item.slug}" class="link"
+						>Editar download</a
+					>
 				{/if}
 			</div>
 		</div>
@@ -192,13 +116,28 @@ function loadTiktokWidget() {
 
 <div class="TopSpace"></div>
 
-<Banners banners={data.banners} />
-
-<TopNoticiasHome data={data.top} />
-
 <Banners banners={data.banners} region="rodape" />
 
 <style>
+	.baixar {
+		display: flex;
+		justify-content: center;
+	}
+	.btn_baixar {
+		padding: 16px;
+		padding-left: 64px;
+		padding-right: 64px;
+		border-radius: 50px;
+		font-family: 'Cabin', sans-serif;
+		font-weight: 700;
+		background-color: var(--secundary);
+		font-size: 18px;
+		color: var(--branco);
+	}
+	.btn_baixar:hover {
+		background-color: var(--primary);
+		color: var(--branco);
+	}
 	.comentarios {
 		margin-top: 50px;
 	}
@@ -222,6 +161,7 @@ function loadTiktokWidget() {
 		line-height: 28px;
 	}
 	.img {
+		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: auto;
@@ -249,6 +189,10 @@ function loadTiktokWidget() {
 		}
 		.img {
 			margin-bottom: 0px;
+		}
+		.thumb {
+			width: 400px;
+			margin: auto;
 		}
 	}
 </style>

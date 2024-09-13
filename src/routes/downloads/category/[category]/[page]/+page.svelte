@@ -47,7 +47,7 @@
 				<ItemCD
 					title={download.title}
 					url_image={HOST_API + '/images/downloads/' + download.image}
-					link={download.link}
+					link={'/downloads/' + download.slug}
 					date={formatarData(download.created_at)}
 				/>
 			{/each}
