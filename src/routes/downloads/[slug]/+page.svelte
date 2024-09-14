@@ -186,6 +186,8 @@
 			font-size: 32px;
 		}
 		.conteudo {
+			display: flex;
+			min-width: calc(100vw / 2);
 			margin-top: -30px;
 		}
 		.thumb {
