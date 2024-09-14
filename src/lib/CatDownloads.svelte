@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import ItemCD from '$lib/ItemCD.svelte';
 	export let data;
+	export let category;
 	let page = 24;
 </script>
 
@@ -21,7 +22,7 @@
 		</div>
 		<div class="box">
 			<div class="box-page">
-				<a href="/downloads/category/{data.category}/1" class="link" data-sveltekit-reload
+				<a href="/downloads/category/{category}/1" class="link" data-sveltekit-reload
 					>Veja todos os downloads</a
 				>
 			</div>
