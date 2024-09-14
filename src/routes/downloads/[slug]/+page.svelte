@@ -115,7 +115,7 @@
 
 <div class="TopSpace"></div>
 
-<CatDownloads data={data.relacionados} />
+<CatDownloads data={data.relacionados} category={data.category} />
 
 <Banners banners={data.banners} region="rodape" />
 
