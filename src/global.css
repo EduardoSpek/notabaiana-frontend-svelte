@@ -17,6 +17,7 @@
 	--label: rgb(68, 68, 68);
 	--link: rgb(0, 130, 229);
 	--hover-bg: rgb(253, 64, 64);
+	--preto-fixo: #000;
 }
 .dark-mode:root {
 	--primary: #ccc;
@@ -36,6 +37,7 @@
 	--form-color: yellow;
 	--label: #f5f3f2;
 	--link: yellow;
+	--preto-fixo: #000;
 }
 .visible {
 	color: var(--link);

@@ -1,7 +1,39 @@
 <script>
 	import { globalStore } from '$lib/index.js';
+	import IconSetaDireita from '$lib/svg/IconSetaDireita.svelte';
 	const openmenu = () => {
 		$globalStore.isOpen = !$globalStore.isOpen;
+	};
+	let cat1 = true;
+	const expand1 = () => {
+		cat1 = !cat1;
+		cat2 = false;
+		cat3 = false;
+		cat4 = false;
+	};
+
+	let cat2 = false;
+	const expand2 = () => {
+		cat1 = false;
+		cat2 = !cat2;
+		cat3 = false;
+		cat4 = false;
+	};
+
+	let cat3 = false;
+	const expand3 = () => {
+		cat1 = false;
+		cat2 = false;
+		cat3 = !cat3;
+		cat4 = false;
+	};
+
+	let cat4 = false;
+	const expand4 = () => {
+		cat1 = false;
+		cat2 = false;
+		cat3 = false;
+		cat4 = !cat4;
 	};
 </script>
 
@@ -16,18 +48,28 @@
 </div>
 
 <div class="menu-box {$globalStore.isOpen ? 'open' : ''}">
-	<div class="menu-title">Categorias</div>
-	<ul>
-		<li><a href="/" on:click={openmenu}>Home</a></li>
-		<li><a href="/news/category/famosos/1" on:click={openmenu}>Famosos</a></li>
-		<li><a href="/news/category/esportes/1" on:click={openmenu}>Esportes</a></li>
-		<li><a href="/news/category/justica/1" on:click={openmenu}>Justiça</a></li>
-		<li><a href="/news/category/saude/1" on:click={openmenu}>Saúde</a></li>
-		<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
-		<li><a href="/news/1/24" on:click={openmenu}>Todas as notícias</a></li>
-	</ul>
-	<div class="menu-title">Baixar CDs</div>
-	<ul>
+	<div class="menu-category">
+		<div class="menu-title">
+			<button class="btn_transparent" on:click={expand1}
+				><IconSetaDireita seta={cat1} /> Categorias</button
+			>
+		</div>
+		<ul class={cat1 ? 'visible' : 'invisible'}>
+			<li><a href="/" on:click={openmenu}>Home</a></li>
+			<li><a href="/news/category/famosos/1" on:click={openmenu}>Famosos</a></li>
+			<li><a href="/news/category/esportes/1" on:click={openmenu}>Esportes</a></li>
+			<li><a href="/news/category/justica/1" on:click={openmenu}>Justiça</a></li>
+			<li><a href="/news/category/saude/1" on:click={openmenu}>Saúde</a></li>
+			<li><a href="/news/category/municipios/1" on:click={openmenu}>Municípios</a></li>
+			<li><a href="/news/1/24" on:click={openmenu}>Todas as notícias</a></li>
+		</ul>
+	</div>
+	<div class="menu-title">
+		<button class="btn_transparent" on:click={expand2}
+			><IconSetaDireita seta={cat2} /> Baixar CDs</button
+		>
+	</div>
+	<ul class={cat2 ? 'visible' : 'invisible'}>
 		<li><a href="/downloads/1/24" on:click={openmenu}>Recentes</a></li>
 		<li><a href="/downloads/category/arrocha/1" on:click={openmenu}>Arrocha</a></li>
 		<li><a href="/downloads/category/arrochadeira/1" on:click={openmenu}>Arrochadeira</a></li>
@@ -50,13 +92,21 @@
 		<li><a href="/downloads/category/swingueira/1" on:click={openmenu}>Swingueira</a></li>
 		<li><a href="/downloads/category/variados/1" on:click={openmenu}>Variados</a></li>
 	</ul>
-	<div class="menu-title">Institucional</div>
-	<ul>
+	<div class="menu-title">
+		<button class="btn_transparent" on:click={expand3}
+			><IconSetaDireita seta={cat3} /> Institucional</button
+		>
+	</div>
+	<ul class={cat3 ? 'visible' : 'invisible'}>
 		<li><a href="/politica-de-privacidade" on:click={openmenu}>Política de Privacidade</a></li>
 		<li><a href="/fale-conosco" on:click={openmenu}>Fale conosco</a></li>
 	</ul>
-	<div class="menu-title">Administração</div>
-	<ul>
+	<div class="menu-title">
+		<button class="btn_transparent" on:click={expand4}
+			><IconSetaDireita seta={cat4} /> Administração</button
+		>
+	</div>
+	<ul class={cat4 ? 'visible' : 'invisible'}>
 		<li><a href="/admin/login" on:click={openmenu}>Entrar</a></li>
 	</ul>
 	<br />
@@ -67,16 +117,41 @@
 </div>
 
 <style>
+	.btn_transparent {
+		width: 100%;
+	}
+	.invisible {
+		display: none;
+	}
+	.visible {
+		display: block;
+		transition: all 1s ease;
+		animation: fadeIn 0.4s ease;
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 	.menu-title {
 		text-align: start;
-		margin-left: 20px;
+		margin-left: 10px;
 		margin-top: 30px;
 		font-family: 'Cabin', sans-serif;
 		font-size: 18px;
 		color: var(--dark-title);
-		border-bottom: 1px solid var(--dark);
-		padding-bottom: 10px;
-		margin-right: 20px;
+		margin-right: 10px;
+		background-color: var(--preto-fixo);
+		padding: 12px;
+		padding-left: 20px;
+		padding-bottom: 14px;
+		height: 20px;
+		border-radius: 50px;
 	}
 	ul {
 		list-style: none;
@@ -86,6 +161,7 @@
 		font-weight: lighter;
 	}
 	ul li {
+		margin-left: 10px;
 		margin-bottom: 12px;
 	}
 	ul li a {
