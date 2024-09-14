@@ -33,17 +33,18 @@
 	}
 	.card {
 		display: flex;
-		width: 100%;
-		gap: 16px;
+		width: calc((100vw / 2) - 32px);
+		gap: 26px;
 		margin-bottom: 14px;
 		padding-bottom: 14px;
 		border-bottom: 1px solid var(--cinza);
+		flex-direction: column;
 	}
 	.img {
-		width: 130px;
+		width: 100%;
 	}
 	.thumb {
-		width: 130px;
+		width: 100%;
 		border-radius: 4px;
 	}
 	.title {
