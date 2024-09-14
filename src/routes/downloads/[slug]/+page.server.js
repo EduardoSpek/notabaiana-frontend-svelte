@@ -27,10 +27,6 @@ export async function load({ fetch, params, cookies }) {
 		error(404, 'Not Found');
 	}
 
-	if (item.title_ai) {
-		item.title = item.title_ai;
-	}
-
 	if (item.text) {
 		item['text'] = item.text.replace(/\n/g, '<br>');
 
@@ -43,7 +39,13 @@ export async function load({ fetch, params, cookies }) {
 		item['text'] = item.text.replace(/<br><br><br>/g, '<br><br>');
 	}
 
+	const downRelacionados = await fetch(`${HOST_API}/downloads/category/${item.category}/1`).then(
+		(response) => {
+			return response.json();
+		}
+	);
+
 	const token = cookies.get('user_token');
 
-	return { banners: banners.banners, item, token };
+	return { banners: banners.banners, relacionados: downRelacionados.downloads, item, token };
 }

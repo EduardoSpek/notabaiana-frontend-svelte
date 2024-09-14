@@ -1,13 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
-	import { SITE_NAME, IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
+	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
 	import Banners from '$lib/Banners.svelte';
 	import { fly } from 'svelte/transition';
 	import Seo from '$lib/Seo.svelte';
-	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
+	import CatDownloads from '$lib/CatDownloads.svelte';
 	import IconSocialNetwork from '$lib/svg/IconSocialNetwork.svelte';
 
 	export let data;
+	let divRef;
 	let data_news = formatarData(data.item.created_at);
 
 	onMount(() => {
@@ -60,61 +61,61 @@
 
 <section>
 	<article>
-		<div class="central">
-			<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
-				<div class="title">
-					<h1>{data.item.title}</h1>
-				</div>
+		<div class="conteudo" in:fly={{ duration: 200, y: 500 }}>
+			<div class="title">
+				<h1>{data.item.title}</h1>
+			</div>
 
-				<div class="data_news">
-					Publicado em {data_news}
-				</div>
+			<div class="data_news">
+				Publicado em {data_news}
+			</div>
 
-				<div class="img">
-					{#if data.item.image?.includes('.jpg')}
-						<img
-							class="thumb"
-							src="{HOST_API}/images/downloads/{data.item.image}"
-							alt={data.item.title}
-						/>
-					{:else}
-						<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
-					{/if}
-				</div>
-
-				<div class="text" id="textNews">
-					<p>{@html data.item.text}</p>
-				</div>
-				<div class="baixar">
-					<button
-						class="btn_transparent btn_baixar"
-						on:click={() => {
-							window.open(data.item.link);
-						}}>Quero baixar este CD</button
-					>
-				</div>
-				<div class="social">
-					<IconSocialNetwork url={HOST + data.item.link} />
-				</div>
-				<div class="comentarios">
-					<div
-						class="fb-comments"
-						data-href={HOST + data.item.link}
-						data-width="100%"
-						data-numposts="5"
-					></div>
-				</div>
-				{#if data.token}
-					<br /><br /><a href="{HOST}/admin/downloads/update/{data.item.slug}" class="link"
-						>Editar download</a
-					>
+			<div class="img">
+				{#if data.item.image?.includes('.jpg')}
+					<img
+						class="thumb"
+						src="{HOST_API}/images/downloads/{data.item.image}"
+						alt={data.item.title}
+					/>
+				{:else}
+					<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
 				{/if}
 			</div>
+
+			<div class="text" id="textNews">
+				<p>{@html data.item.text}</p>
+			</div>
+			<div class="baixar">
+				<button
+					class="btn_transparent btn_baixar"
+					on:click={() => {
+						window.open(data.item.link);
+					}}>Quero baixar este CD</button
+				>
+			</div>
+			<div class="social">
+				<IconSocialNetwork url={HOST + data.item.link} />
+			</div>
+			<div class="comentarios">
+				<div
+					class="fb-comments"
+					data-href={HOST + data.item.link}
+					data-width="100%"
+					data-numposts="5"
+				></div>
+			</div>
+			{#if data.token}
+				<br /><br /><a href="{HOST}/admin/downloads/update/{data.item.slug}" class="link"
+					>Editar download</a
+				>
+			{/if}
 		</div>
 	</article>
 </section>
 
 <div class="TopSpace"></div>
+
+<CatDownloads data={data.relacionados} />
 
 <Banners banners={data.banners} region="rodape" />
 
@@ -185,13 +186,8 @@
 		h1 {
 			font-size: 32px;
 		}
-		.conteudo {
-			display: flex;
-			min-width: calc(100vw / 2);
-			margin-top: -30px;
-		}
 		.thumb {
-			width: 400px;
+			width: 550px;
 			margin: auto;
 		}
 	}
