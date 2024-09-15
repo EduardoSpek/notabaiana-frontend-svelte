@@ -13,6 +13,12 @@
 			<button
 				class="btn_transparent"
 				on:click={() => {
+					window.location = '/admin/downloads';
+				}}><li>Downloads</li></button
+			>
+			<button
+				class="btn_transparent"
+				on:click={() => {
 					window.location = '/admin/banners';
 				}}><li>Banners</li></button
 			>
