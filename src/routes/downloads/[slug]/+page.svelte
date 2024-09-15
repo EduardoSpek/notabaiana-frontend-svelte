@@ -105,7 +105,7 @@
 				></div>
 			</div>
 			{#if data.token}
-				<br /><br /><a href="{HOST}/admin/downloads/update/{data.item.slug}" class="link"
+				<br /><br /><a href="{HOST}/admin/downloads/{data.item.slug}" class="link"
 					>Editar download</a
 				>
 			{/if}
