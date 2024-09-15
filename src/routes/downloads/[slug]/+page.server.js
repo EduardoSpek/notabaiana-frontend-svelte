@@ -47,5 +47,5 @@ export async function load({ fetch, params, cookies }) {
 
 	const token = cookies.get('user_token');
 
-	return { banners: banners.banners, relacionados: downRelacionados.downloads, item, token };
+	return { banners: banners.banners, relacionados: downRelacionados.downloads,category: item.category, item, token };
 }
