@@ -39,12 +39,12 @@
 {#if search_visible}
 	<div class="search-control">
 		<div class="search">
-			<form action="/downloads/search/1" method="get" on:submit={checkWords}>
+			<form action="/conteudo-musical/search/1" method="get" on:submit={checkWords}>
 				<input
 					type="text"
 					name="search"
 					id="search"
-					placeholder="Encontrar CD..."
+					placeholder="Encontrar artista..."
 					bind:this={ref}
 				/>
 				<button type="submit">Buscar</button>

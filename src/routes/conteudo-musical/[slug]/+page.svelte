@@ -49,10 +49,10 @@
 <div id="fb-root"></div>
 
 <Seo
-	title="{data.item.title} - Baixar CD"
+	title="{data.item.title} - Conteúdo Musical"
 	description="{data.item.text?.substr(0, 150)}..."
-	url={HOST + '/downloads/' + data.item.slug}
-	image="{HOST_API}/images/downloads/{data.item.image}"
+	url={HOST + '/conteudo-musical/' + data.item.slug}
+	image="{HOST_API}/images/conteudo-musical/{data.item.image}"
 />
 
 <div class="TopSpace"></div>
@@ -90,11 +90,11 @@
 					class="btn_transparent btn_baixar"
 					on:click={() => {
 						window.open(data.item.link);
-					}}>Quero baixar este CD</button
+					}}>Quero ouvir este conteúdo</button
 				>
 			</div>
 			<div class="social">
-				<IconSocialNetwork url={HOST + "/downloads/" + data.item.slug} />
+				<IconSocialNetwork url={HOST + '/conteudo-musical/' + data.item.slug} />
 			</div>
 			<div class="comentarios">
 				<div
@@ -105,7 +105,7 @@
 				></div>
 			</div>
 			{#if data.token}
-				<br /><br /><a href="{HOST}/admin/downloads/{data.item.slug}" class="link"
+				<br /><br /><a href="{HOST}/admin/conteudo-musical/{data.item.slug}" class="link"
 					>Editar download</a
 				>
 			{/if}

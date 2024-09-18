@@ -18,8 +18,8 @@
 </script>
 
 <svelte:head>
-	<title>Administração - Lista de Downloads - {SITE_NAME}</title>
-	<meta name="description" content="Lista de Downloads - {SITE_NAME}" />
+	<title>Administração - Lista de Conteúdo Musical - {SITE_NAME}</title>
+	<meta name="description" content="Lista de Conteúdo Musical - {SITE_NAME}" />
 	<meta name="robots" content="index, follow" />
 </svelte:head>
 
@@ -28,7 +28,7 @@
 <section>
 	<div class="central">
 		<div class="conteudo-flow">
-			<div class="emalta">Downloads</div>
+			<div class="emalta">Conteúdo Musical</div>
 			<form action="?/deleteall" method="post" use:enhance>
 				<div class="actions">
 					<button
@@ -41,8 +41,8 @@
 							}
 						}}>Apagar selecionados</button
 					>
-					<a href="/admin/downloads/create" class="link"
-						><button class="btn_transparent novo">Novo download</button></a
+					<a href="/admin/conteudo-musical/create" class="link"
+						><button class="btn_transparent novo">Novo Conteúdo Musical</button></a
 					>
 				</div>
 				<table>
@@ -54,7 +54,10 @@
 					{#each data.downloads as download}
 						<tr>
 							<td><input type="checkbox" name="id[]" id="id" value={download.id} /></td>
-							<td><a href="/admin/downloads/{download.slug}" class="link">{download.title}</a></td>
+							<td
+								><a href="/admin/conteudo-musical/{download.slug}" class="link">{download.title}</a
+								></td
+							>
 							<td>
 								<form action="?/delete" method="post" use:enhance>
 									<input type="hidden" name="id" value={download.id} />
@@ -68,9 +71,9 @@
 			<section>
 				<div class="pagination">
 					{#if parseInt(data.pagination.currentPage) >= 4}
-						<button on:click={() => goto('/admin/downloads/1/16')} class="btn_transparent">
+						<button on:click={() => goto('/admin/conteudo-musical/1/16')} class="btn_transparent">
 							<div class="page">
-								<a href="/admin/downloads/1/16" class="link">1</a>
+								<a href="/admin/conteudo-musical/1/16" class="link">1</a>
 							</div>
 						</button>
 						...
@@ -79,11 +82,13 @@
 						{#each data.pagination.previousPages as previousPage}
 							{#if previousPage > 0}
 								<button
-									on:click={() => goto('/admin/downloads/' + previousPage + '/16')}
+									on:click={() => goto('/admin/conteudo-musical/' + previousPage + '/16')}
 									class="btn_transparent"
 								>
 									<div class="page">
-										<a href="/admin/downloads/{previousPage}/16" class="link">{previousPage}</a>
+										<a href="/admin/conteudo-musical/{previousPage}/16" class="link"
+											>{previousPage}</a
+										>
 									</div>
 								</button>
 							{/if}
@@ -91,12 +96,13 @@
 					{/if}
 					{#if data.pagination.currentPage}
 						<button
-							on:click={() => goto('/admin/downloads/' + data.pagination.currentPage + '/16')}
+							on:click={() =>
+								goto('/admin/conteudo-musical/' + data.pagination.currentPage + '/16')}
 							class="btn_transparent"
 						>
 							<div class="page page_current">
 								<a
-									href="/admin/downloads/{data.pagination.currentPage}/16"
+									href="/admin/conteudo-musical/{data.pagination.currentPage}/16"
 									class="link link_current">{data.pagination.currentPage}</a
 								>
 							</div>
@@ -105,11 +111,11 @@
 					{#if data.pagination.nextPages}
 						{#each data.pagination.nextPages as nextPage}
 							<button
-								on:click={() => goto('/admin/downloads/' + nextPage + '/16')}
+								on:click={() => goto('/admin/conteudo-musical/' + nextPage + '/16')}
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/admin/downloads/{nextPage}/16" class="link">{nextPage}</a>
+									<a href="/admin/conteudo-musical/{nextPage}/16" class="link">{nextPage}</a>
 								</div>
 							</button>
 						{/each}
@@ -117,12 +123,12 @@
 					{#if comparePage < parseInt(data.pagination.totalPages)}
 						...
 						<button
-							on:click={() => goto('/admin/downloads/' + data.pagination.totalPages + '/16')}
+							on:click={() => goto('/admin/conteudo-musical/' + data.pagination.totalPages + '/16')}
 							class="btn_transparent"
 						>
 							<div class="page">
 								<a
-									href="/admin/downloads/{data.pagination.totalPages}/16"
+									href="/admin/conteudo-musical/{data.pagination.totalPages}/16"
 									class="link"
 									data-sveltekit-preload-code="viewport">{data.pagination.totalPages}</a
 								>

@@ -13,8 +13,8 @@
 			<button
 				class="btn_transparent"
 				on:click={() => {
-					window.location = '/admin/downloads';
-				}}><li>Downloads</li></button
+					window.location = '/admin/conteudo-musical';
+				}}><li>Conteúdo Musical</li></button
 			>
 			<button
 				class="btn_transparent"

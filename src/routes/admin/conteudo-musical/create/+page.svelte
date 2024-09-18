@@ -8,6 +8,7 @@
 <section>
 	<div class="central">
 		<div class="conteudo-flow">
+			<div class="emalta">Criar Conteúdo Musical</div>
 			<form action="?/create" method="post" id="formDefault" enctype="multipart/form-data">
 				<input type="hidden" id="ctoken" name="token" value={data.token} />
 

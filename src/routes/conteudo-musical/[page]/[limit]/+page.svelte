@@ -33,10 +33,10 @@
 </script>
 
 <Seo
-	title="Baixe CDs atuais aqui - Página {data.pagination.currentPage} - {SITE_NAME}"
-	description="Lista com os CDs mais recentes da atualidade - Página {data.pagination
+	title="Conteúdo Musical - Página {data.pagination.currentPage} - {SITE_NAME}"
+	description="Lista com conteúdos musicais mais recentes - Página {data.pagination
 		.currentPage} - {SITE_NAME}"
-	url={HOST + '/downloads/' + data.pagination.currentPage + '/' + page}
+	url={HOST + '/conteudo-musical/' + data.pagination.currentPage + '/' + page}
 	image="{HOST}/notabaiana_1200.jpg"
 />
 
@@ -48,7 +48,7 @@
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
 		<div class="list">
-			<div class="emalta">Baixar CDs - Recentes</div>
+			<div class="emalta">Conteúdo Musical - Recentes</div>
 			<div>
 				<IconSearchSvg onSearchClick={opensearch} />
 			</div>
@@ -59,7 +59,7 @@
 				<ItemCD
 					title={download.title}
 					url_image={HOST_API + '/images/downloads/' + download.image}
-					link={'/downloads/' + download.slug}
+					link={'/conteudo-musical/' + download.slug}
 					date={formatarData(download.created_at)}
 				/>
 			{/each}
@@ -68,9 +68,9 @@
 		<section>
 			<div class="pagination">
 				{#if parseInt(data.pagination.currentPage) >= 4}
-					<button on:click={() => goto('/downloads/1/' + page)} class="btn_transparent">
+					<button on:click={() => goto('/conteudo-musical/1/' + page)} class="btn_transparent">
 						<div class="page">
-							<a href="/downloads/1/{page}" class="link">1</a>
+							<a href="/conteudo-musical/1/{page}" class="link">1</a>
 						</div>
 					</button>
 					...
@@ -79,11 +79,11 @@
 					{#each data.pagination.previousPages as previousPage}
 						{#if previousPage > 0}
 							<button
-								on:click={() => goto('/downloads/' + previousPage + '/' + page)}
+								on:click={() => goto('/conteudo-musical/' + previousPage + '/' + page)}
 								class="btn_transparent"
 							>
 								<div class="page">
-									<a href="/downloads/{previousPage}/{page}" class="link">{previousPage}</a>
+									<a href="/conteudo-musical/{previousPage}/{page}" class="link">{previousPage}</a>
 								</div>
 							</button>
 						{/if}
@@ -91,12 +91,13 @@
 				{/if}
 				{#if data.pagination.currentPage}
 					<button
-						on:click={() => goto('/downloads/' + data.pagination.currentPage + '/' + page)}
+						on:click={() => goto('/conteudo-musical/' + data.pagination.currentPage + '/' + page)}
 						class="btn_transparent"
 					>
 						<div class="page page_current">
-							<a href="/downloads/{data.pagination.currentPage}/{page}" class="link link_current"
-								>{data.pagination.currentPage}</a
+							<a
+								href="/conteudo-musical/{data.pagination.currentPage}/{page}"
+								class="link link_current">{data.pagination.currentPage}</a
 							>
 						</div>
 					</button>
@@ -104,11 +105,11 @@
 				{#if data.pagination.nextPages}
 					{#each data.pagination.nextPages as nextPage}
 						<button
-							on:click={() => goto('/downloads/' + nextPage + '/' + page)}
+							on:click={() => goto('/conteudo-musical/' + nextPage + '/' + page)}
 							class="btn_transparent"
 						>
 							<div class="page">
-								<a href="/downloads/{nextPage}/{page}" class="link">{nextPage}</a>
+								<a href="/conteudo-musical/{nextPage}/{page}" class="link">{nextPage}</a>
 							</div>
 						</button>
 					{/each}
@@ -116,11 +117,11 @@
 				{#if comparePage < parseInt(data.pagination.totalPages)}
 					...
 					<button
-						on:click={() => goto('/downloads/' + data.pagination.totalPages + '/' + page)}
+						on:click={() => goto('/conteudo-musical/' + data.pagination.totalPages + '/' + page)}
 						class="btn_transparent"
 					>
 						<div class="page">
-							<a href="/downloads/{data.pagination.totalPages}/{page}" class="link"
+							<a href="/conteudo-musical/{data.pagination.totalPages}/{page}" class="link"
 								>{data.pagination.totalPages}</a
 							>
 						</div>

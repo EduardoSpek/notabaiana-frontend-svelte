@@ -39,7 +39,7 @@ export const actions = {
 		const data = await response.json();
 
 		if (data.id) {
-			redirect(302, HOST + '/admin/downloads');
+			redirect(302, HOST + '/admin/conteudo-musical');
 		} else {
 			erro = true;
 			return { erro: erro };

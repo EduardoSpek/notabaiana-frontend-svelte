@@ -9,7 +9,7 @@ export async function GET() {
 
 	downloads.downloads.forEach((element) => {
 		urls += `<url>
-        <loc>${host + '/downloads/' + element.slug}</loc>
+        <loc>${host + '/conteudo-musical/' + element.slug}</loc>
         <lastmod>${element.created_at}</lastmod>
         <priority>1.0</priority>
     </url>`;
