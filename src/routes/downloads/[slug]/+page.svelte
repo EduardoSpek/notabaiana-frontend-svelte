@@ -94,7 +94,7 @@
 				>
 			</div>
 			<div class="social">
-				<IconSocialNetwork url={HOST + data.item.link} />
+				<IconSocialNetwork url={HOST + "/downloads/" + data.item.slug} />
 			</div>
 			<div class="comentarios">
 				<div
