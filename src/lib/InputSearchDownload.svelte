@@ -21,6 +21,16 @@
 		ref?.focus();
 	};
 
+	const checkWords = (e) => {
+		if (ref.value.length < 3) {
+			e.preventDefault();
+			alert('É necessário uma palavra com no mínimo 3 caracteres');
+			clearTimeout(timeoutID);
+			return;
+		}
+		search_visible = !search_visible;
+	};
+
 	$: if (search_visible) {
 		setFocus();
 	}
@@ -29,7 +39,7 @@
 {#if search_visible}
 	<div class="search-control">
 		<div class="search">
-			<form action="/downloads/search/1" method="get" on:submit={opensearch}>
+			<form action="/downloads/search/1" method="get" on:submit={checkWords}>
 				<input
 					type="text"
 					name="search"

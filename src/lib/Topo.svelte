@@ -24,6 +24,16 @@
 		await tick();
 		ref?.focus();
 	};
+
+	const checkWords = (e) => {
+		if (ref.value.length < 3) {
+			e.preventDefault();
+			alert('É necessário uma palavra com no mínimo 3 caracteres');
+			clearTimeout(timeoutID);
+			return;
+		}
+		search_visible = !search_visible;
+	};
 </script>
 
 <header>
@@ -40,7 +50,7 @@
 
 	{#if search_visible}
 		<div class="search">
-			<form action="/news/search/1" method="get" on:submit={opensearch}>
+			<form action="/news/search/1" method="get" on:submit={checkWords}>
 				<input type="text" name="search" placeholder="Procurar notícia..." bind:this={ref} />
 				<button type="submit">Buscar</button>
 			</form>
