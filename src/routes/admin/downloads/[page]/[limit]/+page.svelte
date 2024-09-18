@@ -42,7 +42,7 @@
 						}}>Apagar selecionados</button
 					>
 					<a href="/admin/downloads/create" class="link"
-						><button class="btn_transparent novo">Nova notícia</button></a
+						><button class="btn_transparent novo">Novo download</button></a
 					>
 				</div>
 				<table>
