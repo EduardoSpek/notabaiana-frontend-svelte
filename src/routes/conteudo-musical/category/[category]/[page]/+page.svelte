@@ -17,9 +17,9 @@ import IconSearchSvg from "$lib/IconSearchSvg.svelte";
 import InputSearchDownload from "$lib/InputSearchDownload.svelte";
 import { tick } from "svelte";
 export let data;
-let page = 24;
+const page = 24;
 export let comparePage;
-$: comparePage = parseInt(data.pagination.currentPage) + 2;
+$: comparePage = Number.parseInt(data.pagination.currentPage) + 2;
 
 onMount(() => {
 	$globalStore.listNewsExpand = true;

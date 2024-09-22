@@ -15,8 +15,8 @@ import Seo from "$lib/Seo.svelte";
 import Banners from "$lib/Banners.svelte";
 export let data;
 export let comparePage;
-let page = 24;
-$: comparePage = parseInt(data.pagination.currentPage) + 2;
+const page = 24;
+$: comparePage = Number.parseInt(data.pagination.currentPage) + 2;
 
 onMount(() => {
 	$globalStore.listNewsExpand = true;

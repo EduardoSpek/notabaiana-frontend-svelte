@@ -13,8 +13,8 @@ import Seo from "$lib/Seo.svelte";
 import Banners from "$lib/Banners.svelte";
 export let data;
 export let comparePage;
-let page = 24;
-$: comparePage = parseInt(data.pagination.currentPage) + 2;
+const page = 24;
+$: comparePage = Number.parseInt(data.pagination.currentPage) + 2;
 
 onMount(() => {
 	loadInstagramWidget();
@@ -27,11 +27,11 @@ function loadInstagramWidget() {
 	const existingScripts = document.querySelectorAll(
 		'script[src*="instagram.com/embed.js"]',
 	);
-	existingScripts.forEach((script) => script.remove());
+	existingScripts.forEach((script, i) => script.remove());
 
 	// Remover qualquer instância anterior do objeto instgrm
 	if (window.instgrm) {
-		delete window.instgrm;
+		window.instgrm = undefined;
 	}
 
 	// Carrega o script do Instagram
@@ -52,7 +52,7 @@ function loadTwitterWidget() {
 	const existingScripts = document.querySelectorAll(
 		'script[src*="platform.twitter.com/widgets.js"]',
 	);
-	existingScripts.forEach((script) => script.remove());
+	existingScripts.forEach((script, i) => script.remove());
 
 	// Carregar o script do Twitter
 	const script = document.createElement("script");

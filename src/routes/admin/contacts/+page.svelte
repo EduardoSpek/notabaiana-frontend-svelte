@@ -4,14 +4,16 @@ import DeleteSvg from "$lib/svg/delete.svelte";
 import { enhance } from "$app/forms";
 export let data;
 
-let checkbox = [];
+const checkbox = [];
 
 const selectAll = () => {
 	const idAll = document.getElementsByName("id[]");
 	const ids = document.getElementById("ids");
-	idAll.forEach((id) => {
-		id.checked = ids.checked;
-	});
+
+	for (let index = 0; index < idAll.length; index++) {
+		const element = idAll[index];
+		element.checked = ids.checked;
+	}
 };
 </script>
 

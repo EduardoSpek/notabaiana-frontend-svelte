@@ -1,5 +1,5 @@
-import { HOST_API } from "$lib/index.js";
-import { error } from "@sveltejs/kit";
+import { HOST_API } from '$lib/index.js';
+import { error } from '@sveltejs/kit';
 export async function load({ fetch, params, cookies }) {
 	let item;
 	let banners;
@@ -24,34 +24,34 @@ export async function load({ fetch, params, cookies }) {
 	});
 
 	if (!item.id) {
-		error(404, "Not Found");
+		error(404, 'Not Found');
 	}
 
 	if (item.text) {
-		item["text"] = item.text.replace(/\n/g, "<br>");
+		item.text = item.text.replace(/\n/g, '<br>');
 
-		item["text"] = item.text.replace(/<br><br><br><br><br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br><br><br><br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br><br><br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br> <br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br><br> <br><br> <br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br><br> <br><br>/g, "<br><br>");
-		item["text"] = item.text.replace(/<br><br><br>/g, "<br><br>");
+		item.text = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br><br><br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br> <br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br><br> <br><br> <br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
+		item.text = item.text.replace(/<br><br><br>/g, '<br><br>');
 	}
 
-	const downRelacionados = await fetch(
-		`${HOST_API}/downloads/category/${item.category}/1`,
-	).then((response) => {
-		return response.json();
-	});
+	const downRelacionados = await fetch(`${HOST_API}/downloads/category/${item.category}/1`).then(
+		(response) => {
+			return response.json();
+		}
+	);
 
-	const token = cookies.get("user_token");
+	const token = cookies.get('user_token');
 
 	return {
 		banners: banners.banners,
 		relacionados: downRelacionados.downloads,
 		category: item.category,
 		item,
-		token,
+		token
 	};
 }

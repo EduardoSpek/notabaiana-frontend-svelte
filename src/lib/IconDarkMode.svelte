@@ -4,7 +4,7 @@ export let html;
 
 function darkmode(e) {
 	html.classList.toggle("dark-mode");
-	let dark_mode = localStorage.getItem("dark-mode");
+	const dark_mode = localStorage.getItem("dark-mode");
 	if (dark_mode) {
 		localStorage.removeItem("dark-mode");
 	} else {
@@ -13,7 +13,7 @@ function darkmode(e) {
 }
 onMount(() => {
 	html = document.querySelector("html");
-	let dark_mode = localStorage.getItem("dark-mode");
+	const dark_mode = localStorage.getItem("dark-mode");
 	if (dark_mode) {
 		html.classList.add("dark-mode");
 	}

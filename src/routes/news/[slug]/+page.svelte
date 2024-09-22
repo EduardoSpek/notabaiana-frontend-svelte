@@ -9,7 +9,7 @@ import TopNoticiasHome from "$lib/TopNoticiasHome.svelte";
 import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 
 export let data;
-let data_news = formatarData(data.item.created_at);
+const data_news = formatarData(data.item.created_at);
 let textNews;
 let divRef;
 
@@ -39,11 +39,6 @@ function loadFacebookComments() {
 		existingScript.remove();
 	}
 
-	// Resetar o objeto FB se existir
-	if (window.FB) {
-		delete window.FB;
-	}
-
 	// Carregar o SDK do Facebook
 	const script = document.createElement("script");
 	script.id = "facebook-jssdk";
@@ -68,11 +63,11 @@ function loadInstagramWidget() {
 	const existingScripts = document.querySelectorAll(
 		'script[src*="instagram.com/embed.js"]',
 	);
-	existingScripts.forEach((script) => script.remove());
+	existingScripts.forEach((script, i) => script.remove());
 
 	// Remover qualquer instância anterior do objeto instgrm
 	if (window.instgrm) {
-		delete window.instgrm;
+		window.instgrm = undefined;
 	}
 
 	// Carrega o script do Instagram
@@ -93,7 +88,7 @@ function loadTwitterWidget() {
 	const existingScripts = document.querySelectorAll(
 		'script[src*="platform.twitter.com/widgets.js"]',
 	);
-	existingScripts.forEach((script) => script.remove());
+	existingScripts.forEach((script, i) => script.remove());
 
 	// Carregar o script do Twitter
 	const script = document.createElement("script");
@@ -117,7 +112,7 @@ function loadTiktokWidget() {
 	const existingScripts = document.querySelectorAll(
 		'script[src*="tiktok.com/embed.js"]',
 	);
-	existingScripts.forEach((script) => script.remove());
+	existingScripts.forEach((script, i) => script.remove());
 
 	// Carregar o script do TikTok
 	const script = document.createElement("script");

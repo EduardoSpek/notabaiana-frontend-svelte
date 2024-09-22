@@ -9,7 +9,7 @@ import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 
 export let data;
 let divRef;
-let data_news = formatarData(data.item.created_at);
+const data_news = formatarData(data.item.created_at);
 
 onMount(() => {
 	loadFacebookComments();
@@ -24,7 +24,7 @@ function loadFacebookComments() {
 
 	// Resetar o objeto FB se existir
 	if (window.FB) {
-		delete window.FB;
+		window.FB = undefined;
 	}
 
 	// Carregar o SDK do Facebook

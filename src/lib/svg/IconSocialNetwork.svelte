@@ -1,18 +1,18 @@
 <script>
-let largura_viewbox = 64;
-let largura_svg = 36;
-let largura_circle = 32;
-let color_fill = "var(--branco)";
+const largura_viewbox = 64;
+const largura_svg = 36;
+const largura_circle = 32;
+const color_fill = "var(--branco)";
 export let url;
 
 const openCenteredWindow = (url) => {
 	// Define as dimensões da nova janela
-	var width = 800;
-	var height = 600;
+	const width = 800;
+	const height = 600;
 
 	// Calcula a posição para centralizar a janela
-	var left = window.screen.width / 2 - width / 2;
-	var top = window.screen.height / 2 - height / 2;
+	const left = window.screen.width / 2 - width / 2;
+	const top = window.screen.height / 2 - height / 2;
 
 	// Abre a nova janela com as dimensões e posição calculadas
 	window.open(

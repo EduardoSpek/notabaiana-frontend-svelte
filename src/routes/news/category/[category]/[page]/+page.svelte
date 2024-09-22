@@ -7,7 +7,7 @@ import Seo from "$lib/Seo.svelte";
 import Banners from "$lib/Banners.svelte";
 export let data;
 export let comparePage;
-$: comparePage = parseInt(data.pagination.currentPage) + 2;
+$: comparePage = Number.parseInt(data.pagination.currentPage) + 2;
 </script>
 
 <Seo
