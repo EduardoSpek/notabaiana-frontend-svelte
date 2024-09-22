@@ -1,4 +1,4 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST_API } from "$lib/index.js";
 export async function load({ fetch, params }) {
 	let news;
 	let banners;
@@ -10,7 +10,9 @@ export async function load({ fetch, params }) {
 	};
 
 	const fnNews = () => {
-		return fetch(`${HOST_API}/news/category/${params.category}/${params.page}`).then((res) => {
+		return fetch(
+			`${HOST_API}/news/category/${params.category}/${params.page}`,
+		).then((res) => {
 			return res.json();
 		});
 	};
@@ -32,6 +34,6 @@ export async function load({ fetch, params }) {
 		banners: banners.banners,
 		news: news.news,
 		pagination: news.pagination,
-		category: news.category
+		category: news.category,
 	};
 }

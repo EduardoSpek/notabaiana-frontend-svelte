@@ -1,14 +1,14 @@
 <script>
-	import { HOST_API } from '$lib/index.js';
-	export let banners;
-	export let region;
-	let bannersTopo;
-	let aBanners = banners.flat();
-	if (region) {
-		bannersTopo = aBanners.filter((item, i) => item.tag === region);
-	} else {
-		bannersTopo = aBanners;
-	}
+import { HOST_API } from "$lib/index.js";
+export let banners;
+export let region;
+let bannersTopo;
+let aBanners = banners.flat();
+if (region) {
+	bannersTopo = aBanners.filter((item, i) => item.tag === region);
+} else {
+	bannersTopo = aBanners;
+}
 </script>
 
 {#if bannersTopo.length > 0}

@@ -1,5 +1,5 @@
-import { HOST_API } from '$lib/index.js';
-import { error } from '@sveltejs/kit';
+import { HOST_API } from "$lib/index.js";
+import { error } from "@sveltejs/kit";
 export async function load({ fetch, params, cookies }) {
 	let item;
 	let top;
@@ -32,7 +32,7 @@ export async function load({ fetch, params, cookies }) {
 	});
 
 	if (!item.id) {
-		error(404, 'Not Found');
+		error(404, "Not Found");
 	}
 
 	if (item.title_ai) {
@@ -40,18 +40,18 @@ export async function load({ fetch, params, cookies }) {
 	}
 
 	if (item.text) {
-		item['text'] = item.text.replace(/\n/g, '<br>');
+		item["text"] = item.text.replace(/\n/g, "<br>");
 
-		item['text'] = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br><br><br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br> <br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br><br> <br><br> <br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
-		item['text'] = item.text.replace(/<br><br><br>/g, '<br><br>');
+		item["text"] = item.text.replace(/<br><br><br><br><br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br><br><br><br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br><br><br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br> <br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br><br> <br><br> <br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br><br> <br><br>/g, "<br><br>");
+		item["text"] = item.text.replace(/<br><br><br>/g, "<br><br>");
 	}
 
-	const token = cookies.get('user_token');
+	const token = cookies.get("user_token");
 
 	top.splice(top.length - 2, 2);
 

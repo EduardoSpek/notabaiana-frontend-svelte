@@ -1,10 +1,10 @@
 <script>
-	import { HOST_API, formatarData } from '$lib/index.js';
-	import { fly } from 'svelte/transition';
-	import ItemCD from '$lib/ItemCD.svelte';
-	export let data;
-	export let category;
-	let page = 24;
+import { HOST_API, formatarData } from "$lib/index.js";
+import { fly } from "svelte/transition";
+import ItemCD from "$lib/ItemCD.svelte";
+export let data;
+export let category;
+let page = 24;
 </script>
 
 <section>

@@ -1,13 +1,13 @@
 <script>
-	import { goto } from '$app/navigation';
-	import { HOST, HOST_API, formatarData } from '$lib/index.js';
-	import { fly } from 'svelte/transition';
-	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
-	import Seo from '$lib/Seo.svelte';
-	import Banners from '$lib/Banners.svelte';
-	export let data;
-	export let comparePage;
-	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+import { goto } from "$app/navigation";
+import { HOST, HOST_API, formatarData } from "$lib/index.js";
+import { fly } from "svelte/transition";
+import ItemNewsHome from "$lib/ItemNewsHome.svelte";
+import Seo from "$lib/Seo.svelte";
+import Banners from "$lib/Banners.svelte";
+export let data;
+export let comparePage;
+$: comparePage = parseInt(data.pagination.currentPage) + 2;
 </script>
 
 <Seo

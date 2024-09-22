@@ -1,9 +1,9 @@
 <script>
-	import { SITE_NAME, formatarData } from '../lib/index';
-	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
-	import TopNoticiasCategorias from '$lib/TopNoticiasCategorias.svelte';
-	import Banners from '$lib/Banners.svelte';
-	export let data;
+import { SITE_NAME, formatarData } from "../lib/index";
+import TopNoticiasHome from "$lib/TopNoticiasHome.svelte";
+import TopNoticiasCategorias from "$lib/TopNoticiasCategorias.svelte";
+import Banners from "$lib/Banners.svelte";
+export let data;
 </script>
 
 <svelte:head>

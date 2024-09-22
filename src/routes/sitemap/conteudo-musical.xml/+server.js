@@ -1,7 +1,7 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST_API } from "$lib/index.js";
 
 export async function GET() {
-	const host = 'https://www.notabaiana.com.br';
+	const host = "https://www.notabaiana.com.br";
 	const response = await fetch(`${HOST_API}/downloads/1/1000`);
 	const data = await response.json();
 	let downloads = data;
@@ -9,7 +9,7 @@ export async function GET() {
 
 	downloads.downloads.forEach((element) => {
 		urls += `<url>
-        <loc>${host + '/conteudo-musical/' + element.slug}</loc>
+        <loc>${host + "/conteudo-musical/" + element.slug}</loc>
         <lastmod>${element.created_at}</lastmod>
         <priority>1.0</priority>
     </url>`;
@@ -28,8 +28,8 @@ export async function GET() {
 		</urlset>`.trim(),
 		{
 			headers: {
-				'Content-Type': 'application/xml'
-			}
-		}
+				"Content-Type": "application/xml",
+			},
+		},
 	);
 }

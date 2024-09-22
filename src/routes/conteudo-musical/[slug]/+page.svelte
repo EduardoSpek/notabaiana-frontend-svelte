@@ -1,49 +1,50 @@
 <script>
-	import { onMount } from 'svelte';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
-	import Banners from '$lib/Banners.svelte';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import CatDownloads from '$lib/CatDownloads.svelte';
-	import IconSocialNetwork from '$lib/svg/IconSocialNetwork.svelte';
+import { onMount } from "svelte";
+import { IMG_PADRAO, HOST, HOST_API, formatarData } from "$lib/index.js";
+import Banners from "$lib/Banners.svelte";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import CatDownloads from "$lib/CatDownloads.svelte";
+import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 
-	export let data;
-	let divRef;
-	let data_news = formatarData(data.item.created_at);
+export let data;
+let divRef;
+let data_news = formatarData(data.item.created_at);
 
-	onMount(() => {
-		loadFacebookComments();
-	});
+onMount(() => {
+	loadFacebookComments();
+});
 
-	function loadFacebookComments() {
-		// Remover qualquer instância anterior do script do Facebook
-		const existingScript = document.getElementById('facebook-jssdk');
-		if (existingScript) {
-			existingScript.remove();
-		}
-
-		// Resetar o objeto FB se existir
-		if (window.FB) {
-			delete window.FB;
-		}
-
-		// Carregar o SDK do Facebook
-		const script = document.createElement('script');
-		script.id = 'facebook-jssdk';
-		script.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0';
-		script.async = true;
-		script.defer = true;
-		script.crossOrigin = 'anonymous';
-
-		script.onload = () => {
-			// Inicializar o widget quando o script for carregado
-			if (window.FB) {
-				window.FB.XFBML.parse(divRef);
-			}
-		};
-
-		document.body.appendChild(script);
+function loadFacebookComments() {
+	// Remover qualquer instância anterior do script do Facebook
+	const existingScript = document.getElementById("facebook-jssdk");
+	if (existingScript) {
+		existingScript.remove();
 	}
+
+	// Resetar o objeto FB se existir
+	if (window.FB) {
+		delete window.FB;
+	}
+
+	// Carregar o SDK do Facebook
+	const script = document.createElement("script");
+	script.id = "facebook-jssdk";
+	script.src =
+		"https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0";
+	script.async = true;
+	script.defer = true;
+	script.crossOrigin = "anonymous";
+
+	script.onload = () => {
+		// Inicializar o widget quando o script for carregado
+		if (window.FB) {
+			window.FB.XFBML.parse(divRef);
+		}
+	};
+
+	document.body.appendChild(script);
+}
 </script>
 
 <div id="fb-root"></div>

@@ -1,15 +1,15 @@
 <script>
-	import '../global.css';
-	import '@fontsource-variable/roboto-condensed';
-	import '@fontsource-variable/cabin';
-	import '@fontsource/poppins';
-	import Topo from '$lib/Topo.svelte';
-	import ScrollToTop from '$lib/ScrollToTop.svelte';
-	import { globalStore } from '$lib/index.js';
+import "../global.css";
+import "@fontsource-variable/roboto-condensed";
+import "@fontsource-variable/cabin";
+import "@fontsource/poppins";
+import Topo from "$lib/Topo.svelte";
+import ScrollToTop from "$lib/ScrollToTop.svelte";
+import { globalStore } from "$lib/index.js";
 
-	const openmenu = () => {
-		$globalStore.isOpen = !$globalStore.isOpen;
-	};
+const openmenu = () => {
+	$globalStore.isOpen = !$globalStore.isOpen;
+};
 </script>
 
 <button on:click={openmenu}>

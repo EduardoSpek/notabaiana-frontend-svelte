@@ -1,10 +1,10 @@
 <script>
-	import { SITE_NAME } from '$lib/index.js';
+import { SITE_NAME } from "$lib/index.js";
 
-	export let title;
-	export let description;
-	export let url;
-	export let image;
+export let title;
+export let description;
+export let url;
+export let image;
 </script>
 
 <svelte:head>

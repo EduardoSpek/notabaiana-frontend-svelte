@@ -1,36 +1,36 @@
 <script>
-	import { goto } from '$app/navigation';
-	import { HOST, HOST_API, SITE_NAME, formatarData } from '$lib/index.js';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import ItemCD from '$lib/ItemCD.svelte';
-	import Banners from '$lib/Banners.svelte';
-	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
-	import InputSearchDownload from '$lib/InputSearchDownload.svelte';
-	export let data;
-	export let comparePage;
-	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+import { goto } from "$app/navigation";
+import { HOST, HOST_API, SITE_NAME, formatarData } from "$lib/index.js";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import ItemCD from "$lib/ItemCD.svelte";
+import Banners from "$lib/Banners.svelte";
+import IconSearchSvg from "$lib/IconSearchSvg.svelte";
+import InputSearchDownload from "$lib/InputSearchDownload.svelte";
+export let data;
+export let comparePage;
+$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
-	let search_visible = false;
-	let timeoutID;
-	let ref;
+let search_visible = false;
+let timeoutID;
+let ref;
 
-	const closesearch = () => {
-		search_visible = false;
-		clearTimeout(timeoutID);
-	};
+const closesearch = () => {
+	search_visible = false;
+	clearTimeout(timeoutID);
+};
 
-	const opensearch = () => {
-		search_visible = !search_visible;
-		clearTimeout(timeoutID);
-		timeoutID = setTimeout(closesearch, 15000);
-		setFocus();
-	};
+const opensearch = () => {
+	search_visible = !search_visible;
+	clearTimeout(timeoutID);
+	timeoutID = setTimeout(closesearch, 15000);
+	setFocus();
+};
 
-	const setFocus = async () => {
-		await tick();
-		ref?.focus();
-	};
+const setFocus = async () => {
+	await tick();
+	ref?.focus();
+};
 </script>
 
 <Seo

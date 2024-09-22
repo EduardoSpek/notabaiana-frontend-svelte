@@ -1,39 +1,39 @@
 <script>
-	import { tick } from 'svelte';
-	export let search_visible = false;
-	let timeoutID;
-	export let ref;
+import { tick } from "svelte";
+export let search_visible = false;
+let timeoutID;
+export let ref;
 
-	const closesearch = () => {
-		search_visible = false;
+const closesearch = () => {
+	search_visible = false;
+	clearTimeout(timeoutID);
+};
+
+const opensearch = () => {
+	search_visible = !search_visible;
+	clearTimeout(timeoutID);
+	timeoutID = setTimeout(closesearch, 15000);
+	setFocus();
+};
+
+const setFocus = async () => {
+	await tick();
+	ref?.focus();
+};
+
+const checkWords = (e) => {
+	if (ref.value.length < 3) {
+		e.preventDefault();
+		alert("É necessário uma palavra com no mínimo 3 caracteres");
 		clearTimeout(timeoutID);
-	};
-
-	const opensearch = () => {
-		search_visible = !search_visible;
-		clearTimeout(timeoutID);
-		timeoutID = setTimeout(closesearch, 15000);
-		setFocus();
-	};
-
-	const setFocus = async () => {
-		await tick();
-		ref?.focus();
-	};
-
-	const checkWords = (e) => {
-		if (ref.value.length < 3) {
-			e.preventDefault();
-			alert('É necessário uma palavra com no mínimo 3 caracteres');
-			clearTimeout(timeoutID);
-			return;
-		}
-		search_visible = !search_visible;
-	};
-
-	$: if (search_visible) {
-		setFocus();
+		return;
 	}
+	search_visible = !search_visible;
+};
+
+$: if (search_visible) {
+	setFocus();
+}
 </script>
 
 {#if search_visible}

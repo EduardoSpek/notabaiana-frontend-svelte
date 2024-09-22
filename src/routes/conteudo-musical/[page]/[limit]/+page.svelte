@@ -1,35 +1,41 @@
 <script>
-	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
-	import { HOST, HOST_API, formatarData, globalStore, SITE_NAME } from '$lib/index.js';
-	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
-	import InputSearchDownload from '$lib/InputSearchDownload.svelte';
-	import ItemCD from '$lib/ItemCD.svelte';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import Banners from '$lib/Banners.svelte';
-	export let data;
-	let page = 24;
-	export let comparePage;
-	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+import { onMount } from "svelte";
+import { goto } from "$app/navigation";
+import {
+	HOST,
+	HOST_API,
+	formatarData,
+	globalStore,
+	SITE_NAME,
+} from "$lib/index.js";
+import IconSearchSvg from "$lib/IconSearchSvg.svelte";
+import InputSearchDownload from "$lib/InputSearchDownload.svelte";
+import ItemCD from "$lib/ItemCD.svelte";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import Banners from "$lib/Banners.svelte";
+export let data;
+let page = 24;
+export let comparePage;
+$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
-	onMount(() => {
-		$globalStore.listNewsExpand = true;
-	});
+onMount(() => {
+	$globalStore.listNewsExpand = true;
+});
 
-	let search_visible = false;
-	let timeoutID;
+let search_visible = false;
+let timeoutID;
 
-	const closesearch = () => {
-		search_visible = false;
-		clearTimeout(timeoutID);
-	};
+const closesearch = () => {
+	search_visible = false;
+	clearTimeout(timeoutID);
+};
 
-	const opensearch = () => {
-		search_visible = !search_visible;
-		clearTimeout(timeoutID);
-		timeoutID = setTimeout(closesearch, 15000);
-	};
+const opensearch = () => {
+	search_visible = !search_visible;
+	clearTimeout(timeoutID);
+	timeoutID = setTimeout(closesearch, 15000);
+};
 </script>
 
 <Seo

@@ -1,23 +1,23 @@
 <script>
-	import { onMount } from 'svelte';
-	export let html;
+import { onMount } from "svelte";
+export let html;
 
-	function darkmode(e) {
-		html.classList.toggle('dark-mode');
-		let dark_mode = localStorage.getItem('dark-mode');
-		if (dark_mode) {
-			localStorage.removeItem('dark-mode');
-		} else {
-			localStorage.setItem('dark-mode', 'dark');
-		}
+function darkmode(e) {
+	html.classList.toggle("dark-mode");
+	let dark_mode = localStorage.getItem("dark-mode");
+	if (dark_mode) {
+		localStorage.removeItem("dark-mode");
+	} else {
+		localStorage.setItem("dark-mode", "dark");
 	}
-	onMount(() => {
-		html = document.querySelector('html');
-		let dark_mode = localStorage.getItem('dark-mode');
-		if (dark_mode) {
-			html.classList.add('dark-mode');
-		}
-	});
+}
+onMount(() => {
+	html = document.querySelector("html");
+	let dark_mode = localStorage.getItem("dark-mode");
+	if (dark_mode) {
+		html.classList.add("dark-mode");
+	}
+});
 </script>
 
 <div class="darkmode">

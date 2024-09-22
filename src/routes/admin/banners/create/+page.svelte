@@ -1,6 +1,6 @@
 <script>
-	export let data;
-	export let form;
+export let data;
+export let form;
 </script>
 
 <div class="TopSpace"></div>

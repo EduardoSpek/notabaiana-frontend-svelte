@@ -1,18 +1,18 @@
 <script>
-	import { SITE_NAME } from '$lib/index.js';
-	import DeleteSvg from '$lib/svg/delete.svelte';
-	import { enhance } from '$app/forms';
-	export let data;
+import { SITE_NAME } from "$lib/index.js";
+import DeleteSvg from "$lib/svg/delete.svelte";
+import { enhance } from "$app/forms";
+export let data;
 
-	let checkbox = [];
+let checkbox = [];
 
-	const selectAll = () => {
-		const idAll = document.getElementsByName('id[]');
-		const ids = document.getElementById('ids');
-		idAll.forEach((id) => {
-			id.checked = ids.checked;
-		});
-	};
+const selectAll = () => {
+	const idAll = document.getElementsByName("id[]");
+	const ids = document.getElementById("ids");
+	idAll.forEach((id) => {
+		id.checked = ids.checked;
+	});
+};
 </script>
 
 <svelte:head>

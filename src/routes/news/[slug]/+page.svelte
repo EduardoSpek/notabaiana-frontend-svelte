@@ -1,138 +1,140 @@
 <script>
-	import { beforeNavigate } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData } from '$lib/index.js';
-	import Banners from '$lib/Banners.svelte';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import TopNoticiasHome from '$lib/TopNoticiasHome.svelte';
-	import IconSocialNetwork from '$lib/svg/IconSocialNetwork.svelte';
+import { beforeNavigate } from "$app/navigation";
+import { onMount } from "svelte";
+import { IMG_PADRAO, HOST, HOST_API, formatarData } from "$lib/index.js";
+import Banners from "$lib/Banners.svelte";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import TopNoticiasHome from "$lib/TopNoticiasHome.svelte";
+import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 
-	export let data;
-	let data_news = formatarData(data.item.created_at);
-	let textNews;
-	let divRef;
+export let data;
+let data_news = formatarData(data.item.created_at);
+let textNews;
+let divRef;
 
-	function removeIframe() {
-		const iframe = document.querySelector('iframe');
-		if (iframe) {
-			iframe.remove();
-		}
+function removeIframe() {
+	const iframe = document.querySelector("iframe");
+	if (iframe) {
+		iframe.remove();
+	}
+}
+
+onMount(() => {
+	loadInstagramWidget();
+	loadTwitterWidget();
+	loadTiktokWidget();
+	loadFacebookComments();
+	textNews = document.getElementById("textNews");
+});
+
+beforeNavigate((event) => {
+	removeIframe();
+});
+
+function loadFacebookComments() {
+	// Remover qualquer instância anterior do script do Facebook
+	const existingScript = document.getElementById("facebook-jssdk");
+	if (existingScript) {
+		existingScript.remove();
 	}
 
-	onMount(() => {
-		loadInstagramWidget();
-		loadTwitterWidget();
-		loadTiktokWidget();
-		loadFacebookComments();
-		textNews = document.getElementById('textNews');
-	});
+	// Resetar o objeto FB se existir
+	if (window.FB) {
+		delete window.FB;
+	}
 
-	beforeNavigate((event) => {
-		removeIframe();
-	});
+	// Carregar o SDK do Facebook
+	const script = document.createElement("script");
+	script.id = "facebook-jssdk";
+	script.src =
+		"https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0";
+	script.async = true;
+	script.defer = true;
+	script.crossOrigin = "anonymous";
 
-	function loadFacebookComments() {
-		// Remover qualquer instância anterior do script do Facebook
-		const existingScript = document.getElementById('facebook-jssdk');
-		if (existingScript) {
-			existingScript.remove();
-		}
-
-		// Resetar o objeto FB se existir
+	script.onload = () => {
+		// Inicializar o widget quando o script for carregado
 		if (window.FB) {
-			delete window.FB;
+			window.FB.XFBML.parse(divRef);
 		}
+	};
 
-		// Carregar o SDK do Facebook
-		const script = document.createElement('script');
-		script.id = 'facebook-jssdk';
-		script.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0';
-		script.async = true;
-		script.defer = true;
-		script.crossOrigin = 'anonymous';
+	document.body.appendChild(script);
+}
 
-		script.onload = () => {
-			// Inicializar o widget quando o script for carregado
-			if (window.FB) {
-				window.FB.XFBML.parse(divRef);
-			}
-		};
+function loadInstagramWidget() {
+	// Remover qualquer instância anterior do script do Instagram
+	const existingScripts = document.querySelectorAll(
+		'script[src*="instagram.com/embed.js"]',
+	);
+	existingScripts.forEach((script) => script.remove());
 
-		document.body.appendChild(script);
+	// Remover qualquer instância anterior do objeto instgrm
+	if (window.instgrm) {
+		delete window.instgrm;
 	}
 
-	function loadInstagramWidget() {
-		// Remover qualquer instância anterior do script do Instagram
-		const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
-		existingScripts.forEach((script) => script.remove());
-
-		// Remover qualquer instância anterior do objeto instgrm
+	// Carrega o script do Instagram
+	const script = document.createElement("script");
+	script.src = "//www.instagram.com/embed.js";
+	script.async = true;
+	script.onload = () => {
+		// Inicializa o widget quando o script for carregado
 		if (window.instgrm) {
-			delete window.instgrm;
+			window.instgrm.Embeds.process();
 		}
+	};
+	document.body.appendChild(script);
+}
 
-		// Carrega o script do Instagram
-		const script = document.createElement('script');
-		script.src = '//www.instagram.com/embed.js';
-		script.async = true;
-		script.onload = () => {
-			// Inicializa o widget quando o script for carregado
-			if (window.instgrm) {
-				window.instgrm.Embeds.process();
-			}
-		};
-		document.body.appendChild(script);
-	}
+function loadTwitterWidget() {
+	// Remover qualquer instância anterior do script do Twitter
+	const existingScripts = document.querySelectorAll(
+		'script[src*="platform.twitter.com/widgets.js"]',
+	);
+	existingScripts.forEach((script) => script.remove());
 
-	function loadTwitterWidget() {
-		// Remover qualquer instância anterior do script do Twitter
-		const existingScripts = document.querySelectorAll(
-			'script[src*="platform.twitter.com/widgets.js"]'
-		);
-		existingScripts.forEach((script) => script.remove());
+	// Carregar o script do Twitter
+	const script = document.createElement("script");
+	script.id = "twitter-widget-script";
+	script.src = "https://platform.twitter.com/widgets.js";
+	script.async = true;
+	script.charset = "utf-8";
 
-		// Carregar o script do Twitter
-		const script = document.createElement('script');
-		script.id = 'twitter-widget-script';
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		script.charset = 'utf-8';
+	script.onload = () => {
+		// Inicializar o widget quando o script for carregado
+		if (window.twttr) {
+			window.twttr.widgets.load();
+		}
+	};
 
-		script.onload = () => {
-			// Inicializar o widget quando o script for carregado
-			if (window.twttr) {
-				window.twttr.widgets.load();
-			}
-		};
-
-		document.body.appendChild(script);
-	}
+	document.body.appendChild(script);
+}
 
 function loadTiktokWidget() {
-		// Remover qualquer instância anterior do script do TikTok 
-		const existingScripts = document.querySelectorAll(
-			'script[src*="tiktok.com/embed.js"]'
-		);
-		existingScripts.forEach((script) => script.remove());
+	// Remover qualquer instância anterior do script do TikTok
+	const existingScripts = document.querySelectorAll(
+		'script[src*="tiktok.com/embed.js"]',
+	);
+	existingScripts.forEach((script) => script.remove());
 
-		// Carregar o script do TikTok
-    const script = document.createElement('script');
-    script.id = 'tiktok-embed-script';
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    
-    script.onload = () => {
-      // O TikTok geralmente não requer uma inicialização explícita
-      // mas podemos forçar um re-parse se necessário
-      if (window.TikTok) {
-        //window.TikTok.reload();
-      }
-    };
+	// Carregar o script do TikTok
+	const script = document.createElement("script");
+	script.id = "tiktok-embed-script";
+	script.src = "https://www.tiktok.com/embed.js";
+	script.async = true;
 
+	script.onload = () => {
+		// O TikTok geralmente não requer uma inicialização explícita
+		// mas podemos forçar um re-parse se necessário
+		if (window.TikTok) {
+			//window.TikTok.reload();
+		}
+	};
 
-		document.body.appendChild(script);
-	}
+	document.body.appendChild(script);
+}
 </script>
 
 <div id="fb-root"></div>

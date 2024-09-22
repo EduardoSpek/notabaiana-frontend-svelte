@@ -1,4 +1,4 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST_API } from "$lib/index.js";
 
 export async function load({ fetch }) {
 	let news;
@@ -50,17 +50,19 @@ export async function load({ fetch }) {
 		fnFamosos(),
 		fnEsportes(),
 		fnMunicipios(),
-		fnJustica()
+		fnJustica(),
 	]);
 
-	await allPromises.then(([rbanners, rnews, rfamosos, resportes, rmunicipios, rjustica]) => {
-		banners = rbanners;
-		news = rnews;
-		famosos = rfamosos;
-		esportes = resportes;
-		municipios = rmunicipios;
-		justica = rjustica;
-	});
+	await allPromises.then(
+		([rbanners, rnews, rfamosos, resportes, rmunicipios, rjustica]) => {
+			banners = rbanners;
+			news = rnews;
+			famosos = rfamosos;
+			esportes = resportes;
+			municipios = rmunicipios;
+			justica = rjustica;
+		},
+	);
 
 	news.forEach((item, i) => {
 		if (item.title_ai) {
@@ -104,6 +106,6 @@ export async function load({ fetch }) {
 		famosos: famosos.news,
 		esportes: esportes.news,
 		municipios: municipios.news,
-		justica: justica.news
+		justica: justica.news,
 	};
 }

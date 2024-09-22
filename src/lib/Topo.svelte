@@ -1,39 +1,39 @@
 <script>
-	import IconSearchSvg from '$lib/IconSearchSvg.svelte';
-	import IconMenuSvg from '$lib/IconMenuSvg.svelte';
-	import { tick } from 'svelte';
-	import IconDarkMode from './IconDarkMode.svelte';
+import IconSearchSvg from "$lib/IconSearchSvg.svelte";
+import IconMenuSvg from "$lib/IconMenuSvg.svelte";
+import { tick } from "svelte";
+import IconDarkMode from "./IconDarkMode.svelte";
 
-	let search_visible = false;
-	let timeoutID;
-	let ref;
+let search_visible = false;
+let timeoutID;
+let ref;
 
-	const closesearch = () => {
-		search_visible = false;
+const closesearch = () => {
+	search_visible = false;
+	clearTimeout(timeoutID);
+};
+
+const opensearch = () => {
+	search_visible = !search_visible;
+	clearTimeout(timeoutID);
+	timeoutID = setTimeout(closesearch, 15000);
+	setFocus();
+};
+
+const setFocus = async () => {
+	await tick();
+	ref?.focus();
+};
+
+const checkWords = (e) => {
+	if (ref.value.length < 3) {
+		e.preventDefault();
+		alert("É necessário uma palavra com no mínimo 3 caracteres");
 		clearTimeout(timeoutID);
-	};
-
-	const opensearch = () => {
-		search_visible = !search_visible;
-		clearTimeout(timeoutID);
-		timeoutID = setTimeout(closesearch, 15000);
-		setFocus();
-	};
-
-	const setFocus = async () => {
-		await tick();
-		ref?.focus();
-	};
-
-	const checkWords = (e) => {
-		if (ref.value.length < 3) {
-			e.preventDefault();
-			alert('É necessário uma palavra com no mínimo 3 caracteres');
-			clearTimeout(timeoutID);
-			return;
-		}
-		search_visible = !search_visible;
-	};
+		return;
+	}
+	search_visible = !search_visible;
+};
 </script>
 
 <header>

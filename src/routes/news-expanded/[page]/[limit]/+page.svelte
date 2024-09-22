@@ -1,67 +1,75 @@
 <script>
-	import { onMount } from 'svelte';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData, globalStore } from '$lib/index.js';
-	import ListNewsCloseSvg from '$lib/svg/list_news_close.svelte';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import Banners from '$lib/Banners.svelte';
-	export let data;
-	export let comparePage;
-	let page = 24;
-	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+import { onMount } from "svelte";
+import {
+	IMG_PADRAO,
+	HOST,
+	HOST_API,
+	formatarData,
+	globalStore,
+} from "$lib/index.js";
+import ListNewsCloseSvg from "$lib/svg/list_news_close.svelte";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import Banners from "$lib/Banners.svelte";
+export let data;
+export let comparePage;
+let page = 24;
+$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
-	onMount(() => {
-		loadInstagramWidget();
-		loadTwitterWidget();
-		$globalStore.listNewsExpand = false;
-	});
+onMount(() => {
+	loadInstagramWidget();
+	loadTwitterWidget();
+	$globalStore.listNewsExpand = false;
+});
 
-	function loadInstagramWidget() {
-		// Remover qualquer instância anterior do script do Instagram
-		const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
-		existingScripts.forEach((script) => script.remove());
+function loadInstagramWidget() {
+	// Remover qualquer instância anterior do script do Instagram
+	const existingScripts = document.querySelectorAll(
+		'script[src*="instagram.com/embed.js"]',
+	);
+	existingScripts.forEach((script) => script.remove());
 
-		// Remover qualquer instância anterior do objeto instgrm
+	// Remover qualquer instância anterior do objeto instgrm
+	if (window.instgrm) {
+		delete window.instgrm;
+	}
+
+	// Carrega o script do Instagram
+	const script = document.createElement("script");
+	script.src = "//www.instagram.com/embed.js";
+	script.async = true;
+	script.onload = () => {
+		// Inicializa o widget quando o script for carregado
 		if (window.instgrm) {
-			delete window.instgrm;
+			window.instgrm.Embeds.process();
 		}
+	};
+	document.body.appendChild(script);
+}
 
-		// Carrega o script do Instagram
-		const script = document.createElement('script');
-		script.src = '//www.instagram.com/embed.js';
-		script.async = true;
-		script.onload = () => {
-			// Inicializa o widget quando o script for carregado
-			if (window.instgrm) {
-				window.instgrm.Embeds.process();
-			}
-		};
-		document.body.appendChild(script);
-	}
+function loadTwitterWidget() {
+	// Remover qualquer instância anterior do script do Twitter
+	const existingScripts = document.querySelectorAll(
+		'script[src*="platform.twitter.com/widgets.js"]',
+	);
+	existingScripts.forEach((script) => script.remove());
 
-	function loadTwitterWidget() {
-		// Remover qualquer instância anterior do script do Twitter
-		const existingScripts = document.querySelectorAll(
-			'script[src*="platform.twitter.com/widgets.js"]'
-		);
-		existingScripts.forEach((script) => script.remove());
+	// Carregar o script do Twitter
+	const script = document.createElement("script");
+	script.id = "twitter-widget-script";
+	script.src = "https://platform.twitter.com/widgets.js";
+	script.async = true;
+	script.charset = "utf-8";
 
-		// Carregar o script do Twitter
-		const script = document.createElement('script');
-		script.id = 'twitter-widget-script';
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		script.charset = 'utf-8';
+	script.onload = () => {
+		// Inicializar o widget quando o script for carregado
+		if (window.twttr) {
+			window.twttr.widgets.load();
+		}
+	};
 
-		script.onload = () => {
-			// Inicializar o widget quando o script for carregado
-			if (window.twttr) {
-				window.twttr.widgets.load();
-			}
-		};
-
-		document.body.appendChild(script);
-	}
+	document.body.appendChild(script);
+}
 </script>
 
 <Seo

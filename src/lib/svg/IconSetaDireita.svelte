@@ -1,5 +1,5 @@
 <script>
-	export let seta;
+export let seta;
 </script>
 
 <svg

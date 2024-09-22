@@ -8,12 +8,15 @@ const InitTwitterWidget = async () => {
 				window.__twttr.widgets.loaded &&
 				window.twttr.widgets.load &&
 				window.twttr.widgets.load(),
-			(window.__twttr && window.__twttr.widgets && window.__twttr.widgets.init) ||
+			(window.__twttr &&
+				window.__twttr.widgets &&
+				window.__twttr.widgets.init) ||
 				(function (t) {
 					function e(e) {
 						for (var n, i, o = e[0], s = e[1], a = 0, c = []; a < o.length; a++)
 							(i = o[a]), r[i] && c.push(r[i][0]), (r[i] = 0);
-						for (n in s) Object.prototype.hasOwnProperty.call(s, n) && (t[n] = s[n]);
+						for (n in s)
+							Object.prototype.hasOwnProperty.call(s, n) && (t[n] = s[n]);
 						for (u && u(e); c.length; ) c.shift()();
 					}
 					var n = {},
@@ -34,33 +37,33 @@ const InitTwitterWidget = async () => {
 								});
 								e.push((n[2] = o));
 								var s,
-									a = document.getElementsByTagName('head')[0],
-									u = document.createElement('script');
-								(u.charset = 'utf-8'),
+									a = document.getElementsByTagName("head")[0],
+									u = document.createElement("script");
+								(u.charset = "utf-8"),
 									(u.timeout = 120),
-									i.nc && u.setAttribute('nonce', i.nc),
+									i.nc && u.setAttribute("nonce", i.nc),
 									(u.src = (function (t) {
 										return (
 											i.p +
-											'js/' +
+											"js/" +
 											({
-												1: 'dm_button',
-												2: 'button',
-												3: 'moment',
-												4: 'periscope_on_air',
-												5: 'timeline',
-												6: 'tweet'
+												1: "dm_button",
+												2: "button",
+												3: "moment",
+												4: "periscope_on_air",
+												5: "timeline",
+												6: "tweet",
 											}[t] || t) +
-											'.' +
+											"." +
 											{
-												1: 'f53535f7e1a7738ec410842054f2de1c',
-												2: '856debeac157d9669cf51e73a08fbc93',
-												3: 'cd19c6b67c2f5cf62643a0c94915ac9a',
-												4: '59d430bc7d44af5536b78dbdd566058f',
-												5: 'e108540dddc96e4b707f5cf259a582d7',
-												6: 'd7aeb21a88e025d2ea5f5431a103f586'
+												1: "f53535f7e1a7738ec410842054f2de1c",
+												2: "856debeac157d9669cf51e73a08fbc93",
+												3: "cd19c6b67c2f5cf62643a0c94915ac9a",
+												4: "59d430bc7d44af5536b78dbdd566058f",
+												5: "e108540dddc96e4b707f5cf259a582d7",
+												6: "d7aeb21a88e025d2ea5f5431a103f586",
 											}[t] +
-											'.js'
+											".js"
 										);
 									})(t)),
 									(s = function (e) {
@@ -68,16 +71,24 @@ const InitTwitterWidget = async () => {
 										var n = r[t];
 										if (0 !== n) {
 											if (n) {
-												var i = e && ('load' === e.type ? 'missing' : e.type),
+												var i = e && ("load" === e.type ? "missing" : e.type),
 													o = e && e.target && e.target.src,
-													s = new Error('Loading chunk ' + t + ' failed.\n(' + i + ': ' + o + ')');
+													s = new Error(
+														"Loading chunk " +
+															t +
+															" failed.\n(" +
+															i +
+															": " +
+															o +
+															")",
+													);
 												(s.type = i), (s.request = o), n[1](s);
 											}
 											r[t] = void 0;
 										}
 									});
 								var c = setTimeout(function () {
-									s({ type: 'timeout', target: u });
+									s({ type: "timeout", target: u });
 								}, 12e4);
 								(u.onerror = u.onload = s), a.appendChild(u);
 							}
@@ -86,22 +97,28 @@ const InitTwitterWidget = async () => {
 						(i.m = t),
 						(i.c = n),
 						(i.d = function (t, e, n) {
-							i.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: n });
+							i.o(t, e) ||
+								Object.defineProperty(t, e, { enumerable: !0, get: n });
 						}),
 						(i.r = function (t) {
-							'undefined' != typeof Symbol &&
+							"undefined" != typeof Symbol &&
 								Symbol.toStringTag &&
-								Object.defineProperty(t, Symbol.toStringTag, { value: 'Module' }),
-								Object.defineProperty(t, '__esModule', { value: !0 });
+								Object.defineProperty(t, Symbol.toStringTag, {
+									value: "Module",
+								}),
+								Object.defineProperty(t, "__esModule", { value: !0 });
 						}),
 						(i.t = function (t, e) {
 							if ((1 & e && (t = i(t)), 8 & e)) return t;
-							if (4 & e && 'object' == typeof t && t && t.__esModule) return t;
+							if (4 & e && "object" == typeof t && t && t.__esModule) return t;
 							var n = Object.create(null);
 							if (
 								(i.r(n),
-								Object.defineProperty(n, 'default', { enumerable: !0, value: t }),
-								2 & e && 'string' != typeof t)
+								Object.defineProperty(n, "default", {
+									enumerable: !0,
+									value: t,
+								}),
+								2 & e && "string" != typeof t)
 							)
 								for (var r in t)
 									i.d(
@@ -109,7 +126,7 @@ const InitTwitterWidget = async () => {
 										r,
 										function (e) {
 											return t[e];
-										}.bind(null, r)
+										}.bind(null, r),
 									);
 							return n;
 						}),
@@ -122,12 +139,12 @@ const InitTwitterWidget = async () => {
 									: function () {
 											return t;
 										};
-							return i.d(e, 'a', e), e;
+							return i.d(e, "a", e), e;
 						}),
 						(i.o = function (t, e) {
 							return Object.prototype.hasOwnProperty.call(t, e);
 						}),
-						(i.p = 'https://platform.twitter.com/'),
+						(i.p = "https://platform.twitter.com/"),
 						(i.oe = function (t) {
 							throw (console.error(t), t);
 						});
@@ -142,7 +159,8 @@ const InitTwitterWidget = async () => {
 						var r = n(1);
 						function i(t, e) {
 							var n;
-							for (n in t) (t.hasOwnProperty && !t.hasOwnProperty(n)) || e(n, t[n]);
+							for (n in t)
+								(t.hasOwnProperty && !t.hasOwnProperty(n)) || e(n, t[n]);
 							return t;
 						}
 						function o(t) {
@@ -186,7 +204,7 @@ const InitTwitterWidget = async () => {
 								return (
 									i(e, function (n, r) {
 										s(r) && (t(r), a(r) && delete e[n]),
-											(void 0 !== r && null !== r && '' !== r) || delete e[n];
+											(void 0 !== r && null !== r && "" !== r) || delete e[n];
 									}),
 									e
 								);
@@ -201,7 +219,7 @@ const InitTwitterWidget = async () => {
 							isType: function (t, e) {
 								return t == o(e);
 							},
-							toRealArray: u
+							toRealArray: u,
 						};
 					},
 					function (t, e) {
@@ -219,15 +237,19 @@ const InitTwitterWidget = async () => {
 							c = /twitter\.com(?::\d{2,4})?\/intent\/(\w+)/,
 							d = /^https?:\/\/(?:www\.)?twitter\.com\/\w+\/timelines\/(\d+)/i,
 							f = /^https?:\/\/(?:www\.)?twitter\.com\/i\/moments\/(\d+)/i,
-							l = /^https?:\/\/(?:www\.)?twitter\.com\/(\w+)\/(?:likes|favorites)/i,
-							h = /^https?:\/\/(?:www\.)?twitter\.com\/(\w+)\/lists\/([\w-%]+)/i,
+							l =
+								/^https?:\/\/(?:www\.)?twitter\.com\/(\w+)\/(?:likes|favorites)/i,
+							h =
+								/^https?:\/\/(?:www\.)?twitter\.com\/(\w+)\/lists\/([\w-%]+)/i,
 							p = /^https?:\/\/(?:www\.)?twitter\.com\/i\/live\/(\d+)/i,
 							m = /^https?:\/\/syndication\.twitter\.com\/settings/i,
 							v =
 								/^https?:\/\/(localhost|platform)\.twitter\.com(?::\d+)?\/widgets\/widget_iframe\.(.+)/i,
 							g = /^https?:\/\/(?:www\.)?twitter\.com\/search\?q=(\w+)/i;
 						function w(t) {
-							return 'string' == typeof t && i.test(t) && RegExp.$1.length <= 20;
+							return (
+								"string" == typeof t && i.test(t) && RegExp.$1.length <= 20
+							);
 						}
 						function y(t) {
 							if (w(t)) return RegExp.$1;
@@ -235,18 +257,22 @@ const InitTwitterWidget = async () => {
 						function b(t, e) {
 							var n = r.decodeURL(t);
 							if (((e = e || !1), (n.screen_name = y(t)), n.screen_name))
-								return r.url('https://twitter.com/intent/' + (e ? 'follow' : 'user'), n);
+								return r.url(
+									"https://twitter.com/intent/" + (e ? "follow" : "user"),
+									n,
+								);
 						}
 						function _(t) {
-							return 'string' == typeof t && u.test(t);
+							return "string" == typeof t && u.test(t);
 						}
 						function E(t) {
-							return 'string' == typeof t && o.test(t);
+							return "string" == typeof t && o.test(t);
 						}
 						t.exports = {
 							isHashTag: _,
 							hashTag: function (t, e) {
-								if (((e = void 0 === e || e), _(t))) return (e ? '#' : '') + RegExp.$1;
+								if (((e = void 0 === e || e), _(t)))
+									return (e ? "#" : "") + RegExp.$1;
 							},
 							isScreenName: w,
 							screenName: y,
@@ -302,7 +328,7 @@ const InitTwitterWidget = async () => {
 							},
 							eventId: function (t) {
 								return p.test(t) && RegExp.$1;
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -319,10 +345,10 @@ const InitTwitterWidget = async () => {
 					},
 					function (t, e, n) {
 						var r = n(0),
-							i = [!0, 1, '1', 'on', 'ON', 'true', 'TRUE', 'yes', 'YES'],
-							o = [!1, 0, '0', 'off', 'OFF', 'false', 'FALSE', 'no', 'NO'];
+							i = [!0, 1, "1", "on", "ON", "true", "TRUE", "yes", "YES"],
+							o = [!1, 0, "0", "off", "OFF", "false", "FALSE", "no", "NO"];
 						function s(t) {
-							return void 0 !== t && null !== t && '' !== t;
+							return void 0 !== t && null !== t && "" !== t;
 						}
 						function a(t) {
 							return c(t) && t % 1 == 0;
@@ -345,10 +371,10 @@ const InitTwitterWidget = async () => {
 							isFloat: u,
 							isNumber: c,
 							isString: function (t) {
-								return 'string' === r.toType(t);
+								return "string" === r.toType(t);
 							},
 							isArray: function (t) {
-								return s(t) && 'array' == r.toType(t);
+								return s(t) && "array" == r.toType(t);
 							},
 							isTruthValue: f,
 							isFalseValue: d,
@@ -363,7 +389,7 @@ const InitTwitterWidget = async () => {
 							},
 							asBoolean: function (t) {
 								return !(!s(t) || (!f(t) && (d(t) || !t)));
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -387,25 +413,33 @@ const InitTwitterWidget = async () => {
 					},
 					function (t, e, n) {
 						var r = n(47);
-						t.exports = new r('__twttr');
+						t.exports = new r("__twttr");
 					},
 					function (t, e, n) {
 						var r = n(0),
 							i = /\b([\w-_]+)\b/g;
 						function o(t) {
-							return new RegExp('\\b' + t + '\\b', 'g');
+							return new RegExp("\\b" + t + "\\b", "g");
 						}
 						function s(t, e) {
-							t.classList ? t.classList.add(e) : o(e).test(t.className) || (t.className += ' ' + e);
+							t.classList
+								? t.classList.add(e)
+								: o(e).test(t.className) || (t.className += " " + e);
 						}
 						function a(t, e) {
-							t.classList ? t.classList.remove(e) : (t.className = t.className.replace(o(e), ' '));
+							t.classList
+								? t.classList.remove(e)
+								: (t.className = t.className.replace(o(e), " "));
 						}
 						function u(t, e) {
-							return t.classList ? t.classList.contains(e) : r.contains(c(t), e);
+							return t.classList
+								? t.classList.contains(e)
+								: r.contains(c(t), e);
 						}
 						function c(t) {
-							return r.toRealArray(t.classList ? t.classList : t.className.match(i));
+							return r.toRealArray(
+								t.classList ? t.classList : t.className.match(i),
+							);
 						}
 						t.exports = {
 							add: s,
@@ -420,7 +454,7 @@ const InitTwitterWidget = async () => {
 									: (n ? s(t, e) : a(t, e), n);
 							},
 							present: u,
-							list: c
+							list: c,
 						};
 					},
 					function (t, e, n) {
@@ -430,17 +464,19 @@ const InitTwitterWidget = async () => {
 							s = n(0),
 							a = n(108);
 						t.exports = function (t) {
-							var e = t.href && t.href.split('?')[1],
+							var e = t.href && t.href.split("?")[1],
 								n = e ? o.decode(e) : {},
 								u = {
 									lang: a(t),
-									width: t.getAttribute('data-width') || t.getAttribute('width'),
-									height: t.getAttribute('data-height') || t.getAttribute('height'),
-									related: t.getAttribute('data-related'),
-									partner: t.getAttribute('data-partner')
+									width:
+										t.getAttribute("data-width") || t.getAttribute("width"),
+									height:
+										t.getAttribute("data-height") || t.getAttribute("height"),
+									related: t.getAttribute("data-related"),
+									partner: t.getAttribute("data-partner"),
 								};
 							return (
-								i.asBoolean(t.getAttribute('data-dnt')) && r.setOn(),
+								i.asBoolean(t.getAttribute("data-dnt")) && r.setOn(),
 								s.forIn(u, function (t, e) {
 									var r = n[t];
 									n[t] = i.hasValue(r) ? r : e;
@@ -453,14 +489,14 @@ const InitTwitterWidget = async () => {
 						var r = n(109),
 							i = n(21);
 						t.exports = function () {
-							var t = 'data-twitter-extracted-' + i.generate();
+							var t = "data-twitter-extracted-" + i.generate();
 							return function (e, n) {
 								return r(e, n)
 									.filter(function (e) {
 										return !e.hasAttribute(t);
 									})
 									.map(function (e) {
-										return e.setAttribute(t, 'true'), e;
+										return e.setAttribute(t, "true"), e;
 									});
 							};
 						};
@@ -482,15 +518,15 @@ const InitTwitterWidget = async () => {
 					},
 					function (t, e) {
 						t.exports = {
-							DM_BUTTON: 'twitter-dm-button',
-							FOLLOW_BUTTON: 'twitter-follow-button',
-							HASHTAG_BUTTON: 'twitter-hashtag-button',
-							MENTION_BUTTON: 'twitter-mention-button',
-							MOMENT: 'twitter-moment',
-							PERISCOPE: 'periscope-on-air',
-							SHARE_BUTTON: 'twitter-share-button',
-							TIMELINE: 'twitter-timeline',
-							TWEET: 'twitter-tweet'
+							DM_BUTTON: "twitter-dm-button",
+							FOLLOW_BUTTON: "twitter-follow-button",
+							HASHTAG_BUTTON: "twitter-hashtag-button",
+							MENTION_BUTTON: "twitter-mention-button",
+							MOMENT: "twitter-moment",
+							PERISCOPE: "periscope-on-air",
+							SHARE_BUTTON: "twitter-share-button",
+							TIMELINE: "twitter-timeline",
+							TWEET: "twitter-tweet",
 						};
 					},
 					function (t, e, n) {
@@ -505,7 +541,7 @@ const InitTwitterWidget = async () => {
 							return (
 								(t = t || []),
 								(e = e || {}),
-								(c = 'ƒ(' + t.join(', ') + ', target, [options]);'),
+								(c = "ƒ(" + t.join(", ") + ", target, [options]);"),
 								function () {
 									var d,
 										f,
@@ -517,9 +553,9 @@ const InitTwitterWidget = async () => {
 										m.forEach(function (t) {
 											t &&
 												(t.nodeType !== Node.ELEMENT_NODE
-													? u.isType('function', t)
+													? u.isType("function", t)
 														? (d = t)
-														: u.isType('object', t) && (f = t)
+														: u.isType("object", t) && (f = t)
 													: (l = t));
 										}),
 										p.length !== t.length || 0 === m.length
@@ -527,7 +563,9 @@ const InitTwitterWidget = async () => {
 													u.async(function () {
 														d(!1);
 													}),
-												r.reject(new Error('Not enough parameters. Expected: ' + c)))
+												r.reject(
+													new Error("Not enough parameters. Expected: " + c),
+												))
 											: l
 												? ((f = u.aug({}, f || {}, e)),
 													t.forEach(function (t) {
@@ -546,7 +584,11 @@ const InitTwitterWidget = async () => {
 														u.async(function () {
 															d(!1);
 														}),
-													r.reject(new Error('No target element specified. Expected: ' + c)))
+													r.reject(
+														new Error(
+															"No target element specified. Expected: " + c,
+														),
+													))
 									);
 								}
 							);
@@ -556,7 +598,9 @@ const InitTwitterWidget = async () => {
 						var r = n(5),
 							i = n(0);
 						function o(t) {
-							return encodeURIComponent(t).replace(/\+/g, '%2B').replace(/'/g, '%27');
+							return encodeURIComponent(t)
+								.replace(/\+/g, "%2B")
+								.replace(/'/g, "%27");
 						}
 						function s(t) {
 							return decodeURIComponent(t);
@@ -566,24 +610,26 @@ const InitTwitterWidget = async () => {
 							return (
 								i.forIn(t, function (t, n) {
 									var s = o(t);
-									i.isType('array', n) || (n = [n]),
+									i.isType("array", n) || (n = [n]),
 										n.forEach(function (t) {
-											r.hasValue(t) && e.push(s + '=' + o(t));
+											r.hasValue(t) && e.push(s + "=" + o(t));
 										});
 								}),
-								e.sort().join('&')
+								e.sort().join("&")
 							);
 						}
 						function u(t) {
 							var e = {};
 							return t
-								? (t.split('&').forEach(function (t) {
-										var n = t.split('='),
+								? (t.split("&").forEach(function (t) {
+										var n = t.split("="),
 											r = s(n[0]),
 											o = s(n[1]);
 										if (2 == n.length) {
-											if (!i.isType('array', e[r]))
-												return r in e ? ((e[r] = [e[r]]), void e[r].push(o)) : void (e[r] = o);
+											if (!i.isType("array", e[r]))
+												return r in e
+													? ((e[r] = [e[r]]), void e[r].push(o))
+													: void (e[r] = o);
 											e[r].push(o);
 										}
 									}),
@@ -592,16 +638,20 @@ const InitTwitterWidget = async () => {
 						}
 						t.exports = {
 							url: function (t, e) {
-								return a(e).length > 0 ? (i.contains(t, '?') ? t + '&' + a(e) : t + '?' + a(e)) : t;
+								return a(e).length > 0
+									? i.contains(t, "?")
+										? t + "&" + a(e)
+										: t + "?" + a(e)
+									: t;
 							},
 							decodeURL: function (t) {
-								var e = t && t.split('?');
+								var e = t && t.split("?");
 								return 2 == e.length ? u(e[1]) : {};
 							},
 							decode: u,
 							encode: a,
 							encodePart: o,
-							decodePart: s
+							decodePart: s,
 						};
 					},
 					function (t, e, n) {
@@ -632,11 +682,11 @@ const InitTwitterWidget = async () => {
 							defer: function (t, e, n) {
 								var a = new i();
 								return (
-									o.isType('function', t) && ((n = e), (e = t), (t = 1)),
+									o.isType("function", t) && ((n = e), (e = t), (t = 1)),
 									r.defer(t, s(e, a), n),
 									a.promise
 								);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -644,7 +694,7 @@ const InitTwitterWidget = async () => {
 							i = n(1),
 							o = n(0),
 							s = {},
-							a = o.contains(r.href, 'tw_debug=true');
+							a = o.contains(r.href, "tw_debug=true");
 						function u() {}
 						function c() {}
 						function d() {
@@ -671,7 +721,7 @@ const InitTwitterWidget = async () => {
 									default:
 										0 !== e.length &&
 											i.console.warn &&
-											i.console.warn('too many params passed to logger.' + t);
+											i.console.warn("too many params passed to logger." + t);
 								}
 						}
 						t.exports = {
@@ -679,20 +729,20 @@ const InitTwitterWidget = async () => {
 							devInfo: c,
 							devObject: function (t, e) {},
 							publicError: function () {
-								f('error', o.toRealArray(arguments));
+								f("error", o.toRealArray(arguments));
 							},
 							publicLog: function () {
-								f('info', o.toRealArray(arguments));
+								f("info", o.toRealArray(arguments));
 							},
 							publicWarn: function () {
-								f('warn', o.toRealArray(arguments));
+								f("warn", o.toRealArray(arguments));
 							},
 							time: function (t) {
 								a && (s[t] = d());
 							},
 							timeEnd: function (t) {
 								a && s[t] && (d(), s[t]);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -711,12 +761,14 @@ const InitTwitterWidget = async () => {
 							enabled: function (t, e) {
 								return !!(
 									c ||
-									a.asBoolean(u.val('dnt')) ||
+									a.asBoolean(u.val("dnt")) ||
 									s.isUrlSensitive(e || i.host) ||
-									(o.isFramed() && s.isUrlSensitive(o.rootDocumentLocation())) ||
-									((t = d.test(t || r.referrer) && RegExp.$1) && s.isUrlSensitive(t))
+									(o.isFramed() &&
+										s.isUrlSensitive(o.rootDocumentLocation())) ||
+									((t = d.test(t || r.referrer) && RegExp.$1) &&
+										s.isUrlSensitive(t))
 								);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -733,7 +785,8 @@ const InitTwitterWidget = async () => {
 								return (t = t || o).devicePixelRatio
 									? t.devicePixelRatio >= 1.5
 									: !!t.matchMedia &&
-											t.matchMedia('only screen and (min-resolution: 144dpi)').matches;
+											t.matchMedia("only screen and (min-resolution: 144dpi)")
+												.matches;
 							},
 							anyIE: u,
 							ie9: function (t) {
@@ -746,17 +799,25 @@ const InitTwitterWidget = async () => {
 								return /(iPad|iPhone|iPod)/.test((t = t || a));
 							},
 							android: function (t) {
-								return /^Mozilla\/5\.0 \(Linux; (U; )?Android/.test((t = t || a));
+								return /^Mozilla\/5\.0 \(Linux; (U; )?Android/.test(
+									(t = t || a),
+								);
 							},
 							canPostMessage: function (t, e) {
-								return (t = t || o), (e = e || a), t.postMessage && !(u(e) && t.opener);
+								return (
+									(t = t || o),
+									(e = e || a),
+									t.postMessage && !(u(e) && t.opener)
+								);
 							},
 							touch: function (t, e, n) {
 								return (
 									(t = t || o),
 									(e = e || i),
 									(n = n || a),
-									'ontouchstart' in t || /Opera Mini/.test(n) || e.msMaxTouchPoints > 0
+									"ontouchstart" in t ||
+										/Opera Mini/.test(n) ||
+										e.msMaxTouchPoints > 0
 								);
 							},
 							cssTransitions: function () {
@@ -779,7 +840,7 @@ const InitTwitterWidget = async () => {
 									(new o.Promise(function (e) {
 										t = e;
 									}),
-									s.isType('function', t))
+									s.isType("function", t))
 								);
 								var t;
 							},
@@ -788,27 +849,32 @@ const InitTwitterWidget = async () => {
 							},
 							hasPerformanceInformation: function () {
 								return o.performance && o.performance.getEntriesByType;
-							}
+							},
 						};
 					},
 					function (t, e) {
-						var n = 'i',
+						var n = "i",
 							r = 0,
 							i = 0;
 						t.exports = {
 							generate: function () {
-								return n + String(+new Date()) + Math.floor(1e5 * Math.random()) + r++;
+								return (
+									n +
+									String(+new Date()) +
+									Math.floor(1e5 * Math.random()) +
+									r++
+								);
 							},
 							deterministic: function () {
 								return n + String(i++);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
 						var r = n(46),
 							i = n(49),
 							o = n(0);
-						t.exports = o.aug(r.get('events') || {}, i.Emitter);
+						t.exports = o.aug(r.get("events") || {}, i.Emitter);
 					},
 					function (t, e, n) {
 						var r = n(6),
@@ -824,7 +890,7 @@ const InitTwitterWidget = async () => {
 							allResolved: function (t) {
 								var e;
 								return void 0 === t
-									? r.reject(new Error('undefined is not an object'))
+									? r.reject(new Error("undefined is not an object"))
 									: Array.isArray(t)
 										? (e = t.length)
 											? new r(function (n, r) {
@@ -841,7 +907,7 @@ const InitTwitterWidget = async () => {
 													});
 												})
 											: r.resolve([])
-										: r.reject(new Error('Type error'));
+										: r.reject(new Error("Type error"));
 							},
 							some: function (t) {
 								var e;
@@ -850,7 +916,7 @@ const InitTwitterWidget = async () => {
 									(t = t.filter(s)),
 									e
 										? e !== t.length
-											? r.reject('non-Promise passed to .some')
+											? r.reject("non-Promise passed to .some")
 											: new r(function (e, n) {
 													var r = 0;
 													function i() {
@@ -860,7 +926,7 @@ const InitTwitterWidget = async () => {
 														t.then(e, i);
 													});
 												})
-										: r.reject('no promises passed to .some')
+										: r.reject("no promises passed to .some")
 								);
 							},
 							isPromise: s,
@@ -869,14 +935,14 @@ const InitTwitterWidget = async () => {
 								return r.all(
 									(t || []).map(function (t) {
 										return o(t, e);
-									})
+									}),
 								);
 							},
 							timeout: function (t, e) {
 								var n = new i();
 								return (
 									setTimeout(function () {
-										n.reject(new Error('Promise timed out'));
+										n.reject(new Error("Promise timed out"));
 									}, e),
 									t.then(
 										function (t) {
@@ -884,48 +950,55 @@ const InitTwitterWidget = async () => {
 										},
 										function (t) {
 											n.reject(t);
-										}
+										},
 									),
 									n.promise
 								);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
 						var r = n(1).JSON;
-						t.exports = { stringify: r.stringify || r.encode, parse: r.parse || r.decode };
+						t.exports = {
+							stringify: r.stringify || r.encode,
+							parse: r.parse || r.decode,
+						};
 					},
 					function (t, e, n) {
 						var r = n(39),
 							i = n(97),
 							o = n(7);
-						((r = Object.create(r)).build = o(r.build, null, i)), (t.exports = r);
+						((r = Object.create(r)).build = o(r.build, null, i)),
+							(t.exports = r);
 					},
 					function (t, e, n) {
 						var r = n(49).makeEmitter();
 						t.exports = {
 							emitter: r,
-							START: 'start',
-							ALL_WIDGETS_RENDER_START: 'all_widgets_render_start',
-							ALL_WIDGETS_RENDER_END: 'all_widgets_render_end',
-							ALL_WIDGETS_AND_IMAGES_LOADED: 'all_widgets_and_images_loaded'
+							START: "start",
+							ALL_WIDGETS_RENDER_START: "all_widgets_render_start",
+							ALL_WIDGETS_RENDER_END: "all_widgets_render_end",
+							ALL_WIDGETS_AND_IMAGES_LOADED: "all_widgets_and_images_loaded",
 						};
 					},
 					function (t, e, n) {
 						var r = n(9),
 							i = n(102),
-							o = 'https://syndication.twitter.com',
-							s = 'https://platform.twitter.com',
+							o = "https://syndication.twitter.com",
+							s = "https://platform.twitter.com",
 							a = [
-								'https://syndication.twitter.com',
-								'https://cdn.syndication.twimg.com',
-								'https://localhost.twitter.com:8444'
+								"https://syndication.twitter.com",
+								"https://cdn.syndication.twimg.com",
+								"https://localhost.twitter.com:8444",
 							],
-							u = ['https://syndication.twitter.com', 'https://localhost.twitter.com:8445'],
+							u = [
+								"https://syndication.twitter.com",
+								"https://localhost.twitter.com:8445",
+							],
 							c = [
-								'https://platform.twitter.com',
-								'https://localhost.twitter.com',
-								/^https:\/\/ton\.local\.twitter\.com\/syndication-internal\/embed-iframe\/[0-9A-Za-z_-]+\/app/
+								"https://platform.twitter.com",
+								"https://localhost.twitter.com",
+								/^https:\/\/ton\.local\.twitter\.com\/syndication-internal\/embed-iframe\/[0-9A-Za-z_-]+\/app/,
 							],
 							d = function (t, e) {
 								return t.some(function (t) {
@@ -933,11 +1006,11 @@ const InitTwitterWidget = async () => {
 								});
 							},
 							f = function () {
-								var t = r.get('backendHost');
-								return t && d(a, t) ? t : 'https://cdn.syndication.twimg.com';
+								var t = r.get("backendHost");
+								return t && d(a, t) ? t : "https://cdn.syndication.twimg.com";
 							},
 							l = function () {
-								var t = r.get('settingsSvcHost');
+								var t = r.get("settingsSvcHost");
 								return t && d(u, t) ? t : o;
 							};
 						function h(t, e) {
@@ -946,70 +1019,70 @@ const InitTwitterWidget = async () => {
 								e.forEach(function (t) {
 									n.push(
 										(function (t) {
-											var e = (t || '').toString(),
-												n = '/' === e.slice(0, 1) ? 1 : 0,
+											var e = (t || "").toString(),
+												n = "/" === e.slice(0, 1) ? 1 : 0,
 												r = (function (t) {
-													return '/' === t.slice(-1);
+													return "/" === t.slice(-1);
 												})(e)
 													? -1
 													: void 0;
 											return e.slice(n, r);
-										})(t)
+										})(t),
 									);
 								}),
-								n.join('/')
+								n.join("/")
 							);
 						}
 						t.exports = {
 							cookieConsent: function (t) {
 								var e = t || [];
-								return e.unshift('cookie/consent'), h(l(), e);
+								return e.unshift("cookie/consent"), h(l(), e);
 							},
 							embedIframe: function (t, e) {
 								var n = t || [],
 									o = s,
-									a = r.get('embedIframeURL');
+									a = r.get("embedIframeURL");
 								return a && d(c, a)
-									? h(a, n) + '.html'
-									: (n.unshift(i.getBaseURLPath(e)), h(o, n) + '.html');
+									? h(a, n) + ".html"
+									: (n.unshift(i.getBaseURLPath(e)), h(o, n) + ".html");
 							},
 							embedService: function (t) {
 								var e = t || [],
 									n = o;
-								return e.unshift('srv'), h(n, e);
+								return e.unshift("srv"), h(n, e);
 							},
 							eventVideo: function (t) {
 								var e = t || [];
-								return e.unshift('video/event'), h(f(), e);
+								return e.unshift("video/event"), h(f(), e);
 							},
 							grid: function (t) {
 								var e = t || [];
-								return e.unshift('grid/collection'), h(f(), e);
+								return e.unshift("grid/collection"), h(f(), e);
 							},
 							moment: function (t) {
 								var e = t || [];
-								return e.unshift('moments'), h(f(), e);
+								return e.unshift("moments"), h(f(), e);
 							},
 							settings: function (t) {
 								var e = t || [];
-								return e.unshift('settings'), h(l(), e);
+								return e.unshift("settings"), h(l(), e);
 							},
 							settingsScribe: function (t) {
 								var e = t || [];
-								return e.unshift('i/jot/embeds'), h(l(), e);
+								return e.unshift("i/jot/embeds"), h(l(), e);
 							},
 							timeline: function (t) {
 								var e = t || [];
-								return e.unshift('timeline'), h(f(), e);
+								return e.unshift("timeline"), h(f(), e);
 							},
 							tweetBatch: function (t) {
 								var e = t || [];
-								return e.unshift('tweets.json'), h(f(), e);
+								return e.unshift("tweets.json"), h(f(), e);
 							},
 							video: function (t) {
 								var e = t || [];
-								return e.unshift('widgets/video'), h(f(), e);
-							}
+								return e.unshift("widgets/video"), h(f(), e);
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1019,18 +1092,20 @@ const InitTwitterWidget = async () => {
 							var o;
 							if (((n = n || r), (t = t || {}), (e = e || {}), t.name)) {
 								try {
-									o = n.createElement('<iframe name="' + t.name + '"></iframe>');
+									o = n.createElement(
+										'<iframe name="' + t.name + '"></iframe>',
+									);
 								} catch (e) {
-									(o = n.createElement('iframe')).name = t.name;
+									(o = n.createElement("iframe")).name = t.name;
 								}
 								delete t.name;
-							} else o = n.createElement('iframe');
+							} else o = n.createElement("iframe");
 							return (
 								t.id && ((o.id = t.id), delete t.id),
-								(o.allowtransparency = 'true'),
-								(o.scrolling = 'no'),
-								o.setAttribute('frameBorder', 0),
-								o.setAttribute('allowTransparency', !0),
+								(o.allowtransparency = "true"),
+								(o.scrolling = "no"),
+								o.setAttribute("frameBorder", 0),
+								o.setAttribute("allowTransparency", !0),
 								i.forIn(t, function (t, e) {
 									o.setAttribute(t, e);
 								}),
@@ -1055,7 +1130,8 @@ const InitTwitterWidget = async () => {
 						var r = n(39),
 							i = n(40),
 							o = n(7);
-						((r = Object.create(r)).build = o(r.build, null, i)), (t.exports = r);
+						((r = Object.create(r)).build = o(r.build, null, i)),
+							(t.exports = r);
 					},
 					function (t, e, n) {
 						var r = n(70),
@@ -1069,20 +1145,24 @@ const InitTwitterWidget = async () => {
 								height: { transform: o.asInt },
 								instanceId: { required: !0, fallback: s.deterministic },
 								isPreconfigured: {},
-								lang: { required: !0, transform: r.matchLanguage, fallback: 'en' },
+								lang: {
+									required: !0,
+									transform: r.matchLanguage,
+									fallback: "en",
+								},
 								theme: {},
-								tweetLimit: { transform: o.asInt }
+								tweetLimit: { transform: o.asInt },
 							}),
-								t.defineProperty('endpoint', {
+								t.defineProperty("endpoint", {
 									get: function () {
-										throw new Error('endpoint not specified');
-									}
+										throw new Error("endpoint not specified");
+									},
 								}),
-								t.define('queryParams', function () {
+								t.define("queryParams", function () {
 									return a.compact({
 										dnt: i.enabled(),
 										limit: this.params.tweetLimit,
-										lang: this.params.lang
+										lang: this.params.lang,
 									});
 								});
 						};
@@ -1095,14 +1175,18 @@ const InitTwitterWidget = async () => {
 								n,
 								o,
 								s = 0;
-							for (r = {}, e = (t = t || i).getElementsByTagName('meta'); e[s]; s++) {
-								if (((n = e[s]), /^twitter:/.test(n.getAttribute('name'))))
-									o = n.getAttribute('name').replace(/^twitter:/, '');
+							for (
+								r = {}, e = (t = t || i).getElementsByTagName("meta");
+								e[s];
+								s++
+							) {
+								if (((n = e[s]), /^twitter:/.test(n.getAttribute("name"))))
+									o = n.getAttribute("name").replace(/^twitter:/, "");
 								else {
-									if (!/^twitter:/.test(n.getAttribute('property'))) continue;
-									o = n.getAttribute('property').replace(/^twitter:/, '');
+									if (!/^twitter:/.test(n.getAttribute("property"))) continue;
+									o = n.getAttribute("property").replace(/^twitter:/, "");
 								}
-								r[o] = n.getAttribute('content') || n.getAttribute('value');
+								r[o] = n.getAttribute("content") || n.getAttribute("value");
 							}
 						}
 						o(),
@@ -1110,7 +1194,7 @@ const InitTwitterWidget = async () => {
 								init: o,
 								val: function (t) {
 									return r[t];
-								}
+								},
 							});
 					},
 					function (t, e, n) {
@@ -1118,12 +1202,12 @@ const InitTwitterWidget = async () => {
 							i = n(24),
 							o = n(1);
 						function s(t) {
-							var e = '';
-							if (!t) return '';
+							var e = "";
+							if (!t) return "";
 							try {
 								return (e = i.stringify(t)), o.btoa(e);
 							} catch (t) {
-								return '';
+								return "";
 							}
 						}
 						function a(t) {
@@ -1132,17 +1216,17 @@ const InitTwitterWidget = async () => {
 							});
 						}
 						function u() {
-							return a('features');
+							return a("features");
 						}
 						t.exports = {
 							encodeFeatures: s,
 							shouldObtainCookieConsent: function () {
-								return a('shouldObtainCookieConsent');
+								return a("shouldObtainCookieConsent");
 							},
 							getExperiments: u,
 							getExperiment: function (t) {
 								return u().then(function (e) {
-									if (!e[t]) throw new Error('Experiment not found');
+									if (!e[t]) throw new Error("Experiment not found");
 									return e[t];
 								});
 							},
@@ -1163,7 +1247,7 @@ const InitTwitterWidget = async () => {
 							},
 							load: function () {
 								r.load();
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1172,13 +1256,14 @@ const InitTwitterWidget = async () => {
 							o = -1,
 							s = {};
 						function a(t) {
-							var e = t.getAttribute('data-twitter-event-id');
-							return e || (t.setAttribute('data-twitter-event-id', ++o), o);
+							var e = t.getAttribute("data-twitter-event-id");
+							return e || (t.setAttribute("data-twitter-event-id", ++o), o);
 						}
 						function u(t, e, n) {
 							var r = 0,
 								i = (t && t.length) || 0;
-							for (r = 0; r < i; r++) if ((t[r].call(e, n, e), n.ceaseImmediately)) return !1;
+							for (r = 0; r < i; r++)
+								if ((t[r].call(e, n, e), n.ceaseImmediately)) return !1;
 						}
 						function c(t, e, n) {
 							for (
@@ -1186,7 +1271,7 @@ const InitTwitterWidget = async () => {
 									o = r
 										.list(i)
 										.map(function (t) {
-											return '.' + t;
+											return "." + t;
 										})
 										.concat(i.tagName),
 									s = 0,
@@ -1195,7 +1280,9 @@ const InitTwitterWidget = async () => {
 								s++
 							)
 								if (!1 === u(e[o[s]], i, t)) return;
-							t.cease || (i !== this && c.call(this, t, e, i.parentElement || i.parentNode));
+							t.cease ||
+								(i !== this &&
+									c.call(this, t, e, i.parentElement || i.parentNode));
 						}
 						function d(t, e, n, r) {
 							function i(r) {
@@ -1222,7 +1309,10 @@ const InitTwitterWidget = async () => {
 							},
 							stopPropagation: l,
 							stopImmediatePropagation: function (t) {
-								t && ((t.ceaseImmediately = !0), l(t), t.stopImmediatePropagation());
+								t &&
+									((t.ceaseImmediately = !0),
+									l(t),
+									t.stopImmediatePropagation());
 							},
 							preventDefault: f,
 							delegate: function (t, e, n, r) {
@@ -1241,10 +1331,11 @@ const InitTwitterWidget = async () => {
 								var e = s[t];
 								e &&
 									(e.forEach(function (t) {
-										t.el.removeEventListener(t.type, t.listener, !1), delete i[t.rootId];
+										t.el.removeEventListener(t.type, t.listener, !1),
+											delete i[t.rootId];
 									}),
 									delete s[t]);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1256,16 +1347,22 @@ const InitTwitterWidget = async () => {
 								if (n)
 									return (
 										(o = o || (n && n.ownerDocument)),
-										(s = r.isType('function', e)
+										(s = r.isType("function", e)
 											? e
 											: (function (t) {
 													return function (e) {
 														return !!e.tagName && i(e, t);
 													};
 												})(e)),
-										n === o ? (s(n) ? n : void 0) : s(n) ? n : t(s, n.parentNode, o)
+										n === o
+											? s(n)
+												? n
+												: void 0
+											: s(n)
+												? n
+												: t(s, n.parentNode, o)
 									);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1280,9 +1377,11 @@ const InitTwitterWidget = async () => {
 							f = n(0),
 							l = 1,
 							h = r.version,
-							p = c.get('clientEventEndpoint') || 'https://syndication.twitter.com/i/jot';
+							p =
+								c.get("clientEventEndpoint") ||
+								"https://syndication.twitter.com/i/jot";
 						function m(t) {
-							return f.aug({ client: 'tfw' }, t || {});
+							return f.aug({ client: "tfw" }, t || {});
 						}
 						function v(t, e, n) {
 							return (
@@ -1290,7 +1389,7 @@ const InitTwitterWidget = async () => {
 								f.aug({}, e, {
 									_category_: t,
 									triggered_on: e.triggered_on || +new Date(),
-									dnt: o.enabled(n)
+									dnt: o.enabled(n),
 								})
 							);
 						}
@@ -1300,9 +1399,9 @@ const InitTwitterWidget = async () => {
 								return (
 									(n = n || {}),
 									e && e.nodeType === Node.ELEMENT_NODE
-										? ((r = e.getAttribute('data-scribe')) &&
-												r.split(' ').forEach(function (t) {
-													var e = t.trim().split(':'),
+										? ((r = e.getAttribute("data-scribe")) &&
+												r.split(" ").forEach(function (t) {
+													var e = t.trim().split(":"),
 														r = e[0],
 														i = e[1];
 													r && i && !n[r] && (n[r] = i);
@@ -1312,9 +1411,9 @@ const InitTwitterWidget = async () => {
 								);
 							},
 							clickEventElement: function (t) {
-								var e = s.closest('[data-expanded-url]', t),
-									n = e && e.getAttribute('data-expanded-url');
-								return n && d.isTwitterURL(n) ? 'twitter_url' : 'url';
+								var e = s.closest("[data-expanded-url]", t),
+									n = e && e.getAttribute("data-expanded-url");
+								return n && d.isTwitterURL(n) ? "twitter_url" : "url";
 							},
 							flattenClientEventPayload: function (t, e) {
 								return f.aug({}, e, { event_namespace: t });
@@ -1323,7 +1422,7 @@ const InitTwitterWidget = async () => {
 							formatClientEventData: function (t, e, n) {
 								var r = (t && t.widget_origin) || i.referrer;
 								return (
-									((t = v('tfw_client_event', t, r)).client_version = h),
+									((t = v("tfw_client_event", t, r)).client_version = h),
 									(t.format_version = void 0 !== n ? n : 1),
 									e || (t.widget_origin = r),
 									t
@@ -1332,14 +1431,20 @@ const InitTwitterWidget = async () => {
 							formatClientEventNamespace: m,
 							formatHorizonTweetData: function (t) {
 								var e = { item_ids: [], item_details: {} };
-								return e.item_ids.push(t), (e.item_details[t] = { item_type: a.TWEET }), e;
+								return (
+									e.item_ids.push(t),
+									(e.item_details[t] = { item_type: a.TWEET }),
+									e
+								);
 							},
 							formatTweetAssociation: function (t, e) {
 								var n = {};
-								return ((e = e || {}).association_namespace = m(t)), (n[l] = e), n;
+								return (
+									((e = e || {}).association_namespace = m(t)), (n[l] = e), n
+								);
 							},
 							noticeSeen: function (t) {
-								return 'notice' === t.element && 'seen' === t.action;
+								return "notice" === t.element && "seen" === t.action;
 							},
 							splitLogEntry: function (t) {
 								var e, n, r, i, o;
@@ -1357,7 +1462,7 @@ const InitTwitterWidget = async () => {
 										}),
 										[
 											f.aug({}, t, { item_ids: n, item_details: r }),
-											f.aug({}, t, { item_ids: i, item_details: o })
+											f.aug({}, t, { item_ids: i, item_details: o }),
 										])
 									: [t];
 							},
@@ -1372,7 +1477,7 @@ const InitTwitterWidget = async () => {
 								);
 							},
 							CLIENT_EVENT_ENDPOINT: p,
-							RUFOUS_REDIRECT: 'https://platform.twitter.com/jot.html'
+							RUFOUS_REDIRECT: "https://platform.twitter.com/jot.html",
 						};
 					},
 					function (t, e, n) {
@@ -1386,11 +1491,11 @@ const InitTwitterWidget = async () => {
 								return s !== a;
 							},
 							rootDocumentLocation: function (t) {
-								return t && o.isType('string', t) && (s = t), s;
+								return t && o.isType("string", t) && (s = t), s;
 							},
 							currentDocumentLocation: function () {
 								return a;
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1409,7 +1514,7 @@ const InitTwitterWidget = async () => {
 									}),
 									o.build(n)
 								);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -1417,7 +1522,9 @@ const InitTwitterWidget = async () => {
 							i = n(0),
 							o = n(41);
 						function s() {
-							(this.Component = this.factory()), (this._adviceArgs = []), (this._lastArgs = []);
+							(this.Component = this.factory()),
+								(this._adviceArgs = []),
+								(this._lastArgs = []);
 						}
 						i.aug(s.prototype, {
 							factory: o,
@@ -1429,7 +1536,7 @@ const InitTwitterWidget = async () => {
 									this._adviceArgs.concat(this._lastArgs).forEach(function (t) {
 										(function (t, e, n) {
 											var r = this[e];
-											if (!r) throw new Error(e + ' does not exist');
+											if (!r) throw new Error(e + " does not exist");
 											this[e] = t(r, n);
 										}).apply(e.Component.prototype, t);
 									}),
@@ -1440,11 +1547,12 @@ const InitTwitterWidget = async () => {
 							},
 							params: function (t) {
 								var e = this.Component.prototype.paramConfigs;
-								(t = t || {}), (this.Component.prototype.paramConfigs = i.aug({}, t, e));
+								(t = t || {}),
+									(this.Component.prototype.paramConfigs = i.aug({}, t, e));
 							},
 							define: function (t, e) {
 								if (t in this.Component.prototype)
-									throw new Error(t + ' has previously been defined');
+									throw new Error(t + " has previously been defined");
 								this.override(t, e);
 							},
 							defineStatic: function (t, e) {
@@ -1455,7 +1563,7 @@ const InitTwitterWidget = async () => {
 							},
 							defineProperty: function (t, e) {
 								if (t in this.Component.prototype)
-									throw new Error(t + ' has previously been defined');
+									throw new Error(t + " has previously been defined");
 								this.overrideProperty(t, e);
 							},
 							overrideProperty: function (t, e) {
@@ -1473,7 +1581,7 @@ const InitTwitterWidget = async () => {
 							},
 							last: function (t, e) {
 								this._lastArgs.push([r.after, t, e]);
-							}
+							},
 						}),
 							(t.exports = s);
 					},
@@ -1489,45 +1597,50 @@ const InitTwitterWidget = async () => {
 							function t(t) {
 								var e = this;
 								(t = t || {}),
-									(this.params = Object.keys(this.paramConfigs).reduce(function (n, s) {
-										var a = [],
-											u = e.boundParams,
-											c = e.paramConfigs[s],
-											d = c.validate || i,
-											f = c.transform || o;
-										if (
-											(s in u && a.push(u[s]),
-											s in t && a.push(t[s]),
-											(a = 'fallback' in c ? a.concat(c.fallback) : a),
-											(n[s] = (function (t, e, n) {
-												var i = null;
-												return (
-													t.some(function (t) {
-														if (((t = r.isType('function', t) ? t() : t), e(t)))
-															return (i = n(t)), !0;
-													}),
-													i
-												);
-											})(a, d, f)),
-											c.required && null == n[s])
-										)
-											throw new Error(s + ' is a required parameter');
-										return n;
-									}, {})),
+									(this.params = Object.keys(this.paramConfigs).reduce(
+										function (n, s) {
+											var a = [],
+												u = e.boundParams,
+												c = e.paramConfigs[s],
+												d = c.validate || i,
+												f = c.transform || o;
+											if (
+												(s in u && a.push(u[s]),
+												s in t && a.push(t[s]),
+												(a = "fallback" in c ? a.concat(c.fallback) : a),
+												(n[s] = (function (t, e, n) {
+													var i = null;
+													return (
+														t.some(function (t) {
+															if (
+																((t = r.isType("function", t) ? t() : t), e(t))
+															)
+																return (i = n(t)), !0;
+														}),
+														i
+													);
+												})(a, d, f)),
+												c.required && null == n[s])
+											)
+												throw new Error(s + " is a required parameter");
+											return n;
+										},
+										{},
+									)),
 									this.initialize();
 							}
 							return (
 								r.aug(t.prototype, {
 									paramConfigs: {},
 									boundParams: {},
-									initialize: function () {}
+									initialize: function () {},
 								}),
 								t
 							);
 						};
 					},
 					function (t) {
-						t.exports = { version: '2615f7e52b7e0:1702314776716' };
+						t.exports = { version: "2615f7e52b7e0:1702314776716" };
 					},
 					function (t, e, n) {
 						var r = n(1);
@@ -1540,7 +1653,8 @@ const InitTwitterWidget = async () => {
 									var a = n || this,
 										u = arguments,
 										c = +new Date();
-									if ((r.clearTimeout(i), c - o > e)) return (o = c), void t.apply(a, u);
+									if ((r.clearTimeout(i), c - o > e))
+										return (o = c), void t.apply(a, u);
 									i = r.setTimeout(function () {
 										s.apply(a, u);
 									}, e);
@@ -1552,11 +1666,11 @@ const InitTwitterWidget = async () => {
 						var r = n(18);
 						t.exports = function () {
 							r.publicError(
-								'Error: This Timeline type is no longer supported (Likes, Collections, & Moments). \n\t',
-								'* Twitter still supports Profile and List Timelines \n\t',
-								'* You can learn more about this change in our announcement: \n\t',
-								'https://twittercommunity.com/t/removing-support-for-embedded-like-collection-and-moment-timelines/150313 \n\t',
-								'* In order to create a new Embedded Timeline, visit: https://publish.twitter.com'
+								"Error: This Timeline type is no longer supported (Likes, Collections, & Moments). \n\t",
+								"* Twitter still supports Profile and List Timelines \n\t",
+								"* You can learn more about this change in our announcement: \n\t",
+								"https://twittercommunity.com/t/removing-support-for-embedded-like-collection-and-moment-timelines/150313 \n\t",
+								"* In order to create a new Embedded Timeline, visit: https://publish.twitter.com",
 							);
 						};
 					},
@@ -1569,32 +1683,36 @@ const InitTwitterWidget = async () => {
 						 * @version   v4.2.5+7f2b526d
 						 */ var r;
 						(r = function () {
-							'use strict';
+							"use strict";
 							function t(t) {
-								return 'function' == typeof t;
+								return "function" == typeof t;
 							}
 							var e = Array.isArray
 									? Array.isArray
 									: function (t) {
-											return '[object Array]' === Object.prototype.toString.call(t);
+											return (
+												"[object Array]" === Object.prototype.toString.call(t)
+											);
 										},
 								n = 0,
 								r = void 0,
 								i = void 0,
 								o = function (t, e) {
-									(l[n] = t), (l[n + 1] = e), 2 === (n += 2) && (i ? i(h) : w());
+									(l[n] = t),
+										(l[n + 1] = e),
+										2 === (n += 2) && (i ? i(h) : w());
 								},
-								s = 'undefined' != typeof window ? window : void 0,
+								s = "undefined" != typeof window ? window : void 0,
 								a = s || {},
 								u = a.MutationObserver || a.WebKitMutationObserver,
 								c =
-									'undefined' == typeof self &&
-									'undefined' != typeof process &&
-									'[object process]' === {}.toString.call(process),
+									"undefined" == typeof self &&
+									"undefined" != typeof process &&
+									"[object process]" === {}.toString.call(process),
 								d =
-									'undefined' != typeof Uint8ClampedArray &&
-									'undefined' != typeof importScripts &&
-									'undefined' != typeof MessageChannel;
+									"undefined" != typeof Uint8ClampedArray &&
+									"undefined" != typeof importScripts &&
+									"undefined" != typeof MessageChannel;
 							function f() {
 								var t = setTimeout;
 								return function () {
@@ -1626,7 +1744,8 @@ const InitTwitterWidget = async () => {
 								return r;
 							}
 							function b(t) {
-								if (t && 'object' == typeof t && t.constructor === this) return t;
+								if (t && "object" == typeof t && t.constructor === this)
+									return t;
 								var e = new this(E);
 								return C(e, t), e;
 							}
@@ -1637,7 +1756,7 @@ const InitTwitterWidget = async () => {
 								: u
 									? ((m = 0),
 										(v = new u(h)),
-										(g = document.createTextNode('')),
+										(g = document.createTextNode("")),
 										v.observe(g, { characterData: !0 }),
 										(w = function () {
 											g.data = m = ++m % 2;
@@ -1651,8 +1770,10 @@ const InitTwitterWidget = async () => {
 												void 0 === s
 													? (function () {
 															try {
-																var t = Function('return this')().require('vertx');
-																return void 0 !== (r = t.runOnLoop || t.runOnContext)
+																var t =
+																	Function("return this")().require("vertx");
+																return void 0 !==
+																	(r = t.runOnLoop || t.runOnContext)
 																	? function () {
 																			r(h);
 																		}
@@ -1676,7 +1797,9 @@ const InitTwitterWidget = async () => {
 								}
 							}
 							function N(e, n, r) {
-								n.constructor === e.constructor && r === y && n.constructor.resolve === b
+								n.constructor === e.constructor &&
+								r === y &&
+								n.constructor.resolve === b
 									? (function (t, e) {
 											e._state === T
 												? P(t, e._result)
@@ -1690,7 +1813,7 @@ const InitTwitterWidget = async () => {
 															},
 															function (e) {
 																return j(t, e);
-															}
+															},
 														);
 										})(e, n)
 									: r === S
@@ -1711,12 +1834,13 @@ const InitTwitterWidget = async () => {
 																	n,
 																	e,
 																	function (n) {
-																		r || ((r = !0), e !== n ? C(t, n) : P(t, n));
+																		r ||
+																			((r = !0), e !== n ? C(t, n) : P(t, n));
 																	},
 																	function (e) {
 																		r || ((r = !0), j(t, e));
 																	},
-																	t._label
+																	t._label,
 																);
 															!r && i && ((r = !0), j(t, i));
 														}, t);
@@ -1726,16 +1850,23 @@ const InitTwitterWidget = async () => {
 							function C(t, e) {
 								var n, r;
 								t === e
-									? j(t, new TypeError('You cannot resolve a promise with itself'))
+									? j(
+											t,
+											new TypeError("You cannot resolve a promise with itself"),
+										)
 									: ((r = typeof (n = e)),
-										null === n || ('object' !== r && 'function' !== r) ? P(t, e) : N(t, e, R(e)));
+										null === n || ("object" !== r && "function" !== r)
+											? P(t, e)
+											: N(t, e, R(e)));
 							}
 							function L(t) {
 								t._onerror && t._onerror(t._result), O(t);
 							}
 							function P(t, e) {
 								t._state === x &&
-									((t._result = e), (t._state = T), 0 !== t._subscribers.length && o(O, t));
+									((t._result = e),
+									(t._state = T),
+									0 !== t._subscribers.length && o(O, t));
 							}
 							function j(t, e) {
 								t._state === x && ((t._state = A), (t._result = e), o(L, t));
@@ -1753,7 +1884,11 @@ const InitTwitterWidget = async () => {
 								var e = t._subscribers,
 									n = t._state;
 								if (0 !== e.length) {
-									for (var r = void 0, i = void 0, o = t._result, s = 0; s < e.length; s += 3)
+									for (
+										var r = void 0, i = void 0, o = t._result, s = 0;
+										s < e.length;
+										s += 3
+									)
 										(r = e[s]), (i = e[s + n]), r ? D(n, r, i, o) : i(o);
 									t._subscribers.length = 0;
 								}
@@ -1779,15 +1914,26 @@ const InitTwitterWidget = async () => {
 									)
 										return void j(
 											n,
-											new TypeError('A promises callback cannot return that same promise.')
+											new TypeError(
+												"A promises callback cannot return that same promise.",
+											),
 										);
 								} else (s = i), (u = !0);
 								n._state !== x ||
-									(o && u ? C(n, s) : c ? j(n, a) : e === T ? P(n, s) : e === A && j(n, s));
+									(o && u
+										? C(n, s)
+										: c
+											? j(n, a)
+											: e === T
+												? P(n, s)
+												: e === A && j(n, s));
 							}
 							var z = 0;
 							function k(t) {
-								(t[_] = z++), (t._state = void 0), (t._result = void 0), (t._subscribers = []);
+								(t[_] = z++),
+									(t._state = void 0),
+									(t._result = void 0),
+									(t._subscribers = []);
 							}
 							var M = (function () {
 									function t(t, n) {
@@ -1802,8 +1948,14 @@ const InitTwitterWidget = async () => {
 														? P(this.promise, this._result)
 														: ((this.length = this.length || 0),
 															this._enumerate(n),
-															0 === this._remaining && P(this.promise, this._result)))
-												: j(this.promise, new Error('Array Methods must be provided an Array'));
+															0 === this._remaining &&
+																P(this.promise, this._result)))
+												: j(
+														this.promise,
+														new Error(
+															"Array Methods must be provided an Array",
+														),
+													);
 									}
 									return (
 										(t.prototype._enumerate = function (t) {
@@ -1815,8 +1967,10 @@ const InitTwitterWidget = async () => {
 												r = n.resolve;
 											if (r === b) {
 												var i = R(t);
-												if (i === y && t._state !== x) this._settledAt(t._state, e, t._result);
-												else if ('function' != typeof i) this._remaining--, (this._result[e] = t);
+												if (i === y && t._state !== x)
+													this._settledAt(t._state, e, t._result);
+												else if ("function" != typeof i)
+													this._remaining--, (this._result[e] = t);
 												else if (n === U) {
 													var o = new n(E);
 													N(o, t, i), this._willSettleAt(o, e);
@@ -1825,14 +1979,15 @@ const InitTwitterWidget = async () => {
 														new n(function (e) {
 															return e(t);
 														}),
-														e
+														e,
 													);
 											} else this._willSettleAt(r(t), e);
 										}),
 										(t.prototype._settledAt = function (t, e, n) {
 											var r = this.promise;
 											r._state === x &&
-												(this._remaining--, t === A ? j(r, n) : (this._result[e] = n)),
+												(this._remaining--,
+												t === A ? j(r, n) : (this._result[e] = n)),
 												0 === this._remaining && P(r, this._result);
 										}),
 										(t.prototype._willSettleAt = function (t, e) {
@@ -1845,7 +2000,7 @@ const InitTwitterWidget = async () => {
 												},
 												function (t) {
 													return n._settledAt(A, e, t);
-												}
+												},
 											);
 										}),
 										t
@@ -1857,10 +2012,10 @@ const InitTwitterWidget = async () => {
 											(this._result = this._state = void 0),
 											(this._subscribers = []),
 											E !== t &&
-												('function' != typeof t &&
+												("function" != typeof t &&
 													(function () {
 														throw new TypeError(
-															'You must pass a resolver function as the first argument to the promise constructor'
+															"You must pass a resolver function as the first argument to the promise constructor",
 														);
 													})(),
 												this instanceof e
@@ -1872,7 +2027,7 @@ const InitTwitterWidget = async () => {
 																	},
 																	function (e) {
 																		j(t, e);
-																	}
+																	},
 																);
 															} catch (e) {
 																j(t, e);
@@ -1880,7 +2035,7 @@ const InitTwitterWidget = async () => {
 														})(this, t)
 													: (function () {
 															throw new TypeError(
-																"Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function."
+																"Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.",
 															);
 														})());
 									}
@@ -1901,7 +2056,7 @@ const InitTwitterWidget = async () => {
 															return n.resolve(e()).then(function () {
 																throw t;
 															});
-														}
+														},
 													)
 												: this.then(e, e);
 										}),
@@ -1917,10 +2072,13 @@ const InitTwitterWidget = async () => {
 									var n = this;
 									return e(t)
 										? new n(function (e, r) {
-												for (var i = t.length, o = 0; o < i; o++) n.resolve(t[o]).then(e, r);
+												for (var i = t.length, o = 0; o < i; o++)
+													n.resolve(t[o]).then(e, r);
 											})
 										: new n(function (t, e) {
-												return e(new TypeError('You must pass an array to race.'));
+												return e(
+													new TypeError("You must pass an array to race."),
+												);
 											});
 								}),
 								(U.resolve = b),
@@ -1937,14 +2095,14 @@ const InitTwitterWidget = async () => {
 								(U._asap = o),
 								(U.polyfill = function () {
 									var t = void 0;
-									if ('undefined' != typeof global) t = global;
-									else if ('undefined' != typeof self) t = self;
+									if ("undefined" != typeof global) t = global;
+									else if ("undefined" != typeof self) t = self;
 									else
 										try {
-											t = Function('return this')();
+											t = Function("return this")();
 										} catch (t) {
 											throw new Error(
-												'polyfill failed because global object is unavailable in this environment'
+												"polyfill failed because global object is unavailable in this environment",
 											);
 										}
 									var e = t.Promise;
@@ -1953,7 +2111,7 @@ const InitTwitterWidget = async () => {
 										try {
 											n = Object.prototype.toString.call(e.resolve());
 										} catch (t) {}
-										if ('[object Promise]' === n && !e.cast) return;
+										if ("[object Promise]" === n && !e.cast) return;
 									}
 									t.Promise = U;
 								}),
@@ -1965,18 +2123,22 @@ const InitTwitterWidget = async () => {
 					},
 					function (t, e, n) {
 						var r = n(47);
-						t.exports = new r('twttr');
+						t.exports = new r("twttr");
 					},
 					function (t, e, n) {
 						var r = n(1),
 							i = n(0);
 						function o(t) {
-							return i.isType('string', t) ? t.split('.') : i.isType('array', t) ? t : [];
+							return i.isType("string", t)
+								? t.split(".")
+								: i.isType("array", t)
+									? t
+									: [];
 						}
 						function s(t, e) {
 							((e = e || r)[t] = e[t] || {}),
-								Object.defineProperty(this, 'base', { value: e[t] }),
-								Object.defineProperty(this, 'name', { value: t });
+								Object.defineProperty(this, "base", { value: e[t] }),
+								Object.defineProperty(this, "name", { value: t });
 						}
 						i.aug(s.prototype, {
 							get: function (t) {
@@ -1991,7 +2153,8 @@ const InitTwitterWidget = async () => {
 										return n.reduce(function (t, e, r) {
 											if (((t[e] = t[e] || {}), !i.isObject(t[e])))
 												throw new Error(
-													n.slice(0, r + 1).join('.') + ' is already defined with a value.'
+													n.slice(0, r + 1).join(".") +
+														" is already defined with a value.",
 												);
 											return t[e];
 										}, t);
@@ -2010,20 +2173,25 @@ const InitTwitterWidget = async () => {
 							aug: function (t) {
 								var e = this.get(t),
 									n = i.toRealArray(arguments).slice(1);
-								if (((e = void 0 !== e ? e : {}), n.unshift(e), !n.every(i.isObject)))
-									throw new Error('Cannot augment non-object.');
+								if (
+									((e = void 0 !== e ? e : {}),
+									n.unshift(e),
+									!n.every(i.isObject))
+								)
+									throw new Error("Cannot augment non-object.");
 								return this.set(t, i.aug.apply(null, n));
 							},
 							call: function (t) {
 								var e = this.get(t),
 									n = i.toRealArray(arguments).slice(1);
-								if (!i.isType('function', e)) throw new Error('Function ' + t + 'does not exist.');
+								if (!i.isType("function", e))
+									throw new Error("Function " + t + "does not exist.");
 								return e.apply(null, n);
 							},
 							fullPath: function (t) {
 								var e = o(t);
-								return e.unshift(this.name), e.join('.');
-							}
+								return e.unshift(this.name), e.join(".");
+							},
 						}),
 							(t.exports = s);
 					},
@@ -2056,7 +2224,8 @@ const InitTwitterWidget = async () => {
 									this._handlers &&
 										this._handlers[t] &&
 										(e
-											? (n = this._handlers[t].indexOf(e)) >= 0 && this._handlers[t].splice(n, 1)
+											? (n = this._handlers[t].indexOf(e)) >= 0 &&
+												this._handlers[t].splice(n, 1)
 											: (this._handlers[t] = []));
 								},
 								trigger: function (t, e) {
@@ -2066,13 +2235,13 @@ const InitTwitterWidget = async () => {
 											n.forEach(function (t) {
 												r.async(i(t, this, e));
 											});
-								}
+								},
 							};
 						t.exports = {
 							Emitter: o,
 							makeEmitter: function () {
 								return r.aug(function () {}, o);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2085,14 +2254,18 @@ const InitTwitterWidget = async () => {
 							c = new i(function (t) {
 								var e = (function (t) {
 									return t.reduce(function (t, e) {
-										return (t[e._className] = t[e._className] || []), t[e._className].push(e), t;
+										return (
+											(t[e._className] = t[e._className] || []),
+											t[e._className].push(e),
+											t
+										);
 									}, {});
 								})(t.map(r.fromRawTask));
 								u.forIn(e, function (t, e) {
 									s.allSettled(
 										e.map(function (t) {
 											return t.initialize();
-										})
+										}),
 									).then(function () {
 										e.forEach(function (t) {
 											o.all([t.hydrate(), t.insertIntoDom()])
@@ -2105,7 +2278,7 @@ const InitTwitterWidget = async () => {
 						t.exports = {
 							addWidget: function (t) {
 								return c.add(t);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2142,7 +2315,7 @@ const InitTwitterWidget = async () => {
 														t.forEach(function (t) {
 															t.taskDoneDeferred.reject();
 														});
-													}
+													},
 												);
 										}
 									: function (t) {
@@ -2164,7 +2337,7 @@ const InitTwitterWidget = async () => {
 							},
 							resume: function () {
 								o.resume();
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2179,8 +2352,8 @@ const InitTwitterWidget = async () => {
 							getSelection: i,
 							getSelectedText: function (t) {
 								var e = i(t);
-								return e ? e.toString() : '';
-							}
+								return e ? e.toString() : "";
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2190,7 +2363,7 @@ const InitTwitterWidget = async () => {
 							s = 2e4;
 						t.exports = function (t) {
 							var e = new o(),
-								n = r.createElement('img');
+								n = r.createElement("img");
 							return (
 								(n.onload = n.onerror =
 									function () {
@@ -2211,30 +2384,30 @@ const InitTwitterWidget = async () => {
 							u = n(51),
 							c = n(5),
 							d = n(21),
-							f = 'csptest';
+							f = "csptest";
 						t.exports = {
 							inlineStyle: function () {
 								var t = f + d.generate(),
-									e = o.createElement('div'),
-									n = o.createElement('style'),
-									l = '.' + t + ' { visibility: hidden; }';
+									e = o.createElement("div"),
+									n = o.createElement("style"),
+									l = "." + t + " { visibility: hidden; }";
 								return (
 									!!o.body &&
-									(c.asBoolean(a.val('widgets:csp')) && (r = !1),
+									(c.asBoolean(a.val("widgets:csp")) && (r = !1),
 									void 0 !== r
 										? r
-										: ((e.style.display = 'none'),
+										: ((e.style.display = "none"),
 											i.add(e, t),
-											(n.type = 'text/css'),
+											(n.type = "text/css"),
 											n.appendChild(o.createTextNode(l)),
 											o.body.appendChild(n),
 											o.body.appendChild(e),
-											(r = 'hidden' === s.getComputedStyle(e).visibility),
+											(r = "hidden" === s.getComputedStyle(e).visibility),
 											u(e),
 											u(n),
 											r))
 								);
-							}
+							},
 						};
 					},
 					function (t, e) {
@@ -2246,21 +2419,21 @@ const InitTwitterWidget = async () => {
 					function (t, e, n) {
 						var r = n(101);
 						t.exports = function (t) {
-							t.define('createElement', r),
-								t.define('createFragment', r),
-								t.define('htmlToElement', r),
-								t.define('hasSelectedText', r),
-								t.define('addRootClass', r),
-								t.define('removeRootClass', r),
-								t.define('hasRootClass', r),
-								t.define('prependStyleSheet', r),
-								t.define('appendStyleSheet', r),
-								t.define('prependCss', r),
-								t.define('appendCss', r),
-								t.define('makeVisible', r),
-								t.define('injectWidgetEl', r),
-								t.define('matchHeightToContent', r),
-								t.define('matchWidthToContent', r);
+							t.define("createElement", r),
+								t.define("createFragment", r),
+								t.define("htmlToElement", r),
+								t.define("hasSelectedText", r),
+								t.define("addRootClass", r),
+								t.define("removeRootClass", r),
+								t.define("hasRootClass", r),
+								t.define("prependStyleSheet", r),
+								t.define("appendStyleSheet", r),
+								t.define("prependCss", r),
+								t.define("appendCss", r),
+								t.define("makeVisible", r),
+								t.define("injectWidgetEl", r),
+								t.define("matchHeightToContent", r),
+								t.define("matchWidthToContent", r);
 						};
 					},
 					function (t, e) {
@@ -2332,7 +2505,10 @@ const InitTwitterWidget = async () => {
 							return t
 								? (function (t) {
 										var e, n;
-										return (e = (t.sourceType + '').toLowerCase()), (n = u[e]) ? new n(t) : null;
+										return (
+											(e = (t.sourceType + "").toLowerCase()),
+											(n = u[e]) ? new n(t) : null
+										);
 									})(t) || d(t)
 								: null;
 						};
@@ -2344,7 +2520,7 @@ const InitTwitterWidget = async () => {
 							s = n(138),
 							a = n(14);
 						t.exports = function (t, e, n) {
-							var u = r.createElement('div');
+							var u = r.createElement("div");
 							return new i(s, o, a.TIMELINE, t, e, n, { sandboxWrapperEl: u });
 						};
 					},
@@ -2355,7 +2531,9 @@ const InitTwitterWidget = async () => {
 							s = n(140),
 							a = n(14);
 						t.exports = function (t, e, n) {
-							return new i(s, o, a.TWEET, t, e, n, { sandboxWrapperEl: r.createElement('div') });
+							return new i(s, o, a.TWEET, t, e, n, {
+								sandboxWrapperEl: r.createElement("div"),
+							});
 						};
 					},
 					function (t, e, n) {
@@ -2364,11 +2542,11 @@ const InitTwitterWidget = async () => {
 							o = n(30),
 							s = n(14);
 						t.exports = function (t, e, n) {
-							var a = (t && t.type) || 'share',
+							var a = (t && t.type) || "share",
 								u =
-									'hashtag' == a
+									"hashtag" == a
 										? s.HASHTAG_BUTTON
-										: 'mention' == a
+										: "mention" == a
 											? s.MENTION_BUTTON
 											: s.SHARE_BUTTON;
 							return new r(i, o, u, t, e, n);
@@ -2381,28 +2559,33 @@ const InitTwitterWidget = async () => {
 						t.exports = function (t) {
 							var e = {
 									widget_origin: i.rootDocumentLocation(),
-									widget_frame: i.isFramed() ? i.currentDocumentLocation() : null,
+									widget_frame: i.isFramed()
+										? i.currentDocumentLocation()
+										: null,
 									duration_ms: t.duration,
-									item_ids: t.widgetIds || []
+									item_ids: t.widgetIds || [],
 								},
-								n = o.aug(t.namespace, { page: 'page', component: 'performance' });
+								n = o.aug(t.namespace, {
+									page: "page",
+									component: "performance",
+								});
 							r.scribe(n, e);
 						};
 					},
 					function (t, e, n) {
 						var r = n(0),
 							i = n(129),
-							o = ['ar', 'fa', 'he', 'ur'];
+							o = ["ar", "fa", "he", "ur"];
 						t.exports = {
 							isRtlLang: function (t) {
 								return (t = String(t).toLowerCase()), r.contains(o, t);
 							},
 							matchLanguage: function (t) {
 								return (
-									(t = (t = (t || '').toLowerCase()).replace('_', '-')),
-									i(t) ? t : ((t = t.replace(/-.*/, '')), i(t) ? t : 'en')
+									(t = (t = (t || "").toLowerCase()).replace("_", "-")),
+									i(t) ? t : ((t = t.replace(/-.*/, "")), i(t) ? t : "en")
 								);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2413,10 +2596,10 @@ const InitTwitterWidget = async () => {
 							a = n(0),
 							u = n(9),
 							c = n(6),
-							d = u.get('scribeCallback'),
+							d = u.get("scribeCallback"),
 							f = 2083,
 							l = [],
-							h = i.url(o.CLIENT_EVENT_ENDPOINT, { dnt: 0, l: '' }),
+							h = i.url(o.CLIENT_EVENT_ENDPOINT, { dnt: 0, l: "" }),
 							p = encodeURIComponent(h).length;
 						function m(t, e, n, r, i) {
 							var u = !a.isObject(t),
@@ -2430,8 +2613,8 @@ const InitTwitterWidget = async () => {
 											o.formatClientEventNamespace(t),
 											o.formatClientEventData(e, n, r),
 											s.settingsScribe(),
-											i
-										)
+											i,
+										),
 									)
 								);
 						}
@@ -2468,26 +2651,27 @@ const InitTwitterWidget = async () => {
 									return g(
 										o.flattenClientEventPayload(
 											o.formatClientEventNamespace(t),
-											o.formatClientEventData(e, n, r)
-										)
+											o.formatClientEventData(e, n, r),
+										),
 									);
 							},
 							interaction: function (t, e, n, r) {
 								var i = o.extractTermsFromDOM(t.target || t.srcElement);
-								return (i.action = r || 'click'), m(i, e, n);
+								return (i.action = r || "click"), m(i, e, n);
 							},
-							placePixel: w
+							placePixel: w,
 						};
 					},
 					function (t) {
 						t.exports = {
 							tweetButtonHtmlPath:
-								'/widgets/tweet_button.2f70fb173b9000da126c79afe2098f02.{{lang}}.html',
+								"/widgets/tweet_button.2f70fb173b9000da126c79afe2098f02.{{lang}}.html",
 							followButtonHtmlPath:
-								'/widgets/follow_button.2f70fb173b9000da126c79afe2098f02.{{lang}}.html',
-							hubHtmlPath: '/widgets/hub.html',
-							widgetIframeHtmlPath: '/widgets/widget_iframe.2f70fb173b9000da126c79afe2098f02.html',
-							resourceBaseUrl: 'https://platform.twitter.com'
+								"/widgets/follow_button.2f70fb173b9000da126c79afe2098f02.{{lang}}.html",
+							hubHtmlPath: "/widgets/hub.html",
+							widgetIframeHtmlPath:
+								"/widgets/widget_iframe.2f70fb173b9000da126c79afe2098f02.html",
+							resourceBaseUrl: "https://platform.twitter.com",
 						};
 					},
 					function (t, e, n) {
@@ -2502,24 +2686,33 @@ const InitTwitterWidget = async () => {
 									? t
 									: /^\/\//.test(t)
 										? e.protocol + t
-										: ((n = e.host + (e.port.length ? ':' + e.port : '')),
-											0 !== t.indexOf('/') &&
-												((r = e.pathname.split('/')).pop(), r.push(t), (t = '/' + r.join('/'))),
-											[e.protocol, '//', n, t].join(''))
+										: ((n = e.host + (e.port.length ? ":" + e.port : "")),
+											0 !== t.indexOf("/") &&
+												((r = e.pathname.split("/")).pop(),
+												r.push(t),
+												(t = "/" + r.join("/"))),
+											[e.protocol, "//", n, t].join(""))
 							);
 						}
 						t.exports = {
 							absolutize: s,
 							getCanonicalURL: function () {
-								for (var t, e = r.getElementsByTagName('link'), n = 0; e[n]; n++)
-									if ('canonical' == (t = e[n]).rel) return s(t.href);
+								for (
+									var t, e = r.getElementsByTagName("link"), n = 0;
+									e[n];
+									n++
+								)
+									if ("canonical" == (t = e[n]).rel) return s(t.href);
 							},
 							getScreenNameFromPage: function () {
 								for (
 									var t,
 										e,
 										n,
-										i = [r.getElementsByTagName('a'), r.getElementsByTagName('link')],
+										i = [
+											r.getElementsByTagName("a"),
+											r.getElementsByTagName("link"),
+										],
 										s = 0,
 										a = 0,
 										u = /\bme\b/;
@@ -2530,9 +2723,9 @@ const InitTwitterWidget = async () => {
 										if (u.test(e.rel) && (n = o.screenName(e.href))) return n;
 							},
 							getHostname: function (t) {
-								var e = r.createElement('a');
-								return e.setAttribute('href', t), e.hostname;
-							}
+								var e = r.createElement("a");
+								return e.setAttribute("href", t), e.hostname;
+							},
 						};
 					},
 					function (t) {
@@ -2541,7 +2734,7 @@ const InitTwitterWidget = async () => {
 							RETWEET: 10,
 							CUSTOM_TIMELINE: 17,
 							LIVE_VIDEO_EVENT: 28,
-							QUOTE_TWEET: 23
+							QUOTE_TWEET: 23,
 						};
 					},
 					,
@@ -2568,14 +2761,14 @@ const InitTwitterWidget = async () => {
 							v = n(34);
 						n(153),
 							m.emitter.trigger(m.START),
-							u.set('widgets.init', !0),
-							a.set('init', !0),
+							u.set("widgets.init", !0),
+							a.set("init", !0),
 							p(),
 							(r = new i()),
-							s.exposeReadyPromise(r.promise, a.base, '_e'),
-							a.set('widgets', l),
-							a.set('widgets.load', f.load),
-							a.set('events', d),
+							s.exposeReadyPromise(r.promise, a.base, "_e"),
+							a.set("widgets", l),
+							a.set("widgets.load", f.load),
+							a.set("events", d),
 							h(function () {
 								v.load(), r.resolve(a.base), c.attachTo(o), f.loadPage();
 							});
@@ -2588,8 +2781,10 @@ const InitTwitterWidget = async () => {
 						t.exports = {
 							exposeReadyPromise: function (t, e, n) {
 								(e.ready = r(t.then, t)),
-									n && Array.isArray(e[n]) && (e[n].forEach(r(t.then, t)), delete e[n]);
-							}
+									n &&
+										Array.isArray(e[n]) &&
+										(e[n].forEach(r(t.then, t)), delete e[n]);
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2604,19 +2799,23 @@ const InitTwitterWidget = async () => {
 								t.metaKey ||
 								t.shiftKey ||
 								((e = o.closest(function (t) {
-									return 'A' === t.tagName || 'AREA' === t.tagName;
+									return "A" === t.tagName || "AREA" === t.tagName;
 								}, t.target)) &&
 									a.isIntentURL(e.href) &&
-									((n = (n = (n = [(u = e.href), 'original_referer=' + r.href].join(
-										-1 == u.indexOf('?') ? '?' : '&'
-									)).replace(/^http[:]/, 'https:')).replace(/^\/\//, 'https://')),
+									((n = (n = (n = [
+										(u = e.href),
+										"original_referer=" + r.href,
+									].join(-1 == u.indexOf("?") ? "?" : "&")).replace(
+										/^http[:]/,
+										"https:",
+									)).replace(/^\/\//, "https://")),
 									s.open(n, e),
 									i.preventDefault(t)));
 						}
 						t.exports = {
 							attachTo: function (t) {
-								t.addEventListener('click', u, !1);
-							}
+								t.addEventListener("click", u, !1);
+							},
 						};
 					},
 					function (t, e, n) {
@@ -2625,43 +2824,52 @@ const InitTwitterWidget = async () => {
 							o = n(22),
 							s = n(16),
 							a = {
-								favorite: ['favorite', 'like'],
-								follow: ['follow'],
-								like: ['favorite', 'like'],
-								retweet: ['retweet'],
-								tweet: ['tweet']
+								favorite: ["favorite", "like"],
+								follow: ["follow"],
+								like: ["favorite", "like"],
+								retweet: ["retweet"],
+								tweet: ["tweet"],
 							};
 						function u(t) {
 							(this.srcEl = []), (this.element = t);
 						}
 						(u.open = function (t, e, n) {
-							var u = (r.intentType(t) || '').toLowerCase();
+							var u = (r.intentType(t) || "").toLowerCase();
 							r.isTwitterURL(t) &&
 								((function (t, e) {
 									i.open(t, e);
 								})(t, n),
-								e && o.trigger('click', { target: e, region: 'intent', type: 'click', data: {} }),
+								e &&
+									o.trigger("click", {
+										target: e,
+										region: "intent",
+										type: "click",
+										data: {},
+									}),
 								e &&
 									a[u] &&
 									a[u].forEach(function (n) {
 										o.trigger(n, {
 											target: e,
-											region: 'intent',
+											region: "intent",
 											type: n,
 											data: (function (t, e) {
 												var n = s.decodeURL(e);
 												switch (t) {
-													case 'favorite':
-													case 'like':
+													case "favorite":
+													case "like":
 														return { tweet_id: n.tweet_id };
-													case 'follow':
-														return { screen_name: n.screen_name, user_id: n.user_id };
-													case 'retweet':
+													case "follow":
+														return {
+															screen_name: n.screen_name,
+															user_id: n.user_id,
+														};
+													case "retweet":
 														return { source_tweet_id: n.tweet_id };
 													default:
 														return {};
 												}
-											})(u, t)
+											})(u, t),
 										});
 									}));
 						}),
@@ -2674,12 +2882,12 @@ const InitTwitterWidget = async () => {
 							s = n(20),
 							a = n(2),
 							u = n(21),
-							c = 'intent_';
+							c = "intent_";
 						function d(t) {
 							this.win = t;
 						}
 						(d.prototype.open = function (t, e) {
-							var n = e && 'click' == e.type && o.closest('a', e.target),
+							var n = e && "click" == e.type && o.closest("a", e.target),
 								r = e && (e.altKey || e.metaKey || e.shiftKey),
 								d = n && (s.ios() || s.android());
 							if (a.isTwitterURL(t))
@@ -2710,8 +2918,11 @@ const InitTwitterWidget = async () => {
 							p = n(106),
 							m = n(26);
 						function v() {
-							var t = a.val('widgets:autoload') || !0;
-							return !f.isFalseValue(t) && (f.isTruthValue(t) ? r.body : r.querySelectorAll(t));
+							var t = a.val("widgets:autoload") || !0;
+							return (
+								!f.isFalseValue(t) &&
+								(f.isTruthValue(t) ? r.body : r.querySelectorAll(t))
+							);
 						}
 						function g(t, e) {
 							var n, i;
@@ -2723,7 +2934,7 @@ const InitTwitterWidget = async () => {
 										return t.concat(
 											p.reduce(function (t, r) {
 												return t.concat(r(n, e));
-											}, [])
+											}, []),
 										);
 									}, []);
 								})(t, e)),
@@ -2732,11 +2943,15 @@ const InitTwitterWidget = async () => {
 									.allResolved(
 										i.map(function (t) {
 											return s.addWidget(t);
-										})
+										}),
 									)
 									.then(function (t) {
-										d.trigger('loaded', { widgets: t }),
-											t && t.length && m.emitter.trigger(m.ALL_WIDGETS_RENDER_END, { widgets: t });
+										d.trigger("loaded", { widgets: t }),
+											t &&
+												t.length &&
+												m.emitter.trigger(m.ALL_WIDGETS_RENDER_END, {
+													widgets: t,
+												});
 									})),
 								o.always(n, function () {
 									c.resume();
@@ -2753,9 +2968,11 @@ const InitTwitterWidget = async () => {
 							load: w,
 							loadPage: function () {
 								var t = v();
-								return !1 === t ? i.resolve() : (u.set('widgets.loaded', !0), w(t));
+								return !1 === t
+									? i.resolve()
+									: (u.set("widgets.loaded", !0), w(t));
 							},
-							_getPageLoadTarget: v
+							_getPageLoadTarget: v,
 						};
 					},
 					function (t, e, n) {
@@ -2775,21 +2992,25 @@ const InitTwitterWidget = async () => {
 								(this._widgetParams = t.parameters),
 								(this._resolve = e),
 								(this._className = t.className),
-								(this._renderedClassName = t.className + '-rendered'),
-								(this._errorClassName = t.className + '-error'),
+								(this._renderedClassName = t.className + "-rendered"),
+								(this._errorClassName = t.className + "-error"),
 								(this._srcEl = t.srcEl),
 								(this._targetGlobal = (function (t) {
 									return (t.srcEl || t.targetEl).ownerDocument.defaultView;
 								})(t)),
-								(this._sandboxWrapperEl = t.options ? t.options.sandboxWrapperEl : null),
+								(this._sandboxWrapperEl = t.options
+									? t.options.sandboxWrapperEl
+									: null),
 								(this._insertionStrategy = function (e) {
 									var n,
 										r = t.srcEl,
 										i = t.targetEl,
 										o = t.className,
-										s = t.className + '-rendered',
+										s = t.className + "-rendered",
 										a = t.options ? t.options.sandboxWrapperEl : null;
-									a ? (a.appendChild(e), a.classList.add(o, s), (n = a)) : (n = e),
+									a
+										? (a.appendChild(e), a.classList.add(o, s), (n = a))
+										: (n = e),
 										r ? i.insertBefore(n, r) : i.appendChild(n);
 								});
 						}
@@ -2811,15 +3032,24 @@ const InitTwitterWidget = async () => {
 							(c.prototype.insertIntoDom = function () {
 								var t = this,
 									e = this._sandboxWrapperEl
-										? ''
-										: [this._className, this._renderedClassName].join(' ');
+										? ""
+										: [this._className, this._renderedClassName].join(" ");
 								return this._widget
 									? this._sandbox
-											.insert(this._widget.id, { class: e }, null, this._insertionStrategy)
+											.insert(
+												this._widget.id,
+												{ class: e },
+												null,
+												this._insertionStrategy,
+											)
 											.then(function () {
 												t._insertedIntoDom = !0;
 											})
-									: a.reject(new Error('cannot insert widget into DOM before it is initialized'));
+									: a.reject(
+											new Error(
+												"cannot insert widget into DOM before it is initialized",
+											),
+										);
 							}),
 							(c.prototype.hydrate = function () {
 								var t = this;
@@ -2827,12 +3057,18 @@ const InitTwitterWidget = async () => {
 									? this._widget.hydrate().then(function () {
 											t._hydrated = !0;
 										})
-									: a.reject(new Error('cannot hydrate widget before it is initialized'));
+									: a.reject(
+											new Error(
+												"cannot hydrate widget before it is initialized",
+											),
+										);
 							}),
 							(c.prototype.render = function () {
 								var t = this;
 								function e(e) {
-									var n = t._sandboxWrapperEl ? t._sandboxWrapperEl : t._sandbox.sandboxEl;
+									var n = t._sandboxWrapperEl
+										? t._sandboxWrapperEl
+										: t._sandbox.sandboxEl;
 									return s(n).then(function () {
 										return a.reject(e);
 									});
@@ -2848,7 +3084,7 @@ const InitTwitterWidget = async () => {
 																var e = t._sandboxWrapperEl
 																	? t._sandboxWrapperEl
 																	: t._sandbox.sandboxEl;
-																o.trigger('resize', { target: e });
+																o.trigger("resize", { target: e });
 															});
 														}),
 														t._widget.show()
@@ -2859,8 +3095,8 @@ const InitTwitterWidget = async () => {
 														return t._sandbox.sandboxEl;
 													});
 												}, e)
-										: e(new Error('cannot render widget before DOM insertion'))
-									: e(new Error('cannot render widget before hydration'));
+										: e(new Error("cannot render widget before DOM insertion"))
+									: e(new Error("cannot render widget before hydration"));
 							}),
 							(c.prototype.fail = function () {
 								var t = this,
@@ -2872,21 +3108,23 @@ const InitTwitterWidget = async () => {
 												r.add(n, e);
 											}),
 											function () {
-												o.trigger('rendered', { target: n }), t._resolve(n);
-											}
+												o.trigger("rendered", { target: n }), t._resolve(n);
+											},
 										)
 									: (t._resolve(), a.resolve());
 							}),
 							(c.prototype.success = function () {
-								var t = this._sandboxWrapperEl ? this._sandboxWrapperEl : this._sandbox.sandboxEl;
-								o.trigger('rendered', { target: t }), this._resolve(t);
+								var t = this._sandboxWrapperEl
+									? this._sandboxWrapperEl
+									: this._sandbox.sandboxEl;
+								o.trigger("rendered", { target: t }), this._resolve(t);
 							}),
 							(t.exports = c);
 					},
 					function (t, e, n) {
 						var r;
 						!(function () {
-							'use strict';
+							"use strict";
 							var i =
 								window.requestAnimationFrame ||
 								window.webkitRequestAnimationFrame ||
@@ -2902,28 +3140,28 @@ const InitTwitterWidget = async () => {
 									(this.batch = { hash: {}, read: [], write: [], mode: null });
 							}
 							(o.prototype.read = function (t, e) {
-								var n = this.add('read', t, e),
+								var n = this.add("read", t, e),
 									r = n.id;
 								return (
 									this.batch.read.push(n.id),
-									'reading' === this.batch.mode || this.batch.scheduled
+									"reading" === this.batch.mode || this.batch.scheduled
 										? r
 										: (this.scheduleBatch(), r)
 								);
 							}),
 								(o.prototype.write = function (t, e) {
-									var n = this.add('write', t, e),
+									var n = this.add("write", t, e),
 										r = this.batch.mode,
 										i = n.id;
 									return (
 										this.batch.write.push(n.id),
-										'writing' === r || 'reading' === r || this.batch.scheduled
+										"writing" === r || "reading" === r || this.batch.scheduled
 											? i
 											: (this.scheduleBatch(), i)
 									);
 								}),
 								(o.prototype.defer = function (t, e, n) {
-									'function' == typeof t && ((n = e), (e = t), (t = 1));
+									"function" == typeof t && ((n = e), (e = t), (t = 1));
 									var r = this,
 										i = t - 1;
 									return this.schedule(i, function () {
@@ -2931,7 +3169,7 @@ const InitTwitterWidget = async () => {
 									});
 								}),
 								(o.prototype.clear = function (t) {
-									if ('function' == typeof t) return this.clearFrame(t);
+									if ("function" == typeof t) return this.clearFrame(t);
 									t = Number(t);
 									var e = this.batch.hash[t];
 									if (e) {
@@ -2959,9 +3197,9 @@ const InitTwitterWidget = async () => {
 								}),
 								(o.prototype.runBatch = function () {
 									try {
-										(this.batch.mode = 'reading'),
+										(this.batch.mode = "reading"),
 											this.flush(this.batch.read),
-											(this.batch.mode = 'writing'),
+											(this.batch.mode = "writing"),
 											this.flush(this.batch.write),
 											(this.batch.mode = null);
 									} catch (t) {
@@ -2970,12 +3208,18 @@ const InitTwitterWidget = async () => {
 								}),
 								(o.prototype.add = function (t, e, n) {
 									var r = this.uniqueId();
-									return (this.batch.hash[r] = { id: r, fn: e, ctx: n, type: t });
+									return (this.batch.hash[r] = {
+										id: r,
+										fn: e,
+										ctx: n,
+										type: t,
+									});
 								}),
 								(o.prototype.run = function (t) {
 									var e = t.ctx || this,
 										n = t.fn;
-									if ((delete this.batch.hash[t.id], !this.onError)) return n.call(e);
+									if ((delete this.batch.hash[t.id], !this.onError))
+										return n.call(e);
 									try {
 										n.call(e);
 									} catch (t) {
@@ -3019,7 +3263,9 @@ const InitTwitterWidget = async () => {
 							i = n(92),
 							o = n(7);
 						function s(t) {
-							(this._inputsQueue = []), (this._task = t), (this._hasFlushBeenScheduled = !1);
+							(this._inputsQueue = []),
+								(this._task = t),
+								(this._hasFlushBeenScheduled = !1);
 						}
 						(s.prototype.add = function (t) {
 							var e = new r();
@@ -3060,28 +3306,28 @@ const InitTwitterWidget = async () => {
 							h = n(37),
 							p = n(0),
 							m = n(29),
-							v = n(9).get('scribeCallback'),
-							g = Math.floor(1e3 * Math.random()) + '_',
-							w = 'rufous-frame-' + g + '-',
-							y = 'rufous-form-' + g + '-',
+							v = n(9).get("scribeCallback"),
+							g = Math.floor(1e3 * Math.random()) + "_",
+							w = "rufous-frame-" + g + "-",
+							y = "rufous-form-" + g + "-",
 							b = 0,
 							_ = !1,
 							E = new d();
 						function x() {
-							var t = o.createElement('form'),
-								e = o.createElement('input'),
-								n = o.createElement('input');
+							var t = o.createElement("form"),
+								e = o.createElement("input"),
+								n = o.createElement("input");
 							return (
 								b++,
 								(t.action = h.CLIENT_EVENT_ENDPOINT),
-								(t.method = 'POST'),
+								(t.method = "POST"),
 								(t.target = w + b),
 								(t.id = y + b),
-								(e.type = 'hidden'),
-								(e.name = 'dnt'),
+								(e.type = "hidden"),
+								(e.name = "dnt"),
 								(e.value = c.enabled()),
-								(n.type = 'hidden'),
-								(n.name = 'tfw_redirect'),
+								(n.type = "hidden"),
+								(n.name = "tfw_redirect"),
 								(n.value = h.RUFOUS_REDIRECT),
 								t.appendChild(e),
 								t.appendChild(n),
@@ -3092,8 +3338,8 @@ const InitTwitterWidget = async () => {
 							var t = w + b;
 							return u(
 								{ id: t, name: t, width: 0, height: 0, border: 0 },
-								{ display: 'none' },
-								o.doc
+								{ display: "none" },
+								o.doc,
 							);
 						}
 						t.exports = {
@@ -3113,11 +3359,14 @@ const InitTwitterWidget = async () => {
 												(l.log(t, e),
 												(s = h.flattenClientEventPayload(t, e)),
 												((n = r.firstChild).value = +(+n.value || s.dnt || 0)),
-												((i = o.createElement('input')).type = 'hidden'),
-												(i.name = 'l'),
+												((i = o.createElement("input")).type = "hidden"),
+												(i.name = "l"),
 												(i.value = h.stringify(s)),
 												r.appendChild(i));
-										})(h.formatClientEventNamespace(t), h.formatClientEventData(e, n, i));
+										})(
+											h.formatClientEventNamespace(t),
+											h.formatClientEventData(e, n, i),
+										);
 									}));
 							},
 							flush: function () {
@@ -3126,12 +3375,15 @@ const InitTwitterWidget = async () => {
 									return r.children.length <= 2
 										? f.reject()
 										: ((t = f
-												.all([o.doc.body.appendChild(r), o.doc.body.appendChild(i)])
+												.all([
+													o.doc.body.appendChild(r),
+													o.doc.body.appendChild(i),
+												])
 												.then(function (t) {
 													var e = t[0],
 														n = t[1];
 													return (
-														n.addEventListener('load', function () {
+														n.addEventListener("load", function () {
 															!(function (t, e) {
 																return function () {
 																	var n = t.parentNode;
@@ -3152,18 +3404,23 @@ const InitTwitterWidget = async () => {
 								return _
 									? E.promise
 									: ((o = new m(a))
-											.insert('rufous-sandbox', null, { display: 'none' }, function (t) {
-												s.body.appendChild(t);
-											})
+											.insert(
+												"rufous-sandbox",
+												null,
+												{ display: "none" },
+												function (t) {
+													s.body.appendChild(t);
+												},
+											)
 											.then(function () {
-												o.setTitle('Twitter analytics iframe'),
+												o.setTitle("Twitter analytics iframe"),
 													(r = x()),
 													(i = T()),
 													E.resolve([r, i]);
 											}),
 										(_ = !0),
 										E.promise);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -3177,7 +3434,7 @@ const InitTwitterWidget = async () => {
 							isUrlSensitive: s,
 							isHostPageSensitive: function () {
 								return s(r.host);
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -3186,7 +3443,7 @@ const InitTwitterWidget = async () => {
 							var n = [];
 							return (
 								e.forEach(function (e) {
-									var i = r.isType('array', e) ? t(e) : [e];
+									var i = r.isType("array", e) ? t(e) : [e];
 									n = n.concat(i);
 								}),
 								n
@@ -3258,7 +3515,7 @@ const InitTwitterWidget = async () => {
 									var n = i.toRealArray(arguments);
 									return n.unshift(o(t, this)), e.apply(this, n);
 								};
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -3270,7 +3527,8 @@ const InitTwitterWidget = async () => {
 						t.exports = function () {
 							var t = o();
 							function e(e) {
-								t.apply(this, arguments), Object.defineProperty(this, 'targetGlobal', { value: e });
+								t.apply(this, arguments),
+									Object.defineProperty(this, "targetGlobal", { value: e });
 							}
 							return (
 								(e.prototype = Object.create(t.prototype)),
@@ -3313,7 +3571,7 @@ const InitTwitterWidget = async () => {
 												e.sandboxEl.style[t] = n;
 											});
 										});
-									}
+									},
 								}),
 								e
 							);
@@ -3337,44 +3595,48 @@ const InitTwitterWidget = async () => {
 							g = n(9),
 							w = n(21),
 							y = n(7),
-							b = { allowfullscreen: 'true' },
+							b = { allowfullscreen: "true" },
 							_ = {
-								position: 'absolute',
-								visibility: 'hidden',
-								display: 'block',
-								width: '0px',
-								height: '0px',
-								padding: '0',
-								border: 'none'
+								position: "absolute",
+								visibility: "hidden",
+								display: "block",
+								width: "0px",
+								height: "0px",
+								padding: "0",
+								border: "none",
 							},
-							E = { position: 'static', visibility: 'visible' },
-							x = 'SandboxRoot',
-							T = '.SandboxRoot { display: none; }',
+							E = { position: "static", visibility: "visible" },
+							x = "SandboxRoot",
+							T = ".SandboxRoot { display: none; }",
 							A = 50;
 						function S(t, e, n, r) {
-							return (e = v.aug({ id: t }, b, e)), (n = v.aug({}, _, n)), f(e, n, r);
+							return (
+								(e = v.aug({ id: t }, b, e)), (n = v.aug({}, _, n)), f(e, n, r)
+							);
 						}
 						function R(t, e, n, i, s) {
 							var a = new p(),
 								u = w.generate(),
 								c = S(t, e, n, s);
 							return (
-								g.set(['sandbox', u], function () {
+								g.set(["sandbox", u], function () {
 									var t = c.contentWindow.document;
 									o.write(function () {
-										t.write('<!DOCTYPE html><html><head></head><body></body></html>');
+										t.write(
+											"<!DOCTYPE html><html><head></head><body></body></html>",
+										);
 									}).then(function () {
 										t.close(), a.resolve(c);
 									});
 								}),
 								(c.src = [
-									'javascript:',
+									"javascript:",
 									'document.write("");',
-									'try { window.parent.document; }',
+									"try { window.parent.document; }",
 									'catch (e) { document.domain="' + r.domain + '"; }',
-									'window.parent.' + g.fullPath(['sandbox', u]) + '();'
-								].join('')),
-								c.addEventListener('error', a.reject, !1),
+									"window.parent." + g.fullPath(["sandbox", u]) + "();",
+								].join("")),
+								c.addEventListener("error", a.reject, !1),
 								o.write(function () {
 									i.parentNode.replaceChild(c, i);
 								}),
@@ -3382,73 +3644,73 @@ const InitTwitterWidget = async () => {
 							);
 						}
 						t.exports = a.couple(n(58), function (t) {
-							t.overrideProperty('id', {
+							t.overrideProperty("id", {
 								get: function () {
 									return this.sandboxEl && this.sandboxEl.id;
-								}
+								},
 							}),
-								t.overrideProperty('initialized', {
+								t.overrideProperty("initialized", {
 									get: function () {
 										return !!this.win;
-									}
+									},
 								}),
-								t.overrideProperty('width', {
+								t.overrideProperty("width", {
 									get: function () {
 										return this._width;
-									}
+									},
 								}),
-								t.overrideProperty('height', {
+								t.overrideProperty("height", {
 									get: function () {
 										return this._height;
-									}
+									},
 								}),
-								t.overrideProperty('sandboxEl', {
+								t.overrideProperty("sandboxEl", {
 									get: function () {
 										return this.iframeEl;
-									}
+									},
 								}),
-								t.defineProperty('iframeEl', {
+								t.defineProperty("iframeEl", {
 									get: function () {
 										return this._iframe;
-									}
+									},
 								}),
-								t.defineProperty('rootEl', {
+								t.defineProperty("rootEl", {
 									get: function () {
 										return this.doc && this.doc.documentElement;
-									}
+									},
 								}),
-								t.defineProperty('widgetEl', {
+								t.defineProperty("widgetEl", {
 									get: function () {
 										return this.doc && this.doc.body.firstElementChild;
-									}
+									},
 								}),
-								t.defineProperty('win', {
+								t.defineProperty("win", {
 									get: function () {
 										return this.iframeEl && this.iframeEl.contentWindow;
-									}
+									},
 								}),
-								t.defineProperty('doc', {
+								t.defineProperty("doc", {
 									get: function () {
 										return this.win && this.win.document;
-									}
+									},
 								}),
-								t.define('_updateCachedDimensions', function () {
+								t.define("_updateCachedDimensions", function () {
 									var t = this;
 									return o.read(function () {
 										var e,
 											n = h(t.sandboxEl);
-										'visible' == t.sandboxEl.style.visibility
+										"visible" == t.sandboxEl.style.visibility
 											? (t._width = n.width)
 											: ((e = h(t.sandboxEl.parentElement).width),
 												(t._width = Math.min(n.width, e))),
 											(t._height = n.height);
 									});
 								}),
-								t.define('_setTargetToBlank', function () {
-									var t = this.createElement('base');
-									(t.target = '_blank'), this.doc.head.appendChild(t);
+								t.define("_setTargetToBlank", function () {
+									var t = this.createElement("base");
+									(t.target = "_blank"), this.doc.head.appendChild(t);
 								}),
-								t.define('_didResize', function () {
+								t.define("_didResize", function () {
 									var t = this,
 										e = this._resizeHandlers.slice(0);
 									return this._updateCachedDimensions().then(function () {
@@ -3457,23 +3719,26 @@ const InitTwitterWidget = async () => {
 										});
 									});
 								}),
-								t.define('setTitle', function (t) {
+								t.define("setTitle", function (t) {
 									this.iframeEl.title = t;
 								}),
-								t.override('createElement', function (t) {
+								t.override("createElement", function (t) {
 									return this.doc.createElement(t);
 								}),
-								t.override('createFragment', function () {
+								t.override("createFragment", function () {
 									return this.doc.createDocumentFragment();
 								}),
-								t.override('htmlToElement', function (t) {
+								t.override("htmlToElement", function (t) {
 									var e;
-									return ((e = this.createElement('div')).innerHTML = t), e.firstElementChild;
+									return (
+										((e = this.createElement("div")).innerHTML = t),
+										e.firstElementChild
+									);
 								}),
-								t.override('hasSelectedText', function () {
+								t.override("hasSelectedText", function () {
 									return !!s.getSelectedText(this.win);
 								}),
-								t.override('addRootClass', function (t) {
+								t.override("addRootClass", function (t) {
 									var e = this.rootEl;
 									return (
 										(t = Array.isArray(t) ? t : [t]),
@@ -3483,10 +3748,10 @@ const InitTwitterWidget = async () => {
 														i.add(e, t);
 													});
 												})
-											: m.reject(new Error('sandbox not initialized'))
+											: m.reject(new Error("sandbox not initialized"))
 									);
 								}),
-								t.override('removeRootClass', function (t) {
+								t.override("removeRootClass", function (t) {
 									var e = this.rootEl;
 									return (
 										(t = Array.isArray(t) ? t : [t]),
@@ -3496,77 +3761,82 @@ const InitTwitterWidget = async () => {
 														i.remove(e, t);
 													});
 												})
-											: m.reject(new Error('sandbox not initialized'))
+											: m.reject(new Error("sandbox not initialized"))
 									);
 								}),
-								t.override('hasRootClass', function (t) {
+								t.override("hasRootClass", function (t) {
 									return i.present(this.rootEl, t);
 								}),
-								t.define('addStyleSheet', function (t, e) {
+								t.define("addStyleSheet", function (t, e) {
 									var n,
 										r = new p();
 									return this.initialized
-										? (((n = this.createElement('link')).type = 'text/css'),
-											(n.rel = 'stylesheet'),
+										? (((n = this.createElement("link")).type = "text/css"),
+											(n.rel = "stylesheet"),
 											(n.href = t),
-											n.addEventListener('load', r.resolve, !1),
-											n.addEventListener('error', r.reject, !1),
+											n.addEventListener("load", r.resolve, !1),
+											n.addEventListener("error", r.reject, !1),
 											o.write(y(e, null, n)).then(function () {
 												return u(t).then(r.resolve, r.reject), r.promise;
 											}))
-										: m.reject(new Error('sandbox not initialized'));
+										: m.reject(new Error("sandbox not initialized"));
 								}),
-								t.override('prependStyleSheet', function (t) {
+								t.override("prependStyleSheet", function (t) {
 									var e = this.doc;
 									return this.addStyleSheet(t, function (t) {
 										var n = e.head.firstElementChild;
-										return n ? e.head.insertBefore(t, n) : e.head.appendChild(t);
+										return n
+											? e.head.insertBefore(t, n)
+											: e.head.appendChild(t);
 									});
 								}),
-								t.override('appendStyleSheet', function (t) {
+								t.override("appendStyleSheet", function (t) {
 									var e = this.doc;
 									return this.addStyleSheet(t, function (t) {
 										return e.head.appendChild(t);
 									});
 								}),
-								t.define('addCss', function (t, e) {
+								t.define("addCss", function (t, e) {
 									var n;
 									return c.inlineStyle()
-										? (((n = this.createElement('style')).type = 'text/css'),
+										? (((n = this.createElement("style")).type = "text/css"),
 											n.appendChild(this.doc.createTextNode(t)),
 											o.write(y(e, null, n)))
-										: (l.devError('CSP enabled; cannot embed inline styles'), m.resolve());
+										: (l.devError("CSP enabled; cannot embed inline styles"),
+											m.resolve());
 								}),
-								t.override('prependCss', function (t) {
+								t.override("prependCss", function (t) {
 									var e = this.doc;
 									return this.addCss(t, function (t) {
 										var n = e.head.firstElementChild;
-										return n ? e.head.insertBefore(t, n) : e.head.appendChild(t);
+										return n
+											? e.head.insertBefore(t, n)
+											: e.head.appendChild(t);
 									});
 								}),
-								t.override('appendCss', function (t) {
+								t.override("appendCss", function (t) {
 									var e = this.doc;
 									return this.addCss(t, function (t) {
 										return e.head.appendChild(t);
 									});
 								}),
-								t.override('makeVisible', function () {
+								t.override("makeVisible", function () {
 									var t = this;
 									return this.styleSelf(E).then(function () {
 										t._updateCachedDimensions();
 									});
 								}),
-								t.override('injectWidgetEl', function (t) {
+								t.override("injectWidgetEl", function (t) {
 									var e = this;
 									return this.initialized
 										? this.widgetEl
-											? m.reject(new Error('widget already injected'))
+											? m.reject(new Error("widget already injected"))
 											: o.write(function () {
 													e.doc.body.appendChild(t);
 												})
-										: m.reject(new Error('sandbox not initialized'));
+										: m.reject(new Error("sandbox not initialized"));
 								}),
-								t.override('matchHeightToContent', function () {
+								t.override("matchHeightToContent", function () {
 									var t,
 										e = this;
 									return (
@@ -3575,14 +3845,14 @@ const InitTwitterWidget = async () => {
 										}),
 										o
 											.write(function () {
-												e.sandboxEl.style.height = t + 'px';
+												e.sandboxEl.style.height = t + "px";
 											})
 											.then(function () {
 												return e._updateCachedDimensions();
 											})
 									);
 								}),
-								t.override('matchWidthToContent', function () {
+								t.override("matchWidthToContent", function () {
 									var t,
 										e = this;
 									return (
@@ -3591,19 +3861,19 @@ const InitTwitterWidget = async () => {
 										}),
 										o
 											.write(function () {
-												e.sandboxEl.style.width = t + 'px';
+												e.sandboxEl.style.width = t + "px";
 											})
 											.then(function () {
 												return e._updateCachedDimensions();
 											})
 									);
 								}),
-								t.after('initialize', function () {
+								t.after("initialize", function () {
 									(this._iframe = null),
 										(this._width = this._height = 0),
 										(this._resizeHandlers = []);
 								}),
-								t.override('insert', function (t, e, n, r) {
+								t.override("insert", function (t, e, n, r) {
 									var i = this,
 										s = new p(),
 										a = this.targetGlobal.document,
@@ -3611,7 +3881,7 @@ const InitTwitterWidget = async () => {
 									return (
 										o.write(y(r, null, u)),
 										u.addEventListener(
-											'load',
+											"load",
 											function () {
 												(function (t) {
 													try {
@@ -3624,44 +3894,52 @@ const InitTwitterWidget = async () => {
 													.then(null, y(R, null, t, e, n, u, a))
 													.then(s.resolve, s.reject);
 											},
-											!1
+											!1,
 										),
-										u.addEventListener('error', s.reject, !1),
+										u.addEventListener("error", s.reject, !1),
 										s.promise.then(function (t) {
 											var e = d(i._didResize, A, i);
 											return (
 												(i._iframe = t),
-												i.win.addEventListener('resize', e, !1),
-												m.all([i._setTargetToBlank(), i.addRootClass(x), i.prependCss(T)])
+												i.win.addEventListener("resize", e, !1),
+												m.all([
+													i._setTargetToBlank(),
+													i.addRootClass(x),
+													i.prependCss(T),
+												])
 											);
 										})
 									);
 								}),
-								t.override('onResize', function (t) {
+								t.override("onResize", function (t) {
 									this._resizeHandlers.push(t);
 								}),
-								t.after('styleSelf', function () {
+								t.after("styleSelf", function () {
 									return this._updateCachedDimensions();
 								});
 						});
 					},
 					function (t, e) {
 						t.exports = function () {
-							throw new Error('unimplemented method');
+							throw new Error("unimplemented method");
 						};
 					},
 					function (t, e) {
 						t.exports = {
 							getBaseURLPath: function (t) {
-								switch (t && t.tfw_team_holdback_11929 && t.tfw_team_holdback_11929.bucket) {
-									case 'control':
-										return 'embed-holdback';
-									case 'holdback_prod':
-										return 'embed-holdback-prod';
+								switch (
+									t &&
+									t.tfw_team_holdback_11929 &&
+									t.tfw_team_holdback_11929.bucket
+								) {
+									case "control":
+										return "embed-holdback";
+									case "holdback_prod":
+										return "embed-holdback-prod";
 									default:
-										return 'embed';
+										return "embed";
 								}
-							}
+							},
 						};
 					},
 					function (t, e, n) {
@@ -3688,7 +3966,10 @@ const InitTwitterWidget = async () => {
 							(a.prototype._scheduleFlush = function () {
 								this._isPaused ||
 									(clearTimeout(this._flushTimeout),
-									(this._flushTimeout = setTimeout(i(this._flush, this), this._flushDelay)));
+									(this._flushTimeout = setTimeout(
+										i(this._flush, this),
+										this._flushDelay,
+									)));
 							}),
 							(a.prototype._flush = function () {
 								try {
@@ -3703,7 +3984,9 @@ const InitTwitterWidget = async () => {
 							(a.prototype.pause = function (t) {
 								clearTimeout(this._flushTimeout),
 									(this._isPaused = !0),
-									!t && this._pauseLength && setTimeout(i(this.resume, this), this._pauseLength);
+									!t &&
+										this._pauseLength &&
+										setTimeout(i(this.resume, this), this._pauseLength);
 							}),
 							(a.prototype.resume = function () {
 								(this._isPaused = !1), this._scheduleFlush();
@@ -3734,13 +4017,20 @@ const InitTwitterWidget = async () => {
 						t.exports = {
 							load: function () {
 								var t, e, n, o;
-								if (u.ie9() || u.ie10() || ('http:' !== d.protocol && 'https:' !== d.protocol))
+								if (
+									u.ie9() ||
+									u.ie10() ||
+									("http:" !== d.protocol && "https:" !== d.protocol)
+								)
 									return (
-										f.devError('Using default settings due to unsupported browser or protocol.'),
+										f.devError(
+											"Using default settings due to unsupported browser or protocol.",
+										),
 										void y().resolve()
 									);
 								(t = { origin: d.origin }),
-									a.settings().indexOf('localhost') > -1 && (t.localSettings = !0),
+									a.settings().indexOf("localhost") > -1 &&
+										(t.localSettings = !0),
 									(e = m.url(r.resourceBaseUrl + r.widgetIframeHtmlPath, t)),
 									(n = function (t) {
 										var n, r, i, o;
@@ -3751,25 +4041,29 @@ const InitTwitterWidget = async () => {
 											(i && r) || o)
 										)
 											try {
-												(n = 'string' == typeof t.data ? c.parse(t.data) : t.data).namespace ===
-													l.settings &&
+												(n =
+													"string" == typeof t.data ? c.parse(t.data) : t.data)
+													.namespace === l.settings &&
 													((b = g.aug(b, {
 														features: n.settings.features,
-														sessionId: n.sessionId
+														sessionId: n.sessionId,
 													})),
 													y().resolve());
 											} catch (t) {
 												f.devError(t);
 											}
 									}),
-									w.addEventListener('message', n),
-									(o = i({ src: e, title: 'Twitter settings iframe' }, { display: 'none' })),
+									w.addEventListener("message", n),
+									(o = i(
+										{ src: e, title: "Twitter settings iframe" },
+										{ display: "none" },
+									)),
 									s.body.appendChild(o);
 							},
 							settingsLoaded: function () {
 								var t, e;
 								return (
-									(t = p.get('experimentOverride')),
+									(t = p.get("experimentOverride")),
 									y().promise.then(function () {
 										return (
 											t &&
@@ -3781,14 +4075,22 @@ const InitTwitterWidget = async () => {
 										);
 									})
 								);
-							}
+							},
 						};
 					},
 					function (t, e) {
-						t.exports = { settings: 'twttr.settings' };
+						t.exports = { settings: "twttr.settings" };
 					},
 					function (t, e, n) {
-						t.exports = [n(107), n(114), n(122), n(124), n(126), n(139), n(141)];
+						t.exports = [
+							n(107),
+							n(114),
+							n(122),
+							n(124),
+							n(126),
+							n(139),
+							n(141),
+						];
 					},
 					function (t, e, n) {
 						var r = n(16),
@@ -3797,32 +4099,34 @@ const InitTwitterWidget = async () => {
 							s = n(11),
 							a = n(12)(),
 							u = n(60),
-							c = 'a.twitter-dm-button';
+							c = "a.twitter-dm-button";
 						t.exports = function (t) {
 							return a(t, c).map(function (t) {
 								return u(
 									(function (t) {
-										var e = t.getAttribute('data-show-screen-name'),
+										var e = t.getAttribute("data-show-screen-name"),
 											n = s(t),
-											a = t.getAttribute('href'),
-											u = t.getAttribute('data-screen-name'),
+											a = t.getAttribute("href"),
+											u = t.getAttribute("data-screen-name"),
 											c = e ? i.asBoolean(e) : null,
-											d = t.getAttribute('data-size'),
+											d = t.getAttribute("data-size"),
 											f = r.decodeURL(a),
 											l = f.recipient_id,
-											h = t.getAttribute('data-text') || f.text,
-											p = t.getAttribute('data-welcome-message-id') || f.welcomeMessageId;
+											h = t.getAttribute("data-text") || f.text,
+											p =
+												t.getAttribute("data-welcome-message-id") ||
+												f.welcomeMessageId;
 										return o.aug(n, {
 											screenName: u,
 											showScreenName: c,
 											size: d,
 											text: h,
 											userId: l,
-											welcomeMessageId: p
+											welcomeMessageId: p,
 										});
 									})(t),
 									t.parentNode,
-									t
+									t,
 								);
 							});
 						};
@@ -3833,8 +4137,8 @@ const InitTwitterWidget = async () => {
 							var n;
 							if (e)
 								return (
-									(n = e.lang || e.getAttribute('data-lang')),
-									r.isType('string', n) ? n : t(e.parentElement)
+									(n = e.lang || e.getAttribute("data-lang")),
+									r.isType("string", n) ? n : t(e.parentElement)
 								);
 						};
 					},
@@ -3860,7 +4164,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -3891,58 +4195,60 @@ const InitTwitterWidget = async () => {
 							v = n(0),
 							g = 50,
 							w = {
-								position: 'absolute',
-								visibility: 'hidden',
-								display: 'block',
-								transform: 'rotate(0deg)'
+								position: "absolute",
+								visibility: "hidden",
+								display: "block",
+								transform: "rotate(0deg)",
 							},
-							y = { position: 'static', visibility: 'visible' },
-							b = 'twitter-widget',
-							_ = 'open',
-							E = 'SandboxRoot',
-							x = '.SandboxRoot { display: none; max-height: 10000px; }';
+							y = { position: "static", visibility: "visible" },
+							b = "twitter-widget",
+							_ = "open",
+							E = "SandboxRoot",
+							x = ".SandboxRoot { display: none; max-height: 10000px; }";
 						t.exports = c.couple(n(58), function (t) {
-							t.defineStatic('isSupported', function () {
-								return !!i.HTMLElement.prototype.attachShadow && f.inlineStyle();
+							t.defineStatic("isSupported", function () {
+								return (
+									!!i.HTMLElement.prototype.attachShadow && f.inlineStyle()
+								);
 							}),
-								t.overrideProperty('id', {
+								t.overrideProperty("id", {
 									get: function () {
 										return this.sandboxEl && this.sandboxEl.id;
-									}
+									},
 								}),
-								t.overrideProperty('initialized', {
+								t.overrideProperty("initialized", {
 									get: function () {
 										return !!this._shadowHost;
-									}
+									},
 								}),
-								t.overrideProperty('width', {
+								t.overrideProperty("width", {
 									get: function () {
 										return this._width;
-									}
+									},
 								}),
-								t.overrideProperty('height', {
+								t.overrideProperty("height", {
 									get: function () {
 										return this._height;
-									}
+									},
 								}),
-								t.overrideProperty('sandboxEl', {
+								t.overrideProperty("sandboxEl", {
 									get: function () {
 										return this._shadowHost;
-									}
+									},
 								}),
-								t.define('_updateCachedDimensions', function () {
+								t.define("_updateCachedDimensions", function () {
 									var t = this;
 									return a.read(function () {
 										var e,
 											n = l(t.sandboxEl);
-										'visible' == t.sandboxEl.style.visibility
+										"visible" == t.sandboxEl.style.visibility
 											? (t._width = n.width)
 											: ((e = l(t.sandboxEl.parentElement).width),
 												(t._width = Math.min(n.width, e))),
 											(t._height = n.height);
 									});
 								}),
-								t.define('_didResize', function () {
+								t.define("_didResize", function () {
 									var t = this,
 										e = this._resizeHandlers.slice(0);
 									return this._updateCachedDimensions().then(function () {
@@ -3951,20 +4257,23 @@ const InitTwitterWidget = async () => {
 										});
 									});
 								}),
-								t.override('createElement', function (t) {
+								t.override("createElement", function (t) {
 									return this.targetGlobal.document.createElement(t);
 								}),
-								t.override('createFragment', function () {
+								t.override("createFragment", function () {
 									return this.targetGlobal.document.createDocumentFragment();
 								}),
-								t.override('htmlToElement', function (t) {
+								t.override("htmlToElement", function (t) {
 									var e;
-									return ((e = this.createElement('div')).innerHTML = t), e.firstElementChild;
+									return (
+										((e = this.createElement("div")).innerHTML = t),
+										e.firstElementChild
+									);
 								}),
-								t.override('hasSelectedText', function () {
+								t.override("hasSelectedText", function () {
 									return !!u.getSelectedText(this.targetGlobal);
 								}),
-								t.override('addRootClass', function (t) {
+								t.override("addRootClass", function (t) {
 									var e = this._shadowRootBody;
 									return (
 										(t = Array.isArray(t) ? t : [t]),
@@ -3974,10 +4283,10 @@ const InitTwitterWidget = async () => {
 														o.add(e, t);
 													});
 												})
-											: m.reject(new Error('sandbox not initialized'))
+											: m.reject(new Error("sandbox not initialized"))
 									);
 								}),
-								t.override('removeRootClass', function (t) {
+								t.override("removeRootClass", function (t) {
 									var e = this._shadowRootBody;
 									return (
 										(t = Array.isArray(t) ? t : [t]),
@@ -3987,61 +4296,65 @@ const InitTwitterWidget = async () => {
 														o.remove(e, t);
 													});
 												})
-											: m.reject(new Error('sandbox not initialized'))
+											: m.reject(new Error("sandbox not initialized"))
 									);
 								}),
-								t.override('hasRootClass', function (t) {
+								t.override("hasRootClass", function (t) {
 									return o.present(this._shadowRootBody, t);
 								}),
-								t.override('addStyleSheet', function (t, e) {
-									return this.addCss('@import url("' + t + '");', e).then(function () {
-										return d(t);
-									});
+								t.override("addStyleSheet", function (t, e) {
+									return this.addCss('@import url("' + t + '");', e).then(
+										function () {
+											return d(t);
+										},
+									);
 								}),
-								t.override('prependStyleSheet', function (t) {
+								t.override("prependStyleSheet", function (t) {
 									var e = this._shadowRoot;
 									return this.addStyleSheet(t, function (t) {
 										var n = e.firstElementChild;
 										return n ? e.insertBefore(t, n) : e.appendChild(t);
 									});
 								}),
-								t.override('appendStyleSheet', function (t) {
+								t.override("appendStyleSheet", function (t) {
 									var e = this._shadowRoot;
 									return this.addStyleSheet(t, function (t) {
 										return e.appendChild(t);
 									});
 								}),
-								t.override('addCss', function (t, e) {
+								t.override("addCss", function (t, e) {
 									var n;
 									return this.initialized
 										? f.inlineStyle()
-											? (((n = this.createElement('style')).type = 'text/css'),
-												n.appendChild(this.targetGlobal.document.createTextNode(t)),
+											? (((n = this.createElement("style")).type = "text/css"),
+												n.appendChild(
+													this.targetGlobal.document.createTextNode(t),
+												),
 												a.write(h(e, null, n)))
 											: m.resolve()
-										: m.reject(new Error('sandbox not initialized'));
+										: m.reject(new Error("sandbox not initialized"));
 								}),
-								t.override('prependCss', function (t) {
+								t.override("prependCss", function (t) {
 									var e = this._shadowRoot;
 									return this.addCss(t, function (t) {
 										var n = e.firstElementChild;
 										return n ? e.insertBefore(t, n) : e.appendChild(t);
 									});
 								}),
-								t.override('appendCss', function (t) {
+								t.override("appendCss", function (t) {
 									var e = this._shadowRoot;
 									return this.addCss(t, function (t) {
 										return e.appendChild(t);
 									});
 								}),
-								t.override('makeVisible', function () {
+								t.override("makeVisible", function () {
 									return this.styleSelf(y);
 								}),
-								t.override('injectWidgetEl', function (t) {
+								t.override("injectWidgetEl", function (t) {
 									var e = this;
 									return this.initialized
 										? this._shadowRootBody.firstElementChild
-											? m.reject(new Error('widget already injected'))
+											? m.reject(new Error("widget already injected"))
 											: a
 													.write(function () {
 														e._shadowRootBody.appendChild(t);
@@ -4053,45 +4366,49 @@ const InitTwitterWidget = async () => {
 														var t = p(e._didResize, g, e);
 														new r(e._shadowRootBody, t);
 													})
-										: m.reject(new Error('sandbox not initialized'));
+										: m.reject(new Error("sandbox not initialized"));
 								}),
-								t.override('matchHeightToContent', function () {
+								t.override("matchHeightToContent", function () {
 									return m.resolve();
 								}),
-								t.override('matchWidthToContent', function () {
+								t.override("matchWidthToContent", function () {
 									return m.resolve();
 								}),
-								t.override('insert', function (t, e, n, r) {
+								t.override("insert", function (t, e, n, r) {
 									var i = this.targetGlobal.document,
 										o = (this._shadowHost = i.createElement(b)),
 										u = (this._shadowRoot = o.attachShadow({ mode: _ })),
-										c = (this._shadowRootBody = i.createElement('div'));
+										c = (this._shadowRootBody = i.createElement("div"));
 									return (
 										v.forIn(e || {}, function (t, e) {
 											o.setAttribute(t, e);
 										}),
 										(o.id = t),
 										u.appendChild(c),
-										s.delegate(c, 'click', 'A', function (t, e) {
-											e.hasAttribute('target') || e.setAttribute('target', '_blank');
+										s.delegate(c, "click", "A", function (t, e) {
+											e.hasAttribute("target") ||
+												e.setAttribute("target", "_blank");
 										}),
 										m.all([
 											this.styleSelf(w),
 											this.addRootClass(E),
 											this.prependCss(x),
-											a.write(r.bind(null, o))
+											a.write(r.bind(null, o)),
 										])
 									);
 								}),
-								t.override('onResize', function (t) {
+								t.override("onResize", function (t) {
 									this._resizeHandlers.push(t);
 								}),
-								t.after('initialize', function () {
-									(this._shadowHost = this._shadowRoot = this._shadowRootBody = null),
+								t.after("initialize", function () {
+									(this._shadowHost =
+										this._shadowRoot =
+										this._shadowRootBody =
+											null),
 										(this._width = this._height = 0),
 										(this._resizeHandlers = []);
 								}),
-								t.after('styleSelf', function () {
+								t.after("styleSelf", function () {
 									return this._updateCachedDimensions();
 								});
 						});
@@ -4110,15 +4427,16 @@ const InitTwitterWidget = async () => {
 												this.q.push(t);
 											}),
 											(this.call = function () {
-												for (t = 0, e = this.q.length; t < e; t++) this.q[t].call();
+												for (t = 0, e = this.q.length; t < e; t++)
+													this.q[t].call();
 											});
 									})()),
 										t.resizedAttached.add(e);
-								(t.resizeSensor = document.createElement('div')),
-									(t.resizeSensor.className = 'resize-sensor');
+								(t.resizeSensor = document.createElement("div")),
+									(t.resizeSensor.className = "resize-sensor");
 								var n =
-										'position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;',
-									r = 'position: absolute; left: 0; top: 0; transition: 0s;';
+										"position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;",
+									r = "position: absolute; left: 0; top: 0; transition: 0s;";
 								(t.resizeSensor.style.cssText = n),
 									(t.resizeSensor.innerHTML =
 										'<div class="resize-sensor-expand" style="' +
@@ -4138,8 +4456,8 @@ const InitTwitterWidget = async () => {
 												: window.getComputedStyle
 													? window.getComputedStyle(t, null).getPropertyValue(e)
 													: t.style[e];
-										})(t, 'position')
-									] || (t.style.position = 'relative');
+										})(t, "position")
+									] || (t.style.position = "relative");
 								var i,
 									o,
 									s = t.resizeSensor.childNodes[0],
@@ -4148,8 +4466,8 @@ const InitTwitterWidget = async () => {
 									c =
 										(u.childNodes[0],
 										function () {
-											(a.style.width = s.offsetWidth + 10 + 'px'),
-												(a.style.height = s.offsetHeight + 10 + 'px'),
+											(a.style.width = s.offsetWidth + 10 + "px"),
+												(a.style.height = s.offsetHeight + 10 + "px"),
 												(s.scrollLeft = s.scrollWidth),
 												(s.scrollTop = s.scrollHeight),
 												(u.scrollLeft = u.scrollWidth),
@@ -4159,22 +4477,24 @@ const InitTwitterWidget = async () => {
 										});
 								c();
 								var d = function (t, e, n) {
-										t.attachEvent ? t.attachEvent('on' + e, n) : t.addEventListener(e, n);
+										t.attachEvent
+											? t.attachEvent("on" + e, n)
+											: t.addEventListener(e, n);
 									},
 									f = function () {
 										(t.offsetWidth == i && t.offsetHeight == o) ||
 											(t.resizedAttached && t.resizedAttached.call()),
 											c();
 									};
-								d(s, 'scroll', f), d(u, 'scroll', f);
+								d(s, "scroll", f), d(u, "scroll", f);
 							}
 							var i = Object.prototype.toString.call(t),
 								o =
-									'[object Array]' === i ||
-									'[object NodeList]' === i ||
-									'[object HTMLCollection]' === i ||
-									('undefined' != typeof jQuery && t instanceof jQuery) ||
-									('undefined' != typeof Elements && t instanceof Elements);
+									"[object Array]" === i ||
+									"[object NodeList]" === i ||
+									"[object HTMLCollection]" === i ||
+									("undefined" != typeof jQuery && t instanceof jQuery) ||
+									("undefined" != typeof Elements && t instanceof Elements);
 							if (o) for (var s = 0, a = t.length; s < a; s++) r(t[s], e);
 							else r(t, e);
 							this.detach = function () {
@@ -4183,9 +4503,13 @@ const InitTwitterWidget = async () => {
 							};
 						}).detach = function (t) {
 							t.resizeSensor &&
-								(t.removeChild(t.resizeSensor), delete t.resizeSensor, delete t.resizedAttached);
+								(t.removeChild(t.resizeSensor),
+								delete t.resizeSensor,
+								delete t.resizedAttached);
 						}),
-							void 0 !== t && void 0 !== t.exports ? (t.exports = n) : (window.ResizeSensor = n);
+							void 0 !== t && void 0 !== t.exports
+								? (t.exports = n)
+								: (window.ResizeSensor = n);
 					},
 					function (t, e, n) {
 						var r = n(2),
@@ -4194,7 +4518,7 @@ const InitTwitterWidget = async () => {
 							s = n(12)(),
 							a = n(62),
 							u = n(5),
-							c = 'a.twitter-follow-button';
+							c = "a.twitter-follow-button";
 						t.exports = function (t) {
 							return s(t, c).map(function (t) {
 								return a(
@@ -4202,11 +4526,13 @@ const InitTwitterWidget = async () => {
 										var e = o(t),
 											n = {
 												screenName: r.screenName(t.href),
-												showScreenName: 'false' !== t.getAttribute('data-show-screen-name'),
-												showCount: 'false' !== t.getAttribute('data-show-count'),
-												size: t.getAttribute('data-size'),
-												count: t.getAttribute('data-count'),
-												preview: t.getAttribute('data-preview')
+												showScreenName:
+													"false" !== t.getAttribute("data-show-screen-name"),
+												showCount:
+													"false" !== t.getAttribute("data-show-count"),
+												size: t.getAttribute("data-size"),
+												count: t.getAttribute("data-count"),
+												preview: t.getAttribute("data-preview"),
 											};
 										return (
 											i.forIn(n, function (t, n) {
@@ -4218,7 +4544,7 @@ const InitTwitterWidget = async () => {
 										);
 									})(t),
 									t.parentNode,
-									t
+									t,
 								);
 							});
 						};
@@ -4238,7 +4564,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -4256,9 +4582,14 @@ const InitTwitterWidget = async () => {
 							u = n(6),
 							c = n(7),
 							d = n(0),
-							f = { allowfullscreen: 'true' },
-							l = { position: 'absolute', visibility: 'hidden', width: '0px', height: '0px' },
-							h = { position: 'static', visibility: 'visible' },
+							f = { allowfullscreen: "true" },
+							l = {
+								position: "absolute",
+								visibility: "hidden",
+								width: "0px",
+								height: "0px",
+							},
+							h = { position: "static", visibility: "visible" },
 							p = {};
 						i(
 							function (t, e, n) {
@@ -4267,9 +4598,11 @@ const InitTwitterWidget = async () => {
 									return (
 										(e = e || 1),
 										(n = n || 1),
-										r.styleSelf({ width: e + 'px', height: n + 'px' }).then(function () {
-											r.didResize();
-										})
+										r
+											.styleSelf({ width: e + "px", height: n + "px" })
+											.then(function () {
+												r.didResize();
+											})
 									);
 							},
 							function (t) {
@@ -4287,45 +4620,45 @@ const InitTwitterWidget = async () => {
 							function (t) {
 								var e = p[t];
 								if (e) return e._results.reject();
-							}
+							},
 						),
 							(t.exports = function (t) {
-								t.overrideProperty('id', {
+								t.overrideProperty("id", {
 									get: function () {
 										return this.sandboxEl && this.sandboxEl.id;
-									}
+									},
 								}),
-									t.overrideProperty('initialized', {
+									t.overrideProperty("initialized", {
 										get: function () {
 											return !!this.iframeEl;
-										}
+										},
 									}),
-									t.overrideProperty('width', {
+									t.overrideProperty("width", {
 										get: function () {
 											return this._width;
-										}
+										},
 									}),
-									t.overrideProperty('height', {
+									t.overrideProperty("height", {
 										get: function () {
 											return this._height;
-										}
+										},
 									}),
-									t.overrideProperty('sandboxEl', {
+									t.overrideProperty("sandboxEl", {
 										get: function () {
 											return this.iframeEl;
-										}
+										},
 									}),
-									t.defineProperty('iframeEl', {
+									t.defineProperty("iframeEl", {
 										get: function () {
 											return this._iframe;
-										}
+										},
 									}),
-									t.defineProperty('iframeVersion', {
+									t.defineProperty("iframeVersion", {
 										get: function () {
 											return this._iframeVersion;
-										}
+										},
 									}),
-									t.define('updateCachedDimensions', function () {
+									t.define("updateCachedDimensions", function () {
 										var t = this;
 										return this.initialized
 											? r.read(function () {
@@ -4334,25 +4667,25 @@ const InitTwitterWidget = async () => {
 												})
 											: u.resolve();
 									}),
-									t.define('setTitle', function (t) {
+									t.define("setTitle", function (t) {
 										this.iframeEl.title = t;
 									}),
-									t.define('setWaitToSwapUntilRendered', function (t) {
+									t.define("setWaitToSwapUntilRendered", function (t) {
 										this._waitToSwapUntilRendered = t;
 									}),
-									t.define('setIframeVersion', function (t) {
+									t.define("setIframeVersion", function (t) {
 										this._iframeVersion = t;
 									}),
-									t.define('getResultsPromise', function () {
+									t.define("getResultsPromise", function () {
 										return this._results.promise;
 									}),
-									t.define('getRenderedPromise', function () {
+									t.define("getRenderedPromise", function () {
 										return this._rendered.promise;
 									}),
-									t.define('makeVisible', function () {
+									t.define("makeVisible", function () {
 										return this.styleSelf(h);
 									}),
-									t.define('didResize', function () {
+									t.define("didResize", function () {
 										var t = this,
 											e = t._resizeHandlers.length > 0;
 										return this.updateCachedDimensions().then(function () {
@@ -4362,18 +4695,22 @@ const InitTwitterWidget = async () => {
 												});
 										});
 									}),
-									t.define('loadDocument', function (t) {
+									t.define("loadDocument", function (t) {
 										var e = new a();
 										return this.initialized
 											? this.iframeEl.src
-												? u.reject(new Error('widget already loaded'))
-												: (this.iframeEl.addEventListener('load', e.resolve, !1),
-													this.iframeEl.addEventListener('error', e.reject, !1),
+												? u.reject(new Error("widget already loaded"))
+												: (this.iframeEl.addEventListener(
+														"load",
+														e.resolve,
+														!1,
+													),
+													this.iframeEl.addEventListener("error", e.reject, !1),
 													(this.iframeEl.src = t),
 													e.promise)
-											: u.reject(new Error('sandbox not initialized'));
+											: u.reject(new Error("sandbox not initialized"));
 									}),
-									t.after('initialize', function () {
+									t.after("initialize", function () {
 										var t = new a(),
 											e = new a();
 										(this._iframe = null),
@@ -4384,7 +4721,7 @@ const InitTwitterWidget = async () => {
 											(this._results = e),
 											(this._waitToSwapUntilRendered = !1);
 									}),
-									t.override('insert', function (t, e, n, i) {
+									t.override("insert", function (t, e, n, i) {
 										var a = this;
 										return (
 											(e = d.aug({ id: t }, f, e)),
@@ -4395,15 +4732,15 @@ const InitTwitterWidget = async () => {
 												this.onResize(
 													o(function () {
 														a.makeVisible();
-													})
+													}),
 												),
 											r.write(c(i, null, this._iframe))
 										);
 									}),
-									t.override('onResize', function (t) {
+									t.override("onResize", function (t) {
 										this._resizeHandlers.push(t);
 									}),
-									t.after('styleSelf', function () {
+									t.after("styleSelf", function () {
 										return this.updateCachedDimensions();
 									});
 							});
@@ -4422,7 +4759,7 @@ const InitTwitterWidget = async () => {
 									target: e,
 									region: t.region,
 									type: t.type,
-									data: t.data || {}
+									data: t.data || {},
 								});
 							}
 							function l(e) {
@@ -4433,34 +4770,34 @@ const InitTwitterWidget = async () => {
 								r && void 0 !== i && void 0 !== o && t(r, i, o);
 							}
 							new i()
-								.attachReceiver(new o.Receiver(r, 'twttr.button'))
-								.bind('twttr.private.trigger', f)
-								.bind('twttr.private.resizeButton', l),
+								.attachReceiver(new o.Receiver(r, "twttr.button"))
+								.bind("twttr.private.trigger", f)
+								.bind("twttr.private.resizeButton", l),
 								new i()
-									.attachReceiver(new o.Receiver(r, 'twttr.embed'))
-									.bind('twttr.private.initialized', function (t) {
+									.attachReceiver(new o.Receiver(r, "twttr.embed"))
+									.bind("twttr.private.initialized", function (t) {
 										var e = u(this),
 											n = e && e.id,
 											r = t.iframe_version;
 										n && r && c && c(n, r);
 									})
-									.bind('twttr.private.trigger', f)
-									.bind('twttr.private.results', function () {
+									.bind("twttr.private.trigger", f)
+									.bind("twttr.private.results", function () {
 										var t = u(this),
 											n = t && t.id;
 										n && e && e(n);
 									})
-									.bind('twttr.private.rendered', function () {
+									.bind("twttr.private.rendered", function () {
 										var t = u(this),
 											e = t && t.id;
 										e && n && n(e);
 									})
-									.bind('twttr.private.no_results', function () {
+									.bind("twttr.private.no_results", function () {
 										var t = u(this),
 											e = t && t.id;
 										e && d && d(e);
 									})
-									.bind('twttr.private.resize', l);
+									.bind("twttr.private.resize", l);
 						};
 					},
 					function (t, e, n) {
@@ -4469,13 +4806,17 @@ const InitTwitterWidget = async () => {
 							o = n(0),
 							s = n(6),
 							a = n(23),
-							u = '2.0';
+							u = "2.0";
 						function c(t) {
 							this.registry = t || {};
 						}
 						function d(t) {
 							var e, n;
-							return (e = o.isType('string', t)), (n = o.isType('number', t)), e || n || null === t;
+							return (
+								(e = o.isType("string", t)),
+								(n = o.isType("number", t)),
+								e || n || null === t
+							);
 						}
 						function f(t, e) {
 							return { jsonrpc: u, id: d(t) ? t : null, error: e };
@@ -4484,7 +4825,7 @@ const InitTwitterWidget = async () => {
 							var n, r, i;
 							(n = this.registry[t.method]),
 								(r = t.params || []),
-								(r = o.isType('array', r) ? r : [r]);
+								(r = o.isType("array", r) ? r : [r]);
 							try {
 								i = n.apply(e.source || null, r);
 							} catch (t) {
@@ -4499,23 +4840,27 @@ const InitTwitterWidget = async () => {
 									return (
 										!!o.isObject(t) &&
 										((e = t.jsonrpc === u),
-										(n = o.isType('string', t.method)),
-										(r = !('id' in t) || d(t.id)),
+										(n = o.isType("string", t.method)),
+										(r = !("id" in t) || d(t.id)),
 										e && n && r)
 									);
 								})(t)
 									? ((n =
-											'params' in t && ((r = t.params), !o.isObject(r) || o.isType('function', r))
+											"params" in t &&
+											((r = t.params),
+											!o.isObject(r) || o.isType("function", r))
 												? s.resolve(f(t.id, i.INVALID_PARAMS))
 												: this.registry[t.method]
 													? this._invoke(t, { source: e }).then(
 															function (e) {
-																return (n = t.id), { jsonrpc: u, id: n, result: e };
+																return (
+																	(n = t.id), { jsonrpc: u, id: n, result: e }
+																);
 																var n;
 															},
 															function () {
 																return f(t.id, i.INTERNAL_ERROR);
-															}
+															},
 														)
 													: s.resolve(f(t.id, i.METHOD_NOT_FOUND))),
 										null != t.id ? n : s.resolve())
@@ -4533,13 +4878,13 @@ const InitTwitterWidget = async () => {
 									u,
 									c = this;
 								try {
-									(u = t), (t = o.isType('string', u) ? r.parse(u) : u);
+									(u = t), (t = o.isType("string", u) ? r.parse(u) : u);
 								} catch (t) {
 									return s.resolve(f(null, i.PARSE_ERROR));
 								}
 								return (
 									(e = e || null),
-									(a = ((n = o.isType('array', t)) ? t : [t]).map(function (t) {
+									(a = ((n = o.isType("array", t)) ? t : [t]).map(function (t) {
 										return c._processRequest(t, e);
 									})),
 									n
@@ -4559,11 +4904,11 @@ const InitTwitterWidget = async () => {
 					},
 					function (t) {
 						t.exports = {
-							PARSE_ERROR: { code: -32700, message: 'Parse error' },
-							INVALID_REQUEST: { code: -32600, message: 'Invalid Request' },
-							INVALID_PARAMS: { code: -32602, message: 'Invalid params' },
-							METHOD_NOT_FOUND: { code: -32601, message: 'Method not found' },
-							INTERNAL_ERROR: { code: -32603, message: 'Internal error' }
+							PARSE_ERROR: { code: -32700, message: "Parse error" },
+							INVALID_REQUEST: { code: -32600, message: "Invalid Request" },
+							INVALID_PARAMS: { code: -32602, message: "Invalid params" },
+							METHOD_NOT_FOUND: { code: -32601, message: "Method not found" },
+							INTERNAL_ERROR: { code: -32603, message: "Internal error" },
 						};
 					},
 					function (t, e, n) {
@@ -4580,15 +4925,19 @@ const InitTwitterWidget = async () => {
 							var r;
 							t &&
 								t.postMessage &&
-								(f ? (r = (n || '') + o.stringify(e)) : n ? ((r = {})[n] = e) : (r = e),
-								t.postMessage(r, '*'));
+								(f
+									? (r = (n || "") + o.stringify(e))
+									: n
+										? ((r = {})[n] = e)
+										: (r = e),
+								t.postMessage(r, "*"));
 						}
 						function h(t) {
-							return u.isType('string', t) ? t : 'JSONRPC';
+							return u.isType("string", t) ? t : "JSONRPC";
 						}
 						function p(t, e) {
 							return e
-								? u.isType('string', t) && 0 === t.indexOf(e)
+								? u.isType("string", t) && 0 === t.indexOf(e)
 									? t.substring(e.length)
 									: t && t[e]
 										? t[e]
@@ -4600,14 +4949,14 @@ const InitTwitterWidget = async () => {
 							(this.filter = h(e)),
 								(this.server = null),
 								(this.isTwitterFrame = c.isTwitterURL(n.location.href)),
-								t.addEventListener('message', d(this._onMessage, this), !1);
+								t.addEventListener("message", d(this._onMessage, this), !1);
 						}
 						function v(t, e) {
 							(this.pending = {}),
 								(this.target = t),
 								(this.isTwitterHost = c.isTwitterURL(r.href)),
 								(this.filter = h(e)),
-								i.addEventListener('message', d(this._onMessage, this), !1);
+								i.addEventListener("message", d(this._onMessage, this), !1);
 						}
 						u.aug(m.prototype, {
 							_onMessage: function (t) {
@@ -4625,7 +4974,7 @@ const InitTwitterWidget = async () => {
 							},
 							detach: function () {
 								this.server = null;
-							}
+							},
 						}),
 							u.aug(v.prototype, {
 								_processResponse: function (t) {
@@ -4638,13 +4987,15 @@ const InitTwitterWidget = async () => {
 										(!this.isTwitterHost || c.isTwitterURL(t.origin)) &&
 										(e = p(t.data, this.filter))
 									) {
-										if (u.isType('string', e))
+										if (u.isType("string", e))
 											try {
 												e = o.parse(e);
 											} catch (t) {
 												return;
 											}
-										(e = u.isType('array', e) ? e : [e]).forEach(d(this._processResponse, this));
+										(e = u.isType("array", e) ? e : [e]).forEach(
+											d(this._processResponse, this),
+										);
 									}
 								},
 								send: function (t) {
@@ -4654,20 +5005,24 @@ const InitTwitterWidget = async () => {
 										l(this.target, t, this.filter),
 										e.promise
 									);
-								}
+								},
 							}),
 							(t.exports = {
 								Receiver: m,
 								Dispatcher: v,
 								_stringifyPayload: function (t) {
 									return arguments.length > 0 && (f = !!t), f;
-								}
+								},
 							});
 					},
 					function (t, e, n) {
 						var r = n(4);
 						t.exports = function (t) {
-							for (var e, n = r.getElementsByTagName('iframe'), i = 0; n[i]; i++)
+							for (
+								var e, n = r.getElementsByTagName("iframe"), i = 0;
+								n[i];
+								i++
+							)
 								if ((e = n[i]).contentWindow === t) return e;
 						};
 					},
@@ -4678,7 +5033,7 @@ const InitTwitterWidget = async () => {
 							s = n(11),
 							a = n(12)(),
 							u = n(63),
-							c = 'a.twitter-moment';
+							c = "a.twitter-moment";
 						t.exports = function (t) {
 							return a(t, c).map(function (t) {
 								return u(
@@ -4686,8 +5041,8 @@ const InitTwitterWidget = async () => {
 										var e = s(t),
 											n = {
 												momentId: o.momentId(t.href),
-												chrome: t.getAttribute('data-chrome'),
-												limit: t.getAttribute('data-limit')
+												chrome: t.getAttribute("data-chrome"),
+												limit: t.getAttribute("data-limit"),
 											};
 										return (
 											i.forIn(n, function (t, n) {
@@ -4698,7 +5053,7 @@ const InitTwitterWidget = async () => {
 										);
 									})(t),
 									t.parentNode,
-									t
+									t,
 								);
 							});
 						};
@@ -4718,7 +5073,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -4732,20 +5087,21 @@ const InitTwitterWidget = async () => {
 							i = n(11),
 							o = n(12)(),
 							s = n(64),
-							a = 'a.periscope-on-air',
-							u = /^https?:\/\/(?:www\.)?(?:periscope|pscp)\.tv\/@?([a-zA-Z0-9_]+)\/?$/i;
+							a = "a.periscope-on-air",
+							u =
+								/^https?:\/\/(?:www\.)?(?:periscope|pscp)\.tv\/@?([a-zA-Z0-9_]+)\/?$/i;
 						t.exports = function (t) {
 							return o(t, a).map(function (t) {
 								return s(
 									(function (t) {
 										var e = i(t),
-											n = t.getAttribute('href'),
-											o = t.getAttribute('data-size'),
+											n = t.getAttribute("href"),
+											o = t.getAttribute("data-size"),
 											s = u.exec(n)[1];
 										return r.aug(e, { username: s, size: o });
 									})(t),
 									t.parentNode,
-									t
+									t,
 								);
 							});
 						};
@@ -4765,7 +5121,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -4783,46 +5139,59 @@ const InitTwitterWidget = async () => {
 							u = n(66),
 							c = n(2),
 							d = n(18),
-							f = 'a.twitter-timeline,div.twitter-timeline,a.twitter-grid',
+							f = "a.twitter-timeline,div.twitter-timeline,a.twitter-grid",
 							l =
-								'Embedded Search timelines have been deprecated. See https://twittercommunity.com/t/deprecating-widget-settings/102295.',
+								"Embedded Search timelines have been deprecated. See https://twittercommunity.com/t/deprecating-widget-settings/102295.",
 							h =
-								'You may have been affected by an update to settings in embedded timelines. See https://twittercommunity.com/t/deprecating-widget-settings/102295.',
+								"You may have been affected by an update to settings in embedded timelines. See https://twittercommunity.com/t/deprecating-widget-settings/102295.",
 							p =
-								'Embedded grids have been deprecated and will now render as timelines. Please update your embed code to use the twitter-timeline class. More info: https://twittercommunity.com/t/update-on-the-embedded-grid-display-type/119564.';
+								"Embedded grids have been deprecated and will now render as timelines. Please update your embed code to use the twitter-timeline class. More info: https://twittercommunity.com/t/update-on-the-embedded-grid-display-type/119564.";
 						t.exports = function (t, e) {
 							return a(t, f).map(function (t) {
 								return u(
 									(function (t) {
 										var e = s(t),
-											n = t.getAttribute('data-show-replies'),
+											n = t.getAttribute("data-show-replies"),
 											a = {
-												isPreconfigured: !!t.getAttribute('data-widget-id'),
-												chrome: t.getAttribute('data-chrome'),
+												isPreconfigured: !!t.getAttribute("data-widget-id"),
+												chrome: t.getAttribute("data-chrome"),
 												tweetLimit:
-													t.getAttribute('data-tweet-limit') || t.getAttribute('data-limit'),
-												ariaLive: t.getAttribute('data-aria-polite'),
-												theme: t.getAttribute('data-theme'),
-												borderColor: t.getAttribute('data-border-color'),
+													t.getAttribute("data-tweet-limit") ||
+													t.getAttribute("data-limit"),
+												ariaLive: t.getAttribute("data-aria-polite"),
+												theme: t.getAttribute("data-theme"),
+												borderColor: t.getAttribute("data-border-color"),
 												showReplies: n ? r.asBoolean(n) : null,
-												profileScreenName: t.getAttribute('data-screen-name'),
-												profileUserId: t.getAttribute('data-user-id'),
-												favoritesScreenName: t.getAttribute('data-favorites-screen-name'),
-												favoritesUserId: t.getAttribute('data-favorites-user-id'),
-												likesScreenName: t.getAttribute('data-likes-screen-name'),
-												likesUserId: t.getAttribute('data-likes-user-id'),
-												listOwnerScreenName: t.getAttribute('data-list-owner-screen-name'),
-												listOwnerUserId: t.getAttribute('data-list-owner-id'),
-												listId: t.getAttribute('data-list-id'),
-												listSlug: t.getAttribute('data-list-slug'),
-												customTimelineId: t.getAttribute('data-custom-timeline-id'),
-												staticContent: t.getAttribute('data-static-content'),
-												url: t.href
+												profileScreenName: t.getAttribute("data-screen-name"),
+												profileUserId: t.getAttribute("data-user-id"),
+												favoritesScreenName: t.getAttribute(
+													"data-favorites-screen-name",
+												),
+												favoritesUserId: t.getAttribute(
+													"data-favorites-user-id",
+												),
+												likesScreenName: t.getAttribute(
+													"data-likes-screen-name",
+												),
+												likesUserId: t.getAttribute("data-likes-user-id"),
+												listOwnerScreenName: t.getAttribute(
+													"data-list-owner-screen-name",
+												),
+												listOwnerUserId: t.getAttribute("data-list-owner-id"),
+												listId: t.getAttribute("data-list-id"),
+												listSlug: t.getAttribute("data-list-slug"),
+												customTimelineId: t.getAttribute(
+													"data-custom-timeline-id",
+												),
+												staticContent: t.getAttribute("data-static-content"),
+												url: t.href,
 											};
 										return (
 											a.isPreconfigured &&
-												(c.isSearchUrl(a.url) ? d.publicError(l, t) : d.publicLog(h, t)),
-											'twitter-grid' === t.className && d.publicLog(p, t),
+												(c.isSearchUrl(a.url)
+													? d.publicError(l, t)
+													: d.publicLog(h, t)),
+											"twitter-grid" === t.className && d.publicLog(p, t),
 											((a = i.aug(a, e)).dataSource = o(a)),
 											(a.id = a.dataSource && a.dataSource.id),
 											a
@@ -4830,14 +5199,15 @@ const InitTwitterWidget = async () => {
 									})(t),
 									t.parentNode,
 									t,
-									e
+									e,
 								);
 							});
 						};
 					},
 					function (t, e) {
 						t.exports = function (t, e, n) {
-							for (var r, i = 0; i < t.length; i++) if ((r = e.call(n, t[i], i, t))) return r;
+							for (var r, i = 0; i < t.length; i++)
+								if ((r = e.call(n, t[i], i, t))) return r;
 						};
 					},
 					function (t, e, n) {
@@ -4848,74 +5218,74 @@ const InitTwitterWidget = async () => {
 						var r = n(0),
 							i = n(130);
 						t.exports = function (t) {
-							return 'en' === t || r.contains(i, t);
+							return "en" === t || r.contains(i, t);
 						};
 					},
 					function (t, e) {
 						t.exports = [
-							'hi',
-							'zh-cn',
-							'fr',
-							'zh-tw',
-							'msa',
-							'fil',
-							'fi',
-							'sv',
-							'pl',
-							'ja',
-							'ko',
-							'de',
-							'it',
-							'pt',
-							'es',
-							'ru',
-							'id',
-							'tr',
-							'da',
-							'no',
-							'nl',
-							'hu',
-							'fa',
-							'ar',
-							'ur',
-							'he',
-							'th',
-							'cs',
-							'uk',
-							'vi',
-							'ro',
-							'bn',
-							'el',
-							'en-gb',
-							'gu',
-							'kn',
-							'mr',
-							'ta',
-							'bg',
-							'ca',
-							'hr',
-							'sr',
-							'sk'
+							"hi",
+							"zh-cn",
+							"fr",
+							"zh-tw",
+							"msa",
+							"fil",
+							"fi",
+							"sv",
+							"pl",
+							"ja",
+							"ko",
+							"de",
+							"it",
+							"pt",
+							"es",
+							"ru",
+							"id",
+							"tr",
+							"da",
+							"no",
+							"nl",
+							"hu",
+							"fa",
+							"ar",
+							"ur",
+							"he",
+							"th",
+							"cs",
+							"uk",
+							"vi",
+							"ro",
+							"bn",
+							"el",
+							"en-gb",
+							"gu",
+							"kn",
+							"mr",
+							"ta",
+							"bg",
+							"ca",
+							"hr",
+							"sr",
+							"sk",
 						];
 					},
 					function (t, e, n) {
 						var r = n(2),
 							i = n(44),
-							o = 'collection:';
+							o = "collection:";
 						function s(t, e) {
 							return r.collectionId(t) || e;
 						}
 						t.exports = function (t) {
 							t.params({ id: {}, url: {} }),
-								t.overrideProperty('id', {
+								t.overrideProperty("id", {
 									get: function () {
 										var t = s(this.params.url, this.params.id);
 										return o + t;
-									}
+									},
 								}),
-								t.before('initialize', function () {
+								t.before("initialize", function () {
 									if (!s(this.params.url, this.params.id))
-										throw new Error('one of url or id is required');
+										throw new Error("one of url or id is required");
 									i();
 								});
 						};
@@ -4927,21 +5297,21 @@ const InitTwitterWidget = async () => {
 					function (t, e, n) {
 						var r = n(2),
 							i = n(44),
-							o = 'likes:';
+							o = "likes:";
 						function s(t) {
 							return r.likesScreenName(t.url) || t.screenName;
 						}
 						t.exports = function (t) {
 							t.params({ screenName: {}, userId: {}, url: {} }),
-								t.overrideProperty('id', {
+								t.overrideProperty("id", {
 									get: function () {
 										var t = s(this.params) || this.params.userId;
 										return o + t;
-									}
+									},
 								}),
-								t.before('initialize', function () {
+								t.before("initialize", function () {
 									if (!s(this.params) && !this.params.userId)
-										throw new Error('screen name or user id is required');
+										throw new Error("screen name or user id is required");
 									i();
 								});
 						};
@@ -4954,44 +5324,57 @@ const InitTwitterWidget = async () => {
 						var r = n(2),
 							i = n(0),
 							o = n(27),
-							s = 'list:';
+							s = "list:";
 						function a(t) {
 							var e = r.listScreenNameAndSlug(t.url) || t;
 							return i.compact({
 								screen_name: e.ownerScreenName,
 								user_id: e.ownerUserId,
-								list_slug: e.slug
+								list_slug: e.slug,
 							});
 						}
 						t.exports = function (t) {
-							t.params({ id: {}, ownerScreenName: {}, ownerUserId: {}, slug: {}, url: {} }),
-								t.overrideProperty('id', {
+							t.params({
+								id: {},
+								ownerScreenName: {},
+								ownerUserId: {},
+								slug: {},
+								url: {},
+							}),
+								t.overrideProperty("id", {
 									get: function () {
 										var t, e, n;
 										return this.params.id
 											? s + this.params.id
-											: ((e = (t = a(this.params)) && t.list_slug.replace(/-/g, '_')),
+											: ((e =
+													(t = a(this.params)) &&
+													t.list_slug.replace(/-/g, "_")),
 												(n = t && (t.screen_name || t.user_id)),
-												s + (n + ':') + e);
-									}
+												s + (n + ":") + e);
+									},
 								}),
-								t.overrideProperty('endpoint', {
+								t.overrideProperty("endpoint", {
 									get: function () {
 										var t,
-											e = ['timeline-list'];
+											e = ["timeline-list"];
 										return (
 											this.params.id
-												? e.push('list-id', this.params.id)
+												? e.push("list-id", this.params.id)
 												: ((t = a(this.params)),
-													e.push('screen-name', t.screen_name, 'slug', t.list_slug)),
+													e.push(
+														"screen-name",
+														t.screen_name,
+														"slug",
+														t.list_slug,
+													)),
 											o.embedService(e)
 										);
-									}
+									},
 								}),
-								t.before('initialize', function () {
+								t.before("initialize", function () {
 									var t = a(this.params);
 									if (i.isEmptyObject(t) && !this.params.id)
-										throw new Error('qualified slug or list id required');
+										throw new Error("qualified slug or list id required");
 								});
 						};
 					},
@@ -5004,7 +5387,7 @@ const InitTwitterWidget = async () => {
 							i = n(5),
 							o = n(0),
 							s = n(27),
-							a = 'profile:';
+							a = "profile:";
 						function u(t, e) {
 							return r.screenName(t) || e;
 						}
@@ -5013,30 +5396,37 @@ const InitTwitterWidget = async () => {
 								showReplies: { fallback: !1, transform: i.asBoolean },
 								screenName: {},
 								userId: {},
-								url: {}
+								url: {},
 							}),
-								t.overrideProperty('id', {
+								t.overrideProperty("id", {
 									get: function () {
 										var t = u(this.params.url, this.params.screenName);
 										return a + (t || this.params.userId);
-									}
+									},
 								}),
-								t.overrideProperty('endpoint', {
+								t.overrideProperty("endpoint", {
 									get: function () {
-										var t = ['timeline-profile'],
+										var t = ["timeline-profile"],
 											e = u(this.params.url, this.params.screenName);
 										return (
-											e ? t.push('screen-name', e) : t.push('user-id', this.params.userId),
+											e
+												? t.push("screen-name", e)
+												: t.push("user-id", this.params.userId),
 											s.embedService(t)
 										);
-									}
+									},
 								}),
-								t.around('queryParams', function (t) {
-									return o.aug(t(), { showReplies: this.params.showReplies ? 'true' : 'false' });
+								t.around("queryParams", function (t) {
+									return o.aug(t(), {
+										showReplies: this.params.showReplies ? "true" : "false",
+									});
 								}),
-								t.before('initialize', function () {
-									if (!u(this.params.url, this.params.screenName) && !this.params.userId)
-										throw new Error('screen name or user id is required');
+								t.before("initialize", function () {
+									if (
+										!u(this.params.url, this.params.screenName) &&
+										!this.params.userId
+									)
+										throw new Error("screen name or user id is required");
 								});
 						};
 					},
@@ -5055,7 +5445,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -5071,23 +5461,30 @@ const InitTwitterWidget = async () => {
 							s = n(11),
 							a = n(12)(),
 							u = n(67),
-							c = 'blockquote.twitter-tweet, blockquote.twitter-video',
+							c = "blockquote.twitter-tweet, blockquote.twitter-video",
 							d = /\btw-align-(left|right|center)\b/;
 						t.exports = function (t, e) {
 							return a(t, c).map(function (t) {
 								return u(
 									(function (t) {
 										var e = s(t),
-											n = t.getElementsByTagName('A'),
+											n = t.getElementsByTagName("A"),
 											a = n && n[n.length - 1],
 											u = a && i.status(a.href),
-											c = t.getAttribute('data-conversation'),
-											f = 'none' == c || 'hidden' == c || r.present(t, 'tw-hide-thread'),
-											l = t.getAttribute('data-cards'),
-											h = 'none' == l || 'hidden' == l || r.present(t, 'tw-hide-media'),
-											p = t.getAttribute('data-media-max-width'),
-											m = t.getAttribute('data-align') || t.getAttribute('align'),
-											v = t.getAttribute('data-theme');
+											c = t.getAttribute("data-conversation"),
+											f =
+												"none" == c ||
+												"hidden" == c ||
+												r.present(t, "tw-hide-thread"),
+											l = t.getAttribute("data-cards"),
+											h =
+												"none" == l ||
+												"hidden" == l ||
+												r.present(t, "tw-hide-media"),
+											p = t.getAttribute("data-media-max-width"),
+											m =
+												t.getAttribute("data-align") || t.getAttribute("align"),
+											v = t.getAttribute("data-theme");
 										return (
 											!m && d.test(t.className) && (m = RegExp.$1),
 											o.aug(e, {
@@ -5097,13 +5494,13 @@ const InitTwitterWidget = async () => {
 												mediaMaxWidth: p,
 												align: m,
 												theme: v,
-												id: u
+												id: u,
 											})
 										);
 									})(t),
 									t.parentNode,
 									t,
-									e
+									e,
 								);
 							});
 						};
@@ -5123,7 +5520,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -5139,23 +5536,24 @@ const InitTwitterWidget = async () => {
 							s = n(12)(),
 							a = n(68),
 							u = n(5),
-							c = 'a.twitter-share-button, a.twitter-mention-button, a.twitter-hashtag-button',
-							d = 'twitter-hashtag-button',
-							f = 'twitter-mention-button';
+							c =
+								"a.twitter-share-button, a.twitter-mention-button, a.twitter-hashtag-button",
+							d = "twitter-hashtag-button",
+							f = "twitter-mention-button";
 						t.exports = function (t) {
 							return s(t, c).map(function (t) {
 								return a(
 									(function (t) {
 										var e = o(t),
 											n = {
-												screenName: t.getAttribute('data-button-screen-name'),
-												text: t.getAttribute('data-text'),
-												type: t.getAttribute('data-type'),
-												size: t.getAttribute('data-size'),
-												url: t.getAttribute('data-url'),
-												hashtags: t.getAttribute('data-hashtags'),
-												via: t.getAttribute('data-via'),
-												buttonHashtag: t.getAttribute('data-button-hashtag')
+												screenName: t.getAttribute("data-button-screen-name"),
+												text: t.getAttribute("data-text"),
+												type: t.getAttribute("data-type"),
+												size: t.getAttribute("data-size"),
+												url: t.getAttribute("data-url"),
+												hashtags: t.getAttribute("data-hashtags"),
+												via: t.getAttribute("data-via"),
+												buttonHashtag: t.getAttribute("data-button-hashtag"),
 											};
 										return (
 											i.forIn(n, function (t, n) {
@@ -5163,14 +5561,15 @@ const InitTwitterWidget = async () => {
 												e[t] = u.hasValue(r) ? r : n;
 											}),
 											(e.screenName = e.screenName || e.screen_name),
-											(e.buttonHashtag = e.buttonHashtag || e.button_hashtag || e.hashtag),
-											r.present(t, d) && (e.type = 'hashtag'),
-											r.present(t, f) && (e.type = 'mention'),
+											(e.buttonHashtag =
+												e.buttonHashtag || e.button_hashtag || e.hashtag),
+											r.present(t, d) && (e.type = "hashtag"),
+											r.present(t, f) && (e.type = "mention"),
 											e
 										);
 									})(t),
 									t.parentNode,
-									t
+									t,
 								);
 							});
 						};
@@ -5190,7 +5589,7 @@ const InitTwitterWidget = async () => {
 											} catch (t) {
 												i.reject(t);
 											}
-										}.bind(null, n)
+										}.bind(null, n),
 									)
 									.catch(function (t) {
 										i.reject(t);
@@ -5201,26 +5600,35 @@ const InitTwitterWidget = async () => {
 					},
 					function (t, e, n) {
 						var r = n(0);
-						t.exports = r.aug({}, n(144), n(145), n(146), n(147), n(148), n(149), n(150));
+						t.exports = r.aug(
+							{},
+							n(144),
+							n(145),
+							n(146),
+							n(147),
+							n(148),
+							n(149),
+							n(150),
+						);
 					},
 					function (t, e, n) {
 						var r = n(60),
-							i = n(15)(['userId'], {}, r);
+							i = n(15)(["userId"], {}, r);
 						t.exports = { createDMButton: i };
 					},
 					function (t, e, n) {
 						var r = n(62),
-							i = n(15)(['screenName'], {}, r);
+							i = n(15)(["screenName"], {}, r);
 						t.exports = { createFollowButton: i };
 					},
 					function (t, e, n) {
 						var r = n(63),
-							i = n(15)(['momentId'], {}, r);
+							i = n(15)(["momentId"], {}, r);
 						t.exports = { createMoment: i };
 					},
 					function (t, e, n) {
 						var r = n(64),
-							i = n(15)(['username'], {}, r);
+							i = n(15)(["username"], {}, r);
 						t.exports = { createPeriscopeOnAirButton: i };
 					},
 					function (t, e, n) {
@@ -5234,26 +5642,26 @@ const InitTwitterWidget = async () => {
 							d = n(15)([], {}, c),
 							f = n(6),
 							l =
-								'Embedded grids have been deprecated. Please use twttr.widgets.createTimeline instead. More info: https://twittercommunity.com/t/update-on-the-embedded-grid-display-type/119564.',
+								"Embedded grids have been deprecated. Please use twttr.widgets.createTimeline instead. More info: https://twittercommunity.com/t/update-on-the-embedded-grid-display-type/119564.",
 							h = {
 								createTimeline: p,
 								createGridFromCollection: function (t) {
 									var e = s.toRealArray(arguments).slice(1),
-										n = { sourceType: 'collection', id: t };
+										n = { sourceType: "collection", id: t };
 									return e.unshift(n), i.publicLog(l), p.apply(this, e);
-								}
+								},
 							};
 						function p(t) {
 							var e,
 								n = s.toRealArray(arguments).slice(1);
 							return a.isString(t) || a.isNumber(t)
 								? f.reject(
-										'Embedded timelines with widget settings have been deprecated. See https://twittercommunity.com/t/deprecating-widget-settings/102295.'
+										"Embedded timelines with widget settings have been deprecated. See https://twittercommunity.com/t/deprecating-widget-settings/102295.",
 									)
 								: s.isObject(t)
 									? ((t = t || {}),
 										n.forEach(function (t) {
-											s.isType('object', t) &&
+											s.isType("object", t) &&
 												(function (t) {
 													t.ariaLive = t.ariaPolite;
 												})((e = t));
@@ -5264,11 +5672,15 @@ const InitTwitterWidget = async () => {
 										(t.showReplies = e.showReplies),
 										(e.dataSource = u(t)),
 										d.apply(this, n))
-									: f.reject('data source must be an object.');
+									: f.reject("data source must be an object.");
 						}
 						o.isTwitterURL(r.href) &&
 							(h.createTimelinePreview = function (t, e, n) {
-								var r = { previewParams: t, useLegacyDefaults: !0, isPreviewTimeline: !0 };
+								var r = {
+									previewParams: t,
+									useLegacyDefaults: !0,
+									isPreviewTimeline: !0,
+								};
 								return (r.dataSource = u(r)), d(e, r, n);
 							}),
 							(t.exports = h);
@@ -5279,16 +5691,19 @@ const InitTwitterWidget = async () => {
 							o = n(67),
 							s = n(15),
 							a =
-								((r = s(['tweetId'], {}, o)),
+								((r = s(["tweetId"], {}, o)),
 								function () {
 									return (
 										i
 											.toRealArray(arguments)
 											.slice(1)
 											.forEach(function (t) {
-												i.isType('object', t) &&
-													((t.hideCard = 'none' == t.cards || 'hidden' == t.cards),
-													(t.hideThread = 'none' == t.conversation || 'hidden' == t.conversation));
+												i.isType("object", t) &&
+													((t.hideCard =
+														"none" == t.cards || "hidden" == t.cards),
+													(t.hideThread =
+														"none" == t.conversation ||
+														"hidden" == t.conversation));
 											}),
 										r.apply(this, arguments)
 									);
@@ -5299,9 +5714,9 @@ const InitTwitterWidget = async () => {
 						var r = n(0),
 							i = n(68),
 							o = n(15),
-							s = o(['url'], { type: 'share' }, i),
-							a = o(['buttonHashtag'], { type: 'hashtag' }, i),
-							u = o(['screenName'], { type: 'mention' }, i);
+							s = o(["url"], { type: "share" }, i),
+							a = o(["buttonHashtag"], { type: "hashtag" }, i),
+							u = o(["screenName"], { type: "mention" }, i);
 						function c(t) {
 							return function () {
 								return (
@@ -5309,9 +5724,10 @@ const InitTwitterWidget = async () => {
 										.toRealArray(arguments)
 										.slice(1)
 										.forEach(function (t) {
-											r.isType('object', t) &&
+											r.isType("object", t) &&
 												((t.screenName = t.screenName || t.screen_name),
-												(t.buttonHashtag = t.buttonHashtag || t.button_hashtag || t.hashtag));
+												(t.buttonHashtag =
+													t.buttonHashtag || t.button_hashtag || t.hashtag));
 										}),
 									t.apply(this, arguments)
 								);
@@ -5320,7 +5736,7 @@ const InitTwitterWidget = async () => {
 						t.exports = {
 							createShareButton: c(s),
 							createHashtagButton: c(a),
-							createMentionButton: c(u)
+							createMentionButton: c(u),
 						};
 					},
 					function (t, e, n) {
@@ -5331,7 +5747,7 @@ const InitTwitterWidget = async () => {
 							a = n(1),
 							u = 0,
 							c = [],
-							d = s.createElement('a');
+							d = s.createElement("a");
 						function f() {
 							var t, e;
 							for (u = 1, t = 0, e = c.length; t < e; t++) c[t]();
@@ -5339,18 +5755,19 @@ const InitTwitterWidget = async () => {
 						/^loade|c/.test(s.readyState) && (u = 1),
 							s.addEventListener &&
 								s.addEventListener(
-									'DOMContentLoaded',
+									"DOMContentLoaded",
 									(i = function () {
-										s.removeEventListener('DOMContentLoaded', i, !1), f();
+										s.removeEventListener("DOMContentLoaded", i, !1), f();
 									}),
-									!1
+									!1,
 								),
 							d.doScroll &&
 								s.attachEvent(
-									'onreadystatechange',
+									"onreadystatechange",
 									(r = function () {
-										/^c/.test(s.readyState) && (s.detachEvent('onreadystatechange', r), f());
-									})
+										/^c/.test(s.readyState) &&
+											(s.detachEvent("onreadystatechange", r), f());
+									}),
 								),
 							(o = d.doScroll
 								? function (t) {
@@ -5360,7 +5777,7 @@ const InitTwitterWidget = async () => {
 												: c.push(t)
 											: (function () {
 													try {
-														d.doScroll('left');
+														d.doScroll("left");
 													} catch (e) {
 														return setTimeout(function () {
 															o(t);
@@ -5378,7 +5795,7 @@ const InitTwitterWidget = async () => {
 						var r = n(42),
 							i = n(9);
 						t.exports = function () {
-							i.set('buildVersion', r.version);
+							i.set("buildVersion", r.version);
 						};
 					},
 					function (t, e, n) {
@@ -5404,8 +5821,8 @@ const InitTwitterWidget = async () => {
 										e.dataset.tweetId &&
 										o({
 											duration: s.duration(),
-											namespace: { element: 'tweet', action: 'render' },
-											widgetIds: [e.dataset.tweetId]
+											namespace: { element: "tweet", action: "render" },
+											widgetIds: [e.dataset.tweetId],
 										})),
 									i.emitter.unbind(i.ALL_WIDGETS_RENDER_END, u);
 							};
@@ -5429,7 +5846,9 @@ const InitTwitterWidget = async () => {
 					function (t, e, n) {
 						var r = n(1);
 						t.exports = function () {
-							return r.performance && r.performance.now ? r.performance.now() : Date.now();
+							return r.performance && r.performance.now
+								? r.performance.now()
+								: Date.now();
 						};
 					},
 					function (t, e, n) {
@@ -5439,7 +5858,8 @@ const InitTwitterWidget = async () => {
 						function s() {
 							r &&
 								r.length === o &&
-								(i.emitter.trigger(i.ALL_WIDGETS_AND_IMAGES_LOADED, r), (r = null));
+								(i.emitter.trigger(i.ALL_WIDGETS_AND_IMAGES_LOADED, r),
+								(r = null));
 						}
 						i.emitter.bind(i.ALL_WIDGETS_RENDER_END, function (t) {
 							(r = t.widgets), s();
@@ -5447,7 +5867,7 @@ const InitTwitterWidget = async () => {
 							(t.exports = {
 								reportImagesLoadForAWidget: function () {
 									o++, s();
-								}
+								},
 							});
 					},
 					function (t, e, n) {
@@ -5461,7 +5881,7 @@ const InitTwitterWidget = async () => {
 							d = n(61);
 						function f(t) {
 							return t.performance
-								.getEntriesByType('resource')
+								.getEntriesByType("resource")
 								.filter(function (t) {
 									return s.isTwimgURL(t.name) || s.isTwitterURL(t.name);
 								})
@@ -5487,7 +5907,10 @@ const InitTwitterWidget = async () => {
 										var r = Object.keys(t).reduce(function (e, r) {
 											return n(r) ? e + t[r] : e;
 										}, 0);
-										i({ duration: r, namespace: { element: e, action: 'resource' } });
+										i({
+											duration: r,
+											namespace: { element: e, action: "resource" },
+										});
 									})(n, t, o[t]);
 								}));
 						});
@@ -5506,10 +5929,10 @@ const InitTwitterWidget = async () => {
 								},
 								widget_iframe: function (t) {
 									return r.isWidgetIframeURL(t);
-								}
+								},
 							};
 						t.exports = i;
-					}
+					},
 				])));
 };
 

@@ -1,20 +1,26 @@
 <script>
-	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
-	import { IMG_PADRAO, HOST, HOST_API, formatarData, globalStore } from '$lib/index.js';
-	import ItemNewsHome from '$lib/ItemNewsHome.svelte';
-	import ListNewsCloseSvg from '$lib/svg/list_news_close.svelte';
-	import { fly } from 'svelte/transition';
-	import Seo from '$lib/Seo.svelte';
-	import Banners from '$lib/Banners.svelte';
-	export let data;
-	export let comparePage;
-	let page = 24;
-	$: comparePage = parseInt(data.pagination.currentPage) + 2;
+import { onMount } from "svelte";
+import { goto } from "$app/navigation";
+import {
+	IMG_PADRAO,
+	HOST,
+	HOST_API,
+	formatarData,
+	globalStore,
+} from "$lib/index.js";
+import ItemNewsHome from "$lib/ItemNewsHome.svelte";
+import ListNewsCloseSvg from "$lib/svg/list_news_close.svelte";
+import { fly } from "svelte/transition";
+import Seo from "$lib/Seo.svelte";
+import Banners from "$lib/Banners.svelte";
+export let data;
+export let comparePage;
+let page = 24;
+$: comparePage = parseInt(data.pagination.currentPage) + 2;
 
-	onMount(() => {
-		$globalStore.listNewsExpand = true;
-	});
+onMount(() => {
+	$globalStore.listNewsExpand = true;
+});
 </script>
 
 <Seo

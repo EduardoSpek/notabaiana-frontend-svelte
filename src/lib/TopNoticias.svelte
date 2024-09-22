@@ -1,9 +1,9 @@
 <script>
-	import { HOST_API, formatarData } from '$lib/index.js';
-	import { fly } from 'svelte/transition';
-	import ItemNewsBig from '$lib/ItemNewsBig.svelte';
-	export let data;
-	let page = 24;
+import { HOST_API, formatarData } from "$lib/index.js";
+import { fly } from "svelte/transition";
+import ItemNewsBig from "$lib/ItemNewsBig.svelte";
+export let data;
+let page = 24;
 </script>
 
 <section>

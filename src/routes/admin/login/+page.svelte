@@ -1,11 +1,11 @@
 <script>
-	import { onMount } from 'svelte';
-	import { initRecaptcha, KEY_RECAPTCHA } from '$lib/google_recaptcha';
-	export let form;
+import { onMount } from "svelte";
+import { initRecaptcha, KEY_RECAPTCHA } from "$lib/google_recaptcha";
+export let form;
 
-	onMount(() => {
-		initRecaptcha();
-	});
+onMount(() => {
+	initRecaptcha();
+});
 </script>
 
 <div class="TopSpace"></div>

@@ -1,13 +1,13 @@
 <script>
-	import { globalStore } from '$lib/index.js';
-	const expandList = () => {
-		$globalStore.listNewsExpand = !$globalStore.listNewsExpand;
-		if ($globalStore.listNewsExpand) {
-			window.location.href = '/news/1/24';
-		} else {
-			window.location.href = '/news-expanded/1/24';
-		}
-	};
+import { globalStore } from "$lib/index.js";
+const expandList = () => {
+	$globalStore.listNewsExpand = !$globalStore.listNewsExpand;
+	if ($globalStore.listNewsExpand) {
+		window.location.href = "/news/1/24";
+	} else {
+		window.location.href = "/news-expanded/1/24";
+	}
+};
 </script>
 
 <button type="submit" class="btn_transparent" on:click={expandList}>

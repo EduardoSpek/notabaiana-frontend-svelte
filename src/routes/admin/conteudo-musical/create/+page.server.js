@@ -1,14 +1,14 @@
-import { HOST, HOST_API } from '$lib/index.js';
-import { access_check } from '$lib/access_check.js';
-import { redirect } from '@sveltejs/kit';
+import { HOST, HOST_API } from "$lib/index.js";
+import { access_check } from "$lib/access_check.js";
+import { redirect } from "@sveltejs/kit";
 export async function load({ cookies }) {
 	const auth = await access_check(cookies);
 
 	if (!auth?.ok) {
-		redirect(302, '/admin/login');
+		redirect(302, "/admin/login");
 	}
 
-	const token = cookies.get('user_token');
+	const token = cookies.get("user_token");
 
 	return { token };
 }
@@ -20,17 +20,17 @@ export const actions = {
 		const formData = await request.formData();
 
 		const response = await fetch(`${HOST_API}/admin/downloads/create`, {
-			method: 'POST',
-			body: formData
+			method: "POST",
+			body: formData,
 		});
 
 		const data = await response.json();
 
 		if (data.id) {
-			redirect(302, HOST + '/admin/conteudo-musical');
+			redirect(302, HOST + "/admin/conteudo-musical");
 		} else {
 			erro = true;
 			return { erro: erro };
 		}
-	}
+	},
 };

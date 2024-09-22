@@ -1,9 +1,9 @@
 <script>
-	import { IMG_PADRAO } from '$lib/index.js';
-	export let title;
-	export let url_image;
-	export let link;
-	export let date;
+import { IMG_PADRAO } from "$lib/index.js";
+export let title;
+export let url_image;
+export let link;
+export let date;
 </script>
 
 <article>

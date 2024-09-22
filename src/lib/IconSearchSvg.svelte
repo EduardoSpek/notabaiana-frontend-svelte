@@ -1,9 +1,9 @@
 <script>
-	export let onSearchClick;
+export let onSearchClick;
 
-	function opensearch(e) {
-		onSearchClick();
-	}
+function opensearch(e) {
+	onSearchClick();
+}
 </script>
 
 <div class="search">

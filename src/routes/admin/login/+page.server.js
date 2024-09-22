@@ -1,10 +1,10 @@
-import { HOST_API } from '$lib/index.js';
-import { redirect } from '@sveltejs/kit';
-import { access_check } from '$lib/access_check.js';
+import { HOST_API } from "$lib/index.js";
+import { redirect } from "@sveltejs/kit";
+import { access_check } from "$lib/access_check.js";
 export async function load({ cookies }) {
 	const auth = await access_check(cookies);
 	if (auth?.ok) {
-		redirect(302, '/admin');
+		redirect(302, "/admin");
 	}
 
 	return auth;
@@ -14,9 +14,9 @@ export const actions = {
 	login: async ({ request, cookies }) => {
 		const data = await request.formData();
 
-		const login = await fetch(HOST_API + '/login', {
+		const login = await fetch(HOST_API + "/login", {
 			body: data,
-			method: 'post'
+			method: "post",
 		})
 			.then((res) => {
 				return res.json();
@@ -26,13 +26,13 @@ export const actions = {
 			});
 
 		if (login.token) {
-			cookies.set('user_id', login.id, { path: '/' });
-			cookies.set('user_token', login.token, { path: '/' });
-			redirect(302, '/admin');
+			cookies.set("user_id", login.id, { path: "/" });
+			cookies.set("user_token", login.token, { path: "/" });
+			redirect(302, "/admin");
 		} else {
-			cookies.delete('user_id', { path: '/' });
-			cookies.delete('user_token', { path: '/' });
+			cookies.delete("user_id", { path: "/" });
+			cookies.delete("user_token", { path: "/" });
 			return { login: login };
 		}
-	}
+	},
 };

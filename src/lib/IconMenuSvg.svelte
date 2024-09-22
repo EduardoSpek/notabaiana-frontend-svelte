@@ -1,40 +1,40 @@
 <script>
-	import { globalStore } from '$lib/index.js';
-	import IconSetaDireita from '$lib/svg/IconSetaDireita.svelte';
-	const openmenu = () => {
-		$globalStore.isOpen = !$globalStore.isOpen;
-	};
-	let cat1 = true;
-	const expand1 = () => {
-		cat1 = !cat1;
-		cat2 = false;
-		cat3 = false;
-		cat4 = false;
-	};
+import { globalStore } from "$lib/index.js";
+import IconSetaDireita from "$lib/svg/IconSetaDireita.svelte";
+const openmenu = () => {
+	$globalStore.isOpen = !$globalStore.isOpen;
+};
+let cat1 = true;
+const expand1 = () => {
+	cat1 = !cat1;
+	cat2 = false;
+	cat3 = false;
+	cat4 = false;
+};
 
-	let cat2 = false;
-	const expand2 = () => {
-		cat1 = false;
-		cat2 = !cat2;
-		cat3 = false;
-		cat4 = false;
-	};
+let cat2 = false;
+const expand2 = () => {
+	cat1 = false;
+	cat2 = !cat2;
+	cat3 = false;
+	cat4 = false;
+};
 
-	let cat3 = false;
-	const expand3 = () => {
-		cat1 = false;
-		cat2 = false;
-		cat3 = !cat3;
-		cat4 = false;
-	};
+let cat3 = false;
+const expand3 = () => {
+	cat1 = false;
+	cat2 = false;
+	cat3 = !cat3;
+	cat4 = false;
+};
 
-	let cat4 = false;
-	const expand4 = () => {
-		cat1 = false;
-		cat2 = false;
-		cat3 = false;
-		cat4 = !cat4;
-	};
+let cat4 = false;
+const expand4 = () => {
+	cat1 = false;
+	cat2 = false;
+	cat3 = false;
+	cat4 = !cat4;
+};
 </script>
 
 <div class="menu">

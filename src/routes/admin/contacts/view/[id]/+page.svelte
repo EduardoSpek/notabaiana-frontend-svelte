@@ -1,7 +1,7 @@
 <script>
-	import { IMG_PADRAO, HOST_API, formatarData } from '$lib/index.js';
-	export let data;
-	let data_contacts = formatarData(data.item.created_at);
+import { IMG_PADRAO, HOST_API, formatarData } from "$lib/index.js";
+export let data;
+let data_contacts = formatarData(data.item.created_at);
 </script>
 
 <div class="TopSpace"></div>
