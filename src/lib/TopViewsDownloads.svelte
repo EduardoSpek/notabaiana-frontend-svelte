@@ -8,7 +8,7 @@ const page = 24;
 
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
-		<div class="emalta">Conteúdo Musical - Relacionados</div>
+		<div class="emalta">Conteúdo Musical - Mais Visualizados</div>
 		<div class="items">
 			{#each data as download}
 				<ItemCD

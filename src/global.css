@@ -86,6 +86,9 @@ ul {
 .TopSpace {
 	padding-top: 70px;
 }
+.TopSpace2 {
+	padding-top: 20px;
+}
 .dimensoes {
 	font-size: 14px;
 	color: var(--cinza-escuro);
@@ -257,6 +260,9 @@ input::placeholder {
 	}
 	.TopSpace {
 		padding-top: 90px;
+	}
+	.TopSpace2 {
+		padding-top: 40px;
 	}
 	.conteudo-flow {
 		max-width: 1310px;
