@@ -94,6 +94,13 @@ function loadFacebookComments() {
 					}}>Quero ouvir este conteúdo</button
 				>
 			</div>
+			<div class="musics">
+				{#each data.item.musics as music}						
+					<div class="music">
+						{music.file}
+					</div>
+				{/each}
+			</div>
 			<div class="social">
 				<IconSocialNetwork url={HOST + '/conteudo-musical/' + data.item.slug} />
 			</div>
@@ -121,6 +128,26 @@ function loadFacebookComments() {
 <Banners banners={data.banners} region="rodape" />
 
 <style>
+	.musics {
+		display: flex;
+		flex-direction: column;
+		text-align: start;
+		width: 100%;
+		margin: auto;		
+		gap: 12px;
+	}
+	.musics .music{
+		font-family: 'Cabin', sans-serif;
+		font-weight: 700;
+		padding: 18px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: var(--cinza-claro);
+		border-radius: 8px;
+		color: var(--preto);
+		border: 1px solid var(--cinza);
+		
+	}
 	.baixar {
 		display: flex;
 		justify-content: center;
@@ -190,6 +217,9 @@ function loadFacebookComments() {
 		.thumb {
 			width: 550px;
 			margin: auto;
+		}
+		.musics {
+			width: 550px;
 		}
 	}
 </style>
