@@ -50,6 +50,9 @@ const setFocus = async () => {
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
 		{#if data.pagination.totalPages == 0}
 			<div class="zero_resultado">Nenhum resultado encontrado sobre <b>{data.search}</b></div>
+			<div class="search-center">				
+				<IconSearchSvg onSearchClick={opensearch} />
+			</div>
 		{:else}
 			<div class="list">
 				<div class="emalta">Busca por: <b>{data.search}</b></div>
@@ -162,6 +165,12 @@ const setFocus = async () => {
 <Banners banners={data.banners} region="rodape" />
 
 <style>
+	.search-center {
+		display: flex;
+		margin: auto;
+		justify-content: center;
+		padding-right: 30px;
+	}
 	.list {
 		display: flex;
 		justify-content: space-between;
