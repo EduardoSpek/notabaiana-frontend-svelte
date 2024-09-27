@@ -25,7 +25,7 @@ onMount(() => {
 	loadInstagramWidget();
 	loadTwitterWidget();
 	loadTiktokWidget();
-	loadFacebookComments();
+	
 	textNews = document.getElementById("textNews");
 });
 
@@ -33,31 +33,7 @@ beforeNavigate((event) => {
 	removeIframe();
 });
 
-function loadFacebookComments() {
-	// Remover qualquer instância anterior do script do Facebook
-	const existingScript = document.getElementById("facebook-jssdk");
-	if (existingScript) {
-		existingScript.remove();
-	}
 
-	// Carregar o SDK do Facebook
-	const script = document.createElement("script");
-	script.id = "facebook-jssdk";
-	script.src =
-		"https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0";
-	script.async = true;
-	script.defer = true;
-	script.crossOrigin = "anonymous";
-
-	script.onload = () => {
-		// Inicializar o widget quando o script for carregado
-		if (window.FB) {
-			window.FB.XFBML.parse(divRef);
-		}
-	};
-
-	document.body.appendChild(script);
-}
 
 function loadInstagramWidget() {
 	// Remover qualquer instância anterior do script do Instagram
@@ -172,14 +148,7 @@ function loadTiktokWidget() {
 				<div class="social">
 					<IconSocialNetwork url={HOST + data.item.link} />
 				</div>
-				<div class="comentarios">
-					<div
-						class="fb-comments"
-						data-href={HOST + data.item.link}
-						data-width="100%"
-						data-numposts="5"
-					></div>
-				</div>
+				
 				{#if data.token}
 					<br /><br /><a href="{HOST}/admin{data.item.link}" class="link">Editar notícia</a>
 				{/if}

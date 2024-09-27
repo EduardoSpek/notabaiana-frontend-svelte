@@ -1,5 +1,4 @@
 <script>
-import { onMount } from "svelte";
 import { IMG_PADRAO, HOST, HOST_API, formatarData } from "$lib/index.js";
 import Banners from "$lib/Banners.svelte";
 import { fly } from "svelte/transition";
@@ -11,40 +10,7 @@ export let data;
 let divRef;
 const data_news = formatarData(data.item.created_at);
 
-onMount(() => {
-	loadFacebookComments();
-});
 
-function loadFacebookComments() {
-	// Remover qualquer instância anterior do script do Facebook
-	const existingScript = document.getElementById("facebook-jssdk");
-	if (existingScript) {
-		existingScript.remove();
-	}
-
-	// Resetar o objeto FB se existir
-	if (window.FB) {
-		window.FB = undefined;
-	}
-
-	// Carregar o SDK do Facebook
-	const script = document.createElement("script");
-	script.id = "facebook-jssdk";
-	script.src =
-		"https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0";
-	script.async = true;
-	script.defer = true;
-	script.crossOrigin = "anonymous";
-
-	script.onload = () => {
-		// Inicializar o widget quando o script for carregado
-		if (window.FB) {
-			window.FB.XFBML.parse(divRef);
-		}
-	};
-
-	document.body.appendChild(script);
-}
 </script>
 
 <div id="fb-root"></div>
@@ -104,14 +70,7 @@ function loadFacebookComments() {
 			<div class="social">
 				<IconSocialNetwork url={HOST + '/conteudo-musical/' + data.item.slug} />
 			</div>
-			<div class="comentarios">
-				<div
-					class="fb-comments"
-					data-href={HOST + data.item.link}
-					data-width="100%"
-					data-numposts="5"
-				></div>
-			</div>
+			
 			{#if data.token}
 				<br /><br /><a href="{HOST}/admin/conteudo-musical/{data.item.slug}" class="link"
 					>Editar download</a
