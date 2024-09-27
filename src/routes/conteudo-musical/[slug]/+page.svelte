@@ -9,8 +9,6 @@ import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 export let data;
 let divRef;
 const data_news = formatarData(data.item.created_at);
-
-
 </script>
 
 <div id="fb-root"></div>
@@ -126,9 +124,6 @@ const data_news = formatarData(data.item.created_at);
 	.btn_baixar:hover {
 		background-color: var(--primary);
 		color: var(--branco);
-	}
-	.comentarios {
-		margin-top: 50px;
 	}
 	h1 {
 		color: var(--preto);
