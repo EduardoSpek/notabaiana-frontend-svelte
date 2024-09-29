@@ -27,7 +27,7 @@ export const actions = {
 
 		if (login.token) {
 			cookies.set("user_id", login.id, { path: "/" });
-			cookies.set("user_token", login.token, { path: "/", sameSite: 'strict', maxAge: 60 * 60 * 24 * 7 });
+			cookies.set("user_token", login.token, { path: "/", sameSite: 'strict', secure: true,maxAge: 60 * 60 * 24 * 7 });
 			redirect(302, "/admin");
 		} else {
 			cookies.delete("user_id", { path: "/" });
