@@ -14,7 +14,7 @@ export const actions = {
 	login: async ({ request, cookies }) => {
 		const data = await request.formData();
 
-		const login = await fetch(HOST_API + "/login", {
+		const login = await fetch(`${HOST_API}/login`, {
 			body: data,
 			method: "post",
 		})
@@ -27,7 +27,7 @@ export const actions = {
 
 		if (login.token) {
 			cookies.set("user_id", login.id, { path: "/" });
-			cookies.set("user_token", login.token, { path: "/" });
+			cookies.set("user_token", login.token, { path: "/", sameSite: 'strict', maxAge: 60 * 60 * 24 * 7 });
 			redirect(302, "/admin");
 		} else {
 			cookies.delete("user_id", { path: "/" });

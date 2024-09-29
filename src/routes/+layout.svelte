@@ -43,7 +43,7 @@ const openmenu = () => {
 			</ul>
 		</div>
 		<div id="footer_redes">
-			<p><b>NotaBaiana.com.br</b> - Todos os direitos reservados</p>
+			<p><b>NotaBaiana.com.br</b> - Todos os direitos reservados</p>			
 		</div>
 	</div>
 </footer>
