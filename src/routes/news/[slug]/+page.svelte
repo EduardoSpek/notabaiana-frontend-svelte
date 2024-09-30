@@ -25,15 +25,13 @@ onMount(() => {
 	loadInstagramWidget();
 	loadTwitterWidget();
 	loadTiktokWidget();
-	
+
 	textNews = document.getElementById("textNews");
 });
 
 beforeNavigate((event) => {
 	removeIframe();
 });
-
-
 
 function loadInstagramWidget() {
 	// Remover qualquer instância anterior do script do Instagram
@@ -178,9 +176,6 @@ function loadTiktokWidget() {
 <Banners banners={data.banners} region="rodape" />
 
 <style>
-	.comentarios {
-		margin-top: 50px;
-	}
 	h1 {
 		color: var(--preto);
 	}
