@@ -21,7 +21,8 @@ const data_news = formatarData(data.item.created_at);
 
 <Seo
 	title="Baixar {data.item.title} - Conteúdo Musical - {SITE_NAME}"
-	description="Baixe este CD: {data.item.text?.substr(0, 130)}..."
+	description="Baixe este CD: {data.item.text?.substr(0, 130)}..." 
+	keywords="baixar cd, bloquinho, bloco, pagode, mp3, mp3 pagode, axé, samba, rock, sertanejo, baixar música, artistas independentes"
 	url={HOST + '/conteudo-musical/' + data.item.slug}
 	image="{HOST_API}/images/conteudo-musical/{data.item.image}"
 />
