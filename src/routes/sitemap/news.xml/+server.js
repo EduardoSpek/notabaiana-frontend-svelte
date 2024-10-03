@@ -1,7 +1,7 @@
-import { HOST_API } from '$lib/index.js';
+import { HOST, HOST_API } from '$lib/index.js';
 
 export async function GET() {
-	const host = 'https://www.notabaiana.com.br';
+	const host = HOST;
 	const response = await fetch(`${HOST_API}/news/1/1000`);
 	const data = await response.json();
 	const news = data;

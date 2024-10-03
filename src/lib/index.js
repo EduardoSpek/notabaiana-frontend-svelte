@@ -4,7 +4,7 @@ const HOST_API = import.meta.env.VITE_HOST_API;
 const HOST = import.meta.env.VITE_HOST;
 
 const SITE_NAME = "Nota Baiana";
-const IMG_PADRAO = HOST + "/notabaiana_400.jpg";
+const IMG_PADRAO = `${HOST_API}/images/notabaiana_400.jpg`;
 
 const formatarData = (data) => {
 	const data_news = new Date(Date.parse(data));
