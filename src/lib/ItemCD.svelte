@@ -53,6 +53,9 @@ export let date;
 		font-weight: 700;
 		margin-bottom: 10px;
 		line-height: 20px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		hyphens: auto;
 	}
 	.link {
 		text-decoration: none;

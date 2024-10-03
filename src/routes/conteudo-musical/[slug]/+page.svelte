@@ -14,7 +14,7 @@ const data_news = formatarData(data.item.created_at);
 <div id="fb-root"></div>
 
 <Seo
-	title="{data.item.title} - Conteúdo Musical"
+	title="Baixar {data.item.title} - Conteúdo Musical"
 	description="{data.item.text?.substr(0, 150)}..."
 	url={HOST + '/conteudo-musical/' + data.item.slug}
 	image="{HOST_API}/images/conteudo-musical/{data.item.image}"
