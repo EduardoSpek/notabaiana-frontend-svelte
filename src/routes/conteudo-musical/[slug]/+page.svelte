@@ -1,5 +1,11 @@
 <script>
-import { IMG_PADRAO, HOST, HOST_API, formatarData } from "$lib/index.js";
+import {
+	IMG_PADRAO,
+	HOST,
+	HOST_API,
+	formatarData,
+	SITE_NAME,
+} from "$lib/index.js";
 import Banners from "$lib/Banners.svelte";
 import { fly } from "svelte/transition";
 import Seo from "$lib/Seo.svelte";
@@ -14,8 +20,8 @@ const data_news = formatarData(data.item.created_at);
 <div id="fb-root"></div>
 
 <Seo
-	title="Baixar {data.item.title} - Conteúdo Musical"
-	description="{data.item.text?.substr(0, 150)}..."
+	title="Baixar {data.item.title} - Conteúdo Musical - {SITE_NAME}"
+	description="Baixe este CD: {data.item.text?.substr(0, 130)}..."
 	url={HOST + '/conteudo-musical/' + data.item.slug}
 	image="{HOST_API}/images/conteudo-musical/{data.item.image}"
 />
