@@ -12,7 +12,7 @@ export let date;
 			{#if url_image.includes('.jpg') || url_image.includes('.jpeg')}
 				<a href={link}><img class="thumb" src={url_image} alt={title} /></a>
 			{:else}
-				<img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} />
+				<a href={link}><img class="thumb" src={IMG_PADRAO} alt={'Nota Baiana'} /></a>
 			{/if}
 		</div>
 
