@@ -17,7 +17,7 @@ function loadRecaptcha() {
 	// Carregar o script do reCAPTCHA
 	const script = document.createElement("script");
 	script.id = "recaptcha-script";
-	script.src = `https://www.google.com/recaptcha/api.js?render=${KEY_RECAPTCHA}`;
+	script.src = "https://www.google.com/recaptcha/api.js";
 	script.async = true;
 	script.defer = true;
 
