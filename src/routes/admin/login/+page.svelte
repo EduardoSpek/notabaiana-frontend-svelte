@@ -1,34 +1,43 @@
 <script>
 import { onMount } from "svelte";
+import { browser } from "$app/environment";
 import { KEY_RECAPTCHA } from "$lib/index.js";
 export let form;
+let formDefault;
 
 onMount(() => {
-	loadRecaptcha();
+	if (browser) {
+		loadRecaptcha();
+	}
 });
 
 function loadRecaptcha() {
-	// Remover qualquer instância anterior do script do reCAPTCHA
-	const existingScript = document.getElementById("recaptcha-script");
-	if (existingScript) {
-		existingScript.remove();
-	}
-
-	// Carregar o script do reCAPTCHA
 	const script = document.createElement("script");
-	script.id = "recaptcha-script";
-	script.src = "https://www.google.com/recaptcha/api.js";
+	script.src = `https://www.google.com/recaptcha/api.js?render=${KEY_RECAPTCHA}`;
 	script.async = true;
 	script.defer = true;
-
-	script.onload = () => {
-		// Inicializar o reCAPTCHA quando o script for carregado
-		if (window.grecaptcha) {
-			window.grecaptcha.ready();
-		}
-	};
-
 	document.body.appendChild(script);
+}
+
+function handleSubmit(event) {
+	event.preventDefault();
+	if (window.grecaptcha) {
+		window.grecaptcha.ready(() => {
+			window.grecaptcha
+				.execute(KEY_RECAPTCHA, { action: "submit" })
+				.then((token) => {
+					// Adiciona o token ao formulário
+					const input = document.createElement("input");
+					input.type = "hidden";
+					input.name = "g-recaptcha-response";
+					input.value = token;
+					formDefault.appendChild(input);
+
+					// Envia o formulário
+					formDefault.submit();
+				});
+		});
+	}
 }
 </script>
 
@@ -38,34 +47,30 @@ function loadRecaptcha() {
 	<div class="central">
 		<div class="conteudo-flow">
 			<h1 class="titulo">Administração</h1>
-			<form action="?/login" method="post" id="formDefault">
+			<form action="?/login" method="post" id="formDefault" bind:this={formDefault} on:submit={handleSubmit}>
 				<label for="cInput">Email:</label><br />
-				<input type="text" class="inputForm" id="cInput" name="email" required maxlength="80" /><br
-				/><br />
-
+				<input type="text" class="inputForm" id="cInput" name="email" required maxlength="80" /><br /><br />
+			  
 				<label for="tinput">Senha:</label><br />
 				<input
-					type="password"
-					class="inputForm"
-					size="70"
-					id="tinput"
-					name="password"
-					maxlength="30"
-					required="true"
+				  type="password"
+				  class="inputForm"
+				  size="70"
+				  id="tinput"
+				  name="password"
+				  maxlength="30"
+				  required="true"
 				/><br /><br />
-
+			  
 				{#if form?.login.erro}
-					<p class="alert">Dados inválidos. Tente novanente.</p>
+				  <p class="alert">Dados inválidos. Tente novamente.</p>
 				{/if}
 				<input
-					type="submit"
-					value="Enviar"
-					class="buttonForm g-recaptcha"
-					data-sitekey={KEY_RECAPTCHA}
-					data-callback="onSubmit"
-					data-action="submit"
+				  type="submit"
+				  value="Enviar"
+				  class="buttonForm"
 				/>
-			</form>
+			  </form>
 		</div>
 	</div>
 </section>
