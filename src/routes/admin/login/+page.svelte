@@ -1,11 +1,35 @@
 <script>
 import { onMount } from "svelte";
-import { initRecaptcha, KEY_RECAPTCHA } from "$lib/google_recaptcha";
+import { KEY_RECAPTCHA } from "$lib/index.js";
 export let form;
 
 onMount(() => {
-	initRecaptcha();
+	loadRecaptcha();
 });
+
+function loadRecaptcha() {
+	// Remover qualquer instância anterior do script do reCAPTCHA
+	const existingScript = document.getElementById("recaptcha-script");
+	if (existingScript) {
+		existingScript.remove();
+	}
+
+	// Carregar o script do reCAPTCHA
+	const script = document.createElement("script");
+	script.id = "recaptcha-script";
+	script.src = `https://www.google.com/recaptcha/api.js?render=${KEY_RECAPTCHA}`;
+	script.async = true;
+	script.defer = true;
+
+	script.onload = () => {
+		// Inicializar o reCAPTCHA quando o script for carregado
+		if (window.grecaptcha) {
+			window.grecaptcha.ready();
+		}
+	};
+
+	document.body.appendChild(script);
+}
 </script>
 
 <div class="TopSpace"></div>
