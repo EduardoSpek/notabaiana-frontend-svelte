@@ -63,7 +63,7 @@ function handleSubmit(event) {
 				/><br /><br />
 			  
 				{#if form?.login.erro}
-				  <p class="alert">Dados inválidos. Tente novamente.</p>
+				  <p class="alert">Dados inválidos. Tente novamente!</p>
 				{/if}
 				<input
 				  type="submit"

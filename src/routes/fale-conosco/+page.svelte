@@ -1,12 +1,45 @@
 <script>
 import { onMount } from "svelte";
-import { initRecaptcha, KEY_RECAPTCHA } from "$lib/google_recaptcha";
+import { browser } from "$app/environment";
+import { KEY_RECAPTCHA } from "$lib/index.js";
 export let data;
 export let form;
+let formDefault;
 
 onMount(() => {
-	initRecaptcha();
+	if (browser) {
+		loadRecaptcha();
+	}
 });
+
+function loadRecaptcha() {
+	const script = document.createElement("script");
+	script.src = `https://www.google.com/recaptcha/api.js?render=${KEY_RECAPTCHA}`;
+	script.async = true;
+	script.defer = true;
+	document.body.appendChild(script);
+}
+
+function handleSubmit(event) {
+	event.preventDefault();
+	if (window.grecaptcha) {
+		window.grecaptcha.ready(() => {
+			window.grecaptcha
+				.execute(KEY_RECAPTCHA, { action: "submit" })
+				.then((token) => {
+					// Adiciona o token ao formulário
+					const input = document.createElement("input");
+					input.type = "hidden";
+					input.name = "g-recaptcha-response";
+					input.value = token;
+					formDefault.appendChild(input);
+
+					// Envia o formulário
+					formDefault.submit();
+				});
+		});
+	}
+}
 </script>
 
 <div class="TopSpace"></div>
@@ -20,7 +53,7 @@ onMount(() => {
 
 			<h2>Fale conosco</h2>
 
-			<form action="?/create" method="post" id="formDefault" enctype="multipart/form-data">
+			<form action="?/create" method="post" id="formDefault" enctype="multipart/form-data"  bind:this={formDefault} on:submit={handleSubmit}>
 				<input type="hidden" id="ctoken" name="token" value={data.token} />
 
 				<label for="cInputName">Nome:</label><br />
