@@ -19,7 +19,7 @@ const openmenu = () => {
 
 <Topo />
 <main class="main">
-	<Doacao />
+	<slot />
 </main>
 
 <footer>
