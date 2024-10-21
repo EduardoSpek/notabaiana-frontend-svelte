@@ -6,8 +6,6 @@ const HOST = import.meta.env.VITE_HOST;
 const SITE_NAME = "Nota Baiana";
 const IMG_PADRAO = `${HOST}/notabaiana_400.jpg`;
 
-const KEY_RECAPTCHA = import.meta.env.VITE_GOOGLE_CAPTCHA;
-
 const formatarData = (data) => {
 	const data_news = new Date(Date.parse(data));
 	const dia = data_news.getDate().toString().padStart(2, "0");
@@ -34,5 +32,4 @@ export {
 	IMG_PADRAO,
 	globalStore,
 	bigFirstLetter,
-	KEY_RECAPTCHA,
 };
