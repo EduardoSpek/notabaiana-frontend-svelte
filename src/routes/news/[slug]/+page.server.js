@@ -4,7 +4,7 @@ export async function load({ fetch, params, cookies }) {
 	let item;
 	let top;
 	let banners;
-	let downloads;
+	//let downloads;
 
 	const fnBanners = () => {
 		return fetch(`${HOST_API}/banners`).then((res) => {
@@ -24,19 +24,19 @@ export async function load({ fetch, params, cookies }) {
 		});
 	};
 
-	const fnDownloads = () => {
-		return fetch(`${HOST_API}/downloads/topviews/1/12`).then((response) => {
-			return response.json();
-		});
-	};
+	// const fnDownloads = () => {
+	// 	return fetch(`${HOST_API}/downloads/topviews/1/12`).then((response) => {
+	// 		return response.json();
+	// 	});
+	// };
 
-	const allPromises = Promise.all([fnBanners(), fnNews(), fnTop(), fnDownloads()]);
+	const allPromises = Promise.all([fnBanners(), fnNews(), fnTop()]);
 
-	await allPromises.then(([rbanners, ritem, rtop, rDownloads]) => {
+	await allPromises.then(([rbanners, ritem, rtop]) => {
 		banners = rbanners;
 		item = ritem;
 		top = rtop;
-		downloads = rDownloads
+		//downloads = rDownloads
 	});
 
 	if (!item.id) {
@@ -64,5 +64,5 @@ export async function load({ fetch, params, cookies }) {
 	top.splice(top.length - 2, 2);
 	
 
-	return { banners: banners.banners, downloads, item, top, token };
+	return { banners: banners.banners, item, top, token };
 }

@@ -64,7 +64,7 @@ const expand4 = () => {
 			<li><a href="/news/1/24" on:click={openmenu}>Todas as notícias</a></li>
 		</ul>
 	</div>
-	<div class="menu-title">
+	<!-- <div class="menu-title">
 		<button class="btn_transparent" on:click={expand2}
 			><IconSetaDireita seta={cat2} /> Conteúdo Musical</button
 		>
@@ -93,7 +93,7 @@ const expand4 = () => {
 		<li><a href="/conteudo-musical/category/sertanejo/1" on:click={openmenu}>Sertanejo</a></li>
 		<li><a href="/conteudo-musical/category/swingueira/1" on:click={openmenu}>Swingueira</a></li>
 		<li><a href="/conteudo-musical/category/variados/1" on:click={openmenu}>Variados</a></li>
-	</ul>
+	</ul> -->
 	<div class="menu-title">
 		<button class="btn_transparent" on:click={expand3}
 			><IconSetaDireita seta={cat3} /> Institucional</button

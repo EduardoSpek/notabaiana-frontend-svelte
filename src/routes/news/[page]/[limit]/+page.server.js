@@ -20,7 +20,7 @@ export async function load({ fetch, params }) {
 	await allPromises.then(([rbanners, rnews]) => {
 		banners = rbanners;
 		news = rnews;
-	});
+	});	
 
 	news.news.forEach((item, i) => {
 		if (item.title_ai) {
