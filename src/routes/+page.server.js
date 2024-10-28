@@ -62,43 +62,58 @@ export async function load({ fetch }) {
 			municipios = rmunicipios;
 			justica = rjustica;
 		},
-	);
+	);	
 
-	news.forEach((item, i) => {
-		if (item.title_ai) {
-			news[i].title = news[i].title_ai;
-		}
-	});
+	if (news.ok) {
+		news.forEach((item, i) => {
+			if (item.title_ai) {
+				news[i].title = news[i].title_ai;
+			}
+		});
+		news.splice(news.length - 2, 2);
+	}
 
-	famosos.news.forEach((item, i) => {
-		if (item.title_ai) {
-			famosos.news[i].title = famosos.news[i].title_ai;
-		}
-	});
+	if (famosos.news) {
+		famosos.news.forEach((item, i) => {
+			if (item.title_ai) {
+				famosos.news[i].title = famosos.news[i].title_ai;
+			}
+		});
+		famosos.news.splice(famosos.news.length - 8, 8);
+	}
 
-	esportes.news.forEach((item, i) => {
-		if (item.title_ai) {
-			esportes.news[i].title = esportes.news[i].title_ai;
-		}
-	});
+	if (esportes.news) {
+		esportes.news.forEach((item, i) => {
+			if (item.title_ai) {
+				esportes.news[i].title = esportes.news[i].title_ai;
+			}
+		});
+		esportes.news.splice(esportes.news.length - 8, 8);
+	}
+	
+	if (municipios.news) {
+		municipios.news.forEach((item, i) => {
+			if (item.title_ai) {
+				municipios.news[i].title = municipios.news[i].title_ai;
+			}
+		});
+		municipios.news.splice(municipios.news.length - 8, 8);
+	}
 
-	municipios.news.forEach((item, i) => {
-		if (item.title_ai) {
-			municipios.news[i].title = municipios.news[i].title_ai;
-		}
-	});
+	if (justica.news) {
+		justica.news.forEach((item, i) => {
+			if (item.title_ai) {
+				justica.news[i].title = justica.news[i].title_ai;
+			}
+		});
+		justica.news.splice(justica.news.length - 8, 8);
+	}
 
-	justica.news.forEach((item, i) => {
-		if (item.title_ai) {
-			justica.news[i].title = justica.news[i].title_ai;
-		}
-	});
-
-	news.splice(news.length - 2, 2);
-	famosos.news.splice(famosos.news.length - 8, 8);
-	esportes.news.splice(esportes.news.length - 8, 8);
-	municipios.news.splice(municipios.news.length - 8, 8);
-	justica.news.splice(justica.news.length - 8, 8);
+	
+	
+	
+	
+	
 
 	return {
 		banners: banners.banners,

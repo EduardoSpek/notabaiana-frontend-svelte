@@ -3,11 +3,15 @@ import { HOST_API } from "$lib/index.js";
 export let banners;
 export let region;
 let bannersTopo;
-const aBanners = banners.flat();
-if (region) {
-	bannersTopo = aBanners.filter((item, i) => item.tag === region);
+if (banners) {
+	const aBanners = banners.flat();
+	if (region) {
+		bannersTopo = aBanners.filter((item, i) => item.tag === region);
+	} else {
+		bannersTopo = aBanners;
+	}
 } else {
-	bannersTopo = aBanners;
+	bannersTopo = [];
 }
 </script>
 

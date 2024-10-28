@@ -22,23 +22,28 @@ export async function load({ fetch, params }) {
 		news = rnews;
 	});	
 
-	news.news.forEach((item, i) => {
-		if (item.title_ai) {
-			news.news[i].title = news.news[i].title_ai;
-		}
+	console.log(news);
 
-		if (item.text) {
-			item.text = item.text.replace(/\n/g, '<br>');
+	
+	if (news.news) {
+		news.news.forEach((item, i) => {
+			if (item.title_ai) {
+				news.news[i].title = news.news[i].title_ai;
+			}
 
-			item.text = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br><br><br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br> <br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br><br> <br><br> <br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
-			item.text = item.text.replace(/<br><br><br>/g, '<br><br>');
-		}
-	});
+			if (item.text) {
+				item.text = item.text.replace(/\n/g, '<br>');
+
+				item.text = item.text.replace(/<br><br><br><br><br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br><br><br><br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br><br><br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br> <br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br><br> <br><br> <br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br><br> <br><br>/g, '<br><br>');
+				item.text = item.text.replace(/<br><br><br>/g, '<br><br>');
+			}
+		});
+	}
 
 	return {
 		banners: banners.banners,

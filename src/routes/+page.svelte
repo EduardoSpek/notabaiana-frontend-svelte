@@ -23,18 +23,24 @@ export let data;
 
 <Banners banners={data.banners} region="meio1" />
 
+{#if data.famosos}
 <TopNoticiasCategorias data_categorias={data.famosos} category="Famosos" />
-
 <Banners banners={data.banners} region="meio2" />
+{/if}
 
+{#if data.esportes}
 <TopNoticiasCategorias data_categorias={data.esportes} category="Esportes" />
-
 <Banners banners={data.banners} region="meio3" />
+{/if}
 
+{#if data.municipios}
 <TopNoticiasCategorias data_categorias={data.municipios} category="Municípios" />
-
 <Banners banners={data.banners} region="meio4" />
+{/if}
 
+
+{#if data.justica}
 <TopNoticiasCategorias data_categorias={data.justica} category="Justiça" />
+{/if}
 
 <Banners banners={data.banners} region="rodape" />

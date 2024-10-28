@@ -32,7 +32,9 @@ onMount(() => {
 
 <div class="TopSpace"></div>
 
+{#if data.banners}
 <Banners banners={data.banners} region="topo" />
+{/if}
 
 <section>
 	<div class="conteudo-flow" in:fly={{ duration: 200, y: 500 }}>
