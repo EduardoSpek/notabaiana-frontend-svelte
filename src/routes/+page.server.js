@@ -62,7 +62,7 @@ export async function load({ fetch }) {
 			municipios = rmunicipios;
 			justica = rjustica;
 		},
-	);	
+	);
 
 	if (news.ok) {
 		news.forEach((item, i) => {
@@ -90,7 +90,7 @@ export async function load({ fetch }) {
 		});
 		esportes.news.splice(esportes.news.length - 8, 8);
 	}
-	
+
 	if (municipios.news) {
 		municipios.news.forEach((item, i) => {
 			if (item.title_ai) {
@@ -108,12 +108,6 @@ export async function load({ fetch }) {
 		});
 		justica.news.splice(justica.news.length - 8, 8);
 	}
-
-	
-	
-	
-	
-	
 
 	return {
 		banners: banners.banners,
