@@ -64,16 +64,16 @@ export async function load({ fetch }) {
 		},
 	);
 
-	if (news.ok) {
+	if (Array.isArray(news)) {
 		news.forEach((item, i) => {
 			if (item.title_ai) {
 				news[i].title = news[i].title_ai;
 			}
 		});
-		news.splice(news.length - 4, 4);
+		news.splice(news.length - 2, 2);
 	}
 
-	if (famosos.news) {
+	if (Array.isArray(famosos.news)) {
 		famosos.news.forEach((item, i) => {
 			if (item.title_ai) {
 				famosos.news[i].title = famosos.news[i].title_ai;
@@ -82,7 +82,7 @@ export async function load({ fetch }) {
 		famosos.news.splice(famosos.news.length - 8, 8);
 	}
 
-	if (esportes.news) {
+	if (Array.isArray(esportes.news)) {
 		esportes.news.forEach((item, i) => {
 			if (item.title_ai) {
 				esportes.news[i].title = esportes.news[i].title_ai;
@@ -91,7 +91,7 @@ export async function load({ fetch }) {
 		esportes.news.splice(esportes.news.length - 8, 8);
 	}
 
-	if (municipios.news) {
+	if (Array.isArray(municipios.news)) {
 		municipios.news.forEach((item, i) => {
 			if (item.title_ai) {
 				municipios.news[i].title = municipios.news[i].title_ai;
@@ -100,7 +100,7 @@ export async function load({ fetch }) {
 		municipios.news.splice(municipios.news.length - 8, 8);
 	}
 
-	if (justica.news) {
+	if (Array.isArray(justica.news)) {
 		justica.news.forEach((item, i) => {
 			if (item.title_ai) {
 				justica.news[i].title = justica.news[i].title_ai;
