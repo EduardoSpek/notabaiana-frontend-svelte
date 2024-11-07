@@ -70,7 +70,7 @@ export async function load({ fetch }) {
 				news[i].title = news[i].title_ai;
 			}
 		});
-		news.splice(news.length - 2, 2);
+		news.splice(news.length - 4, 4);
 	}
 
 	if (famosos.news) {
