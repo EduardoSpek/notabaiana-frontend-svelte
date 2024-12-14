@@ -14,7 +14,7 @@ export async function load({ params, cookies }) {
 		`${HOST_API}/admin/news/${params.page}/${params.limit}`,
 		{
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: `Bearer ${token}`,
 			},
 		},
 	).then((response) => {
@@ -34,10 +34,10 @@ export const actions = {
 		const token = cookies.get("user_token");
 		const formData = await request.formData();
 
-		await fetch(`${HOST_API}/admin/news/` + formData.get("id"), {
+		await fetch(`${HOST_API}/admin/news/${formData.get("id")}`, {
 			method: "DELETE",
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: `Bearer ${token}`,
 			},
 		}).then((response) => {
 			return response.json();
@@ -53,7 +53,7 @@ export const actions = {
 			method: "DELETE",
 			body: JSON.stringify(formData.getAll("id[]")),
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: `Bearer ${token}`,
 			},
 		}).then((response) => {
 			return response.json();
