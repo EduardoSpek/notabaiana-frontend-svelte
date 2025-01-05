@@ -22,6 +22,17 @@ class NewsCache {
         this.cache.lastFetch = Date.now();
     }
 
+    //setData by name
+    async setDataByName(name, data) {
+        this.cache.data[name] = data;
+        this.cache.lastFetch = Date.now();
+    }
+
+    //getData by name
+    async getDataByName(name) {
+        return this.cache.data[name];
+    }
+
 }
 
 export const newsCache = new NewsCache();
