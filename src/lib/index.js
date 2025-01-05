@@ -26,6 +26,7 @@ const bigFirstLetter = (string) => {
 
 const globalStore = writable({ isOpen: false, listNewsExpand: true });
 
+
 export {
 	SITE_NAME,
 	formatarData,
