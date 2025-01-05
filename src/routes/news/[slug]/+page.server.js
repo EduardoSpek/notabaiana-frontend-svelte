@@ -7,7 +7,9 @@ export async function load({ fetch, params, cookies }) {
 	let banners;
 	let token;
 
-	const cachedData = await newsCache.getDataByName(params.slug);
+	const tagCache = `news-${params.slug}`;
+
+	const cachedData = await newsCache.getDataByName(tagCache);
 
 	if (cachedData) {
 		banners = cachedData.banners;
@@ -75,7 +77,7 @@ export async function load({ fetch, params, cookies }) {
 			top.splice(top.length - 2, 2);
 		}
 
-		newsCache.setDataByName(params.slug, {
+		newsCache.setDataByName(tagCache, {
 			banners: banners.banners,
 			item: item,
 			top: top,
