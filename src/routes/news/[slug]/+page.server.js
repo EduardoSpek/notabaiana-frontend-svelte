@@ -61,10 +61,10 @@ export async function load({ fetch, params, cookies }) {
 
 	const token = cookies.get('user_token');
 
-	if (top.ok) {
+	if (Array.isArray(top)) {
 		top.splice(top.length - 2, 2);
 	}
-	
+
 
 	return { banners: banners.banners, item, top, token };
 }
