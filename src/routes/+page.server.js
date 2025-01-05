@@ -1,5 +1,26 @@
 import { HOST_API } from "$lib/index.js";
 
+const limitedList = (list) => {
+
+	let local = list
+
+	if (local.length < 4) {
+		local = local.slice(0, 0);
+	} else if (local.length > 4 && local.length < 8) {
+		local = local.slice(0, 4);
+	}
+	else if (local.length >= 8 && local.length < 12) {
+		local = local.slice(0, 8);
+	}
+	else if (local.length >= 12 && local.length < 16) {
+		local = local.slice(0, 12);
+	} else {
+		local = local = local.slice(0, 16);
+	}
+
+	return local;
+}
+
 export async function load({ fetch }) {
 	let news;
 	let famosos;
@@ -79,7 +100,8 @@ export async function load({ fetch }) {
 				famosos.news[i].title = famosos.news[i].title_ai;
 			}
 		});
-		famosos.news.splice(famosos.news.length - 8, 8);
+
+		famosos.news = limitedList(famosos.news);
 	}
 
 	if (Array.isArray(esportes.news)) {
@@ -88,7 +110,7 @@ export async function load({ fetch }) {
 				esportes.news[i].title = esportes.news[i].title_ai;
 			}
 		});
-		esportes.news.splice(esportes.news.length - 8, 8);
+		esportes.news = limitedList(esportes.news);
 	}
 
 	if (Array.isArray(municipios.news)) {
@@ -97,7 +119,7 @@ export async function load({ fetch }) {
 				municipios.news[i].title = municipios.news[i].title_ai;
 			}
 		});
-		municipios.news.splice(municipios.news.length - 8, 8);
+		municipios.news = limitedList(municipios.news);
 	}
 
 	if (Array.isArray(justica.news)) {
@@ -106,7 +128,7 @@ export async function load({ fetch }) {
 				justica.news[i].title = justica.news[i].title_ai;
 			}
 		});
-		justica.news.splice(justica.news.length - 8, 8);
+		justica.news = limitedList(justica.news);
 	}
 
 	return {
