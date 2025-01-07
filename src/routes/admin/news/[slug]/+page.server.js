@@ -1,6 +1,7 @@
 import { HOST, HOST_API } from "$lib/index.js";
 import { access_check } from "$lib/access_check.js";
 import { redirect } from "@sveltejs/kit";
+import { newsCache } from "$lib/cache.js";
 export async function load({ cookies, fetch, params }) {
 	const auth = await access_check(cookies);
 
@@ -39,6 +40,7 @@ export const actions = {
 		const data = await response.json();
 
 		if (data.id) {
+			await newsCache.clear();
 			redirect(302, HOST + data.link);
 		} else {
 			erro = true;
