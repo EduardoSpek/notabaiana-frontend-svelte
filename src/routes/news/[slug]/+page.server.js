@@ -11,7 +11,7 @@ export async function load({ fetch, params, cookies }) {
 
 	const cachedData = await newsCache.getDataByName(tagCache);
 
-	if (cachedData) {
+	if (Object.keys(cachedData).length !== 0) {
 		banners = cachedData.banners;
 		item = cachedData.item;
 		top = cachedData.top;

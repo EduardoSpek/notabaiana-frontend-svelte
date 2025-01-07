@@ -32,7 +32,7 @@ export async function load({ fetch }) {
 
 	const cachedData = await newsCache.getData();
 
-	if (cachedData) {
+	if (cachedData.news) {
 		banners = cachedData.banners;
 		news = cachedData.news;
 		famosos = cachedData.famosos;

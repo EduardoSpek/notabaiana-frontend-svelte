@@ -1,20 +1,27 @@
 class NewsCache {
     constructor() {
         this.cache = {
-            data: null,
+            data: {},
             lastFetch: 0
         };
-        this.CACHE_DURATION = 10 * 60 * 1000; // 5 minutos
+        this.CACHE_DURATION = 10 * 1000; // 5 minutos
+    }
+
+    checkDateCache() {
+        const now = Date.now();
+        if (this.cache.data && (now - this.cache.lastFetch) < this.CACHE_DURATION) {
+            return true;
+        }
+        return false;
     }
 
     async getData() {
-        const now = Date.now();
 
-        if (this.cache.data && (now - this.cache.lastFetch) < this.CACHE_DURATION) {
+        if (this.checkDateCache()) {
             return this.cache.data;
         }
 
-        return null;
+        return {};
     }
 
     async setData(data) {
@@ -24,13 +31,32 @@ class NewsCache {
 
     //setData by name
     async setDataByName(name, data) {
+
         this.cache.data[name] = data;
         this.cache.lastFetch = Date.now();
     }
 
     //getData by name
     async getDataByName(name) {
-        return this.cache.data[name];
+        try {
+            if (this.checkDateCache() && this.cache.data[name]) {
+
+                return this.cache.data[name];
+            }
+
+            return {};
+
+        } catch (e) {
+
+            return {};
+
+        }
+    }
+
+    //clear cache
+    async clear() {
+        this.cache.data = {};
+        this.cache.lastFetch = 0;
     }
 
 }

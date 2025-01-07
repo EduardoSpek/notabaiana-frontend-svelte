@@ -31,6 +31,12 @@ $: comparePage = Number.parseInt(data.pagination.currentPage) + 2;
 					Famosos
 				{:else if data.category == 'esportes'}
 					Esportes
+				{:else if data.category == 'justica'}
+					Justiça
+				{:else if data.category == 'saude'}	
+					Saúde
+				{:else if data.category == 'municipios'}
+					Municípios
 				{/if}
 			</div>
 			<div class="items">

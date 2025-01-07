@@ -3,11 +3,13 @@ import { newsCache } from "$lib/cache.js";
 export async function load({ fetch, params }) {
 	let news;
 	let banners;
+
 	const tagCache = `news-${params.page}-${params.limit}`
 
 	const cachedData = await newsCache.getDataByName(tagCache);
 
-	if (cachedData) {
+
+	if (Object.keys(cachedData).length !== 0) {
 		banners = cachedData.banners;
 		news = cachedData.news;
 	} else {
