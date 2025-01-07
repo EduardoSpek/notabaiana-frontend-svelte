@@ -4,7 +4,7 @@ class NewsCache {
             data: {},
             lastFetch: 0
         };
-        this.CACHE_DURATION = 10 * 1000; // 5 minutos
+        this.CACHE_DURATION = 10 * 60 * 1000; // 5 minutos
     }
 
     checkDateCache() {

@@ -12,14 +12,14 @@ export async function load({ cookies, fetch, params }) {
 
 	const item = await fetch(`${HOST_API}/admin/news/${params.slug}`, {
 		headers: {
-			Authorization: "Bearer " + token,
+			Authorization: `Bearer ${token}`,
 		},
 	}).then((response) => {
 		return response.json();
 	});
 
-	item["text"] = item.text.replace(/\n\n/g, "\n");
-	item["text"] = item.text.replace(/<br><br>/g, "\n");
+	item.text = item.text.replace(/\n\n/g, "\n");
+	item.text = item.text.replace(/<br><br>/g, "\n");
 
 	return { item, token };
 }
