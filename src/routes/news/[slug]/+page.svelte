@@ -191,7 +191,7 @@ function loadTiktokWidget() {
 		text-align: justify;
 		font-size: 20px;
 		color: var(--text);
-		word-break: break-all;
+		word-break: break-word;
 	}
 	.text p {
 		line-height: 28px;
