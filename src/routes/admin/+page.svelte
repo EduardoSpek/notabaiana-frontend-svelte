@@ -10,12 +10,12 @@
 					window.location = '/admin/news';
 				}}><li>Notícias</li></button
 			>
-			<!-- <button
+			<button
 				class="btn_transparent"
 				on:click={() => {
 					window.location = '/admin/conteudo-musical';
 				}}><li>Conteúdo Musical</li></button
-			> -->
+			>
 			<button
 				class="btn_transparent"
 				on:click={() => {

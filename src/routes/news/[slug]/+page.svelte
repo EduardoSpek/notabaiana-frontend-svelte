@@ -6,7 +6,7 @@ import Banners from "$lib/Banners.svelte";
 import { fly } from "svelte/transition";
 import Seo from "$lib/Seo.svelte";
 import TopNoticiasHome from "$lib/TopNoticiasHome.svelte";
-//import TopViewsDownloads from "$lib/TopViewsDownloads.svelte";
+import TopViewsDownloads from "$lib/TopViewsDownloads.svelte";
 import IconSocialNetwork from "$lib/svg/IconSocialNetwork.svelte";
 
 export let data;
@@ -167,9 +167,9 @@ function loadTiktokWidget() {
 
 <Banners banners={data.banners} />
 
-<!-- <div class="TopSpace2"></div>
+<div class="TopSpace2"></div>
 
-<TopViewsDownloads data={data.downloads} /> -->
+<TopViewsDownloads data={data.downloads} />
 
 <div class="TopSpace2"></div>
 
@@ -191,7 +191,7 @@ function loadTiktokWidget() {
 		text-align: justify;
 		font-size: 20px;
 		color: var(--text);
-		word-break: break-word;
+		word-break: break-all;
 	}
 	.text p {
 		line-height: 28px;
