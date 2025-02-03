@@ -6,7 +6,7 @@ export async function load({ fetch, params, cookies }) {
 	let top;
 	let banners;
 	let token;
-	let downloads;
+	//let downloads;
 
 	const tagCache = `news-${params.slug}`;
 
@@ -17,7 +17,7 @@ export async function load({ fetch, params, cookies }) {
 		item = cachedData.item;
 		top = cachedData.top;
 		token = cachedData.token;
-		downloads = cachedData.downloads
+		//downloads = cachedData.downloads
 	} else {
 
 		const fnBanners = () => {
@@ -38,19 +38,19 @@ export async function load({ fetch, params, cookies }) {
 			});
 		};
 
-		const fnDownloads = () => {
-			return fetch(`${HOST_API}/downloads/topviews/1/12`).then((response) => {
-				return response.json();
-			});
-		};
+		// const fnDownloads = () => {
+		// 	return fetch(`${HOST_API}/downloads/topviews/1/12`).then((response) => {
+		// 		return response.json();
+		// 	});
+		// };
 
-		const allPromises = Promise.all([fnBanners(), fnNews(), fnTop(), fnDownloads()]);
+		const allPromises = Promise.all([fnBanners(), fnNews(), fnTop()]);
 
-		await allPromises.then(([rbanners, ritem, rtop, rDownloads]) => {
+		await allPromises.then(([rbanners, ritem, rtop]) => {
 			banners = rbanners;
 			item = ritem;
 			top = rtop;
-			downloads = rDownloads
+			// downloads = rDownloads
 		});
 
 		if (!item.id) {
@@ -84,11 +84,11 @@ export async function load({ fetch, params, cookies }) {
 			item: item,
 			top: top,
 			token: token,
-			downloads: downloads
+			//downloads: downloads
 		});
 
 	}
 
 
-	return { banners: banners.banners, item, top, token, downloads };
+	return { banners: banners.banners, item, top, token };
 }

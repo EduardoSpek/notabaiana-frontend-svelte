@@ -167,9 +167,9 @@ function loadTiktokWidget() {
 
 <Banners banners={data.banners} />
 
-<div class="TopSpace2"></div>
+<!-- <div class="TopSpace2"></div>
 
-<TopViewsDownloads data={data.downloads} />
+<TopViewsDownloads data={data.downloads} /> -->
 
 <div class="TopSpace2"></div>
 
