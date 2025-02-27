@@ -3,7 +3,7 @@ import { HOST_API, formatarData } from "$lib/index.js";
 import { fly } from "svelte/transition";
 import ItemNewsHome from "$lib/ItemNewsHome.svelte";
 export let data;
-let page = 24;
+const page = 24;
 </script>
 
 <section>

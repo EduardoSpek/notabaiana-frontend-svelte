@@ -60,6 +60,14 @@ export let date;
 	.link:hover {
 		text-decoration: underline;
 	}
+	@media (min-width: 605px) {
+		.title {
+			font-size: 20px;
+		}
+		.thumb, .img {
+			width: 230px;
+		}
+	}
 
 	@media (min-width: 768px) {
 		article {
@@ -89,7 +97,8 @@ export let date;
 			font-size: 14px;
 		}
 	}
-	@media (min-width: 1024px) {
+
+	@media (min-width: 1000px) {
 		.card {
 			width: 298px;
 		}
