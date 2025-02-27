@@ -60,7 +60,7 @@ export let date;
 	.link:hover {
 		text-decoration: underline;
 	}
-	@media (min-width: 605px) {
+	@media (min-width: 600px) {
 		.title {
 			font-size: 20px;
 		}
