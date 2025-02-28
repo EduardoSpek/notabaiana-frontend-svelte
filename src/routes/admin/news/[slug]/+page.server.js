@@ -19,6 +19,10 @@ export async function load({ cookies, fetch, params }) {
 		return response.json();
 	});
 
+	item.text = item.text.replace(/\n\n\n\n\n/g, "\n\n");
+	item.text = item.text.replace(/\n\n\n\n/g, "\n\n");
+	item.text = item.text.replace(/\n\n\n/g, "\n\n");
+	item.text = item.text.replace(/\n\n \n\n/g, "\n\n");
 	item.text = item.text.replace(/\n \n/g, "\n\n");
 	item.text = item.text.replace(/<br><br>/g, "\n\n");
 	item.text = item.text.trim();
