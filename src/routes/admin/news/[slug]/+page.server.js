@@ -20,9 +20,9 @@ export async function load({ cookies, fetch, params }) {
 	});
 
 	item.text = item.text.replace(/\n\n/g, "\n");
-	item.text = item.text.replace(/\n/g, "\r\r");
-	item.text = item.text.replace(/<br><br>/g, "\r");
-	item.text = item.text.replace(/\r\r \r\r/g, "\r\r");
+	item.text = item.text.replace(/\n \n/g, "\n\n");
+	item.text = item.text.replace(/<br><br>/g, "\n\n");
+	item.text = item.text.trim();
 
 	return { item, token };
 }
