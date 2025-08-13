@@ -12,7 +12,7 @@ let page = 24;
 			<div class="emalta">Notícias em destaque</div>
 			{#each data as info}
 				<ItemNewsBig
-					title={info.title}
+					title={info.title_ai || info.title}
 					url_image="{HOST_API}/images/{info.image}"
 					link={info.link}
 					date={formatarData(info.created_at)}
