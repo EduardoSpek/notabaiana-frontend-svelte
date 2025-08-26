@@ -61,6 +61,10 @@ export async function load({ fetch, params, cookies }) {
 			item.title = item.title_ai;
 		}
 
+		if (top.title_ai) {
+			top.title = top.title_ai;
+		} 
+
 		if (item.text) {
 			item.text = item.text.replace(/\n/g, '<br>');
 
