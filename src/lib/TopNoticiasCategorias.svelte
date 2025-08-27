@@ -13,7 +13,7 @@ export let category;
 		<div class="items">
 			{#each data_categorias as info}
 				<ItemNewsHome
-					title={info.title}
+					title={info.title_ai || info.title}
 					url_image="{HOST_API}/images/{info.image}"
 					link={info.link}
 					date={formatarData(info.created_at)}
