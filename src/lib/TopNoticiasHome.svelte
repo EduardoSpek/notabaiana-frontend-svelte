@@ -13,7 +13,7 @@ const page = 24;
 		<div class="items">
 			{#each data as info}
 				<ItemNewsHome
-					title={info.title}
+					title={info.title_ai || info.title}
 					url_image="{HOST_API}/images/{info.image}"
 					link={info.link}
 					date={formatarData(info.created_at)}
