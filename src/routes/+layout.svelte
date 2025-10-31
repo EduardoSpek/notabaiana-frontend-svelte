@@ -4,7 +4,7 @@ import "@fontsource-variable/roboto-condensed";
 import "@fontsource-variable/cabin";
 import "@fontsource/poppins";
 import Topo from "$lib/Topo.svelte";
-//import Doacao from "$lib/Doacao.svelte";
+import Doacao from "$lib/Doacao.svelte";
 import ScrollToTop from "$lib/ScrollToTop.svelte";
 import { globalStore } from "$lib/index.js";
 
@@ -19,7 +19,7 @@ const openmenu = () => {
 
 <Topo />
 <main class="main">
-	<slot />
+	<Doacao />
 </main>
 
 <footer>
